@@ -134,16 +134,6 @@ class HotelsController extends Controller
             $data = Hotel::find($id);
             DB::beginTransaction();
 
-//            $filename = "";
-//            if ($request->hasFile('image')) {
-//                if (File::exists(public_path('uploads/hotels/' . $data->image))) {
-//                    File::delete(public_path('uploads/hotels/' . $data->image));
-//                }
-//
-//                $filename = \General::uploadImage('hotels', $request->image);
-//                $data->update(['image' => $filename]);
-//            }
-
             $data->update($request->except('id', '_token'));
             DB::commit();
             return redirect()->route('hotels.index')->with(['success' => __('messages.success_updated')]);

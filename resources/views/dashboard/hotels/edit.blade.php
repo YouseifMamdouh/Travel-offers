@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_2')
-@section('title', 'About us Edit')
+@section('title', 'Hotel Edit')
 @section('content')
 
 
@@ -16,7 +16,7 @@
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                            About us</h1>
+                            Hotels</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -24,7 +24,7 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('aboutus.index')}}" class="text-muted text-hover-primary">About us</a> <span class="px-2"> - </span>
+                                <a href="{{route('hotels.index')}}" class="text-muted text-hover-primary">Hotels</a> <span class="px-2"> - </span>
                                 <span> Edit </span>
                             </li>
                             <!--end::Item-->
@@ -65,13 +65,8 @@
                     <!--begin::Card body-->
                     <div class="card-body py-4" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
 
-                        <div class="row px-0">
-                            <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto text-center">
-                                <img src="{{asset('uploads/aboutus/'. $data->image)}}" alt="image" class="w-50">
-                            </div>
-                        </div>
                         <!--begin::Table-->
-                        <form action="{{route('aboutus.update', $data->id)}}" enctype="multipart/form-data" method="post">
+                        <form action="{{route('hotels.update', $data->id)}}" enctype="multipart/form-data" method="post">
                             @csrf
                             <input type="hidden" value="{{$data->id}}" name="id">
                             <!--begin::Input group-->
@@ -80,7 +75,7 @@
                                 <label class="required fw-semibold fs-6 mb-2">Name</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="About us Title" />
+                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Hotel Title" />
                                 <!--end::Input-->
                             </div>
 
@@ -89,20 +84,54 @@
                                 <label class="required fw-semibold fs-6 mb-2" for="title">Description</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <textarea name="description" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="About us Image Description">{{$data->description}}</textarea>
+                                <textarea name="description" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Hotel Description">{{$data->description}}</textarea>
+                                <!--end::Input-->
+                            </div>
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="city_id">City</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                @php
+                                    $cities = \App\Models\City::get();
+                                @endphp
+                                <select name="city_id" id="city_id" style="width: 100%">
+                                    @if(isset($cities) && $cities->count() > 0)
+                                        @foreach($cities as $city)
+                                            <option value="{{$city->id}}" {{$data->city_id == $city->id ? 'selected' : ''}}>{{$city->title}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="location">Location</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" name="location" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$data->location}}" placeholder="Location" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="address">Address</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" name="address" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$data->address}}" placeholder="Address" />
+                                <!--end::Input-->
+                            </div>
+
                             <!--begin::Input group-->
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
-                                <label class="fw-semibold fs-6 mb-2">Image</label>
+                                <label class="required fw-semibold fs-6 mb-2" for="address">Rooms Number</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-solid" type="file" id="formFile" name="image">
+                                <input type="number" name="rooms_num" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Rooms Number" value="{{$data->rooms_num}}" />
                                 <!--end::Input-->
                             </div>
-                            <!--end::Input group-->
 
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary"
@@ -132,6 +161,9 @@
 @section('script')
     <script>
         $(document).ready(function () {
+
+            $('#city_id').select2();
+
             ClassicEditor
                 .create( document.querySelector( '#editor' ) )
                 .then( editor => {

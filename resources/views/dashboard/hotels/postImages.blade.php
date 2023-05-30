@@ -16,7 +16,7 @@
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                            About us</h1>
+                            Add Images to Hotel</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -24,7 +24,7 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('aboutus.index')}}" class="text-muted text-hover-primary">Hotel</a> <span class="px-2"> - </span>
+                                <a href="{{route('hotels.index')}}" class="text-muted text-hover-primary">Hotels</a> <span class="px-2"> - </span>
                                 <span> Add Images </span>
                             </li>
                             <!--end::Item-->

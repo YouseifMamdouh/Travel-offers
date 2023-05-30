@@ -13,7 +13,7 @@
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                            About us</h1>
+                            Hotels</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -338,6 +338,7 @@
                 let form_locale = delete_li.parent();
                 let id = $(this).parent().find('input[name="locale_id"]').val();
                 if (id !== "") {
+                    // alert(id);
                     Swal.fire({
                         text: "Are You Sure?",
                         icon: "warning",
@@ -349,7 +350,7 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/about-us/delete/" + id,
+                                url: "/admin/hotels/delete/" + id,
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",

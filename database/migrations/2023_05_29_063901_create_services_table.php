@@ -15,6 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->json('title');
             $table->enum('type_of', ['flight_booking', 'car_booking']);
             $table->json('description');
             $table->timestamps();

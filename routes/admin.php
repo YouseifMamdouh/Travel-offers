@@ -42,6 +42,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::delete('delete/{id}', 'AboutUsController@destroy')->name('aboutus.destroy');
     });
 
+    Route::group(['prefix' => 'contact-us'], function () {
+        Route::get('/', 'ContactController@index')->name('contacts.index');
+        Route::post('/store', 'ContactController@store')->name('contacts.store');
+        Route::get('/edit/{id}', 'ContactController@edit')->name('contacts.edit');
+        Route::post('/update/{id}', 'ContactController@update')->name('contacts.update');
+        Route::delete('delete/{id}', 'ContactController@destroy')->name('contacts.destroy');
+    });
+
     Route::group(['prefix' => 'hotels'], function () {
         Route::get('/', 'HotelsController@index')->name('hotels.index');
         Route::get('/{id}', 'HotelsController@show')->name('hotels.show');
@@ -52,10 +60,62 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
 
         Route::get('add-images/{id}', 'HotelsController@addImages')->name('hotels.addImages');
         Route::post('post-images/{id}', 'HotelsController@postImages')->name('hotels.postImages');
-        Route::post('delete-images/{image-id}', 'HotelsController@deleteImage')->name('hotels.deleteImage');
+        Route::delete('delete-images/{id}', 'HotelsController@deleteImage')->name('hotels.deleteImage');
     });
 
 
+    Route::group(['prefix' => 'features'], function () {
+        Route::get('/', 'FeaturesController@index')->name('features.index');
+        Route::post('/store', 'FeaturesController@store')->name('features.store');
+        Route::get('/edit/{id}', 'FeaturesController@edit')->name('features.edit');
+        Route::post('/update/{id}', 'FeaturesController@update')->name('features.update');
+        Route::delete('delete/{id}', 'FeaturesController@destroy')->name('features.destroy');
+    });
+
+
+    Route::group(['prefix' => 'rooms'], function () {
+        Route::get('/', 'RoomsController@index')->name('rooms.index');
+        Route::get('/{id}', 'RoomsController@show')->name('rooms.show');
+        Route::post('/store', 'RoomsController@store')->name('rooms.store');
+        Route::get('/edit/{id}', 'RoomsController@edit')->name('rooms.edit');
+        Route::post('/update/{id}', 'RoomsController@update')->name('rooms.update');
+        Route::delete('delete/{id}', 'RoomsController@destroy')->name('rooms.destroy');
+
+        Route::get('add-images/{id}', 'RoomsController@addImages')->name('rooms.addImages');
+        Route::post('post-images/{id}', 'RoomsController@postImages')->name('rooms.postImages');
+        Route::delete('delete-images/{id}', 'RoomsController@deleteImage')->name('rooms.deleteImage');
+    });
+
+
+
+    Route::group(['prefix' => 'blogs'], function () {
+        Route::get('/', 'BlogsController@index')->name('blogs.index');
+        Route::post('/store', 'BlogsController@store')->name('blogs.store');
+        Route::get('/edit/{id}', 'BlogsController@edit')->name('blogs.edit');
+        Route::post('/update/{id}', 'BlogsController@update')->name('blogs.update');
+        Route::delete('delete/{id}', 'BlogsController@destroy')->name('blogs.destroy');
+    });
+
+
+    Route::group(['prefix' => 'services'], function () {
+        Route::get('/', 'ServicesController@index')->name('services.index');
+        Route::post('/store', 'ServicesController@store')->name('services.store');
+        Route::get('/edit/{id}', 'ServicesController@edit')->name('services.edit');
+        Route::post('/update/{id}', 'ServicesController@update')->name('services.update');
+        Route::delete('delete/{id}', 'ServicesController@destroy')->name('services.destroy');
+    });
+    Route::group(['prefix' => 'programmes'], function () {
+        Route::get('/', 'ProgrammesController@index')->name('programmes.index');
+        Route::get('/{id}', 'ProgrammesController@show')->name('programmes.show');
+        Route::post('/store', 'ProgrammesController@store')->name('programmes.store');
+        Route::get('/edit/{id}', 'ProgrammesController@edit')->name('programmes.edit');
+        Route::post('/update/{id}', 'ProgrammesController@update')->name('programmes.update');
+        Route::delete('delete/{id}', 'ProgrammesController@destroy')->name('programmes.destroy');
+
+        Route::get('add-images/{id}', 'ProgrammesController@addImages')->name('programmes.addImages');
+        Route::post('post-images/{id}', 'ProgrammesController@postImages')->name('programmes.postImages');
+        Route::delete('delete-images/{id}', 'ProgrammesController@deleteImage')->name('programmes.deleteImage');
+    });
 
 
 

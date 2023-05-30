@@ -45,37 +45,37 @@ var KTUsersAddUser = function () {
 
                     t.querySelector('[data-kt-users-modal-action="cancel"]').addEventListener("click", (t => {
                     t.preventDefault(), Swal.fire({
-                        text: "هل أنت متأكد؟",
+                        text: "Are You sure?",
                         icon: "warning",
                         showCancelButton: !0,
                         buttonsStyling: !1,
-                        confirmButtonText: "إلغاء",
-                        cancelButtonText: "عودة",
+                        confirmButtonText: "Yes",
+                        cancelButtonText: "Back",
                         customClass: {confirmButton: "btn btn-danger", cancelButton: "btn btn-active-light"}
                     }).then((function (t) {
                         t.value ? (e.reset(), n.hide()) : "cancel" === t.dismiss && Swal.fire({
-                            text: "لم يتم الإلغاء",
+                            text: "Nothing is Canceled",
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "حسنا",
+                            confirmButtonText: "oki",
                             customClass: {confirmButton: "btn btn-primary"}
                         })
                     }))
                 })), t.querySelector('[data-kt-users-modal-action="close"]').addEventListener("click", (t => {
                     t.preventDefault(), Swal.fire({
-                        text: "هل أنت متأكد؟",
+                        text: "Are You Sure?",
                         icon: "warning",
                         showCancelButton: !0,
                         buttonsStyling: !1,
-                        confirmButtonText: "إلغاء",
-                        cancelButtonText: "عودة",
+                        confirmButtonText: "Yes",
+                        cancelButtonText: "Back",
                         customClass: {confirmButton: "btn btn-danger", cancelButton: "btn btn-active-light"}
                     }).then((function (t) {
                         t.value ? (e.reset(), n.hide()) : "cancel" === t.dismiss && Swal.fire({
-                            text: "لم يتم الإلغاء",
+                            text: "Nothing is Canceled",
                             icon: "error",
                             buttonsStyling: !1,
-                            confirmButtonText: "حسنا",
+                            confirmButtonText: "oki",
                             customClass: {confirmButton: "btn btn-primary"}
                         })
                     }))

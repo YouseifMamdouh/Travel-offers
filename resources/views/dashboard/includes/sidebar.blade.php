@@ -168,7 +168,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'aboutus.index' || Route::currentRouteName() === 'aboutus.edit' || Route::currentRouteName() === 'aboutus.show' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'contacts.index' || Route::currentRouteName() === 'contacts.edit' || Route::currentRouteName() === 'contacts.show' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -190,8 +190,8 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'aboutus.index' ? 'active' : ''}}"
-                               href="{{route('aboutus.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'contacts.index' ? 'active' : ''}}"
+                               href="{{route('contacts.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -249,7 +249,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item  -->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'moshaf.index' || Route::currentRouteName() === 'moshaf.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'features.index' || Route::currentRouteName() === 'features.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -269,8 +269,8 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'moshaf.index' ? 'active' : ''}}"
-                               href="{{route('moshaf.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'features.index' ? 'active' : ''}}"
+                               href="{{route('features.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -287,7 +287,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item  -->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'admins.index' || Route::currentRouteName() === 'admins.edit'  || Route::currentRouteName() === 'admins.show'  ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'rooms.index' || Route::currentRouteName() === 'rooms.edit'  || Route::currentRouteName() === 'rooms.show'  ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -298,7 +298,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
  <i class="path3"></i>
 </i>
 											</span>
-											<span class="menu-title">Roomes</span>
+											<span class="menu-title">Rooms</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
@@ -308,8 +308,8 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'admins.index' ? 'active' : ''}}"
-                               href="{{route('admins.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'rooms.index' ? 'active' : ''}}"
+                               href="{{route('rooms.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -323,118 +323,121 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                     <!--end:Menu sub-->
                 </div>
                 <!--end:Menu item-->
-
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu item-->
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'blogs.index'  || Route::currentRouteName() === 'blogs.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
                                                   style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
-												<i class="ki-duotone ki-notepad">
- <i class="path1"></i>
- <i class="path2"></i>
- <i class="path3"></i>
- <i class="path4"></i>
- <i class="path5"></i>
-</i>
+												<i class="ki-duotone ki-slider-vertical-2">
+                                                 <i class="path1"></i>
+                                                 <i class="path2"></i>
+                                                 <i class="path3"></i>
+                                                </i>
 											</span>
 											<span class="menu-title">Blogs</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
                     <!--begin:Menu sub-->
-                    {{--                    <div class="menu-sub menu-sub-accordion">--}}
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'blogs.index' ? 'active' : ''}}"
+                               href="{{route('blogs.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">List </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
 
-                    {{--                        <!--begin:Menu item-->--}}
-                    {{--                        <div class="menu-item">--}}
-                    {{--                            <!--begin:Menu link-->--}}
-                    {{--                            <a class="menu-link {{Route::currentRouteName() === 'admins.index' ? 'active' : ''}}"--}}
-                    {{--                               href="{{route('admins.index')}}">--}}
-                    {{--													<span class="menu-bullet">--}}
-                    {{--														<span class="bullet bullet-dot"></span>--}}
-                    {{--													</span>--}}
-                    {{--                                <span class="menu-title">List </span>--}}
-                    {{--                            </a>--}}
-                    {{--                            <!--end:Menu link-->--}}
-                    {{--                        </div>--}}
-                    {{--                        <!--end:Menu item-->--}}
-
-                    {{--                    </div>--}}
+                        <!--end:Menu item-->
+                    </div>
                     <!--end:Menu sub-->
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--end:Menu item-->
+
+<!--begin:Menu item-->
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'services.index'  || Route::currentRouteName() === 'services.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
                                                   style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
-												<i class="ki-duotone ki-technology-4">
- <i class="path1"></i>
- <i class="path2"></i>
- <i class="path3"></i>
- <i class="path4"></i>
- <i class="path5"></i>
- <i class="path6"></i>
- <i class="path7"></i>
-</i>
+												<i class="ki-duotone ki-slider-vertical-2">
+                                                 <i class="path1"></i>
+                                                 <i class="path2"></i>
+                                                 <i class="path3"></i>
+                                                </i>
 											</span>
 											<span class="menu-title">Services</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
                     <!--begin:Menu sub-->
-                    {{--                    <div class="menu-sub menu-sub-accordion">--}}
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'services.index' ? 'active' : ''}}"
+                               href="{{route('services.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">List </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
 
-                    {{--                        <!--begin:Menu item-->--}}
-                    {{--                        <div class="menu-item">--}}
-                    {{--                            <!--begin:Menu link-->--}}
-                    {{--                            <a class="menu-link {{Route::currentRouteName() === 'admins.index' ? 'active' : ''}}"--}}
-                    {{--                               href="{{route('admins.index')}}">--}}
-                    {{--													<span class="menu-bullet">--}}
-                    {{--														<span class="bullet bullet-dot"></span>--}}
-                    {{--													</span>--}}
-                    {{--                                <span class="menu-title">List </span>--}}
-                    {{--                            </a>--}}
-                    {{--                            <!--end:Menu link-->--}}
-                    {{--                        </div>--}}
-                    {{--                        <!--end:Menu item-->--}}
-
-                    {{--                    </div>--}}
+                        <!--end:Menu item-->
+                    </div>
                     <!--end:Menu sub-->
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--end:Menu item-->
+<!--begin:Menu item-->
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'programmes.index'  || Route::currentRouteName() === 'programmes.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
                                                   style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
-												<i class="ki-duotone ki-scroll">
- <i class="path1"></i>
- <i class="path2"></i>
- <i class="path3"></i>
-</i>
+												<i class="ki-duotone ki-slider-vertical-2">
+                                                 <i class="path1"></i>
+                                                 <i class="path2"></i>
+                                                 <i class="path3"></i>
+                                                </i>
 											</span>
 											<span class="menu-title">Our Programmes</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
                     <!--begin:Menu sub-->
-                    {{--                    <div class="menu-sub menu-sub-accordion">--}}
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'programmes.index' ? 'active' : ''}}"
+                               href="{{route('programmes.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">List </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
 
-                    {{--                        <!--begin:Menu item-->--}}
-                    {{--                        <div class="menu-item">--}}
-                    {{--                            <!--begin:Menu link-->--}}
-                    {{--                            <a class="menu-link {{Route::currentRouteName() === 'admins.index' ? 'active' : ''}}"--}}
-                    {{--                               href="{{route('admins.index')}}">--}}
-                    {{--													<span class="menu-bullet">--}}
-                    {{--														<span class="bullet bullet-dot"></span>--}}
-                    {{--													</span>--}}
-                    {{--                                <span class="menu-title">List </span>--}}
-                    {{--                            </a>--}}
-                    {{--                            <!--end:Menu link-->--}}
-                    {{--                        </div>--}}
-                    {{--                        <!--end:Menu item-->--}}
-
-                    {{--                    </div>--}}
+                        <!--end:Menu item-->
+                    </div>
                     <!--end:Menu sub-->
                 </div>
+                <!--end:Menu item-->
 
 
             </div>

@@ -57563,3 +57563,8 @@ button.menu-link:hover {background:#f1faff}
 .delete_btn_li:hover {transition: color .2s ease;
     background-color: var(--bs-primary-light);
     color: var(--bs-primary);}
+.bold {font-weight: bold}
+.details_item {padding:10px 15px;border-bottom: 1px solid #ddd}
+.details_item:hover {background:#f2eeee;}
+
+
