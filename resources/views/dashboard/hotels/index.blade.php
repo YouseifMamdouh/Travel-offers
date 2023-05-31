@@ -218,7 +218,6 @@
                                     </th>
 
                                     <th class="min-w-50px" style="text-align: center">Title</th>
-                                    <th class="min-w-50px" style="text-align: center">Description</th>
                                     <th class="min-w-50px" style="text-align: center">City</th>
                                     <th class="min-w-50px" style="text-align: center">Rooms</th>
                                     <th class=" min-w-100px" style="text-align: center">Operation</th>
@@ -237,9 +236,9 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->title}}</span>
                                             </td>
-                                            <td class="min-w-50px" style="text-align: center">
-                                                <span>{{$item->description}}</span>
-                                            </td>
+{{--                                            <td class="min-w-50px" style="text-align: center">--}}
+{{--                                                <span>{{$item->description}}</span>--}}
+{{--                                            </td>--}}
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->city->title}}</span>
                                             </td>

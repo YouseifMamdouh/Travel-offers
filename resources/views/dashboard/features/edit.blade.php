@@ -24,7 +24,7 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('cities.index')}}" class="text-muted text-hover-primary">Features</a> <span class="px-2"> - </span>
+                                <a href="{{route('features.index')}}" class="text-muted text-hover-primary">Features</a> <span class="px-2"> - </span>
                                 <span> Edit </span>
                             </li>
                             <!--end::Item-->
@@ -64,7 +64,11 @@
                 <div class="card">
                     <!--begin::Card body-->
                     <div class="card-body py-4" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
-
+                        <div class="row px-0">
+                            <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
+                                <img src="{{asset('uploads/features/'. $data->icon)}}" alt="Banner" style="width: 30px">
+                            </div>
+                        </div>
                         <!--begin::Table-->
                         <form action="{{route('features.update', $data->id)}}" enctype="multipart/form-data" method="post">
                             @csrf
@@ -78,6 +82,16 @@
                                 <!--end::Label-->
                                 <!--begin::Input-->
                                 <input type="text" value="{{$data->name}}" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="features Name" />
+                                <!--end::Input-->
+                            </div>
+
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="icon">Icon</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="icon" name="icon">
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->

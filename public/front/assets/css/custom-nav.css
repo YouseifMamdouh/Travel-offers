@@ -1,0 +1,145 @@
+    .text-slider h2,
+    .text-slider h3 {
+        color: white;
+        font-size: 4rem;
+    }
+    
+    .navs {
+        background-color: rgba(32, 49, 82, .63);
+        padding: 8px 80px;
+    }
+    
+    .container-full-search {
+        background-color: rgba(32, 49, 82, .84);
+    }
+    
+    .form-container {
+        padding: 10px 30px;
+    }
+    
+    .nav-pills .nav-link {
+        border-radius: 0rem;
+        margin-right: 10px;
+    }
+    
+    @media (max-width:450px) {
+        .text-slider h2,
+        .text-slider h3 {
+            color: white;
+            font-size: 2rem;
+        }
+        .cab-section {
+            height: 100vh;
+        }
+        .cab-section .cab-content {
+            height: 65vh;
+        }
+    }
+    
+    @media (min-width:460px) and (max-width:560px) {
+        .text-slider h2,
+        .text-slider h3 {
+            color: white;
+            font-size: 2rem;
+        }
+        .cab-section .cab-content {
+            height: 60vh;
+        }
+    }
+    
+    @media (min-width:570px) and (max-width:768px) {
+        .text-slider h2,
+        .text-slider h3 {
+            color: white;
+            font-size: 2rem;
+        }
+        .cab-section .cab-content {
+            height: 60vh;
+        }
+    }
+    
+    @media (min-width:769px) and (max-width:992px) {
+        .text-slider h2,
+        .text-slider h3 {
+            color: white;
+            font-size: 4rem;
+        }
+        .input-search {
+            margin-bottom: 5px;
+        }
+        .cab-section .cab-content {
+            height: 70vh;
+        }
+    }
+    
+    @media (min-width:769px) and (max-width:991px) {
+        .text-slider h2,
+        .text-slider h3 {
+            color: white;
+            font-size: 4rem;
+        }
+        .cab-section .cab-content {
+            height: 60vh;
+        }
+    }
+    
+    @media (min-width:992px) and (max-width:1200px) {
+        .navs {
+            background-color: rgba(32, 49, 82, .63);
+            padding: 8px 40px;
+        }
+        .cab-section .cab-content form .form-control {
+            border: none;
+            padding: 9px 17px;
+            border-radius: 35px;
+        }
+        .cab-section .cab-content {
+            height: 35vh;
+        }
+    }
+    
+    @media (min-width:1200px) {
+        .cab-section .cab-content {
+            height: 30vh;
+        }
+        div#pills-tabContent {
+            padding: 0 60px;
+        }
+        .navs {
+            background-color: rgba(32, 49, 82, .63);
+            padding: 8px 80px;
+        }
+        .cab-section .cab-content form .form-control {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+        }
+    }
+    
+    .navs button {
+        background: transparent;
+        color: #ccc;
+        font-size: 18px;
+        transition: all .5s ease 0s;
+    }
+    
+    .navs button:hover {
+        color: #fec524;
+    }
+    
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: #fec524;
+        background-color: transparent;
+        font-size: 20px;
+    }
+    
+    .display-none {
+        display: none;
+    }
+    
+    header.light_header .menu .brand-logo img {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+        width: 70px;
+    }

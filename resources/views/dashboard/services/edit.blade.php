@@ -24,7 +24,7 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('cities.index')}}" class="text-muted text-hover-primary">Services</a> <span class="px-2"> - </span>
+                                <a href="{{route('services.index')}}" class="text-muted text-hover-primary">Services</a> <span class="px-2"> - </span>
                                 <span> Edit </span>
                             </li>
                             <!--end::Item-->
@@ -64,7 +64,11 @@
                 <div class="card">
                     <!--begin::Card body-->
                     <div class="card-body py-4" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
-
+                        <div class="row px-0">
+                            <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
+                                <img src="{{asset('uploads/services/'. $data->image)}}" alt="city" class="w-100">
+                            </div>
+                        </div>
                         <!--begin::Table-->
                         <form action="{{route('services.update', $data->id)}}" enctype="multipart/form-data" method="post">
                             @csrf
@@ -96,13 +100,10 @@
                             <!--begin::Input group-->
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
-                                <label class="required fw-semibold fs-6 mb-2" for="image">Type</label>
+                                <label class="fw-semibold fs-6 mb-2">Image</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <select name="type_of" id="type_of" style="width: 100%">
-                                    <option value="flight_booking" {{$data->type_of == 'flight_booking' ? 'selected' : ''}}>Flight Booking</option>
-                                    <option value="car_booking" {{$data->type_of == 'car_booking' ? 'selected' : ''}}>Car Booking</option>
-                                </select>
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="image">
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->

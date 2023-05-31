@@ -88,7 +88,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'aboutus.index' || Route::currentRouteName() === 'aboutus.edit' || Route::currentRouteName() === 'aboutus.show' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'aboutus.index' || Route::currentRouteName() === 'aboutus.edit' || Route::currentRouteName() === 'aboutus_details.index' || Route::currentRouteName() === 'aboutus_details.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -115,7 +115,18 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">Images List </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'aboutus_details.index' ? 'active' : ''}}"
+                               href="{{route('aboutus_details.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Details </span>
                             </a>
                             <!--end:Menu link-->
                         </div>

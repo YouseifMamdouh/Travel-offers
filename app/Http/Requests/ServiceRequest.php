@@ -26,15 +26,15 @@ class ServiceRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            'type_of' => 'required|in:car_booking,flight_booking',
+            'image' => 'required_without:id',
         ];
     }
     public function messages()
     {
         return [
             'name.required' => 'The title Field is Required',
-            'type_of.required' => 'The Type Field is Required',
-            'type_of.in' => 'The Service must Be type of Hotels or Programmes',
+            'description.required' => 'The Description Field is Required',
+            'required_without' => 'The Image is Required',
         ];
     }
 }

@@ -54,6 +54,12 @@ return [
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
+        'features' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/features'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
         'aboutus' => [
             'driver' => 'local',
             'root' => public_path('uploads/aboutus'),
@@ -87,6 +93,12 @@ return [
         'contacts' => [
             'driver' => 'local',
             'root' => public_path('uploads/contacts'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        'services' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/services'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],

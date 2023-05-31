@@ -182,7 +182,7 @@
                                     </th>
 
                                     <th class="min-w-50px" style="text-align: center">Title</th>
-                                    <th class="min-w-50px" style="text-align: center">Description</th>
+                                    <th class="min-w-50px" style="text-align: center">Subtitle</th>
                                     <th class="min-w-50px" style="text-align: center">Image</th>
                                     <th class=" min-w-100px" style="text-align: center">Operation</th>
                                 </tr>

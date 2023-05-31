@@ -13,7 +13,11 @@ class Service extends Model
 
     protected $table = "services";
 
-    protected $fillable = ['type_of', 'title', 'description'];
+    protected $fillable = ['image', 'title', 'description'];
 
     public $translatable = ['title', 'description'];
+
+    public function book() {
+        return $this->hasMany(ServiceBook::class, 'service_id', 'id');
+    }
 }

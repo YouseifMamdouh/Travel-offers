@@ -1,5 +1,17 @@
 @extends('layouts.dashboard_2')
 @section('title', 'Programmes')
+
+@section('style')
+    <style>
+    </style>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
+        integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+@endsection
 @section('content')
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
         <!--begin::Content wrapper-->
@@ -114,10 +126,39 @@
                                                         <!--begin::Input group-->
                                                         <div class="fv-row mb-7">
                                                             <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Title</label>
+                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Duration</label>
                                                             <!--end::Label-->
                                                             <!--begin::Input-->
-                                                            <input type="text" name="title" value="{{old('title')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Title" />
+                                                            <input type="text" name="title" value="{{old('title')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="(6N 7D)" />
+                                                            <!--end::Input-->
+                                                        </div>
+
+                                                        <!--begin::Input group-->
+                                                        <div class="fv-row mb-7">
+                                                            <!--begin::Label-->
+                                                            <div class="col-md-5  d-inline-block mx-3">
+                                                            <label class="required fw-semibold fs-6 mb-2" for="price">Price</label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input type="text" name="price" value="{{old('price')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Price" />
+                                                            <!--end::Input-->
+                                                            </div>
+                                                            <div class="col-md-5 d-inline-block mx-3">
+                                                            <label class="fw-semibold fs-6 mb-2" for="discount">Discount (optional)</label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input type="text" name="discount" value="{{old('discount')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Discount" />
+                                                            <!--end::Input-->
+                                                            </div>
+                                                        </div>
+
+                                                        <!--begin::Input group-->
+                                                        <div class="fv-row mb-7">
+                                                            <!--begin::Label-->
+                                                            <label class="required fw-semibold fs-6 mb-2" for="plan">Programme Plan</label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input type="text" name="plan" value="{{old('plan')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Kuta (2N) → Lombok (2N) → Ubud (2N) " />
                                                             <!--end::Input-->
                                                         </div>
                                                         <!--begin::Input group-->
@@ -129,6 +170,50 @@
                                                             <textarea class="form-control editor "
                                                                       rows="10" id="ck_description"
                                                                       name="description">{{old('description')}}</textarea>                                                                <!--end::Input-->
+                                                        </div>
+                                                        @php
+                                                            $arr=[];
+                                                            for($i = 0;$i < 100; $i++) {
+                                                                array_push($arr, old('features.' . $i));
+                                                            }
+                                                        @endphp
+                                                        <!--begin::Input group-->
+                                                        <div class="fv-row mb-7">
+                                                            <!--begin::Label-->
+                                                            <label class="required fw-semibold fs-6 mb-2" for="features">Features</label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <select id="features" placeholder="Choose Features"
+                                                                    multiple name="features[]"
+                                                                    class=" selectize-event">
+
+                                                                <optgroup label="">
+                                                                    @if(isset($features) && $features->count() > 0)
+                                                                        @foreach($features as $feature)
+                                                                            <option
+                                                                                value="{{$feature->id}}" {{in_array($feature->id, $arr) ? 'selected' : ''}}>
+                                                                                {{$feature->name}}
+                                                                            </option>
+                                                                        @endforeach
+                                                                    @endif
+
+                                                                </optgroup>
+                                                            </select>
+                                                            <!--end::Input-->
+                                                        </div>
+                                                        <div class="fv-row mb-7">
+                                                            <!--begin::Label-->
+                                                            <label class="required fw-semibold fs-6 mb-2" for="city_id">City</label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <select name="city_id" id="city_id" style="width: 100%">
+                                                                @if(isset($cities) && $cities->count() > 0)
+                                                                    @foreach($cities as $city)
+                                                                        <option value="{{$city->id}}">{{$city->title}}</option>
+                                                                    @endforeach
+                                                                @endif
+                                                            </select>
+                                                            <!--end::Input-->
                                                         </div>
                                                         <!--begin::Input group-->
                                                         <div class="fv-row mb-7">
@@ -192,7 +277,11 @@
                                     </th>
 
                                     <th class="min-w-50px" style="text-align: center">name</th>
-                                    <th class="min-w-50px" style="text-align: center">Title</th>
+                                    <th class="min-w-50px" style="text-align: center">Duration</th>
+                                    <th class="min-w-50px" style="text-align: center">City</th>
+                                    <th class="min-w-50px" style="text-align: center">Price</th>
+                                    <th class="min-w-50px" style="text-align: center">discount</th>
+
                                     <th class="min-w-50px" style="text-align: center">cover</th>
                                     <th class=" min-w-100px" style="text-align: center">Operation</th>
                                 </tr>
@@ -212,6 +301,15 @@
                                             </td>
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->title}}</span>
+                                            </td>
+                                            <td class="min-w-50px" style="text-align: center">
+                                                <span>{{$item->city->title}}</span>
+                                            </td>
+                                            <td class="min-w-50px" style="text-align: center">
+                                                <span>{{$item->price}} {{General::getCurrency();}}</span>
+                                            </td>
+                                            <td class="min-w-50px" style="text-align: center">
+                                                <span>{{$item->discount}}%</span>
                                             </td>
                                             <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/programmes/' . $item->cover)}}" target="_blank"><img src="{{asset('uploads/programmes/'.$item->cover)}}" alt="Banner" style="width: 100px"></a></td>
 
@@ -292,9 +390,18 @@
     <script src="{{asset('admin/assets/js/custom/apps/user-management/users/list/add.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
+        integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
 
     <script>
         $(document).ready(function () {
+            $('#features').selectize();
+
+
             ClassicEditor
                 .create( document.querySelector( '.editor' ) )
                 .then( editor => {

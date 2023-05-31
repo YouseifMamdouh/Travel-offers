@@ -110,6 +110,15 @@
                                                                 <input type="text" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="features Name" />
                                                                 <!--end::Input-->
                                                             </div>
+                                                            <!--begin::Input group-->
+                                                            <div class="fv-row mb-7">
+                                                                <!--begin::Label-->
+                                                                <label class="required fw-semibold fs-6 mb-2" for="icon">Icon</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input class="form-control form-control-solid" type="file" id="icon" name="icon">
+                                                                <!--end::Input-->
+                                                            </div>
                                                             <!--end::Input group-->
                                                             <!--begin::Input group-->
                                                             <div class="fv-row mb-7">
@@ -176,6 +185,7 @@
                                         </th>
                                         <th class="min-w-50px" style="text-align: center">Name</th>
                                         <th class="min-w-50px" style="text-align: center">Type</th>
+                                        <th class="min-w-50px" style="text-align: center">Icon</th>
                                         <th class=" min-w-100px" style="text-align: center">Operation</th>
                                     </tr>
                                     </thead>
@@ -195,6 +205,7 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->type_of}}</span>
                                             </td>
+                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/features/' . $item->icon)}}" target="_blank"><img src="{{asset('uploads/features/'.$item->icon)}}" alt="Banner" style="width: 20px"></a></td>
 
                                             <td class="text-end" style="text-align: center!important;">
                                                 <a href="#" class="btn btn-light btn-active-light-primary btn-sm"

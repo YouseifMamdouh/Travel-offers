@@ -48,7 +48,7 @@
 
                         <div class="row px-0">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
-                                <h4>Hotel Images</h4>
+                                <h4>Programme Images</h4>
                             </div>
                             @if(isset($data->progImages) && $data->progImages->count() > 0)
                                 @foreach($data->progImages as $image)
@@ -80,7 +80,7 @@
                         </div>
                         <div class="row px-0 mt-3">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
-                                <h4>Hotel Details</h4>
+                                <h4>Programme Details</h4>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
                                 <div class="row">
@@ -95,10 +95,65 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
-                                        Title :
+                                        Duration :
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
                                         {{$data->title}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Price :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->price}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Discount :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->discount}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Programme Plan :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->plan}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        City :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->city->title}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Features :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        @foreach($data->features as $feature)
+                                            <div class="d-inline-block mx-3 text-center">
+                                                <img src="{{asset('uploads/features/' . $feature->icon)}}" alt="icon" >
+                                                <p>{{$feature->name}}</p>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

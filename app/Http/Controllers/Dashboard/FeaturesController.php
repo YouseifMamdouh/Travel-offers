@@ -7,13 +7,14 @@ use App\Http\Requests\FeatureRequest;
 use App\Models\Feature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class FeaturesController extends Controller
 {
 
     public function index()
     {
-        $data = Feature::select('id', 'name', 'type_of')->get();
+        $data = Feature::select('id', 'name', 'type_of', 'icon')->get();
         return view('dashboard.features.index', compact('data'));
     }
 
@@ -21,9 +22,14 @@ class FeaturesController extends Controller
     {
 //        return  $request;
         try {
+            $filename = "";
+            if ($request->hasFile('icon')) {
+                $filename = \General::uploadImage('features', $request->icon);
+            }
             DB::beginTransaction();
             Feature::create([
                 'name' => $request->name,
+                'icon' => $filename,
                 'type_of' => $request->type_of,
             ]);
 
@@ -52,9 +58,19 @@ class FeaturesController extends Controller
         try {
 //            return $request;
             $data = Feature::find($id);
+
+
             DB::beginTransaction();
 
-            $data->update($request->except('id', '_token'));
+            $filename = "";
+            if ($request->hasFile('icon')) {
+                if (File::exists(public_path('uploads/features/' . $data->icon))) {
+                    File::delete(public_path('uploads/features/' . $data->icon));
+                }
+                $filename = \General::uploadImage('features', $request->icon);
+                $data->update(['icon' => $filename]);
+            }
+            $data->update($request->except('id', '_token', 'icon'));
             DB::commit();
             return redirect()->route('features.index')->with(['success' => __('messages.success_updated')]);
 

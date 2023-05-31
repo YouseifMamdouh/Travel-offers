@@ -41,6 +41,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::post('/update/{id}', 'AboutUsController@update')->name('aboutus.update');
         Route::delete('delete/{id}', 'AboutUsController@destroy')->name('aboutus.destroy');
     });
+    Route::group(['prefix' => 'aboutus_details'], function () {
+        Route::get('/', 'AboutUsDetailsController@index')->name('aboutus_details.index');
+        Route::get('/edit/{id}', 'AboutUsDetailsController@edit')->name('aboutus_details.edit');
+        Route::post('/update/{id}', 'AboutUsDetailsController@update')->name('aboutus_details.update');
+    });
 
     Route::group(['prefix' => 'contact-us'], function () {
         Route::get('/', 'ContactController@index')->name('contacts.index');
@@ -110,7 +115,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::post('/store', 'ProgrammesController@store')->name('programmes.store');
         Route::get('/edit/{id}', 'ProgrammesController@edit')->name('programmes.edit');
         Route::post('/update/{id}', 'ProgrammesController@update')->name('programmes.update');
-        Route::delete('delete/{id}', 'ProgrammesController@destroy')->name('programmes.destroy');
+        Route::get('delete/{id}', 'ProgrammesController@destroy')->name('programmes.destroy');
 
         Route::get('add-images/{id}', 'ProgrammesController@addImages')->name('programmes.addImages');
         Route::post('post-images/{id}', 'ProgrammesController@postImages')->name('programmes.postImages');

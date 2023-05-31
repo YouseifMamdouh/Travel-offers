@@ -86,7 +86,7 @@
 
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
-                                <label class="required fw-semibold fs-6 mb-2" for="title">Description</label>
+                                <label class="required fw-semibold fs-6 mb-2" for="title">Subtitle</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
                                 <textarea name="description" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="About us Image Description">{{$data->description}}</textarea>

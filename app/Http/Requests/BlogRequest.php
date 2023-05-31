@@ -25,6 +25,8 @@ class BlogRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'sub_title' => 'required',
+//            'location' => 'required',
             'image' => 'required_without:id',
             'created_at' => 'required_without',
         ];
@@ -33,6 +35,8 @@ class BlogRequest extends FormRequest
     {
         return [
             'title.required' => 'The Name is Required',
+            'sub_title.required' => 'The Sub Title is Required',
+//            'location.required' => 'The Location is Required',
             'created_at.required_without' => 'The Date is Required',
             'image.required_without' => 'The Blog Image is Required',
         ];

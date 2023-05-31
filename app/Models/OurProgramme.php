@@ -13,12 +13,21 @@ class OurProgramme extends Model
 
     protected  $table = "our_programmes";
 
-    protected $fillable = ['name', 'title', 'description', 'cover'];
+    protected $fillable = ['name', 'title', 'description', 'cover','price', 'discount', 'plan', 'city_id'];
 
-    public $translatable = ['name', 'title', 'description'];
+    public $translatable = ['name', 'title', 'description', 'plan'];
 
     public function progImages() {
         return $this->hasMany(ProgrammeImage::class, 'programme_id', 'id');
+    }
+
+    public function city() {
+        return $this->belongsTo(City::class, 'city_id', 'id');
+    }
+
+
+    public function features() {
+        return $this->belongsToMany(Feature::class, 'programme_feature', 'programme_id', 'feature_id', 'id', 'id');
     }
 
 }

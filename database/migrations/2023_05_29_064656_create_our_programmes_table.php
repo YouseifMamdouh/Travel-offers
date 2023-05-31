@@ -15,9 +15,14 @@ class CreateOurProgrammesTable extends Migration
     {
         Schema::create('our_programmes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('CASCADE');
             $table->json('title');
             $table->json('description');
             $table->string('cover');
+            $table->string('price');
+            $table->string('discount');
+            $table->json('plan');
             $table->timestamps();
         });
     }

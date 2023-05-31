@@ -107,18 +107,29 @@
                                                                 <label class="required fw-semibold fs-6 mb-2" for="title">Title</label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Input-->
-                                                                <input type="text" name="title" class="form-control form-control-solid mb-3 mb-lg-0" placeholder=" Name" />
+                                                                <input type="text" name="title" class="form-control form-control-solid mb-3 mb-lg-0" placeholder=" Title" />
+                                                                <!--end::Input-->
+                                                            </div>
+                                                            <div class="fv-row mb-7">
+                                                                <!--begin::Label-->
+                                                                <label class="required fw-semibold fs-6 mb-2" for="sub_title">Sub Title</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input type="text" name="sub_title" class="form-control form-control-solid mb-3 mb-lg-0" placeholder=" Sub Title" />
                                                                 <!--end::Input-->
                                                             </div>
 
                                                             <!--begin::Input group-->
                                                             <div class="fv-row mb-7">
                                                                 <!--begin::Label-->
-                                                                <label class="required fw-semibold fs-6 mb-2" for="description">Description</label>
+                                                                <label class="required fw-semibold fs-6 mb-2" for="ck_description">Description</label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Input-->
-                                                                <textarea name="description" id="description" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Description"></textarea>
-                                                                <!--end::Input-->
+                                                                <textarea class="form-control editor "
+                                                                          rows="10" id="ck_description"
+                                                                          name="description">
+
+                                                                </textarea>                                                                <!--end::Input-->
                                                             </div>
                                                             <!--end::Input group-->
                                                             <!--begin::Input group-->
@@ -192,8 +203,9 @@
                                                 <input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
                                             </div>
                                         </th>
-                                        <th class="min-w-50px" style="text-align: center">Name</th>
-                                        <th class="min-w-50px" style="text-align: center">Description</th>
+                                        <th class="min-w-50px" style="text-align: center">Title</th>
+                                        <th class="" style="text-align: center">Sub Title</th>
+{{--                                        <th class="min-w-50px" style="text-align: center">Description</th>--}}
                                         <th class="min-w-50px" style="text-align: center">Image</th>
                                         <th class="min-w-50px" style="text-align: center">Date</th>
                                         <th class=" min-w-100px" style="text-align: center">Operation</th>
@@ -212,9 +224,12 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->title}}</span>
                                             </td>
-                                            <td class="min-w-50px" style="text-align: center">
-                                                <span>{!! $item->description !!}</span>
+                                            <td class="" style="text-align: left">
+                                                <span>{{$item->sub_title}}</span>
                                             </td>
+{{--                                            <td class="min-w-50px" style="text-align: center">--}}
+{{--                                                <span>{!! $item->description !!}</span>--}}
+{{--                                            </td>--}}
                                             <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/blogs/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/blogs/'.$item->image)}}" alt="image" style="width: 100px"></a></td>
 
                                             <td class="min-w-50px" style="text-align: center">
@@ -289,6 +304,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
+            ClassicEditor
+                .create( document.querySelector( '.editor' ) )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+
+
             let delete_li = $('.delete_btn_li');
             delete_li.on('click', function (e) {
                 e.preventDefault();

@@ -26,18 +26,28 @@ class ProgrammeRequest extends FormRequest
         return [
             'title' => 'required',
             'name' => 'required',
+            'price' => 'required',
+//            'discount' => 'required',
             'description' => 'required',
             'cover' => 'required_without:id|mimes:jpg,png,jpeg,svg',
+            'city_id' => 'required|exists:cities,id',
+            'features' => 'required',
+
         ];
     }
     public function messages()
     {
         return [
             'title.required' => 'The Title Field is Required',
+            'price.required' => 'The price Field is Required',
+//            'discount.required' => 'The discount Field is Required',
             'name.required' => 'The Name Field is Required',
+            'features.required' => 'The Features Field is Required',
             'description.required' => 'The Description Field is Required',
             'cover.required' => 'The Cover is Required',
             'cover.mimes' => 'The Cover Extension must be JPG, PNG, JPEG, SVG',
+            'city_id.required' => 'The City Field is Required',
+            'city_id.exists' => 'The City must Exists in City List',
 
         ];
     }

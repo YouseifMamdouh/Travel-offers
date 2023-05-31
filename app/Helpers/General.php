@@ -10,5 +10,8 @@ class General {
         $filename = $image->hashName();
         return $filename;
     }
+    public static function getCurrency() {
+        return \App\Models\Currency::first()->currency;
+    }
 }
 ?>

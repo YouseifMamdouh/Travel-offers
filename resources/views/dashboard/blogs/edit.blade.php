@@ -83,15 +83,23 @@
                                 <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Banner Title" />
                                 <!--end::Input-->
                             </div>
-
-                            <!--begin::Input group-->
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
-                                <label class="required fw-semibold fs-6 mb-2" for="description">Description</label>
+                                <label class="required fw-semibold fs-6 mb-2">Sub Title</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <textarea name="description" id="description" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Description">{{$data->description}}</textarea>
+                                <input type="text" name="sub_title" value="{{$data->sub_title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="sub title" />
                                 <!--end::Input-->
+                            </div>
+
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="ck_description">Description</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea class="form-control editor "
+                                          rows="10" id="ck_description"
+                                          name="description">{{$data->description}}</textarea>                                                                <!--end::Input-->
                             </div>
                             <!--end::Input group-->
                             <!--begin::Input group-->
@@ -144,13 +152,14 @@
     <script>
         $(document).ready(function () {
             ClassicEditor
-                .create( document.querySelector( '#editor' ) )
+                .create( document.querySelector( '.editor' ) )
                 .then( editor => {
                     console.log( editor );
                 } )
                 .catch( error => {
                     console.error( error );
                 } );
+
         });
     </script>
 @stop

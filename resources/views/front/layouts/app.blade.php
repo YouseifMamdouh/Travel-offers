@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="rica">
+    <meta name="keywords" content="rica">
+    <meta name="author" content="rica">
+    <link rel="icon" href="" type="image/x-icon" />
+    <title>Ral Travel</title>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vampiro+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/font-awesome.css') }}">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/animate.css') }}">
+
+    <!-- Date-time picker css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/datepicker.min.css') }}">
+
+    <!--Slick slider css-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/slick-theme.css') }}">
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/magnific-popup.css') }}">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/bootstrap.css') }}">
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/themify-icons.css') }}">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/color1.css') }}">
+
+    @if(!Request::is('/') || !Request::is('/hotels'))
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/custom-nav.css') }}">
+    @endif
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.9/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('front/assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/assets/css/owl.theme.default.min.css')}}">
+
+    @yield('style')
+    @stack('user.css')
+</head>
+
+<body>
+
+    <!-- pre-loader start -->
+    <div class="loader-wrapper img-gif">
+        <img src="{{ asset('front/assets/images/loader.gif') }}" alt="">
+    </div>
+    <!-- pre-loader end -->
+
+    @include('front.layouts.header')
+
+    @yield('content')
+
+    @include('front.layouts.footer')
+
+
+    <!-- tap to top -->
+    <div class="tap-top">
+        <div>
+            <i class="fas fa-angle-up"></i>
+        </div>
+    </div>
+    <!-- tap to top end -->
+
+
+    <!-- setting start -->
+    {{-- <div class="theme-setting">
+        <div class="dark">
+            <input class="tgl tgl-skewed" id="dark" type="checkbox">
+            <label class="tgl-btn" data-tg-off="Dark" data-tg-on="Light" for="dark"></label>
+        </div>
+        <div class="rtl">
+            <input class="tgl tgl-skewed" id="rtl" type="checkbox">
+            <label class="tgl-btn" data-tg-off="RTL" data-tg-on="LTR" for="rtl"></label>
+        </div>
+    </div> --}}
+    <!-- setting end -->
+
+
+    <!-- latest jquery-->
+    <script src="{{ asset('front/assets/js/jquery-3.5.1.min.js') }}"></script>
+
+    <!-- date-time picker js -->
+    <script src="{{ asset('front/assets/js/date-picker.js') }}"></script>
+
+    <!-- wow js-->
+    <script src="{{ asset('front/assets/js/wow.min.js') }}"></script>
+
+    <!-- slick js-->
+    <script src="{{ asset('front/assets/js/slick.js') }}"></script>
+
+    <!-- Bootstrap js-->
+    <script src="{{ asset('front/assets/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- lazyload js-->
+    <script src="{{ asset('front/assets/js/lazysizes.min.js') }}"></script>
+
+    <!-- Theme js-->
+    <script src="{{ asset('front/assets/js/script.js') }}"></script>
+    <script src="{{ asset('front/assets/js/owl.carousel.min.js') }}"></script>
+
+
+    <script>
+        new WOW().init();
+        $('.datepicker').each(function() {
+            $(this).datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.9/dist/sweetalert2.all.min.js"></script>
+
+
+    @if(Session::has('error-auth'))
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    icon: 'error',
+                    text: "{{Session::get('error-auth')}}",
+                    dangerMode: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Fine!',
+                    showCloseButton: true,
+                });
+            });
+
+        </script>
+    @endif
+    @if(Session::has('error'))
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    icon: 'error',
+                    text: "{{Session::get('error')}}",
+                    dangerMode: true,
+                    confirmButtonColor: '#3085d6',
+                    // cancelButtonColor: '#d33',
+                    confirmButtonText: 'Fine!',
+                    showCloseButton: true,
+                });
+            });
+
+        </script>
+    @endif
+    @if($errors->has('subscription_email'))
+        <script>
+            ToastyError();
+        </script>
+    @endif
+    @if(Session::has('success'))
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    icon: 'success',
+                    text: "{{Session::get('success')}}",
+                    dangerMode: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Fine!',
+                    showCloseButton: true,
+                });
+            });
+
+        </script>
+    @endif
+    @yield('script')
+    @stack('user.js')
+
+</body>
+
+</html>

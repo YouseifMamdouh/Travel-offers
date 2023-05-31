@@ -126,15 +126,23 @@
                                                             <!--begin::Input group-->
                                                             <div class="fv-row mb-7">
                                                                 <!--begin::Label-->
-                                                                <label class="required fw-semibold fs-6 mb-2" for="image">Type</label>
+                                                                <label class="required fw-semibold fs-6 mb-2" for="image">Image</label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Input-->
-                                                                <select name="type_of" id="type_of" style="width: 100%">
-                                                                    <option value="flight_booking">Flight Booking</option>
-                                                                    <option value="car_booking">Car Booking</option>
-                                                                </select>
+                                                                <input class="form-control form-control-solid" type="file" id="formFile" name="image">
                                                                 <!--end::Input-->
                                                             </div>
+{{--                                                            <div class="fv-row mb-7">--}}
+{{--                                                                <!--begin::Label-->--}}
+{{--                                                                <label class="required fw-semibold fs-6 mb-2" for="image">Type</label>--}}
+{{--                                                                <!--end::Label-->--}}
+{{--                                                                <!--begin::Input-->--}}
+{{--                                                                <select name="type_of" id="type_of" style="width: 100%">--}}
+{{--                                                                    <option value="flight_booking">Flight Booking</option>--}}
+{{--                                                                    <option value="car_booking">Car Booking</option>--}}
+{{--                                                                </select>--}}
+{{--                                                                <!--end::Input-->--}}
+{{--                                                            </div>--}}
                                                             <!--end::Input group-->
                                                         </div>
                                                         <!--end::Scroll-->
@@ -188,7 +196,7 @@
                                         </th>
                                         <th class="" style="text-align: center">Title</th>
                                         <th class="" style="text-align: center">Description</th>
-                                        <th class="" style="text-align: center">Type</th>
+                                        <th class="" style="text-align: center">Image</th>
                                         <th class=" min-w-50px" style="text-align: center">Operation</th>
                                     </tr>
                                     </thead>
@@ -208,9 +216,8 @@
                                             <td class="" style="text-align: left">
                                                 <span>{!! $item->description !!}</span>
                                             </td>
-                                            <td class="" style="text-align: center">
-                                                <span>{{$item->type_of}}</span>
-                                            </td>
+                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/services/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/services/'.$item->image)}}" alt="city" style="width: 100px"></a></td>
+
 
                                             <td class="text-end" style="text-align: center!important;">
                                                 <a href="#" class="btn btn-light btn-active-light-primary btn-sm"

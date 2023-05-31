@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProgrammeImagesRequest;
 use App\Http\Requests\ProgrammeRequest;
+use App\Models\City;
+use App\Models\Feature;
 use App\Models\OurProgramme;
 use App\Models\ProgrammeImage;
 use Illuminate\Http\Request;
@@ -15,9 +17,11 @@ class ProgrammesController extends Controller
 {
     public function index()
     {
-        $data = OurProgramme::with('progImages')
-            ->select('id', 'name', 'title', 'cover', 'description')->get();
-        return view('dashboard.programmes.index', compact('data'));
+        $data = OurProgramme::with('progImages')->get();
+        $cities = City::get();
+        $features = Feature::where('type_of', 'programmes')->get();
+
+        return view('dashboard.programmes.index', compact('data', 'cities', 'features'));
     }
 
     public function store(ProgrammeRequest $request)
@@ -29,26 +33,33 @@ class ProgrammesController extends Controller
                 $filename = \General::uploadImage('programmes', $request->cover);
             }
             DB::beginTransaction();
-            OurProgramme::create([
+            $programme = OurProgramme::create([
                 'name' => $request->name,
                 'title' => $request->title,
+                'price' => $request->price,
+                'plan' => $request->plan,
+                'discount' => $request->discount,
                 'description' => $request->description,
                 'cover' => $filename,
+                'city_id' => $request->city_id,
+
             ]);
+            if ($programme) {
+                $programme->features()->attach($request->features);
+            }
 
             DB::commit();
-            return redirect()->route('programmes.index')->with(['success' => __('messages.success_add')]);
+//            return redirect()->route('programmes.index')->with(['success' => __('messages.success_add')]);
 
         } catch (\Exception $ex) {
             DB::rollback();
-            return redirect()->back()->with(['error' => __('messages.error_general')]);
+//            return redirect()->back()->with(['error' => __('messages.error_general')]);
         }
     }
 
     public function show($id)
     {
-        $data = OurProgramme::with('progImages')
-            ->select('id', 'name', 'title', 'cover', 'description')->find($id);
+        $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
         if ($data) {
             return view('dashboard.programmes.view', compact('data'));
 
@@ -59,8 +70,7 @@ class ProgrammesController extends Controller
 
     public function addImages($id)
     {
-        $data = OurProgramme::with('progImages')
-            ->select('id', 'name', 'title', 'cover', 'description')->find($id);
+        $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
         if ($data) {
             return view('dashboard.programmes.postImages', compact('data'));
 
@@ -99,11 +109,9 @@ class ProgrammesController extends Controller
     {
         $data = ProgrammeImage::find($id);
         if ($data) {
-
             if (File::exists(public_path('uploads/programmes/' . $data->image))) {
                 File::delete(public_path('uploads/programmes/' . $data->image));
             }
-
             $data->delete();
             return response()->json(['status' => 1, 'msg' => __('messages.success_deleted')]);
         } else {
@@ -114,9 +122,13 @@ class ProgrammesController extends Controller
 
     public function edit($id)
     {
-        $data = OurProgramme::find($id);
+        $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
+        $cities = City::get();
+        $features = Feature::where('type_of', 'programmes')->get();
+
+
         if ($data) {
-            return view('dashboard.programmes.edit', compact('data'));
+            return view('dashboard.programmes.edit', compact('data', 'cities', 'features'));
 
         } else {
             return redirect()->route('programmes.index')->with(['error' => __('messages.error_general')]);
@@ -142,6 +154,8 @@ class ProgrammesController extends Controller
             }
 
             $data->update($request->except('id', '_token', 'cover'));
+            $data->features()->sync($request->features);
+
             DB::commit();
             return redirect()->route('programmes.index')->with(['success' => __('messages.success_updated')]);
 
@@ -163,8 +177,8 @@ class ProgrammesController extends Controller
                     }
                 }
             }
-            if (File::exists(public_path('uploads/programmes/' . $image->cover))) {
-                File::delete(public_path('uploads/programmes/' . $image->cover));
+            if (File::exists(public_path('uploads/programmes/' . $data->cover))) {
+                File::delete(public_path('uploads/programmes/' . $data->cover));
             }
             $data->delete();
             return response()->json(['status' => 1, 'msg' => __('messages.success_deleted')]);
