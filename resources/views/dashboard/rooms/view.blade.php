@@ -48,7 +48,7 @@
 
                         <div class="row px-0">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
-                                <h4>Hotel Images</h4>
+                                <h4>Room Images</h4>
                             </div>
                             @if(isset($data->roomImages) && $data->roomImages->count() > 0)
                                 @foreach($data->roomImages as $image)

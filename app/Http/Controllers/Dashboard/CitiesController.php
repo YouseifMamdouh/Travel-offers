@@ -17,6 +17,16 @@ class CitiesController extends Controller
         return view('dashboard.cities.index', compact('data'));
     }
 
+
+    public function show($id)
+    {
+        $data = City::find($id);
+        return view('dashboard.cities.show', compact('data'));
+    }
+    public function create()
+    {
+        return view('dashboard.cities.create');
+    }
     public function store(CityRequest $request)
     {
 //        return  $request;
@@ -28,6 +38,7 @@ class CitiesController extends Controller
             DB::beginTransaction();
             City::create([
                 'title' => $request->title,
+                'summary' => $request->summary,
                 'image' => $filename,
             ]);
 

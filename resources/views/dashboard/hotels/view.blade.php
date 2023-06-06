@@ -87,7 +87,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         Name :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
                                         {{$data->title}}
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         Description :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
                                         {!! $data->description !!}
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         City :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
                                         {{$data->city->title}}
                                     </div>
                                 </div>
@@ -117,8 +117,8 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         Location :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
-                                        {{$data->location}}
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
+                                        {!! $data->location !!}
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         Address :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
                                         {{$data->address}}
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         No. Rooms :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
                                         {{$data->rooms_num}}
                                     </div>
                                 </div>

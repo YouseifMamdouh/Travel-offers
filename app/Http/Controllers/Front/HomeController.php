@@ -8,15 +8,19 @@ use App\Models\AboutUs;
 use App\Models\AboutUsDetail;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\City;
 use App\Models\Contact;
 use App\Models\ContactUsMessage;
+use App\Models\Hotel;
 
 class HomeController extends Controller
 {
     public function index(){
         $banners = Banner::get();
         $blogs = Blog::get();
-        return view('front.index', compact('banners', 'blogs'));
+        $cities = City::get();
+        $hotels = Hotel::get();
+        return view('front.index', compact('banners', 'blogs', 'cities', 'hotels'));
     }
 
     public function contact(){

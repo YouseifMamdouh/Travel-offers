@@ -17,6 +17,15 @@ class ServicesController extends Controller
         return view('dashboard.services.index', compact('data'));
     }
 
+    public function create()
+    {
+        return view('dashboard.services.create');
+    }
+    public function show($id)
+    {
+        $data = Service::find($id);
+        return view('dashboard.services.show', compact('data'));
+    }
     public function store(ServiceRequest $request)
     {
 //        return  $request;

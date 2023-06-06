@@ -79,173 +79,173 @@
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                     <!--begin::Add user-->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-                                        Add Programme<i class="ki-duotone ki-plus fs-2"></i></button>
+                                    <a type="button" class="btn btn-primary" href="{{route('programmes.create')}}">
+                                        Add Programme<i class="ki-duotone ki-plus fs-2"></i></a>
                                     <!--end::Add user-->
                                 </div>
                                 <!--end::Toolbar-->
                                 <!--begin::Modal - Add task-->
-                                <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true" >
-                                    <!--begin::Modal dialog-->
-                                    <div class="modal-dialog modal-dialog-centered mw-650px">
-                                        <!--begin::Modal content-->
-                                        <div class="modal-content">
-                                            <!--begin::Modal header-->
-                                            <div class="modal-header" id="kt_modal_add_user_header">
-                                                <!--begin::Modal title-->
-                                                <h2 class="fw-bold">Add Programme</h2>
-                                                <!--end::Modal title-->
-                                                <!--begin::Close-->
-                                                <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                                                    <i class="ki-duotone ki-cross fs-1">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </div>
-                                                <!--end::Close-->
-                                            </div>
-                                            <!--end::Modal header-->
-                                            <!--begin::Modal body-->
-                                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-                                                <!--begin::Form-->
-                                                <form id="kt_modal_add_user_form" class="form" method="post" action="{{route('programmes.store')}}" enctype="multipart/form-data">
-                                                    @csrf
-                                                    <!--begin::Scroll-->
-                                                    <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+{{--                                <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true" >--}}
+{{--                                    <!--begin::Modal dialog-->--}}
+{{--                                    <div class="modal-dialog modal-dialog-centered mw-650px">--}}
+{{--                                        <!--begin::Modal content-->--}}
+{{--                                        <div class="modal-content">--}}
+{{--                                            <!--begin::Modal header-->--}}
+{{--                                            <div class="modal-header" id="kt_modal_add_user_header">--}}
+{{--                                                <!--begin::Modal title-->--}}
+{{--                                                <h2 class="fw-bold">Add Programme</h2>--}}
+{{--                                                <!--end::Modal title-->--}}
+{{--                                                <!--begin::Close-->--}}
+{{--                                                <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">--}}
+{{--                                                    <i class="ki-duotone ki-cross fs-1">--}}
+{{--                                                        <span class="path1"></span>--}}
+{{--                                                        <span class="path2"></span>--}}
+{{--                                                    </i>--}}
+{{--                                                </div>--}}
+{{--                                                <!--end::Close-->--}}
+{{--                                            </div>--}}
+{{--                                            <!--end::Modal header-->--}}
+{{--                                            <!--begin::Modal body-->--}}
+{{--                                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">--}}
+{{--                                                <!--begin::Form-->--}}
+{{--                                                <form id="kt_modal_add_user_form" class="form" method="post" action="{{route('programmes.store')}}" enctype="multipart/form-data">--}}
+{{--                                                    @csrf--}}
+{{--                                                    <!--begin::Scroll-->--}}
+{{--                                                    <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">--}}
 
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="name">Name</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" name="name" value="{{old('name')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Name" />
-                                                            <!--end::Input-->
-                                                        </div>
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="name">Name</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <input type="text" name="name" value="{{old('name')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Name" />--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                        </div>--}}
 
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Duration</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" name="title" value="{{old('title')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="(6N 7D)" />
-                                                            <!--end::Input-->
-                                                        </div>
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Duration</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <input type="text" name="title" value="{{old('title')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="(6N 7D)" />--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                        </div>--}}
 
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <div class="col-md-5  d-inline-block mx-3">
-                                                            <label class="required fw-semibold fs-6 mb-2" for="price">Price</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" name="price" value="{{old('price')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Price" />
-                                                            <!--end::Input-->
-                                                            </div>
-                                                            <div class="col-md-5 d-inline-block mx-3">
-                                                            <label class="fw-semibold fs-6 mb-2" for="discount">Discount (optional)</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" name="discount" value="{{old('discount')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Discount" />
-                                                            <!--end::Input-->
-                                                            </div>
-                                                        </div>
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <div class="col-md-5  d-inline-block mx-3">--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="price">Price</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <input type="text" name="price" value="{{old('price')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Price" />--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="col-md-5 d-inline-block mx-3">--}}
+{{--                                                            <label class="fw-semibold fs-6 mb-2" for="discount">Discount (optional)</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <input type="text" name="discount" value="{{old('discount')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Discount" />--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
 
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="plan">Programme Plan</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" name="plan" value="{{old('plan')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Kuta (2N) → Lombok (2N) → Ubud (2N) " />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Description</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <textarea class="form-control editor "
-                                                                      rows="10" id="ck_description"
-                                                                      name="description">{{old('description')}}</textarea>                                                                <!--end::Input-->
-                                                        </div>
-                                                        @php
-                                                            $arr=[];
-                                                            for($i = 0;$i < 100; $i++) {
-                                                                array_push($arr, old('features.' . $i));
-                                                            }
-                                                        @endphp
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="features">Features</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select id="features" placeholder="Choose Features"
-                                                                    multiple name="features[]"
-                                                                    class=" selectize-event">
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="plan">Programme Plan</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <input type="text" name="plan" value="{{old('plan')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Kuta (2N) → Lombok (2N) → Ubud (2N) " />--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                        </div>--}}
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Description</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <textarea class="form-control editor "--}}
+{{--                                                                      rows="10" id="ck_description"--}}
+{{--                                                                      name="description">{{old('description')}}</textarea>                                                                <!--end::Input-->--}}
+{{--                                                        </div>--}}
+{{--                                                        @php--}}
+{{--                                                            $arr=[];--}}
+{{--                                                            for($i = 0;$i < 100; $i++) {--}}
+{{--                                                                array_push($arr, old('features.' . $i));--}}
+{{--                                                            }--}}
+{{--                                                        @endphp--}}
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="features">Features</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <select id="features" placeholder="Choose Features"--}}
+{{--                                                                    multiple name="features[]"--}}
+{{--                                                                    class=" selectize-event">--}}
 
-                                                                <optgroup label="">
-                                                                    @if(isset($features) && $features->count() > 0)
-                                                                        @foreach($features as $feature)
-                                                                            <option
-                                                                                value="{{$feature->id}}" {{in_array($feature->id, $arr) ? 'selected' : ''}}>
-                                                                                {{$feature->name}}
-                                                                            </option>
-                                                                        @endforeach
-                                                                    @endif
+{{--                                                                <optgroup label="">--}}
+{{--                                                                    @if(isset($features) && $features->count() > 0)--}}
+{{--                                                                        @foreach($features as $feature)--}}
+{{--                                                                            <option--}}
+{{--                                                                                value="{{$feature->id}}" {{in_array($feature->id, $arr) ? 'selected' : ''}}>--}}
+{{--                                                                                {{$feature->name}}--}}
+{{--                                                                            </option>--}}
+{{--                                                                        @endforeach--}}
+{{--                                                                    @endif--}}
 
-                                                                </optgroup>
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="city_id">City</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select name="city_id" id="city_id" style="width: 100%">
-                                                                @if(isset($cities) && $cities->count() > 0)
-                                                                    @foreach($cities as $city)
-                                                                        <option value="{{$city->id}}">{{$city->title}}</option>
-                                                                    @endforeach
-                                                                @endif
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="cover">Cover</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input class="form-control form-control-solid" type="file" id="cover" name="cover">
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--begin::Input group-->
-                                                    </div>
-                                                    <!--end::Scroll-->
-                                                    <!--begin::Actions-->
-                                                    <div class="text-center pt-15">
-                                                        <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancel</button>
-                                                        <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                                            <span class="indicator-label">Save</span>
-                                                            <span class="indicator-progress">Please wait...
-																			<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                        </button>
-                                                    </div>
-                                                    <!--end::Actions-->
-                                                </form>
-                                                <!--end::Form-->
-                                            </div>
-                                            <!--end::Modal body-->
-                                        </div>
-                                        <!--end::Modal content-->
-                                    </div>
-                                    <!--end::Modal dialog-->
-                                </div>
+{{--                                                                </optgroup>--}}
+{{--                                                            </select>--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="city_id">City</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <select name="city_id" id="city_id" style="width: 100%">--}}
+{{--                                                                @if(isset($cities) && $cities->count() > 0)--}}
+{{--                                                                    @foreach($cities as $city)--}}
+{{--                                                                        <option value="{{$city->id}}">{{$city->title}}</option>--}}
+{{--                                                                    @endforeach--}}
+{{--                                                                @endif--}}
+{{--                                                            </select>--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                        </div>--}}
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                        <div class="fv-row mb-7">--}}
+{{--                                                            <!--begin::Label-->--}}
+{{--                                                            <label class="required fw-semibold fs-6 mb-2" for="cover">Cover</label>--}}
+{{--                                                            <!--end::Label-->--}}
+{{--                                                            <!--begin::Input-->--}}
+{{--                                                            <input class="form-control form-control-solid" type="file" id="cover" name="cover">--}}
+{{--                                                            <!--end::Input-->--}}
+{{--                                                        </div>--}}
+{{--                                                        <!--begin::Input group-->--}}
+{{--                                                    </div>--}}
+{{--                                                    <!--end::Scroll-->--}}
+{{--                                                    <!--begin::Actions-->--}}
+{{--                                                    <div class="text-center pt-15">--}}
+{{--                                                        <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancel</button>--}}
+{{--                                                        <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">--}}
+{{--                                                            <span class="indicator-label">Save</span>--}}
+{{--                                                            <span class="indicator-progress">Please wait...--}}
+{{--																			<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>--}}
+{{--                                                        </button>--}}
+{{--                                                    </div>--}}
+{{--                                                    <!--end::Actions-->--}}
+{{--                                                </form>--}}
+{{--                                                <!--end::Form-->--}}
+{{--                                            </div>--}}
+{{--                                            <!--end::Modal body-->--}}
+{{--                                        </div>--}}
+{{--                                        <!--end::Modal content-->--}}
+{{--                                    </div>--}}
+{{--                                    <!--end::Modal dialog-->--}}
+{{--                                </div>--}}
                                 <!--end::Modal - Add task-->
                             </div>
 

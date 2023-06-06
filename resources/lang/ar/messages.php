@@ -17,6 +17,7 @@ return [
     'success_delete' => 'تم الحذف بنجاح',
     'error_general' => 'حدث خطأ ما .. برجاء المحاولة فيما',
     'failed_delete' => 'لم يتم الحذف',
+    'currency' => 'ريال '
 
 
 ];

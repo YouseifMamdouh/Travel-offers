@@ -24,6 +24,13 @@ class ProgrammesController extends Controller
         return view('dashboard.programmes.index', compact('data', 'cities', 'features'));
     }
 
+
+    public function create()
+    {
+        $cities = City::get();
+        $features = Feature::where('type_of', 'programmes')->get();
+        return view('dashboard.programmes.create', compact('cities', 'features'));
+    }
     public function store(ProgrammeRequest $request)
     {
 //        return  $request;
@@ -49,11 +56,11 @@ class ProgrammesController extends Controller
             }
 
             DB::commit();
-//            return redirect()->route('programmes.index')->with(['success' => __('messages.success_add')]);
+            return redirect()->route('programmes.index')->with(['success' => __('messages.success_add')]);
 
         } catch (\Exception $ex) {
             DB::rollback();
-//            return redirect()->back()->with(['error' => __('messages.error_general')]);
+            return redirect()->back()->with(['error' => __('messages.error_general')]);
         }
     }
 
@@ -61,7 +68,7 @@ class ProgrammesController extends Controller
     {
         $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
         if ($data) {
-            return view('dashboard.programmes.view', compact('data'));
+            return view('dashboard.programmes.show', compact('data'));
 
         } else {
             return redirect()->route('programmes.index')->with(['error' => __('messages.error_general')]);

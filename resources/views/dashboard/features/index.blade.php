@@ -67,8 +67,8 @@
                                     <!--begin::Toolbar-->
                                     <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                         <!--begin::Add user-->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-                                            Add features<i class="ki-duotone ki-plus fs-2"></i></button>
+                                        <a type="button" class="btn btn-primary" href="{{route('features.create')}}">
+                                            Add features<i class="ki-duotone ki-plus fs-2"></i></a>
                                         <!--end::Add user-->
                                     </div>
                                     <!--end::Toolbar-->

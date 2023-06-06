@@ -18,6 +18,7 @@ return [
     'success_delete' => 'Deleted Successfully',
     'error_general' => 'Some Error Happened .. Try Again Later',
     'failed_delete' => 'Failed to Delete',
+    'currency' => 'SAR '
 
 
 ];

@@ -67,81 +67,81 @@
                                     <!--begin::Toolbar-->
                                     <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                         <!--begin::Add user-->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-                                            Add Banner<i class="ki-duotone ki-plus fs-2"></i></button>
+                                        <a  class="btn btn-primary" href="{{route('banners.create')}}">
+                                            Add Banner<i class="ki-duotone ki-plus fs-2"></i></a>
                                         <!--end::Add user-->
                                     </div>
                                     <!--end::Toolbar-->
                                     <!--begin::Modal - Add task-->
-                                    <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true" >
-                                        <!--begin::Modal dialog-->
-                                        <div class="modal-dialog modal-dialog-centered mw-650px">
-                                            <!--begin::Modal content-->
-                                            <div class="modal-content">
-                                                <!--begin::Modal header-->
-                                                <div class="modal-header" id="kt_modal_add_user_header">
-                                                    <!--begin::Modal title-->
-                                                    <h2 class="fw-bold">Add Banner</h2>
-                                                    <!--end::Modal title-->
-                                                    <!--begin::Close-->
-                                                    <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                                                        <i class="ki-duotone ki-cross fs-1">
-                                                            <span class="path1"></span>
-                                                            <span class="path2"></span>
-                                                        </i>
-                                                    </div>
-                                                    <!--end::Close-->
-                                                </div>
-                                                <!--end::Modal header-->
-                                                <!--begin::Modal body-->
-                                                <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-                                                    <!--begin::Form-->
-                                                    <form id="kt_modal_add_user_form" class="form" method="post" action="{{route('banners.store')}}" enctype="multipart/form-data">
-                                                        @csrf
-                                                        <!--begin::Scroll-->
-                                                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+{{--                                    <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true" >--}}
+{{--                                        <!--begin::Modal dialog-->--}}
+{{--                                        <div class="modal-dialog modal-dialog-centered mw-650px">--}}
+{{--                                            <!--begin::Modal content-->--}}
+{{--                                            <div class="modal-content">--}}
+{{--                                                <!--begin::Modal header-->--}}
+{{--                                                <div class="modal-header" id="kt_modal_add_user_header">--}}
+{{--                                                    <!--begin::Modal title-->--}}
+{{--                                                    <h2 class="fw-bold">Add Banner</h2>--}}
+{{--                                                    <!--end::Modal title-->--}}
+{{--                                                    <!--begin::Close-->--}}
+{{--                                                    <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">--}}
+{{--                                                        <i class="ki-duotone ki-cross fs-1">--}}
+{{--                                                            <span class="path1"></span>--}}
+{{--                                                            <span class="path2"></span>--}}
+{{--                                                        </i>--}}
+{{--                                                    </div>--}}
+{{--                                                    <!--end::Close-->--}}
+{{--                                                </div>--}}
+{{--                                                <!--end::Modal header-->--}}
+{{--                                                <!--begin::Modal body-->--}}
+{{--                                                <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">--}}
+{{--                                                    <!--begin::Form-->--}}
+{{--                                                    <form id="kt_modal_add_user_form" class="form" method="post" action="{{route('banners.store')}}" enctype="multipart/form-data">--}}
+{{--                                                        @csrf--}}
+{{--                                                        <!--begin::Scroll-->--}}
+{{--                                                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">--}}
 
-                                                            <!--begin::Input group-->
-                                                            <div class="fv-row mb-7">
-                                                                <!--begin::Label-->
-                                                                <label class="required fw-semibold fs-6 mb-2" for="title">Name</label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Input-->
-                                                                <input type="text" name="title" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Banner Name" />
-                                                                <!--end::Input-->
-                                                            </div>
-                                                            <!--end::Input group-->
-                                                            <!--begin::Input group-->
-                                                            <div class="fv-row mb-7">
-                                                                <!--begin::Label-->
-                                                                <label class="required fw-semibold fs-6 mb-2" for="image">Image</label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Input-->
-                                                                <input class="form-control form-control-solid" type="file" id="formFile" name="image">
-                                                                <!--end::Input-->
-                                                            </div>
-                                                            <!--end::Input group-->
-                                                        </div>
-                                                        <!--end::Scroll-->
-                                                        <!--begin::Actions-->
-                                                        <div class="text-center pt-15">
-                                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancel</button>
-                                                            <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                                                <span class="indicator-label">Save</span>
-                                                                <span class="indicator-progress">Please wait...
-																			<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                            </button>
-                                                        </div>
-                                                        <!--end::Actions-->
-                                                    </form>
-                                                    <!--end::Form-->
-                                                </div>
-                                                <!--end::Modal body-->
-                                            </div>
-                                            <!--end::Modal content-->
-                                        </div>
-                                        <!--end::Modal dialog-->
-                                    </div>
+{{--                                                            <!--begin::Input group-->--}}
+{{--                                                            <div class="fv-row mb-7">--}}
+{{--                                                                <!--begin::Label-->--}}
+{{--                                                                <label class="required fw-semibold fs-6 mb-2" for="title">Name</label>--}}
+{{--                                                                <!--end::Label-->--}}
+{{--                                                                <!--begin::Input-->--}}
+{{--                                                                <input type="text" name="title" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Banner Name" />--}}
+{{--                                                                <!--end::Input-->--}}
+{{--                                                            </div>--}}
+{{--                                                            <!--end::Input group-->--}}
+{{--                                                            <!--begin::Input group-->--}}
+{{--                                                            <div class="fv-row mb-7">--}}
+{{--                                                                <!--begin::Label-->--}}
+{{--                                                                <label class="required fw-semibold fs-6 mb-2" for="image">Image</label>--}}
+{{--                                                                <!--end::Label-->--}}
+{{--                                                                <!--begin::Input-->--}}
+{{--                                                                <input class="form-control form-control-solid" type="file" id="formFile" name="image">--}}
+{{--                                                                <!--end::Input-->--}}
+{{--                                                            </div>--}}
+{{--                                                            <!--end::Input group-->--}}
+{{--                                                        </div>--}}
+{{--                                                        <!--end::Scroll-->--}}
+{{--                                                        <!--begin::Actions-->--}}
+{{--                                                        <div class="text-center pt-15">--}}
+{{--                                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancel</button>--}}
+{{--                                                            <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">--}}
+{{--                                                                <span class="indicator-label">Save</span>--}}
+{{--                                                                <span class="indicator-progress">Please wait...--}}
+{{--																			<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>--}}
+{{--                                                            </button>--}}
+{{--                                                        </div>--}}
+{{--                                                        <!--end::Actions-->--}}
+{{--                                                    </form>--}}
+{{--                                                    <!--end::Form-->--}}
+{{--                                                </div>--}}
+{{--                                                <!--end::Modal body-->--}}
+{{--                                            </div>--}}
+{{--                                            <!--end::Modal content-->--}}
+{{--                                        </div>--}}
+{{--                                        <!--end::Modal dialog-->--}}
+{{--                                    </div>--}}
                                     <!--end::Modal - Add task-->
                                 </div>
 
@@ -172,7 +172,7 @@
                                             </div>
                                         </th>
                                         <th class="min-w-50px" style="text-align: center">Name</th>
-                                        <th class="min-w-50px" style="text-align: center">Image</th>
+{{--                                        <th class="min-w-50px" style="text-align: center">Image</th>--}}
                                         <th class=" min-w-100px" style="text-align: center">Operation</th>
                                     </tr>
                                     </thead>
@@ -189,7 +189,7 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->title}}</span>
                                             </td>
-                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/banners/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/banners/'.$item->image)}}" alt="Banner" style="width: 100px"></a></td>
+{{--                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/banners/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/banners/'.$item->image)}}" alt="Banner" style="width: 100px"></a></td>--}}
 
                                             <td class="text-end" style="text-align: center!important;">
                                                 <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
@@ -210,6 +210,10 @@
                                                     data-kt-menu="true">
                                                     <!--begin::Menu item-->
 
+                                                    <div class="menu-item px-3">
+                                                        <a href="{{route('banners.show', $item->id)}}"
+                                                           class="menu-link px-3"> Show</a>
+                                                    </div>
                                                     <div class="menu-item px-3">
                                                         <a href="{{route('banners.edit', $item->id)}}"
                                                            class="menu-link px-3"> Edit</a>

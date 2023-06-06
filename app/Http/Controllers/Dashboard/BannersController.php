@@ -17,6 +17,15 @@ class BannersController extends Controller
         return view('dashboard.banners.index', compact('data'));
     }
 
+    public function create()
+    {
+        return view('dashboard.banners.create');
+    }
+    public function show($id)
+    {
+        $data = Banner::find($id);
+        return view('dashboard.banners.show', compact('data'));
+    }
     public function store(BannerRequest $request)
     {
 //        return  $request;

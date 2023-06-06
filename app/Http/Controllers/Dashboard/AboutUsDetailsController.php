@@ -21,6 +21,11 @@ class AboutUsDetailsController extends Controller
         $data = AboutUsDetail::first();
         return view('dashboard.aboutus_details.edit', compact('data'));
     }
+    public function show($id)
+    {
+        $data = AboutUsDetail::first();
+        return view('dashboard.aboutus_details.show', compact('data'));
+    }
 
     public function update(AboutUsDetailsRequest $request, $id)
     {
@@ -34,7 +39,7 @@ class AboutUsDetailsController extends Controller
             ]);
             DB::commit();
 
-            return redirect()->route('aboutus_details.index')->with(['success' => __('messages.success_updated')]);
+            return redirect()->route('aboutus_details.show', 1)->with(['success' => __('messages.success_updated')]);
 //            return $request;
 
 

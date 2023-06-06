@@ -265,125 +265,50 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......</p>
             </div>
             <div class="slide-3 no-arrow">
-                <div>
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <div>
-                                <img src="{{ asset('front/assets/images/flights/destination/1.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img" alt="">
+                @if(isset($cities) && $cities->count() > 0)
+                    @foreach($cities as $city)
+                    <div>
+                        <div class="blog-wrap">
+                            <div class="blog-image">
+                                <div>
+                                    <img src="{{ asset('uploads/cities/' . $city->image) }}"
+                                         class="img-fluid blur-up lazyload bg-img" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="destination-details">
-                            <div>
-                                <h2>Cairo</h2>
-                                <h6>Book Economy Class Return Until 29 Apr 19 Lorem Ipsum is simply dummy text of the
-                                    printing industry.</h6>
-                                <a href="#" class="btn btn-rounded color2">from $851*</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <div>
-                                <img src="{{ asset('front/assets/images/flights/destination/2.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img" alt="">
-                            </div>
-                        </div>
-                        <div class="destination-details">
-                            <div>
-                                <h2>fayoum</h2>
-                                <h6>Book Economy Class Return Until 29 Apr 19 Lorem Ipsum is simply dummy text of the
-                                    printing industry.</h6>
-                                <a href="#" class="btn btn-rounded color2">from $369*</a>
+                            <div class="destination-details">
+                                <div>
+                                    <h2>{{$city->title}}</h2>
+                                    <h6>{{$city->summary}}</h6>
+                                    <a href="{{route('user.show.programs', $city->id)}}" class="btn btn-rounded color2">Discovre Programs</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <div>
-                                <img src="{{ asset('front/assets/images/flights/destination/3.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img" alt="">
+                    <div>
+                        <div class="blog-wrap">
+                            <div class="blog-image">
+                                <div>
+                                    <img src="{{ asset('uploads/cities/' . $city->image) }}"
+                                         class="img-fluid blur-up lazyload bg-img" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="destination-details">
-                            <div>
-                                <h2>Alex</h2>
-                                <h6>Book Economy Class Return Until 29 Apr 19 Lorem Ipsum is simply dummy text of the
-                                    printing industry.</h6>
-                                <a href="#" class="btn btn-rounded color2">from $256*</a>
+                            <div class="destination-details">
+                                <div>
+                                    <h2>{{$city->title}}</h2>
+                                    <h6>{{$city->summary}}</h6>
+                                    <a href="{{route('user.show.programs', $city->id)}}" class="btn btn-rounded color2">Discovre Programs</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    @endforeach
+                @endif
 
-                <div>
-                    <div class="blog-wrap">
-                        <div class="blog-image">
-                            <div>
-                                <img src="{{ asset('front/assets/images/flights/destination/3.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img" alt="">
-                            </div>
-                        </div>
-                        <div class="destination-details">
-                            <div>
-                                <h2>Alex</h2>
-                                <h6>Book Economy Class Return Until 29 Apr 19 Lorem Ipsum is simply dummy text of the
-                                    printing industry.</h6>
-                                <a href="#" class="btn btn-rounded color2">from $256*</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     <!-- Local section end -->
 
-    <!-- airlines detail section start -->
-    <section class="pt-0 detail-section zig-zag-effect">
-        <div class="cloud section-b-space section-t-space">
-            <img src="{{ asset('front/assets/images/flights/cloud.png') }}" alt="" class="bg-img">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="detail-box">
-                            <div class="upper-part">
-                                <h6>Ral airlines</h6>
-                                <h2>student offer</h2>
-                                <h5>enjoy extra baggage allowance</h5>
-                            </div>
-                            <a href="#" class="btn btn-rounded btn-sm color1">read more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="detail-box">
-                            <div class="upper-part">
-                                <h6>airlines</h6>
-                                <h2>10% bonus </h2>
-                                <h5>enjoy extra baggage allowance</h5>
-                            </div>
-                            <a href="#" class="btn btn-rounded btn-sm color1">read more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="detail-box">
-                            <div class="upper-part">
-                                <h6>welt wiet airlines</h6>
-                                <h2>New offer</h2>
-                                <h5>enjoy extra baggage allowance</h5>
-                            </div>
-                            <a href="#" class="btn btn-rounded btn-sm color1">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- airlines detail section end -->
 
     <!-- service routes section start -->
     {{-- <section class="routes-section ratio_landscape section-b-space">
@@ -624,51 +549,51 @@
 {{--    </section>--}}
     <!-- Local section end -->
 
-    <!-- banner section start -->
-    <section class="p-0 banner-section full-banner zig-zag-effect">
-        <div class="cloud section-b-space section-t-space">
-            <img src="{{asset('front/assets/images/flights/cloud.png')}}" alt="" class="bg-img">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="place-image">
-                            <img src="{{ asset('front/assets/images/flights/place.png') }}" alt=""
-                                 class="img-fluid blur-up lazyload wow zoomIn">
-                            <div class="animation-place">
-                                <div class=" plane-l">
-                                    <img src="{{ asset('front/assets/images/flights/banner/1.png') }}" alt=""
-                                         class="zoomIn wow img-fluid blur-up lazyload ">
-                                </div>
-                                <div class="cloud-l">
-                                    <img src="{{ asset('front/assets/images/flights/banner/2.png') }}" alt=""
-                                         class="img-fluid blur-up lazyload wow zoomIn">
-                                </div>
-                                <div class="cloud-r">
-                                    <img src="{{ asset('front/assets/images/flights/banner/3.png') }}" alt=""
-                                         class="img-fluid blur-up lazyload wow zoomIn">
-                                </div>
-                                <div class=" plane-r">
-                                    <img src="{{ asset('front/assets/images/flights/banner/4.png') }}" alt=""
-                                         class="img-fluid blur-up lazyload zoomIn wow">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <div class="banner-content">
-                            <div>
-                                <h5>special nature tour offer</h5>
-                                <h2>discount <span>20-30%</span></h2>
-                                <p>Lorem Ipsum is simply dummy text of the printing and type setti ng industry. Lorem
-                                    Ipsum has been the of industry standard dum my text ever since the 1500s,</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- banner section end -->
+{{--    <!-- banner section start -->--}}
+{{--    <section class="p-0 banner-section full-banner zig-zag-effect">--}}
+{{--        <div class="cloud section-b-space section-t-space">--}}
+{{--            <img src="{{asset('front/assets/images/flights/cloud.png')}}" alt="" class="bg-img">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-6">--}}
+{{--                        <div class="place-image">--}}
+{{--                            <img src="{{ asset('front/assets/images/flights/place.png') }}" alt=""--}}
+{{--                                 class="img-fluid blur-up lazyload wow zoomIn">--}}
+{{--                            <div class="animation-place">--}}
+{{--                                <div class=" plane-l">--}}
+{{--                                    <img src="{{ asset('front/assets/images/flights/banner/1.png') }}" alt=""--}}
+{{--                                         class="zoomIn wow img-fluid blur-up lazyload ">--}}
+{{--                                </div>--}}
+{{--                                <div class="cloud-l">--}}
+{{--                                    <img src="{{ asset('front/assets/images/flights/banner/2.png') }}" alt=""--}}
+{{--                                         class="img-fluid blur-up lazyload wow zoomIn">--}}
+{{--                                </div>--}}
+{{--                                <div class="cloud-r">--}}
+{{--                                    <img src="{{ asset('front/assets/images/flights/banner/3.png') }}" alt=""--}}
+{{--                                         class="img-fluid blur-up lazyload wow zoomIn">--}}
+{{--                                </div>--}}
+{{--                                <div class=" plane-r">--}}
+{{--                                    <img src="{{ asset('front/assets/images/flights/banner/4.png') }}" alt=""--}}
+{{--                                         class="img-fluid blur-up lazyload zoomIn wow">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-5 offset-lg-1">--}}
+{{--                        <div class="banner-content">--}}
+{{--                            <div>--}}
+{{--                                <h5>special nature tour offer</h5>--}}
+{{--                                <h2>discount <span>20-30%</span></h2>--}}
+{{--                                <p>Lorem Ipsum is simply dummy text of the printing and type setti ng industry. Lorem--}}
+{{--                                    Ipsum has been the of industry standard dum my text ever since the 1500s,</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- banner section end -->--}}
 
     <!-- hotel section start -->
     <section class="process-steps section-b-space bg-white">
@@ -679,122 +604,41 @@
             </div>
             <div class="step-bg ratio_square">
                 <div class="row popular-section">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="step-box">
-                            <div class="popular-box">
-                                <div class="popular_img">
-                                    <img src="{{ asset('front/assets/images/hotel/room/16.jpg') }}" alt=""
-                                         class="img-fluid blur-up lazyload bg-img">
-                                </div>
-                                <div class="special-content">
-                                    <a href="{{ route('user.hotels.show',1) }}">
-                                        <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span></h5>
-                                    </a>
-                                    <div class="bottom-section">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>26412 review</span>
+                    @if(isset($hotels) && $hotels->count() > 0)
+                        @foreach($hotels as $hotel)
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="step-box">
+                                    <div class="popular-box">
+                                        <div class="popular_img">
+                                            <img src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}" alt=""
+                                                 class="img-fluid blur-up lazyload bg-img">
                                         </div>
-                                        <div class="price">
-                                            <del>$1300</del>
-                                            <span>$1245</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="step-box">
-                            <div class="popular-box">
-                                <div class="popular_img">
-                                    <img src="{{ asset('front/assets/images/hotel/room/17.jpg') }}" alt=""
-                                         class="img-fluid blur-up lazyload bg-img">
-                                </div>
-                                <div class="special-content">
-                                    <a href="{{ route('user.hotels.show',1) }}">
-                                        <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span></h5>
-                                    </a>
-                                    <div class="bottom-section">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>26412 review</span>
-                                        </div>
-                                        <div class="price">
-                                            <del>$1300</del>
-                                            <span>$1245</span>
+                                        <div class="special-content">
+                                            <a href="{{ route('user.hotels.show', $hotel->id) }}">
+                                                <h5>{{$hotel->title}} <span><i class="fas fa-map-marker-alt"></i> {{$hotel->city->title}}</span></h5>
+                                            </a>
+                                            <div class="bottom-section">
+                                                <span>{{$hotel->address}}</span>
+
+                                                {{--                                        <div class="rating">--}}
+                                                {{--                                            <i class="fas fa-star"></i>--}}
+                                                {{--                                            <i class="fas fa-star"></i>--}}
+                                                {{--                                            <i class="fas fa-star"></i>--}}
+                                                {{--                                            <i class="fas fa-star"></i>--}}
+                                                {{--                                            <i class="far fa-star"></i>--}}
+                                                {{--                                            <span>26412 review</span>--}}
+                                                {{--                                        </div>--}}
+{{--                                                <div class="price">--}}
+{{--                                                    <del>$1300</del>--}}
+{{--                                                    <span>$1245</span>--}}
+{{--                                                </div>--}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="step-box">
-                            <div class="popular-box">
-                                <div class="popular_img">
-                                    <img src="{{ asset('front/assets/images/hotel/room/18.jpg') }}" alt=""
-                                         class="img-fluid blur-up lazyload bg-img">
-                                </div>
-                                <div class="special-content">
-                                    <a href="{{ route('user.hotels.show',1) }}">
-                                        <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span></h5>
-                                    </a>
-                                    <div class="bottom-section">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>26412 review</span>
-                                        </div>
-                                        <div class="price">
-                                            <del>$1300</del>
-                                            <span>$1245</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="step-box">
-                            <div class="popular-box">
-                                <div class="popular_img">
-                                    <img src="{{ asset('front/assets/images/hotel/room/19.jpg') }}" alt=""
-                                         class="img-fluid blur-up lazyload bg-img">
-                                </div>
-                                <div class="special-content">
-                                    <a href="{{ route('user.hotels.show',1) }}">
-                                        <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span></h5>
-                                    </a>
-                                    <div class="bottom-section">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>26412 review</span>
-                                        </div>
-                                        <div class="price">
-                                            <del>$1300</del>
-                                            <span>$1245</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

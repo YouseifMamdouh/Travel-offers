@@ -26,20 +26,40 @@
                     <!--begin::Page title-->
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
-                        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                            About us</h1>
-                        <!--end::Title-->
-                        <!--begin::Breadcrumb-->
-                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-                            <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">
-                                <a href="{{route('dashboard')}}"
-                                   class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <span> Rooms </span>
-                            </li>
-                            <!--end::Item-->
 
-                        </ul>
+                        @if(isset($hotel))
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                                Rooms inside ({{$hotel->title}})
+                            </h1>
+                            <!--end::Title-->
+                            <!--begin::Breadcrumb-->
+                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-muted">
+                                    <a href="{{route('dashboard')}}"
+                                       class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
+                                    <span> Rooms inside ({{$hotel->title}}) </span>
+                                </li>
+                                <!--end::Item-->
+
+                            </ul>
+                        @else
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                                Rooms</h1>
+                            <!--end::Title-->
+                            <!--begin::Breadcrumb-->
+                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-muted">
+                                    <a href="{{route('dashboard')}}"
+                                       class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
+                                    <span> Rooms </span>
+                                </li>
+                                <!--end::Item-->
+
+                            </ul>
+                        @endif
+
                         <!--end::Breadcrumb-->
                     </div>
                     <!--end::Page title-->
@@ -75,202 +95,206 @@
                     <!--begin::Card-->
                     <div class="card">
                         <!--begin::Card header-->
-                        <div class="card-header border-0 pt-6">
+                        @if(isset($hotel))
+                        @else
+                            <div class="card-header border-0 pt-6">
 
-                            <!--begin::Card toolbar-->
+                                <!--begin::Card toolbar-->
 
-                            <div class="card-toolbar">
-                                <!--begin::Toolbar-->
-                                <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                    <!--begin::Add user-->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#kt_modal_add_user">
-                                        Add Room<i class="ki-duotone ki-plus fs-2"></i></button>
-                                    <!--end::Add user-->
-                                </div>
-                                <!--end::Toolbar-->
-                                <!--begin::Modal - Add task-->
-                                <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
-                                    <!--begin::Modal dialog-->
-                                    <div class="modal-dialog modal-dialog-centered mw-650px">
-                                        <!--begin::Modal content-->
-                                        <div class="modal-content">
-                                            <!--begin::Modal header-->
-                                            <div class="modal-header" id="kt_modal_add_user_header">
-                                                <!--begin::Modal title-->
-                                                <h2 class="fw-bold">Add Room</h2>
-                                                <!--end::Modal title-->
-                                                <!--begin::Close-->
-                                                <div class="btn btn-icon btn-sm btn-active-icon-primary"
-                                                     data-kt-users-modal-action="close">
-                                                    <i class="ki-duotone ki-cross fs-1">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </div>
-                                                <!--end::Close-->
-                                            </div>
-                                            <!--end::Modal header-->
-                                            <!--begin::Modal body-->
-                                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-                                                <!--begin::Form-->
-                                                <form id="kt_modal_add_user_form" class="form" method="post"
-                                                      action="{{route('rooms.store')}}" enctype="multipart/form-data">
-                                                    @csrf
-                                                    <!--begin::Scroll-->
-                                                    <div class="d-flex flex-column scroll-y me-n7 pe-7"
-                                                         id="kt_modal_add_user_scroll" data-kt-scroll="true"
-                                                         data-kt-scroll-activate="{default: false, lg: true}"
-                                                         data-kt-scroll-max-height="auto"
-                                                         data-kt-scroll-dependencies="#kt_modal_add_user_header"
-                                                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
-                                                         data-kt-scroll-offset="300px">
-
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Name</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" name="title"
-                                                                   class="form-control form-control-solid mb-3 mb-lg-0"
-                                                                   placeholder="Name" value="{{old('title')}}"/>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2"
-                                                                   for="description">Description</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <textarea name="description" id="description"
-                                                                      class="form-control form-control-solid mb-3 mb-lg-0"
-                                                                      placeholder="Description">{{old('description')}}</textarea>
-                                                            <!--end::Input-->
-                                                        </div>
-
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2"
-                                                                   for="hotel_id">Hotel</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select name="hotel_id" id="hotel_id" style="width: 100%">
-                                                                @if(isset($hotels) && $hotels->count() > 0)
-                                                                    @foreach($hotels as $hotel)
-                                                                        <option
-                                                                            value="{{$hotel->id}}" {{old('hotel_id') == $hotel->id ? 'selected' : ''}}>{{$hotel->title}}</option>
-                                                                    @endforeach
-                                                                @endif
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--end::Input group-->
-
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="type_of">Type</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select name="type_of" id="type_of" style="width: 100%">
-                                                                <option value="single" {{old('type_of') == 'single' ? 'selected' : ''}}>Single</option>
-                                                                <option value="double" {{old('type_of') == 'double' ? 'selected' : ''}}>Double</option>
-                                                                <option value="family" {{old('type_of') == 'family' ? 'selected' : ''}}>Family (4 Persons)</option>
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--end::Input group-->
-                                                        @php
-                                                            $arr=[];
-                                                            for($i = 0;$i < 100; $i++) {
-                                                                array_push($arr, old('features.' . $i));
-                                                            }
-                                                        @endphp
-{{--                                                        {{isset($arr) && $arr[0] !== null ?  : ''}}--}}
-{{--                                                        {{dd($arr)}}--}}
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="features">Features</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select id="features" placeholder="Choose Features"
-                                                                    multiple name="features[]"
-                                                                    class=" selectize-event">
-
-                                                                <optgroup label="">
-                                                                    @if(isset($features) && $features->count() > 0)
-                                                                        @foreach($features as $feature)
-                                                                            <option
-                                                                                value="{{$feature->id}}" {{in_array($feature->id, $arr) ? 'selected' : ''}}>
-                                                                                {{$feature->name}}
-                                                                            </option>
-                                                                        @endforeach
-                                                                    @endif
-
-                                                                </optgroup>
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--end::Input group-->
-
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="required fw-semibold fs-6 mb-2" for="price">Price</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <input type="number" name="price" value="{{old('price')}}"
-                                                                   class="form-control form-control-solid mb-3 mb-lg-0"
-                                                                   placeholder="Price"/>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--begin::Input group-->
-                                                    </div>
-                                                    <!--end::Scroll-->
-                                                    <!--begin::Actions-->
-                                                    <div class="text-center pt-15">
-                                                        <button type="reset" class="btn btn-light me-3"
-                                                                data-kt-users-modal-action="cancel">Cancel
-                                                        </button>
-                                                        <button type="submit" class="btn btn-primary"
-                                                                data-kt-users-modal-action="submit">
-                                                            <span class="indicator-label">Save</span>
-                                                            <span class="indicator-progress">Please wait...
-																			<span
-                                                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                        </button>
-                                                    </div>
-                                                    <!--end::Actions-->
-                                                </form>
-                                                <!--end::Form-->
-                                            </div>
-                                            <!--end::Modal body-->
-                                        </div>
-                                        <!--end::Modal content-->
+                                <div class="card-toolbar">
+                                    <!--begin::Toolbar-->
+                                    <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                                        <!--begin::Add user-->
+                                        <a type="button" class="btn btn-primary" href="{{route('rooms.create')}}">
+                                            Add Room<i class="ki-duotone ki-plus fs-2"></i></a>
+                                        <!--end::Add user-->
                                     </div>
-                                    <!--end::Modal dialog-->
+                                    <!--end::Toolbar-->
+                                    <!--begin::Modal - Add task-->
+                                    {{--                                <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">--}}
+                                    {{--                                    <!--begin::Modal dialog-->--}}
+                                    {{--                                    <div class="modal-dialog modal-dialog-centered mw-650px">--}}
+                                    {{--                                        <!--begin::Modal content-->--}}
+                                    {{--                                        <div class="modal-content">--}}
+                                    {{--                                            <!--begin::Modal header-->--}}
+                                    {{--                                            <div class="modal-header" id="kt_modal_add_user_header">--}}
+                                    {{--                                                <!--begin::Modal title-->--}}
+                                    {{--                                                <h2 class="fw-bold">Add Room</h2>--}}
+                                    {{--                                                <!--end::Modal title-->--}}
+                                    {{--                                                <!--begin::Close-->--}}
+                                    {{--                                                <div class="btn btn-icon btn-sm btn-active-icon-primary"--}}
+                                    {{--                                                     data-kt-users-modal-action="close">--}}
+                                    {{--                                                    <i class="ki-duotone ki-cross fs-1">--}}
+                                    {{--                                                        <span class="path1"></span>--}}
+                                    {{--                                                        <span class="path2"></span>--}}
+                                    {{--                                                    </i>--}}
+                                    {{--                                                </div>--}}
+                                    {{--                                                <!--end::Close-->--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                            <!--end::Modal header-->--}}
+                                    {{--                                            <!--begin::Modal body-->--}}
+                                    {{--                                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">--}}
+                                    {{--                                                <!--begin::Form-->--}}
+                                    {{--                                                <form id="kt_modal_add_user_form" class="form" method="post"--}}
+                                    {{--                                                      action="{{route('rooms.store')}}" enctype="multipart/form-data">--}}
+                                    {{--                                                    @csrf--}}
+                                    {{--                                                    <!--begin::Scroll-->--}}
+                                    {{--                                                    <div class="d-flex flex-column scroll-y me-n7 pe-7"--}}
+                                    {{--                                                         id="kt_modal_add_user_scroll" data-kt-scroll="true"--}}
+                                    {{--                                                         data-kt-scroll-activate="{default: false, lg: true}"--}}
+                                    {{--                                                         data-kt-scroll-max-height="auto"--}}
+                                    {{--                                                         data-kt-scroll-dependencies="#kt_modal_add_user_header"--}}
+                                    {{--                                                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll"--}}
+                                    {{--                                                         data-kt-scroll-offset="300px">--}}
+
+                                    {{--                                                        <!--begin::Input group-->--}}
+                                    {{--                                                        <div class="fv-row mb-7">--}}
+                                    {{--                                                            <!--begin::Label-->--}}
+                                    {{--                                                            <label class="required fw-semibold fs-6 mb-2" for="title">Name</label>--}}
+                                    {{--                                                            <!--end::Label-->--}}
+                                    {{--                                                            <!--begin::Input-->--}}
+                                    {{--                                                            <input type="text" name="title"--}}
+                                    {{--                                                                   class="form-control form-control-solid mb-3 mb-lg-0"--}}
+                                    {{--                                                                   placeholder="Name" value="{{old('title')}}"/>--}}
+                                    {{--                                                            <!--end::Input-->--}}
+                                    {{--                                                        </div>--}}
+                                    {{--                                                        <!--begin::Input group-->--}}
+                                    {{--                                                        <div class="fv-row mb-7">--}}
+                                    {{--                                                            <!--begin::Label-->--}}
+                                    {{--                                                            <label class="required fw-semibold fs-6 mb-2"--}}
+                                    {{--                                                                   for="description">Description</label>--}}
+                                    {{--                                                            <!--end::Label-->--}}
+                                    {{--                                                            <!--begin::Input-->--}}
+                                    {{--                                                            <textarea name="description" id="description"--}}
+                                    {{--                                                                      class="form-control form-control-solid mb-3 mb-lg-0"--}}
+                                    {{--                                                                      placeholder="Description">{{old('description')}}</textarea>--}}
+                                    {{--                                                            <!--end::Input-->--}}
+                                    {{--                                                        </div>--}}
+
+                                    {{--                                                        <div class="fv-row mb-7">--}}
+                                    {{--                                                            <!--begin::Label-->--}}
+                                    {{--                                                            <label class="required fw-semibold fs-6 mb-2"--}}
+                                    {{--                                                                   for="hotel_id">Hotel</label>--}}
+                                    {{--                                                            <!--end::Label-->--}}
+                                    {{--                                                            <!--begin::Input-->--}}
+                                    {{--                                                            <select name="hotel_id" id="hotel_id" style="width: 100%">--}}
+                                    {{--                                                                @if(isset($hotels) && $hotels->count() > 0)--}}
+                                    {{--                                                                    @foreach($hotels as $hotel)--}}
+                                    {{--                                                                        <option--}}
+                                    {{--                                                                            value="{{$hotel->id}}" {{old('hotel_id') == $hotel->id ? 'selected' : ''}}>{{$hotel->title}}</option>--}}
+                                    {{--                                                                    @endforeach--}}
+                                    {{--                                                                @endif--}}
+                                    {{--                                                            </select>--}}
+                                    {{--                                                            <!--end::Input-->--}}
+                                    {{--                                                        </div>--}}
+                                    {{--                                                        <!--end::Input group-->--}}
+
+                                    {{--                                                        <!--begin::Input group-->--}}
+                                    {{--                                                        <div class="fv-row mb-7">--}}
+                                    {{--                                                            <!--begin::Label-->--}}
+                                    {{--                                                            <label class="required fw-semibold fs-6 mb-2" for="type_of">Type</label>--}}
+                                    {{--                                                            <!--end::Label-->--}}
+                                    {{--                                                            <!--begin::Input-->--}}
+                                    {{--                                                            <select name="type_of" id="type_of" style="width: 100%">--}}
+                                    {{--                                                                <option value="single" {{old('type_of') == 'single' ? 'selected' : ''}}>Single</option>--}}
+                                    {{--                                                                <option value="double" {{old('type_of') == 'double' ? 'selected' : ''}}>Double</option>--}}
+                                    {{--                                                                <option value="family" {{old('type_of') == 'family' ? 'selected' : ''}}>Family (4 Persons)</option>--}}
+                                    {{--                                                            </select>--}}
+                                    {{--                                                            <!--end::Input-->--}}
+                                    {{--                                                        </div>--}}
+                                    {{--                                                        <!--end::Input group-->--}}
+                                    {{--                                                        @php--}}
+                                    {{--                                                            $arr=[];--}}
+                                    {{--                                                            for($i = 0;$i < 100; $i++) {--}}
+                                    {{--                                                                array_push($arr, old('features.' . $i));--}}
+                                    {{--                                                            }--}}
+                                    {{--                                                        @endphp--}}
+                                    {{--                                                        {{isset($arr) && $arr[0] !== null ?  : ''}}--}}
+                                    {{--                                                        {{dd($arr)}}--}}
+                                    {{--                                                        <!--begin::Input group-->--}}
+                                    {{--                                                        <div class="fv-row mb-7">--}}
+                                    {{--                                                            <!--begin::Label-->--}}
+                                    {{--                                                            <label class="required fw-semibold fs-6 mb-2" for="features">Features</label>--}}
+                                    {{--                                                            <!--end::Label-->--}}
+                                    {{--                                                            <!--begin::Input-->--}}
+                                    {{--                                                            <select id="features" placeholder="Choose Features"--}}
+                                    {{--                                                                    multiple name="features[]"--}}
+                                    {{--                                                                    class=" selectize-event">--}}
+
+                                    {{--                                                                <optgroup label="">--}}
+                                    {{--                                                                    @if(isset($features) && $features->count() > 0)--}}
+                                    {{--                                                                        @foreach($features as $feature)--}}
+                                    {{--                                                                            <option--}}
+                                    {{--                                                                                value="{{$feature->id}}" {{in_array($feature->id, $arr) ? 'selected' : ''}}>--}}
+                                    {{--                                                                                {{$feature->name}}--}}
+                                    {{--                                                                            </option>--}}
+                                    {{--                                                                        @endforeach--}}
+                                    {{--                                                                    @endif--}}
+
+                                    {{--                                                                </optgroup>--}}
+                                    {{--                                                            </select>--}}
+                                    {{--                                                            <!--end::Input-->--}}
+                                    {{--                                                        </div>--}}
+                                    {{--                                                        <!--end::Input group-->--}}
+
+                                    {{--                                                        <!--begin::Input group-->--}}
+                                    {{--                                                        <div class="fv-row mb-7">--}}
+                                    {{--                                                            <!--begin::Label-->--}}
+                                    {{--                                                            <label class="required fw-semibold fs-6 mb-2" for="price">Price</label>--}}
+                                    {{--                                                            <!--end::Label-->--}}
+                                    {{--                                                            <!--begin::Input-->--}}
+                                    {{--                                                            <input type="number" name="price" value="{{old('price')}}"--}}
+                                    {{--                                                                   class="form-control form-control-solid mb-3 mb-lg-0"--}}
+                                    {{--                                                                   placeholder="Price"/>--}}
+                                    {{--                                                            <!--end::Input-->--}}
+                                    {{--                                                        </div>--}}
+                                    {{--                                                        <!--begin::Input group-->--}}
+                                    {{--                                                    </div>--}}
+                                    {{--                                                    <!--end::Scroll-->--}}
+                                    {{--                                                    <!--begin::Actions-->--}}
+                                    {{--                                                    <div class="text-center pt-15">--}}
+                                    {{--                                                        <button type="reset" class="btn btn-light me-3"--}}
+                                    {{--                                                                data-kt-users-modal-action="cancel">Cancel--}}
+                                    {{--                                                        </button>--}}
+                                    {{--                                                        <button type="submit" class="btn btn-primary"--}}
+                                    {{--                                                                data-kt-users-modal-action="submit">--}}
+                                    {{--                                                            <span class="indicator-label">Save</span>--}}
+                                    {{--                                                            <span class="indicator-progress">Please wait...--}}
+                                    {{--																			<span--}}
+                                    {{--                                                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>--}}
+                                    {{--                                                        </button>--}}
+                                    {{--                                                    </div>--}}
+                                    {{--                                                    <!--end::Actions-->--}}
+                                    {{--                                                </form>--}}
+                                    {{--                                                <!--end::Form-->--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                            <!--end::Modal body-->--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                        <!--end::Modal content-->--}}
+                                    {{--                                    </div>--}}
+                                    {{--                                    <!--end::Modal dialog-->--}}
+                                    {{--                                </div>--}}
+                                    <!--end::Modal - Add task-->
                                 </div>
-                                <!--end::Modal - Add task-->
+
+                                <!--end::Card toolbar-->
+                                <!--begin::Card title-->
+                                <div class="card-title">
+                                    <!--begin::Search-->
+                                    <div class="d-flex align-items-center position-relative my-1">
+                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute me-5" style="left: 10px">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                        <input type="text" data-kt-user-table-filter="search"
+                                               class="form-control form-control-solid w-250px ps-13" placeholder="Search"/>
+                                    </div>
+                                    <!--end::Search-->
+                                </div>
                             </div>
 
-                            <!--end::Card toolbar-->
-                            <!--begin::Card title-->
-                            <div class="card-title">
-                                <!--begin::Search-->
-                                <div class="d-flex align-items-center position-relative my-1">
-                                    <i class="ki-duotone ki-magnifier fs-3 position-absolute me-5" style="left: 10px">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                    </i>
-                                    <input type="text" data-kt-user-table-filter="search"
-                                           class="form-control form-control-solid w-250px ps-13" placeholder="Search"/>
-                                </div>
-                                <!--end::Search-->
-                            </div>
-                        </div>
+                        @endif
+
                         <!--end::Card header-->
                         <!--begin::Card body-->
                         <div class="card-body py-4">
@@ -338,7 +362,7 @@
 
                                                     <div class="menu-item px-3">
                                                         <a href="{{route('rooms.show', $item->id)}}"
-                                                           class="menu-link px-3"> View</a>
+                                                           class="menu-link px-3"> Show</a>
                                                     </div>
                                                     <div class="menu-item px-3">
                                                         <a href="{{route('rooms.addImages', $item->id)}}"

@@ -25,6 +25,8 @@ Route::name('user.')->group(function() {
     Route::get('/', [HomeController::class , 'index'])->name('index');
     Route::get('/contact', [HomeController::class , 'contact'])->name('contact');
     Route::get('/about', [HomeController::class , 'about'])->name('about');
+    Route::get('/hotels-form', [HomeController::class , 'about'])->name('hotels.form');
+    Route::get('/show-programs/{id}', [ProgramController::class , 'showPrograms'])->name('show.programs');
 //    Route::resource('/service', ServicesController::class);
     Route::resource('/checkout', CheckoutController::class);
     Route::resource('/hotels', HotelController::class);

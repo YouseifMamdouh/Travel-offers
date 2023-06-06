@@ -182,7 +182,7 @@
                                     </th>
 
                                     <th class="min-w-50px" style="text-align: center">Title</th>
-                                    <th class="min-w-50px" style="text-align: center">Description</th>
+{{--                                    <th class="min-w-50px" style="text-align: center">Description</th>--}}
                                     <th class=" min-w-100px" style="text-align: center">Operation</th>
                                 </tr>
                                 </thead>
@@ -198,9 +198,9 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$data->title}}</span>
                                             </td>
-                                            <td class="min-w-50px" style="text-align: left">
-                                                <span>{!! $data->description !!}</span>
-                                            </td>
+{{--                                            <td class="min-w-50px" style="text-align: left">--}}
+{{--                                                <span>{!! $data->description !!}</span>--}}
+{{--                                            </td>--}}
 
                                             <td class="text-end" style="text-align: center!important;">
                                                 <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
@@ -221,6 +221,10 @@
                                                     data-kt-menu="true">
                                                     <!--begin::Menu item-->
 
+                                                    <div class="menu-item px-3">
+                                                        <a href="{{route('aboutus_details.show', $data->id)}}"
+                                                           class="menu-link px-3"> Show</a>
+                                                    </div>
                                                     <div class="menu-item px-3">
                                                         <a href="{{route('aboutus_details.edit', $data->id)}}"
                                                            class="menu-link px-3"> Edit</a>

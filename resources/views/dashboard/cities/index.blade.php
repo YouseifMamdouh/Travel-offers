@@ -67,8 +67,8 @@
                                     <!--begin::Toolbar-->
                                     <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                         <!--begin::Add user-->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-                                            Add City<i class="ki-duotone ki-plus fs-2"></i></button>
+                                        <a type="button" class="btn btn-primary" href="{{route('cities.create')}}">
+                                            Add City<i class="ki-duotone ki-plus fs-2"></i></a>
                                         <!--end::Add user-->
                                     </div>
                                     <!--end::Toolbar-->
@@ -210,6 +210,10 @@
                                                     data-kt-menu="true">
                                                     <!--begin::Menu item-->
 
+                                                    <div class="menu-item px-3">
+                                                        <a href="{{route('cities.show', $item->id)}}"
+                                                           class="menu-link px-3"> Show</a>
+                                                    </div>
                                                     <div class="menu-item px-3">
                                                         <a href="{{route('cities.edit', $item->id)}}"
                                                            class="menu-link px-3"> Edit</a>

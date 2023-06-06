@@ -67,6 +67,10 @@
                 <div class="col-lg-12 ratio3_2">
                     <div class="product-wrapper-grid special-section grid-box">
                         <div class="row content grid">
+                            @php
+                                $all_features = \App\Models\Feature::where('type_of', 'programmes')->get();
+
+                            @endphp
                             @if(isset($programmes) && $programmes->count() > 0)
                                 @foreach($programmes as $item)
 
@@ -101,7 +105,6 @@
                                                         <ul class="include">
                                                             @php
                                                                 $prog_features = $item->features->pluck('id')->toArray();;
-                                                                $all_features = \App\Models\Feature::get();
                                                             @endphp
                                                             @foreach($all_features as $feature)
                                                                 <li class="{{in_array($feature->id, $prog_features) ? '' : 'not-include'}}">
@@ -120,10 +123,10 @@
                                                             <h6>
                                                             @if($item->discount != null)
                                                                 <del>
-                                                                    {{($item->price * 100)/$item->discount . General::getCurrency()}}
+                                                                    {{ General::getCurrency() . ($item->price * 100)/$item->discount }}
                                                                 </del>
                                                             @endif
-                                                                {{$item->price . General::getCurrency()}}
+                                                                {{ General::getCurrency() . $item->price}}
                                                             </h6>
                                                             <span>price per person</span>
                                                         </div>
@@ -138,25 +141,8 @@
                             @endif
                         </div>
                     </div>
-                    <nav aria-label="Page navigation example" class="pagination-section mt-0">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="javascript:void(0)" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div>{{$programmes->links()}}</div>
+
                 </div>
             </div>
         </div>

@@ -8,28 +8,28 @@
         <div class="container-fluid p-0">
             <div class="row m-0">
                 <div class="col-md-6 p-0">
-                    <a href="{{ asset('end-user/assets/images/single-hotel/slider/10.jpg') }}">
-                        <img src="{{ asset('end-user/assets/images/single-hotel/slider/10.jpg') }}" class="img-fluid blur-up lazyload bg-img"
+                    <a href="{{ asset('front/assets/images/single-hotel/slider/10.jpg') }}" target="_blank">
+                        <img src="{{ asset('front/assets/images/single-hotel/slider/10.jpg') }}" class="img-fluid blur-up lazyload bg-img"
                             alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-6 p-0">
-                    <a href="{{ asset('end-user/assets/images/single-hotel/slider/11.jpg') }}">
-                        <img src="{{ asset('end-user/assets/images/single-hotel/slider/11.jpg') }}" class="img-fluid blur-up lazyload bg-img"
+                    <a href="{{ asset('front/assets/images/single-hotel/slider/11.jpg') }}" target="_blank">
+                        <img src="{{ asset('front/assets/images/single-hotel/slider/11.jpg') }}" class="img-fluid blur-up lazyload bg-img"
                             alt="">
                     </a>
-                    <a href="{{ asset('end-user/assets/images/single-hotel/slider/6.jpg') }}">
-                        <img src="{{ asset('end-user/assets/images/single-hotel/slider/6.jpg') }}" class="img-fluid blur-up lazyload bg-img"
+                    <a href="{{ asset('front/assets/images/single-hotel/slider/6.jpg') }}" target="_blank">
+                        <img src="{{ asset('front/assets/images/single-hotel/slider/6.jpg') }}" class="img-fluid blur-up lazyload bg-img"
                             alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-6 p-0">
-                    <a href="{{ asset('end-user/assets/images/single-hotel/slider/7.jpg') }}">
-                        <img src="{{ asset('end-user/assets/images/single-hotel/slider/7.jpg') }}" class="img-fluid blur-up lazyload bg-img"
+                    <a href="{{ asset('front/assets/images/single-hotel/slider/7.jpg') }}" target="_blank">
+                        <img src="{{ asset('front/assets/images/single-hotel/slider/7.jpg') }}" class="img-fluid blur-up lazyload bg-img"
                             alt="">
                     </a>
-                    <a href="{{ asset('end-user/assets/images/single-hotel/slider/8.jpg') }}">
-                        <img src="{{ asset('end-user/assets/images/single-hotel/slider/8.jpg') }}" class="img-fluid blur-up lazyload bg-img"
+                    <a href="{{ asset('front/assets/images/single-hotel/slider/8.jpg') }}" target="_blank">
+                        <img src="{{ asset('front/assets/images/single-hotel/slider/8.jpg') }}" class="img-fluid blur-up lazyload bg-img"
                             alt="">
                     </a>
                 </div>
@@ -49,13 +49,13 @@
                             <div class="left-part">
                                 <div class="top">
                                     <h2>sea view hotel</h2>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
+{{--                                    <div class="rating">--}}
+{{--                                        <i class="fas fa-star"></i>--}}
+{{--                                        <i class="fas fa-star"></i>--}}
+{{--                                        <i class="fas fa-star"></i>--}}
+{{--                                        <i class="fas fa-star"></i>--}}
+{{--                                        <i class="far fa-star"></i>--}}
+{{--                                    </div>--}}
                                     <div class="share-buttons">
                                         <a href="#" class="btn btn-solid"><i class="far fa-share-square"></i> share</a>
                                         <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> save</a>
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="right-part">
-                                <h2 class="price">$250 <span>/ per night</span></h2>
+                                <h2 class="price">{{__('messages.currency')}}250 <span>/ per night</span></h2>
                                 <a href="{{ route('user.hotels.form',1) }}" class="btn btn-rounded btn-sm color1">book this now</a>
                             </div>
                         </div>
@@ -85,8 +85,6 @@
                                 </li>
                                 <li class="nav-item"><a data-bs-toggle="tab" class="nav-link" href="#location">location</a>
                                 </li>
-                                <li class="nav-item"><a data-bs-toggle="tab" class="nav-link" href="#review">reviews</a>
-                                </li>
                                 <li class="nav-item"><a data-bs-toggle="tab" class="nav-link" href="#policy">policies</a>
                                 </li>
                             </ul>
@@ -97,7 +95,7 @@
                                             <td>
                                                 <h6 class="room-title">Deluxe Room</h6>
                                                 <a href="#">
-                                                    <img src="{{ asset('end-user/assets/images/hotel/room/4.jpg') }}"
+                                                    <img src="{{ asset('front/assets/images/hotel/room/4.jpg') }}"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </a>
                                             </td>
@@ -108,18 +106,18 @@
                                                             <h6>Amenities</h6>
                                                             <div class="facility-detail">
                                                                 <ul>
-                                                                    <li><img src="{{ asset('end-user/assets/images/icon/tour/bed.png') }}"
+                                                                    <li><img src="{{ asset('front/assets/images/icon/tour/bed.png') }}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         king/twin
                                                                     </li>
-                                                                    <li><img src="{{ asset('end-user/assets/images/icon/hotel/shower.png') }}"
+                                                                    <li><img src="{{ asset('front/assets/images/icon/hotel/shower.png') }}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         Shower
                                                                     </li>
-                                                                    <li><img src="{{ asset('end-user/assets/images/icon/hotel/television.png') }}"
+                                                                    <li><img src="{{ asset('front/assets/images/icon/hotel/television.png') }}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         LCD TV</li>
-                                                                    <li><img src="{{ asset('end-user/assets/images/icon/hotel/couch.png') }}"
+                                                                    <li><img src="{{ asset('front/assets/images/icon/hotel/couch.png') }}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         couch
                                                                     </li>
@@ -142,8 +140,8 @@
                                             <td>
                                                 <div class="price-details">
                                                     <div>
-                                                        <h6><del>$1250</del></h6>
-                                                        <h5>$1000</h5>
+                                                        <h6><del>{{__('messages.currency')}}1250</del></h6>
+                                                        <h5>{{__('messages.currency')}}1000</h5>
                                                         <span>per night</span>
                                                         <a href="{{ route('user.hotels.form',1) }}"
                                                             class="btn btn-rounded btn-sm color1">book now</a>
@@ -155,7 +153,7 @@
                                             <td>
                                                 <h6 class="room-title">Suite Room</h6>
                                                 <a href="#">
-                                                    <img src="{{ asset('end-user/assets/images/hotel/room/5.jpg') }}"
+                                                    <img src="{{ asset('front/assets/images/hotel/room/5.jpg') }}"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </a>
                                             </td>
@@ -166,18 +164,18 @@
                                                             <h6>Amenities</h6>
                                                             <div class="facility-detail">
                                                                 <ul>
-                                                                    <li><img src="../assets/images/icon/tour/bed.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/tour/bed.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         king/twin
                                                                     </li>
-                                                                    <li><img src="../assets/images/icon/hotel/pool.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/hotel/pool.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         Pool View</li>
-                                                                    <li><img src="../assets/images/icon/hotel/shower.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/hotel/shower.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         Shower
                                                                     </li>
-                                                                    <li><img src="../assets/images/icon/hotel/television.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/hotel/television.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         LCD TV</li>
                                                                 </ul>
@@ -200,8 +198,8 @@
                                             <td>
                                                 <div class="price-details">
                                                     <div>
-                                                        <h6><del>$1350</del></h6>
-                                                        <h5>$1100</h5>
+                                                        <h6><del>{{__('messages.currency')}}1350</del></h6>
+                                                        <h5>{{__('messages.currency')}}1100</h5>
                                                         <span>per night</span>
                                                         <a href="{{ route('user.hotels.form',1) }}"
                                                             class="btn btn-rounded btn-sm color1">book now</a>
@@ -213,7 +211,7 @@
                                             <td>
                                                 <h6 class="room-title">Royal Room</h6>
                                                 <a href="#">
-                                                    <img src="{{ asset('end-user/assets/images/hotel/room/6.jpg') }}"
+                                                    <img src="{{ asset('front/assets/images/hotel/room/6.jpg') }}"
                                                         class="img-fluid blur-up lazyload" alt="">
                                                 </a>
                                             </td>
@@ -224,18 +222,18 @@
                                                             <h6>Amenities</h6>
                                                             <div class="facility-detail">
                                                                 <ul>
-                                                                    <li><img src="../assets/images/icon/tour/bed.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/tour/bed.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         king/twin
                                                                     </li>
                                                                     <li><img src="../assets/images/icon/hotel/pool.png"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         Pool View</li>
-                                                                    <li><img src="../assets/images/icon/hotel/shower.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/hotel/shower.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         Shower
                                                                     </li>
-                                                                    <li><img src="../assets/images/icon/hotel/television.png"
+                                                                    <li><img src="{{asset('front/assets/images/icon/hotel/television.png')}}"
                                                                             class="img-fluid blur-up lazyload" alt="">
                                                                         LCD TV</li>
                                                                     <li><img src="../assets/images/icon/hotel/couch.png"
@@ -261,8 +259,8 @@
                                             <td>
                                                 <div class="price-details">
                                                     <div>
-                                                        <h6><del>$1950</del></h6>
-                                                        <h5>$1800</h5>
+                                                        <h6><del>{{__('messages.currency')}}1950</del></h6>
+                                                        <h5>{{__('messages.currency')}}1800</h5>
                                                         <span>per night</span>
                                                         <a href="{{ route('user.hotels.form',1) }}"
                                                             class="btn btn-rounded btn-sm color1">book now</a>
@@ -303,7 +301,7 @@
                                 <div class="menu-part tab-pane fade facility" id="facility">
                                     <div class="row">
                                         <div class="col-xl-3 col-6">
-                                            <h6><img src="{{ asset('end-user/assets/images/icon/hotel/verified.png') }}"
+                                            <h6><img src="{{ asset('front/assets/images/icon/hotel/verified.png') }}"
                                                     class="img-fluid blur-up lazyload" alt=""> basic facility</h6>
                                             <ul>
                                                 <li><i class="fas fa-check"></i> Free Wi-Fi</li>
@@ -315,7 +313,7 @@
                                             </ul>
                                         </div>
                                         <div class="col-xl-3 col-6">
-                                            <h6><img src="{{ asset('end-user/assets/images/icon/hotel/credit-card.png') }}"
+                                            <h6><img src="{{ asset('front/assets/images/icon/hotel/credit-card.png') }}"
                                                     class="img-fluid blur-up lazyload" alt=""> payment mode</h6>
                                             <ul>
                                                 <li><i class="fas fa-check"></i> visa card</li>
@@ -358,56 +356,7 @@
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147718689!2d-74.11976358820196!3d40.69740344169578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1568001991098!5m2!1sen!2sin"
                                         style="border:0;" allowfullscreen=""></iframe>
                                 </div>
-                                <div class="menu-part tab-pane fade review" id="review">
-                                    <div class="review-box">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>The stay in the hotel was excellent</span>
-                                        </div>
-                                        <h6>by xyz, jun 18, 2019</h6>
-                                        <p>Our stay at sea view was pleasant. We stayed here for a day and the view from
-                                            the room was brilliant. Rooms were clean hygienic and big. foods were
-                                            amazing. rooms were neat and clean.staff is very courteous and
-                                            cooperative.great place to stay. Good atmosphere, Staff was amazing..well
-                                            education..mannered. Room was spacious and cleaned more then an expected.
-                                        </p>
-                                    </div>
-                                    <div class="review-box">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>Awesome Stay..value for money</span>
-                                        </div>
-                                        <h6>by xyz, jun 18, 2019</h6>
-                                        <p>We were there for 3 nights and hotel was too good. Greenery was flaunting
-                                            everywhere. There were games kept for our entertainment. View from room was
-                                            good. Hotel staff behavior was nice. They provided each and every
-                                            service in hand. Overall stay was too good.</p>
-                                    </div>
-                                    <div class="review-box">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>Best getaway destination with family</span>
-                                        </div>
-                                        <h6>by xyz, jun 18, 2019</h6>
-                                        <p>The location, view from the rooms are just awesome. Very cool landscaping has
-                                            been done Around the hotel. There are small activities that you can indulge
-                                            with your family. Pool wasn't functional at the time of our
-                                            stay. In all, the stay is really peaceful, calm and Silent. A place we would
-                                            definitely want to visit again.</p>
-                                    </div>
-                                </div>
+
                                 <div class="menu-part tab-pane fade policy" id="policy">
                                     <p>Check-in: 2.00 PM, Check-out: 12.00 PM</p>
                                     <p>The primary guest must be at least 18 years of age to check into this hotel.</p>
@@ -448,7 +397,7 @@
                                 <div class="special-box p-0">
                                     <div class="special-img">
                                         <a href="#">
-                                            <img src="{{ asset('end-user/assets/images/hotel/room/14.jpg') }}"
+                                            <img src="{{ asset('front/assets/images/hotel/room/14.jpg') }}"
                                                 class="img-fluid blur-up lazyload bg-img" alt="">
                                         </a>
                                         <div class="top-icon">
@@ -468,17 +417,13 @@
                                             simply dummy text of the ..............
                                         </p>
                                         <div class="bottom-section">
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span>26412 review</span>
+
+                                            <div class="price">
+                                                <del>{{__('messages.currency')}}1300</del>
+                                                <span>{{__('messages.currency')}}1245</span>
+
                                             </div>
                                             <div class="price">
-                                                <del>$1300</del>
-                                                <span>$1245</span>
                                                 <div class="facility-detail">
                                                     <span>swimming</span>
                                                     <span>parking</span>
@@ -492,7 +437,7 @@
                                 <div class="special-box p-0">
                                     <div class="special-img">
                                         <a href="#">
-                                            <img src="{{ asset('end-user/assets/images/hotel/room/13.jpg') }}"
+                                            <img src="{{ asset('front/assets/images/hotel/room/13.jpg') }}"
                                                 class="img-fluid blur-up lazyload bg-img" alt="">
                                         </a>
                                         <div class="top-icon">
@@ -512,17 +457,13 @@
                                             simply dummy text of the ..............
                                         </p>
                                         <div class="bottom-section">
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span>26412 review</span>
+
+                                            <div class="price">
+                                                <del>{{__('messages.currency')}}1300</del>
+                                                <span>{{__('messages.currency')}}1245</span>
+
                                             </div>
                                             <div class="price">
-                                                <del>$1300</del>
-                                                <span>$1245</span>
                                                 <div class="facility-detail">
                                                     <span>swimming</span>
                                                     <span>parking</span>
@@ -536,7 +477,7 @@
                                 <div class="special-box p-0">
                                     <div class="special-img">
                                         <a href="#">
-                                            <img src="{{ asset('end-user/assets/images/hotel/room/10.jpg') }}"
+                                            <img src="{{ asset('front/assets/images/hotel/room/10.jpg') }}"
                                                 class="img-fluid blur-up lazyload bg-img" alt="">
                                         </a>
                                         <div class="top-icon">
@@ -556,17 +497,13 @@
                                             simply dummy text of the ..............
                                         </p>
                                         <div class="bottom-section">
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span>26412 review</span>
+
+                                            <div class="price">
+                                                <del>{{__('messages.currency')}}1300</del>
+                                                <span>{{__('messages.currency')}}1245</span>
+
                                             </div>
                                             <div class="price">
-                                                <del>$1300</del>
-                                                <span>$1245</span>
                                                 <div class="facility-detail">
                                                     <span>swimming</span>
                                                     <span>parking</span>
@@ -580,7 +517,7 @@
                                 <div class="special-box p-0">
                                     <div class="special-img">
                                         <a href="#">
-                                            <img src="{{ asset('end-user/assets/images/hotel/room/15.jpg') }}"
+                                            <img src="{{ asset('front/assets/images/hotel/room/15.jpg') }}"
                                                 class="img-fluid blur-up lazyload bg-img" alt="">
                                         </a>
                                         <div class="top-icon">
@@ -600,17 +537,13 @@
                                             simply dummy text of the ..............
                                         </p>
                                         <div class="bottom-section">
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span>26412 review</span>
+
+                                            <div class="price">
+                                                <del>{{__('messages.currency')}}1300</del>
+                                                <span>{{__('messages.currency')}}1245</span>
+
                                             </div>
                                             <div class="price">
-                                                <del>$1300</del>
-                                                <span>$1245</span>
                                                 <div class="facility-detail">
                                                     <span>swimming</span>
                                                     <span>parking</span>
@@ -628,7 +561,7 @@
                         <div class="single-sidebar">
                             <div class="selection-section">
                                 <div class="overlay-map">
-                                    <img src="{{ asset('end-user/assets/images/map-image.svg') }}" class="img-fluid blur-up lazyload" alt="">
+                                    <img src="{{ asset('front/assets/images/map-image.svg') }}" class="img-fluid blur-up lazyload" alt="">
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147718689!2d-74.11976358820196!3d40.69740344169578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1568001991098!5m2!1sen!2sin"
                                         style="border:0;" allowfullscreen=""></iframe>
@@ -642,8 +575,8 @@
                                     </div>
                                     <div class="right-part">
                                         <span>per night</span>
-                                        <p class="mt-0"><del>$251</del></p>
-                                        <h6>$230</h6>
+                                        <p class="mt-0"><del>{{__('messages.currency')}}251</del></p>
+                                        <h6>{{__('messages.currency')}}230</h6>
                                     </div>
                                 </div>
                                 <div class="book-btn-section">

@@ -67,8 +67,8 @@
                                     <!--begin::Toolbar-->
                                     <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                         <!--begin::Add user-->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
-                                            Add Blog<i class="ki-duotone ki-plus fs-2"></i></button>
+                                        <a type="button" class="btn btn-primary" href="{{route('blogs.create')}}">
+                                            Add Blog<i class="ki-duotone ki-plus fs-2"></i></a>
                                         <!--end::Add user-->
                                     </div>
                                     <!--end::Toolbar-->
@@ -204,9 +204,9 @@
                                             </div>
                                         </th>
                                         <th class="min-w-50px" style="text-align: center">Title</th>
-                                        <th class="" style="text-align: center">Sub Title</th>
+{{--                                        <th class="" style="text-align: center">Sub Title</th>--}}
 {{--                                        <th class="min-w-50px" style="text-align: center">Description</th>--}}
-                                        <th class="min-w-50px" style="text-align: center">Image</th>
+{{--                                        <th class="min-w-50px" style="text-align: center">Image</th>--}}
                                         <th class="min-w-50px" style="text-align: center">Date</th>
                                         <th class=" min-w-100px" style="text-align: center">Operation</th>
                                     </tr>
@@ -224,13 +224,13 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->title}}</span>
                                             </td>
-                                            <td class="" style="text-align: left">
-                                                <span>{{$item->sub_title}}</span>
-                                            </td>
+{{--                                            <td class="" style="text-align: left">--}}
+{{--                                                <span>{{$item->sub_title}}</span>--}}
+{{--                                            </td>--}}
 {{--                                            <td class="min-w-50px" style="text-align: center">--}}
 {{--                                                <span>{!! $item->description !!}</span>--}}
 {{--                                            </td>--}}
-                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/blogs/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/blogs/'.$item->image)}}" alt="image" style="width: 100px"></a></td>
+{{--                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/blogs/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/blogs/'.$item->image)}}" alt="image" style="width: 100px"></a></td>--}}
 
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{date('d-m-Y', strtotime($item->created_at))}}</span>
@@ -254,6 +254,10 @@
                                                     data-kt-menu="true">
                                                     <!--begin::Menu item-->
 
+                                                    <div class="menu-item px-3">
+                                                        <a href="{{route('blogs.show', $item->id)}}"
+                                                           class="menu-link px-3"> Show</a>
+                                                    </div>
                                                     <div class="menu-item px-3">
                                                         <a href="{{route('blogs.edit', $item->id)}}"
                                                            class="menu-link px-3"> Edit</a>

@@ -77,10 +77,10 @@
                             <!--begin::Input group-->
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
-                                <label class="required fw-semibold fs-6 mb-2">Name</label>
+                                <label class="required fw-semibold fs-6 mb-2">Title</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Banner Title" />
+                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Blog Title" />
                                 <!--end::Input-->
                             </div>
                             <div class="fv-row mb-7">

@@ -12,8 +12,8 @@ class City extends Model
     use HasTranslations;
 
     protected $table = "cities";
-    protected $fillable = ['title', 'image'];
+    protected $fillable = ['title', 'image', 'summary'];
 
-    public $translatable = ['title'];
+    public $translatable = ['title', 'summary'];
 
 }

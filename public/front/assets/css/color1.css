@@ -9197,7 +9197,7 @@ section .black-layer:before {
     margin-bottom: 4px;
 }
 
-.process-steps .step-bg .popular-section .step-box .popular-box .special-content h5 span {
+.process-steps .step-bg .popular-section .step-box .popular-box .special-content h5 span, .process-steps .step-bg .popular-section .step-box .popular-box .special-content .bottom-section span {
     color: #9a9a9a;
     font-size: 14px;
     margin-left: auto;
@@ -10508,7 +10508,7 @@ section .black-layer:before {
 .breadcrumb-section {
     background-position: center;
     background-size: cover;
-    height: 500px;
+    height: 250px;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -10524,8 +10524,8 @@ section .black-layer:before {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    height: 500px;
-    padding-top: 93px;
+    height: 250px;
+    padding-top: 30px;
     text-align: center;
 }
 

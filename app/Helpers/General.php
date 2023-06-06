@@ -11,7 +11,7 @@ class General {
         return $filename;
     }
     public static function getCurrency() {
-        return \App\Models\Currency::first()->currency;
+        return \App\Models\Currency::first()->currency . ' ';
     }
 }
 ?>

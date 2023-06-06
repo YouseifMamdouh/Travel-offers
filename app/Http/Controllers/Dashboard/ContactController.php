@@ -18,7 +18,11 @@ class ContactController extends Controller
         return view('dashboard.contacts.index', compact('data'));
     }
 
-
+    public function show($id)
+    {
+        $data = Contact::find($id);
+        return view('dashboard.contacts.show', compact('data'));
+    }
     public function edit($id)
     {
         $data = Contact::find($id);
@@ -49,7 +53,7 @@ class ContactController extends Controller
 
             $data->update($request->except('id', '_token', 'image'));
             DB::commit();
-            return redirect()->route('contacts.index')->with(['success' => __('messages.success_updated')]);
+            return redirect()->route('contacts.show', $id)->with(['success' => __('messages.success_updated')]);
 
 //        } catch (\Exception $ex) {
 //            DB::rollback();

@@ -8,9 +8,9 @@
         <!--begin::Logo image-->
         <a href="{{route('dashboard')}}" style="    position: absolute;
     {{Config::get('app.locale') == 'en' ? 'right:110px' : 'left:110px'}}">
-            <img alt="Logo" src="{{asset('admin/assets/logo/logo.png')}}" style="    height: 50px !important;"
+            <img alt="Logo" src="{{asset('front/assets/images/logo-ral.png')}}" style="    height: 50px !important;"
                  class="h-25px app-sidebar-logo-default"/>
-            <img alt="Logo" src="{{asset('admin/assets/logo/logo.png')}}" style="    height: 40px !important;"
+            <img alt="Logo" src="{{asset('front/assets/images/logo-ral.png')}}" style="    height: 40px !important;"
                  class="h-20px app-sidebar-logo-minimize"/>
         </a>
         <!--end::Logo image-->
@@ -49,18 +49,34 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                 <!--begin:Menu item-->
                 <!--end:Menu item-->
 
+                <div class="menu-item menu-accordion">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{Route::currentRouteName() === 'dashboard' ? 'active' : ''}}"
+                       href="{{route('dashboard')}}">
+                        <span class="menu-icon" style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
 
+                        <i class="ki-duotone ki-home" style="">
+                        </i>
+
+                        </span>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'cities.index' || Route::currentRouteName() === 'cities.add' || Route::currentRouteName() === 'cities.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'admins.index' || Route::currentRouteName() === 'admins.add' || Route::currentRouteName() === 'admins.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
                                                   style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
-												<i class="ki-duotone ki-geolocation-home fs-1"><span
-                                                        class="path1"></span><span class="path2"></span></i>
+												<i class="ki-duotone ki-user-tick">
+                                                 <i class="path1"></i>
+                                                 <i class="path2"></i>
+                                                 <i class="path3"></i>
+                                                </i>
 											</span>
-											<span class="menu-title">Cities</span>
+											<span class="menu-title">Admins</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
@@ -69,12 +85,23 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'cities.index' ? 'active' : ''}}"
-                               href="{{route('cities.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'admins.create' ? 'active' : ''}}"
+                               href="{{route('admins.create')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'admins.index' ? 'active' : ''}}"
+                               href="{{route('admins.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -86,9 +113,11 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                 </div>
                 <!--end:Menu item-->
 
+                <!--end:Menu item-->
+
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'aboutus.index' || Route::currentRouteName() === 'aboutus.edit' || Route::currentRouteName() === 'aboutus_details.index' || Route::currentRouteName() === 'aboutus_details.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'aboutus.index' || Route::currentRouteName() === 'aboutus.edit' || Route::currentRouteName() === 'aboutus_details.show' || Route::currentRouteName() === 'aboutus_details.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -121,8 +150,8 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         </div>
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'aboutus_details.index' ? 'active' : ''}}"
-                               href="{{route('aboutus_details.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'aboutus_details.show' ? 'active' : ''}}"
+                               href="{{route('aboutus_details.show', 1)}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -140,7 +169,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'banners.index'  || Route::currentRouteName() === 'banners.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'banners.index'  || Route::currentRouteName() === 'banners.edit' || Route::currentRouteName() === 'banners.create' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -160,12 +189,23 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'banners.create' ? 'active' : ''}}"
+                               href="{{route('banners.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link {{Route::currentRouteName() === 'banners.index' ? 'active' : ''}}"
                                href="{{route('banners.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -179,7 +219,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'contacts.index' || Route::currentRouteName() === 'contacts.edit' || Route::currentRouteName() === 'contacts.show' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'contacts.show' || Route::currentRouteName() === 'contacts.edit' || Route::currentRouteName() === 'contacts.show' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -201,12 +241,12 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'contacts.index' ? 'active' : ''}}"
-                               href="{{route('contacts.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'contacts.show' ? 'active' : ''}}"
+                               href="{{route('contacts.show', 1)}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">Show </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -221,7 +261,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
                 <!--begin:Menu item Locales -->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'hotels.index' || Route::currentRouteName() === 'hotels.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'hotels.index' || Route::currentRouteName() === 'hotels.edit' || Route::currentRouteName() === 'hotels.show_rooms' || Route::currentRouteName() === 'hotels.create' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -241,12 +281,24 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'hotels.create' ? 'active' : ''}}"
+                               href="{{route('hotels.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link {{Route::currentRouteName() === 'hotels.index' ? 'active' : ''}}"
                                href="{{route('hotels.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -259,46 +311,12 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
 
                 <!--begin:Menu item  -->
-                <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'features.index' || Route::currentRouteName() === 'features.edit' ? 'show' : '' }}">
-                    <!--begin:Menu link-->
-                    <span class="menu-link">
-											<span class="menu-icon"
-                                                  style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
-												<i class="ki-duotone ki-abstract-29">
- <i class="path1"></i>
- <i class="path2"></i>
-</i>
-											</span>
-											<span class="menu-title">Features</span>
-											<span class="menu-arrow"></span>
-										</span>
-                    <!--end:Menu link-->
-                    <!--begin:Menu sub-->
-                    <div class="menu-sub menu-sub-accordion">
 
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'features.index' ? 'active' : ''}}"
-                               href="{{route('features.index')}}">
-													<span class="menu-bullet">
-														<span class="bullet bullet-dot"></span>
-													</span>
-                                <span class="menu-title">List </span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-
-                    </div>
-                    <!--end:Menu sub-->
-                </div>
                 <!--end:Menu item-->
 
                 <!--begin:Menu item  -->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'rooms.index' || Route::currentRouteName() === 'rooms.edit'  || Route::currentRouteName() === 'rooms.show'  ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'rooms.index' || Route::currentRouteName() === 'rooms.edit' || Route::currentRouteName() === 'rooms.create'  || Route::currentRouteName() === 'rooms.show'  ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -319,12 +337,24 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'rooms.create' ? 'active' : ''}}"
+                               href="{{route('rooms.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link {{Route::currentRouteName() === 'rooms.index' ? 'active' : ''}}"
                                href="{{route('rooms.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -336,7 +366,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'blogs.index'  || Route::currentRouteName() === 'blogs.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'blogs.index'  || Route::currentRouteName() === 'blogs.edit' || Route::currentRouteName() === 'blogs.create' || Route::currentRouteName() === 'blogs.show' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -356,12 +386,24 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'blogs.create' ? 'active' : ''}}"
+                               href="{{route('blogs.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link {{Route::currentRouteName() === 'blogs.index' ? 'active' : ''}}"
                                href="{{route('blogs.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -375,7 +417,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
 
 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'services.index'  || Route::currentRouteName() === 'services.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'services.index'  || Route::currentRouteName() === 'services.edit' || Route::currentRouteName() === 'services.create' || Route::currentRouteName() === 'services.show' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -395,12 +437,23 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'services.create' ? 'active' : ''}}"
+                               href="{{route('services.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link {{Route::currentRouteName() === 'services.index' ? 'active' : ''}}"
                                href="{{route('services.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -413,7 +466,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                 <!--end:Menu item-->
 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'programmes.index'  || Route::currentRouteName() === 'programmes.edit' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'programmes.index'  || Route::currentRouteName() === 'programmes.edit' || Route::currentRouteName() === 'programmes.create' || Route::currentRouteName() === 'programmes.show' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -433,12 +486,23 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'programmes.create' ? 'active' : ''}}"
+                               href="{{route('programmes.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link {{Route::currentRouteName() === 'programmes.index' ? 'active' : ''}}"
                                href="{{route('programmes.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-                                <span class="menu-title">List </span>
+                                <span class="menu-title">View </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -449,6 +513,101 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                     <!--end:Menu sub-->
                 </div>
                 <!--end:Menu item-->
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'cities.index' || Route::currentRouteName() === 'cities.create' || Route::currentRouteName() === 'cities.show' || Route::currentRouteName() === 'cities.edit' ? 'show' : '' }}">
+                    <!--begin:Menu link-->
+                    <span class="menu-link">
+											<span class="menu-icon"
+                                                  style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
+												<i class="ki-duotone ki-geolocation-home fs-1"><span
+                                                        class="path1"></span><span class="path2"></span></i>
+											</span>
+											<span class="menu-title">Cities</span>
+											<span class="menu-arrow"></span>
+										</span>
+                    <!--end:Menu link-->
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'cities.create' ? 'active' : ''}}"
+                               href="{{route('cities.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'cities.index' ? 'active' : ''}}"
+                               href="{{route('cities.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">View </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end:Menu sub-->
+                </div>
+
+
+
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'features.index' || Route::currentRouteName() === 'features.edit'  || Route::currentRouteName() === 'features.create' ? 'show' : '' }}">
+                    <!--begin:Menu link-->
+                    <span class="menu-link">
+											<span class="menu-icon"
+                                                  style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
+												<i class="ki-duotone ki-abstract-29">
+ <i class="path1"></i>
+ <i class="path2"></i>
+</i>
+											</span>
+											<span class="menu-title">Features</span>
+											<span class="menu-arrow"></span>
+										</span>
+                    <!--end:Menu link-->
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-accordion">
+
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'features.create' ? 'active' : ''}}"
+                               href="{{route('features.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'features.index' ? 'active' : ''}}"
+                               href="{{route('features.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">View </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+
+                    </div>
+                    <!--end:Menu sub-->
+                </div>
+
 
 
             </div>

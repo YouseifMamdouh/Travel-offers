@@ -85,7 +85,7 @@
                                 <label class="required fw-semibold fs-6 mb-2" for="title">Description</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <textarea class="form-control editor "
+                                <textarea class="form-control "
                                           rows="10" id="ck_description"
                                           name="description">{{$data->description}}</textarea>                                                                <!--end::Input-->
                             </div>

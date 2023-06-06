@@ -18,6 +18,11 @@ class FeaturesController extends Controller
         return view('dashboard.features.index', compact('data'));
     }
 
+
+    public function create()
+    {
+        return view('dashboard.features.create');
+    }
     public function store(FeatureRequest $request)
     {
 //        return  $request;

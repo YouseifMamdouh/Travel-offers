@@ -23,6 +23,12 @@ class HotelsController extends Controller
         return view('dashboard.hotels.index', compact('data', 'cities'));
     }
 
+
+    public function create()
+    {
+        return view('dashboard.hotels.create');
+    }
+
     public function store(HotelRequest $request)
     {
 //        return  $request;
@@ -54,6 +60,18 @@ class HotelsController extends Controller
                 'address', 'rooms_num', 'description')->find($id);
         if ($data) {
             return view('dashboard.hotels.view', compact('data'));
+
+        } else {
+            return redirect()->route('hotels.index')->with(['error' => __('messages.error_general')]);
+        }
+    }
+    public function showRooms($id)
+    {
+        $hotel = Hotel::find($id);
+        $data = Hotel::with( 'rooms')
+            ->select('id')->find($id)->rooms;
+        if ($data) {
+            return view('dashboard.rooms.index', compact('data', 'id', 'hotel'));
 
         } else {
             return redirect()->route('hotels.index')->with(['error' => __('messages.error_general')]);

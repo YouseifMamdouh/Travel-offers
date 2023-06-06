@@ -5,13 +5,13 @@
 
  <!-- breadcrumb start -->
     <section class="breadcrumb-section pt-0">
-        <img src="{{ asset('end-user/assets/images/inner-pages/bg-bread.jpg') }}" class="bg-img img-fluid blur-up lazyload" alt="">
+        <img src="{{ asset('front/assets/images/inner-pages/bg-bread.jpg') }}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content">
             <div>
                 <h2>review</h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">Home</a></li>
                         <li class="breadcrumb-item">hotels</li>
                         <li class="breadcrumb-item active">review</li>
                     </ol>

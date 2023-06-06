@@ -80,8 +80,17 @@
                                 <label class="required fw-semibold fs-6 mb-2">Name</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="اسم اللغة" />
+                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="City Name" />
                                 <!--end::Input-->
+                            </div>
+                            <!-- begin::Input group-->
+                            <div class="fv-row mb-7">
+                                <!-- begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2">Summary</label>
+                                <!-- end::Label-->
+                                <!-- begin::Input-->
+                                <textarea name="summary" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Summary">{{$data->summary}}</textarea>
+                                <!-- end::Input-->
                             </div>
                             <!--end::Input group-->
                             <!--begin::Input group-->

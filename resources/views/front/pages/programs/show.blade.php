@@ -6,7 +6,7 @@
     <section class="home_section p-0">
         <div>
             <div class="home home-60">
-                <img src="{{ asset('end-user') }}/assets/images/tour/spain4.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
+                <img src="{{ asset('front') }}/assets/images/tour/spain4.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
@@ -106,66 +106,66 @@
                                         <div class="row  zoom-gallery">
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="overlay">
-                                                    <a href="{{ asset('end-user') }}/assets/images/tour/tour/7.jpg">
+                                                    <a href="{{ asset('front') }}/assets/images/tour/tour/7.jpg" target="_blank">
                                                         <div class="overlay-background">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </div>
-                                                        <img src="{{ asset('end-user') }}/assets/images/tour/tour/7.jpg" alt=""
+                                                        <img src="{{ asset('front') }}/assets/images/tour/tour/7.jpg" alt=""
                                                             class="img-fluid blur-up lazyload bg-img">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="overlay">
-                                                    <a href="{{ asset('end-user') }}/assets/images/tour/tour/8.jpg">
+                                                    <a href="{{ asset('front') }}/assets/images/tour/tour/8.jpg" target="_blank">
                                                         <div class="overlay-background">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </div>
-                                                        <img src="{{ asset('end-user') }}/assets/images/tour/tour/8.jpg" alt=""
+                                                        <img src="{{ asset('front') }}/assets/images/tour/tour/8.jpg" alt=""
                                                             class="img-fluid blur-up lazyload bg-img">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="overlay">
-                                                    <a href="{{ asset('end-user') }}/assets/images/tour/tour/9.jpg">
+                                                    <a href="{{ asset('front') }}/assets/images/tour/tour/9.jpg" target="_blank">
                                                         <div class="overlay-background">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </div>
-                                                        <img src="{{ asset('end-user') }}/assets/images/tour/tour/9.jpg" alt=""
+                                                        <img src="{{ asset('front') }}/assets/images/tour/tour/9.jpg" alt=""
                                                             class="img-fluid blur-up lazyload bg-img">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="overlay">
-                                                    <a href="{{ asset('end-user') }}/assets/images/tour/tour/10.jpg">
+                                                    <a href="{{ asset('front') }}/assets/images/tour/tour/10.jpg" target="_blank">
                                                         <div class="overlay-background">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </div>
-                                                        <img src="{{ asset('end-user') }}/assets/images/tour/tour/10.jpg" alt=""
+                                                        <img src="{{ asset('front') }}/assets/images/tour/tour/10.jpg" alt=""
                                                             class="img-fluid blur-up lazyload bg-img">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="overlay">
-                                                    <a href="{{ asset('end-user') }}/assets/images/tour/tour/11.jpg">
+                                                    <a href="{{ asset('front') }}/assets/images/tour/tour/11.jpg" target="_blank">
                                                         <div class="overlay-background">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </div>
-                                                        <img src="{{ asset('end-user') }}/assets/images/tour/tour/11.jpg" alt=""
+                                                        <img src="{{ asset('front') }}/assets/images/tour/tour/11.jpg" alt=""
                                                             class="img-fluid blur-up lazyload bg-img">
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="overlay">
-                                                    <a href="{{ asset('end-user') }}/assets/images/tour/tour/12.jpg">
+                                                    <a href="{{ asset('front') }}/assets/images/tour/tour/12.jpg" target="_blank">
                                                         <div class="overlay-background">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </div>
-                                                        <img src="{{ asset('end-user') }}/assets/images/tour/tour/12.jpg" alt=""
+                                                        <img src="{{ asset('front') }}/assets/images/tour/tour/12.jpg" alt=""
                                                             class="img-fluid blur-up lazyload bg-img">
                                                     </a>
                                                 </div>
@@ -175,57 +175,57 @@
                                 </div>
                             </div>
 
-                            <div class="desc-box">
-                                <h4 class="content-title">review</h4>
-                                <div class="menu-part review" id="review">
-                                    <div class="review-box">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>Wonderful Experience...!!</span>
-                                        </div>
-                                        <h6>by xyz, jun 18, 2019</h6>
-                                        <p>Our family holiday to Spain was awesome .pocket friendly rates that make
-                                            planning a holiday a delight. I got a good hotels, flight discount for my
-                                            round trip flight for the same trip while booking from sites.Thank you
-                                            moment for giving us a wonderful experience.</p>
-                                    </div>
-                                    <div class="review-box">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>Excellent Arrangements</span>
-                                        </div>
-                                        <h6>by xyz, jun 18, 2019</h6>
-                                        <p>Rica holidays planned our family trip to Spain, it was so perfect. Everything
-                                            was flawless, in-case if any confusions there was always someone to assist
-                                            us at any point. Had a wonderful experience and thanks to these guys for
-                                            making it happen. I would really recommend them for further vacation
-                                            planning.</p>
-                                    </div>
-                                    <div class="review-box">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span>Best getaway destination with family</span>
-                                        </div>
-                                        <h6>by xyz, jun 18, 2019</h6>
-                                        <p>Extremely happy with my trip to Spain. All the arrangements were spot on and
-                                            cabs were punctual. Never had any hiccups and we enjoyed the trip immensely.
-                                            Thanks you for organizing such a wonderful trip and taking care of all my
-                                            special request with patience and skill.</p>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="desc-box">--}}
+{{--                                <h4 class="content-title">review</h4>--}}
+{{--                                <div class="menu-part review" id="review">--}}
+{{--                                    <div class="review-box">--}}
+{{--                                        <div class="rating">--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <span>Wonderful Experience...!!</span>--}}
+{{--                                        </div>--}}
+{{--                                        <h6>by xyz, jun 18, 2019</h6>--}}
+{{--                                        <p>Our family holiday to Spain was awesome .pocket friendly rates that make--}}
+{{--                                            planning a holiday a delight. I got a good hotels, flight discount for my--}}
+{{--                                            round trip flight for the same trip while booking from sites.Thank you--}}
+{{--                                            moment for giving us a wonderful experience.</p>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="review-box">--}}
+{{--                                        <div class="rating">--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="far fa-star"></i>--}}
+{{--                                            <span>Excellent Arrangements</span>--}}
+{{--                                        </div>--}}
+{{--                                        <h6>by xyz, jun 18, 2019</h6>--}}
+{{--                                        <p>Rica holidays planned our family trip to Spain, it was so perfect. Everything--}}
+{{--                                            was flawless, in-case if any confusions there was always someone to assist--}}
+{{--                                            us at any point. Had a wonderful experience and thanks to these guys for--}}
+{{--                                            making it happen. I would really recommend them for further vacation--}}
+{{--                                            planning.</p>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="review-box">--}}
+{{--                                        <div class="rating">--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="fas fa-star"></i>--}}
+{{--                                            <i class="far fa-star"></i>--}}
+{{--                                            <span>Best getaway destination with family</span>--}}
+{{--                                        </div>--}}
+{{--                                        <h6>by xyz, jun 18, 2019</h6>--}}
+{{--                                        <p>Extremely happy with my trip to Spain. All the arrangements were spot on and--}}
+{{--                                            cabs were punctual. Never had any hiccups and we enjoyed the trip immensely.--}}
+{{--                                            Thanks you for organizing such a wonderful trip and taking care of all my--}}
+{{--                                            special request with patience and skill.</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
                         </div>
                     </div>

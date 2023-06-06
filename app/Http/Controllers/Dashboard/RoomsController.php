@@ -26,6 +26,13 @@ class RoomsController extends Controller
         return view('dashboard.rooms.index', compact('data', 'hotels', 'features'));
     }
 
+    public function create()
+    {
+        $hotels = Hotel::get();
+        $features = Feature::where('type_of', 'hotels')->get();
+        return view('dashboard.rooms.create', compact('hotels', 'features'));
+    }
+
     public function store(RoomRequest $request)
     {
 //        return  $request;
@@ -152,7 +159,7 @@ class RoomsController extends Controller
             ]);
             $data->features()->sync($request->features);
             DB::commit();
-            return redirect()->route('rooms.index')->with(['success' => __('messages.success_updated')]);
+            return redirect()->back()->with(['success' => __('messages.success_updated')]);
 
         } catch (\Exception $ex) {
             DB::rollback();

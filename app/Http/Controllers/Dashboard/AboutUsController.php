@@ -17,6 +17,11 @@ class AboutUsController extends Controller
         return view('dashboard.aboutus.index', compact('data'));
     }
 
+    public function show($id)
+    {
+        $data = AboutUs::find($id);
+        return view('dashboard.aboutus.show', compact('data'));
+    }
     public function store(AboutUsRequest $request)
     {
 //        return  $request;
