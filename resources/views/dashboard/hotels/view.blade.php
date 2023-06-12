@@ -105,6 +105,16 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Country :
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">
+                                        {{$data->country->title}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         City :
                                     </div>
                                     <div class="col-lg-9 col-md-9 col-sm-9 col-6  text-left details_item bold">

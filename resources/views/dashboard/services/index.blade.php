@@ -286,21 +286,9 @@
 @section('script')
     <script src="{{asset('admin/assets/js/custom/apps/user-management/users/list/add.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function () {
-            ClassicEditor
-                .create( document.querySelector( '.editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
 
-            $('#type_of').select2({
-                dropdownParent: $("#kt_modal_add_user")
-            });
 
 
             let delete_li = $('.delete_btn_li');

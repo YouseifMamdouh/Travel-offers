@@ -514,6 +514,50 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                 </div>
                 <!--end:Menu item-->
                 <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'countries.index' || Route::currentRouteName() === 'countries.create' || Route::currentRouteName() === 'countries.show' || Route::currentRouteName() === 'countries.edit' ? 'show' : '' }}">
+                    <!--begin:Menu link-->
+                    <span class="menu-link">
+											<span class="menu-icon"
+                                                  style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
+												<i class="ki-duotone ki-geolocation-home fs-1"><span
+                                                        class="path1"></span><span class="path2"></span></i>
+											</span>
+											<span class="menu-title">Countries</span>
+											<span class="menu-arrow"></span>
+										</span>
+                    <!--end:Menu link-->
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'countries.create' ? 'active' : ''}}"
+                               href="{{route('countries.create')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Add </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'countries.index' ? 'active' : ''}}"
+                               href="{{route('countries.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">View </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end:Menu sub-->
+                </div>
+                 <div data-kt-menu-trigger="click"
                      class="menu-item menu-accordion {{ Route::currentRouteName() === 'cities.index' || Route::currentRouteName() === 'cities.create' || Route::currentRouteName() === 'cities.show' || Route::currentRouteName() === 'cities.edit' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">

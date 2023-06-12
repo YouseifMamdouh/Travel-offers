@@ -17,6 +17,7 @@ class CreateCitiesTable extends Migration
             $table->id();
             $table->json('title');
             $table->string('image');
+            $table->json('summary')->nullable();
             $table->timestamps();
         });
     }

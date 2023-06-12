@@ -12,8 +12,13 @@ class City extends Model
     use HasTranslations;
 
     protected $table = "cities";
-    protected $fillable = ['title', 'image', 'summary'];
+    protected $fillable = ['title', 'image', 'summary', 'country_id'];
 
     public $translatable = ['title', 'summary'];
+
+    public function country() {
+        return $this->belongsTo(Country::class, 'country_id', 'id');
+    }
+
 
 }

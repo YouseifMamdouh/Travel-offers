@@ -31,6 +31,7 @@ class ProgrammeRequest extends FormRequest
             'description' => 'required',
             'cover' => 'required_without:id|mimes:jpg,png,jpeg,svg',
             'city_id' => 'required|exists:cities,id',
+            'country_id' => 'required|exists:countries,id',
             'features' => 'required',
 
         ];
@@ -47,7 +48,9 @@ class ProgrammeRequest extends FormRequest
             'cover.required' => 'The Cover is Required',
             'cover.mimes' => 'The Cover Extension must be JPG, PNG, JPEG, SVG',
             'city_id.required' => 'The City Field is Required',
-            'city_id.exists' => 'The City must Exists in City List',
+            'city_id.exists' => 'The City must Exists in Cities List',
+            'country_id.required' => 'The Country Field is Required',
+            'country_id.exists' => 'The Country must Exists in Countries List',
 
         ];
     }

@@ -168,15 +168,26 @@
                             </div>
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="country_id">Country</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select name="country_id" id="country_id" style="width: 100%">
+                                    @if(isset($countries) && $countries->count() > 0)
+                                    <option value="">Choose City</option>
+                                    @foreach($countries as $country)
+                                            <option value="{{$country->id}}" {{old("country_id") == $country->id ? 'selected' : ''}}>{{$country->title}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                                <!--end::Input-->
+                            </div>
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
                                 <label class="required fw-semibold fs-6 mb-2" for="city_id">City</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <select name="city_id" id="city_id" style="width: 100%">
-                                    @if(isset($cities) && $cities->count() > 0)
-                                        @foreach($cities as $city)
-                                            <option value="{{$city->id}}" {{old("city_id") == $city->id ? 'selected' : ''}}>{{$city->title}}</option>
-                                        @endforeach
-                                    @endif
+                                <select name="city_id" id="city_id" style="width: 100%" disabled>
+                                    <option value="">Choose City</option>
                                 </select>
                                 <!--end::Input-->
                             </div>
@@ -225,6 +236,8 @@
     ></script>
     <script>
         $(document).ready(function () {
+            let lang = $('#lang').val();
+
             $('#features').selectize();
 
             ClassicEditor
@@ -236,7 +249,53 @@
                     console.error( error );
                 } );
 
-            $('#city_id').select2();
+
+
+
+            let city_id = $("#city_id");
+            city_id.select2();
+
+            let country_id = $("#country_id");
+
+            country_id.select2();
+            country_id.on('change', function () {
+                let id = $(this).val();
+                city_id.find('option').remove();
+                if(id !== '') {
+                    $.ajax({
+                        url: "/admin/get-cities-from-country/" + id,
+                        data: {
+                            _token: "{{csrf_token()}}",
+                            _method: "POST",
+                            id: id,
+                        },
+                        type: "POST",
+                        success: function (response) {
+                            if (typeof (response) != 'object') {
+                                response = $.parseJSON(response)
+                            }
+                            // console.log(response);
+                            let data = response.data;
+                            if (response.status === 1) {
+
+                                let html_opts = '';
+                                $.each(data, function (index, item) {
+                                        console.log(item.title[lang]);
+                                    html_opts += "<option value='" + item.id + "'>" + item.title[lang] + "</option>";
+                                });
+                                city_id.append(html_opts);
+                                city_id.removeAttr('disabled');
+                                city_id.select2();
+                            } else {
+                                city_id.attr('disabled', true);
+                            }
+                        }
+
+                    });
+                } else {
+
+                }
+            });
 
             ClassicEditor
                 .create( document.querySelector( '#editor' ) )

@@ -11,16 +11,20 @@ use App\Models\Blog;
 use App\Models\City;
 use App\Models\Contact;
 use App\Models\ContactUsMessage;
+use App\Models\Country;
 use App\Models\Hotel;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
     public function index(){
         $banners = Banner::get();
-        $blogs = Blog::get();
+        $blogs = Blog::orderBy('id', 'desc')->get();
         $cities = City::get();
-        $hotels = Hotel::get();
-        return view('front.index', compact('banners', 'blogs', 'cities', 'hotels'));
+        $countries = Country::get();
+        $hotels = Hotel::limit(4)->get();
+        $latest_services = Service::orderBy('id', 'desc')->limit(5)->get();
+        return view('front.index', compact('banners', 'blogs', 'cities', 'hotels', 'countries', 'latest_services'));
     }
 
     public function contact(){

@@ -288,391 +288,168 @@
 {{--                    </a>--}}
                     <div class="product-wrapper-grid special-section grid-box">
                         <div class="row  content grid">
-                            <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/gallery/1.jpg')}} "
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
-
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
+                            @if(isset($hotels) && $hotels->count() > 0)
+                                @foreach($hotels as $item)
+                                    <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">
+                                        <div class="special-box">
+                                            <div class="special-img">
+                                                <a href="{{ route('user.hotels.show',$item->id) }}">
+                                                    @if(count($item->hotelImages) > 0)
+                                                        <img src="{{asset('uploads/hotels/'. $item->hotelImages->first()->image)}} "
+                                                             class="img-fluid blur-up lazyload bg-img" alt="">
+                                                    @endif
+                                                </a>
+                                                <div class="top-icon">
+                                                    <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
+                                                       data-original-title="Add to Wishlist">
+                                                        <i class="far fa-heart"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="special-content">
+                                                <a href="{{ route('user.hotels.show', $item->id) }}">
+                                                    <h5>{{$item->title}}
+                                                    </h5>
+                                                </a>
+                                                <h5 class="mt-1">
+                                                    <span class="ms-0"><i class="fas fa-map-marker-alt"></i> {{$item->country->title}}, {{$item->city->title}}</span>
+                                                </h5>
+                                                <p>
+                                                    {{$item->address}}
+                                                </p>
 
                                             </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-
+{{--                                            <div class="label-offer">hot deal</div>--}}
                                         </div>
                                     </div>
-                                    <div class="label-offer">hot deal</div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 latest grid-item wow fadeInUp" data-class="latest">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/video-image.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
+                                @endforeach
+                            @endif
+{{--                                <div class="col-xl-4 col-sm-6 latest grid-item wow fadeInUp" data-class="latest">--}}
+{{--                                    <div class="special-box">--}}
+{{--                                        <div class="special-img">--}}
+{{--                                            <a href="{{ route('user.hotels.show',1) }}">--}}
+{{--                                                <img src="{{asset('front/assets/images/hotel/gallery/4.jpg')}}"--}}
+{{--                                                     class="img-fluid blur-up lazyload bg-img" alt="">--}}
+{{--                                            </a>--}}
+{{--                                            <div class="top-icon">--}}
+{{--                                                <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""--}}
+{{--                                                   data-original-title="Add to Wishlist">--}}
+{{--                                                    <i class="far fa-heart"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="special-content">--}}
+{{--                                            <a href="{{ route('user.hotels.show',1) }}">--}}
+{{--                                                <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>--}}
+{{--                                                </h5>--}}
+{{--                                            </a>--}}
+{{--                                            <p>--}}
+{{--                                                Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is--}}
+{{--                                                simply dummy text of the ..............--}}
+{{--                                            </p>--}}
+{{--                                            <div class="bottom-section">--}}
 
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
+{{--                                                <div class="price">--}}
+{{--                                                    <del>{{__('messages.currency')}}1300</del>--}}
+{{--                                                    <span>{{__('messages.currency')}}1245</span>--}}
 
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 popular  grid-item wow fadeInUp" data-class="popular">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/room/3.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
+{{--                                                </div>--}}
+{{--                                                <div class="price">--}}
+{{--                                                    <div class="facility-detail">--}}
+{{--                                                        <span>swimming</span>--}}
+{{--                                                        <span>parking</span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="label-offer">Recommended</div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-sm-6 trend grid-item wow fadeInUp" data-class="trend">--}}
+{{--                                    <div class="special-box">--}}
+{{--                                        <div class="special-img">--}}
+{{--                                            <a href="{{ route('user.hotels.show',1) }}">--}}
+{{--                                                <img src="{{asset('front/assets/images/hotel/room/2.jpg')}}"--}}
+{{--                                                     class="img-fluid blur-up lazyload bg-img" alt="">--}}
+{{--                                            </a>--}}
+{{--                                            <div class="top-icon">--}}
+{{--                                                <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""--}}
+{{--                                                   data-original-title="Add to Wishlist">--}}
+{{--                                                    <i class="far fa-heart"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="special-content">--}}
+{{--                                            <a href="{{ route('user.hotels.show',1) }}">--}}
+{{--                                                <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>--}}
+{{--                                                </h5>--}}
+{{--                                            </a>--}}
+{{--                                            <p>--}}
+{{--                                                Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is--}}
+{{--                                                simply dummy text of the ..............--}}
+{{--                                            </p>--}}
+{{--                                            <div class="bottom-section">--}}
 
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
+{{--                                                <div class="price">--}}
+{{--                                                    <del>{{__('messages.currency')}}1300</del>--}}
+{{--                                                    <span>{{__('messages.currency')}}1245</span>--}}
 
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 trend  grid-item wow fadeInUp" data-class="trend">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/gallery/3.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
+{{--                                                </div>--}}
+{{--                                                <div class="price">--}}
+{{--                                                    <div class="facility-detail">--}}
+{{--                                                        <span>swimming</span>--}}
+{{--                                                        <span>parking</span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">--}}
+{{--                                    <div class="special-box">--}}
+{{--                                        <div class="special-img">--}}
+{{--                                            <a href="{{ route('user.hotels.show',1) }}">--}}
+{{--                                                <img src="{{asset('front/assets/images/hotel/gallery/2.jpg')}}"--}}
+{{--                                                     class="img-fluid blur-up lazyload bg-img" alt="">--}}
+{{--                                            </a>--}}
+{{--                                            <div class="top-icon">--}}
+{{--                                                <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""--}}
+{{--                                                   data-original-title="Add to Wishlist">--}}
+{{--                                                    <i class="far fa-heart"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="special-content">--}}
+{{--                                            <a href="{{ route('user.hotels.show',1) }}">--}}
+{{--                                                <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>--}}
+{{--                                                </h5>--}}
+{{--                                            </a>--}}
+{{--                                            <p>--}}
+{{--                                                Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is--}}
+{{--                                                simply dummy text of the ..............--}}
+{{--                                            </p>--}}
+{{--                                            <div class="bottom-section">--}}
 
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
+{{--                                                <div class="price">--}}
+{{--                                                    <del>{{__('messages.currency')}}1300</del>--}}
+{{--                                                    <span>{{__('messages.currency')}}1245</span>--}}
 
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/gallery/5.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
-
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
-
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="label-offer">certified</div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 trend grid-item wow fadeInUp" data-class="trend">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/room/1.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
-
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
-
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 latest grid-item wow fadeInUp" data-class="latest">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/gallery/4.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
-
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
-
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="label-offer">Recommended</div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 trend grid-item wow fadeInUp" data-class="trend">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/room/2.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
-
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
-
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">
-                                <div class="special-box">
-                                    <div class="special-img">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <img src="{{asset('front/assets/images/hotel/gallery/2.jpg')}}"
-                                                class="img-fluid blur-up lazyload bg-img" alt="">
-                                        </a>
-                                        <div class="top-icon">
-                                            <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                data-original-title="Add to Wishlist">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="special-content">
-                                        <a href="{{ route('user.hotels.show',1) }}">
-                                            <h5>the venetian <span><i class="fas fa-map-marker-alt"></i> Newyork</span>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text the printing Ipsum is simply Lorem Ipsum is
-                                            simply dummy text of the ..............
-                                        </p>
-                                        <div class="bottom-section">
-
-                                            <div class="price">
-                                                <del>{{__('messages.currency')}}1300</del>
-                                                <span>{{__('messages.currency')}}1245</span>
-
-                                            </div>
-                                            <div class="price">
-                                            <div class="facility-detail">
-                                                    <span>swimming</span>
-                                                    <span>parking</span>
-                                                </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                                                </div>--}}
+{{--                                                <div class="price">--}}
+{{--                                                    <div class="facility-detail">--}}
+{{--                                                        <span>swimming</span>--}}
+{{--                                                        <span>parking</span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                         </div>
+                        <div>{{$hotels->links()}}</div>
+
                     </div>
-                    <nav aria-label="Page navigation example" class="pagination-section mt-0">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="javascript:void(0)" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+
                 </div>
             </div>
         </div>

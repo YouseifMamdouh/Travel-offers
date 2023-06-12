@@ -12,12 +12,15 @@ class Hotel extends Model
     use HasTranslations;
     protected $table = 'hotels';
 
-    protected $fillable = ['title', 'city_id', 'location', 'address', 'description', 'rooms_num'];
+    protected $fillable = ['title', 'city_id', 'country_id', 'location', 'address', 'description', 'rooms_num'];
 
     public $translatable = ['title', 'location', 'address', 'description'];
 
     public function city() {
         return $this->belongsTo(City::class, 'city_id', 'id');
+    }
+    public function country() {
+        return $this->belongsTo(Country::class, 'country_id', 'id');
     }
 
     public function hotelImages() {

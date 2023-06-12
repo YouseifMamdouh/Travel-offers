@@ -55,8 +55,8 @@
 
                             <li class="front-setting rounded5">
                                 <select>
-                                    <option value="volvo">EN</option>
-                                    <option value="opel">Ar</option>
+                                    <option value="en">EN</option>
+                                    <option value="ar">Ar</option>
                                 </select>
                             </li>
                             <li class="user rounded5">

@@ -20,6 +20,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+    Route::post('get-cities-from-country/{id}', 'CitiesController@getCitiesFromCountry')->name('get.country.cities');
+
     Route::group(['prefix' => 'admins'], function () {
         Route::get('/', 'AdminsController@index')->name('admins.index');
         Route::get('/create', 'AdminsController@create')->name('admins.create');
@@ -37,6 +39,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::get('/edit/{id}', 'CitiesController@edit')->name('cities.edit');
         Route::post('/update/{id}', 'CitiesController@update')->name('cities.update');
         Route::delete('delete/{id}', 'CitiesController@destroy')->name('cities.destroy');
+    });
+
+    Route::group(['prefix' => 'countries'], function () {
+        Route::get('/', 'CountriesController@index')->name('countries.index');
+        Route::get('/show/{id}', 'CountriesController@show')->name('countries.show');
+        Route::get('/create', 'CountriesController@create')->name('countries.create');
+        Route::post('/store', 'CountriesController@store')->name('countries.store');
+        Route::get('/edit/{id}', 'CountriesController@edit')->name('countries.edit');
+        Route::post('/update/{id}', 'CountriesController@update')->name('countries.update');
+        Route::delete('delete/{id}', 'CountriesController@destroy')->name('countries.destroy');
     });
 
     Route::group(['prefix' => 'banners'], function () {

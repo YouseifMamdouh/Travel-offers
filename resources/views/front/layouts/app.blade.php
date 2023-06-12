@@ -42,15 +42,16 @@
 
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/color1.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/sweetalert2.min.css') }}">
 
     @if(!Request::is('/') || !Request::is('/hotels'))
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/custom-nav.css') }}">
     @endif
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.9/dist/sweetalert2.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('front/assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/owl.theme.default.min.css')}}">
-
+    <link rel="stylesheet" href="{{asset('front/assets/css/pretty-checkbox.min.css')}}">
+    <link rel="stylesheet" href="{{asset('front/assets/css/override.css')}}">
     @yield('style')
     @stack('user.css')
 </head>

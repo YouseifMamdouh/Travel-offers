@@ -29,6 +29,7 @@ class HotelRequest extends FormRequest
             'location' => 'required',
             'address' => 'required',
             'city_id' => 'required|exists:cities,id',
+            'country_id' => 'required|exists:countries,id',
             'rooms_num' => 'required',
         ];
     }
@@ -41,6 +42,8 @@ class HotelRequest extends FormRequest
             'address.required' => 'The address Field is Required',
             'city_id.required' => 'The City Field is Required',
             'city_id.exists' => 'The City must Exists in City List',
+            'country_id.required' => 'The Country Field is Required',
+            'country_id.exists' => 'The Country must Exists in Countries List',
             'rooms_num.required' => 'The Rooms Number Field is Required',
         ];
     }

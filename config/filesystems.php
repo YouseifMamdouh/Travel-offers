@@ -48,6 +48,12 @@ return [
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
+        'countries' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/countries'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
         'banners' => [
             'driver' => 'local',
             'root' => public_path('uploads/banners'),

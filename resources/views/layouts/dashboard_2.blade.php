@@ -22,8 +22,8 @@
 
     <link href="{{asset('admin/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css"/>
     <!--end::Global Stylesheets Bundle-->
+    <link href="{{asset('admin/assets/css/select2.min.css')}}" rel="stylesheet" type="text/css"/>
 
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('admin/assets/css/locale_en.css')}}">
 
     @yield('style')
@@ -83,6 +83,7 @@
         <span class="path2"></span>
     </i>
 </div>
+<input type="hidden" name="lang" id="lang" value="{{ Config::get('app.locale') }}">
 <!--end::Scrolltop-->
 
 <!--begin::Javascript-->
@@ -122,7 +123,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="{{asset('admin/assets/js/select2.min.js')}}"></script>
+<script>
+    $(document).ready(function () {
+    });
+</script>
 @yield('script')
 
 

@@ -218,6 +218,7 @@
                                     </th>
 
                                     <th class="min-w-50px" style="text-align: center">Title</th>
+                                    <th class="min-w-50px" style="text-align: center">Country</th>
                                     <th class="min-w-50px" style="text-align: center">City</th>
                                     <th class="min-w-50px" style="text-align: center">Rooms</th>
                                     <th class=" min-w-100px" style="text-align: center">Operation</th>
@@ -239,6 +240,9 @@
 {{--                                            <td class="min-w-50px" style="text-align: center">--}}
 {{--                                                <span>{{$item->description}}</span>--}}
 {{--                                            </td>--}}
+                                            <td class="min-w-50px" style="text-align: center">
+                                                <span>{{$item->country->title}}</span>
+                                            </td>
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->city->title}}</span>
                                             </td>
@@ -325,7 +329,6 @@
 @section('script')
     <script src="{{asset('admin/assets/js/custom/apps/user-management/users/list/add.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script>
         $(document).ready(function () {

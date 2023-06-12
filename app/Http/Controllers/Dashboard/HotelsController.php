@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\HotelRequest;
 use App\Http\Requests\PostImagesRequest;
 use App\Models\City;
+use App\Models\Country;
 use App\Models\Hotel;
 use App\Models\HotelImage;
 use Illuminate\Http\Request;
@@ -16,17 +17,22 @@ class HotelsController extends Controller
 {
     public function index()
     {
-        $data = Hotel::with('city', 'hotelImages')
-            ->select('id', 'title', 'city_id', 'location',
+        $countries = Country::get();
+
+        $data = Hotel::with('city', 'hotelImages', 'country')
+            ->select('id', 'title', 'city_id','country_id', 'location',
                 'address', 'rooms_num', 'description')->get();
         $cities = City::get();
-        return view('dashboard.hotels.index', compact('data', 'cities'));
+        return view('dashboard.hotels.index', compact('data', 'cities', 'countries'));
     }
 
 
     public function create()
     {
-        return view('dashboard.hotels.create');
+        $countries = Country::get();
+        $cities = City::get();
+
+        return view('dashboard.hotels.create', compact('cities', 'countries'));
     }
 
     public function store(HotelRequest $request)
@@ -38,6 +44,7 @@ class HotelsController extends Controller
             Hotel::create([
                 'title' => $request->title,
                 'description' => $request->description,
+                'country_id' => $request->country_id,
                 'city_id' => $request->city_id,
                 'location' => $request->location,
                 'address' => $request->address,
@@ -56,7 +63,7 @@ class HotelsController extends Controller
     public function show($id)
     {
         $data = Hotel::with('city', 'hotelImages')
-            ->select('id', 'title', 'city_id', 'location',
+            ->select('id', 'title', 'city_id', 'location', 'country_id',
                 'address', 'rooms_num', 'description')->find($id);
         if ($data) {
             return view('dashboard.hotels.view', compact('data'));
@@ -137,8 +144,11 @@ class HotelsController extends Controller
     public function edit($id)
     {
         $data = Hotel::find($id);
+        $cities = City::get();
+        $countries = Country::get();
+
         if ($data) {
-            return view('dashboard.hotels.edit', compact('data'));
+            return view('dashboard.hotels.edit', compact('data', 'countries', 'cities'));
 
         } else {
             return redirect()->route('hotels.index')->with(['error' => __('messages.error_general')]);

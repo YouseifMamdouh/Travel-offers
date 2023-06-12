@@ -172,6 +172,7 @@
                                             </div>
                                         </th>
                                         <th class="min-w-50px" style="text-align: center">Name</th>
+                                        <th class="min-w-50px" style="text-align: center">Country</th>
                                         <th class="min-w-50px" style="text-align: center">Image</th>
                                         <th class=" min-w-100px" style="text-align: center">Operation</th>
                                     </tr>
@@ -188,6 +189,9 @@
                                             </td>
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->title}}</span>
+                                            </td>
+                                            <td class="min-w-50px" style="text-align: center">
+                                                <span>{{$item->country->title}}</span>
                                             </td>
                                             <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/cities/' . $item->image)}}" target="_blank"><img src="{{asset('uploads/cities/'.$item->image)}}" alt="city" style="width: 100px"></a></td>
 

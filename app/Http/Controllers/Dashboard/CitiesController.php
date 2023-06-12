@@ -13,7 +13,7 @@ class CitiesController extends Controller
 {
     public function index()
     {
-        $data = City::select('id', 'title', 'image')->get();
+        $data = City::select('id', 'title', 'image', 'country_id')->get();
         return view('dashboard.cities.index', compact('data'));
     }
 
@@ -39,6 +39,7 @@ class CitiesController extends Controller
             City::create([
                 'title' => $request->title,
                 'summary' => $request->summary,
+                'country_id' => $request->country_id,
                 'image' => $filename,
             ]);
 
@@ -102,4 +103,19 @@ class CitiesController extends Controller
             return redirect()->route('cities.index')->with(['error' => __('messages.error_general')]);
         }
     }
+
+    public function getCitiesFromCountry(Request $request, $id) {
+//        return $id;
+         $cities_inside = City::where('country_id', $id)->get();
+         if ($cities_inside->count() > 0)
+            return response()->json(['status'=> 1, 'msg' => 'Cities Inside Country', 'data' => $cities_inside]);
+         return response()->json(['status'=> 0, 'msg' => 'No Cities Inside Country', 'data' => null]);
+    }
+
+
+
+
+
+
+
 }

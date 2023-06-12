@@ -278,11 +278,12 @@
 
                                     <th class="min-w-50px" style="text-align: center">name</th>
                                     <th class="min-w-50px" style="text-align: center">Duration</th>
+                                    <th class="min-w-50px" style="text-align: center">Country</th>
                                     <th class="min-w-50px" style="text-align: center">City</th>
                                     <th class="min-w-50px" style="text-align: center">Price</th>
                                     <th class="min-w-50px" style="text-align: center">discount</th>
 
-                                    <th class="min-w-50px" style="text-align: center">cover</th>
+{{--                                    <th class="min-w-50px" style="text-align: center">cover</th>--}}
                                     <th class=" min-w-100px" style="text-align: center">Operation</th>
                                 </tr>
                                 </thead>
@@ -303,6 +304,9 @@
                                                 <span>{{$item->title}}</span>
                                             </td>
                                             <td class="min-w-50px" style="text-align: center">
+                                                <span>{{$item->country->title}}</span>
+                                            </td>
+                                            <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->city->title}}</span>
                                             </td>
                                             <td class="min-w-50px" style="text-align: center">
@@ -311,7 +315,7 @@
                                             <td class="min-w-50px" style="text-align: center">
                                                 <span>{{$item->discount}}%</span>
                                             </td>
-                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/programmes/' . $item->cover)}}" target="_blank"><img src="{{asset('uploads/programmes/'.$item->cover)}}" alt="Banner" style="width: 100px"></a></td>
+{{--                                            <td class="min-w-50px" style="text-align: center"><a href="{{asset('uploads/programmes/' . $item->cover)}}" target="_blank"><img src="{{asset('uploads/programmes/'.$item->cover)}}" alt="Banner" style="width: 100px"></a></td>--}}
 
 
                                             <td class="text-end" style="text-align: center!important;">
@@ -389,7 +393,6 @@
 @section('script')
     <script src="{{asset('admin/assets/js/custom/apps/user-management/users/list/add.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
         integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
@@ -399,21 +402,21 @@
 
     <script>
         $(document).ready(function () {
-            $('#features').selectize();
+            // $('#features').selectize();
 
 
-            ClassicEditor
-                .create( document.querySelector( '.editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
+            // ClassicEditor
+            //     .create( document.querySelector( '.editor' ) )
+            //     .then( editor => {
+            //         console.log( editor );
+            //     } )
+            //     .catch( error => {
+            //         console.error( error );
+            //     } );
 
-            $('#city_id').select2({
-                dropdownParent: $("#kt_modal_add_user")
-            });
+            // $('#city_id').select2({
+            //     dropdownParent: $("#kt_modal_add_user")
+            // });
 
 
             let delete_li = $('.delete_btn_li');

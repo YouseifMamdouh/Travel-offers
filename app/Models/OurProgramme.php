@@ -13,7 +13,7 @@ class OurProgramme extends Model
 
     protected  $table = "our_programmes";
 
-    protected $fillable = ['name', 'title', 'description', 'cover','price', 'discount', 'plan', 'city_id'];
+    protected $fillable = ['name', 'title', 'description', 'cover','price', 'discount', 'plan', 'city_id', 'country_id'];
 
     public $translatable = ['name', 'title', 'description', 'plan'];
 
@@ -23,6 +23,9 @@ class OurProgramme extends Model
 
     public function city() {
         return $this->belongsTo(City::class, 'city_id', 'id');
+    }
+    public function country() {
+        return $this->belongsTo(Country::class, 'country_id', 'id');
     }
 
 

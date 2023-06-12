@@ -5,13 +5,50 @@
         <div class="owl-carousel owl-theme banners" dir="ltr">
             @foreach($banners as $k => $banner)
 
-            <div class="item">
+            <div class="item" style="height: 66vh;overflow: hidden;">
                 <img src="{{asset('uploads/banners/' . $banner->image)}}" alt="image">
             </div>
            @endforeach
         </div>
 
     </section>
+
+    <section class="">
+        <div class="tourSection ratio3_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-md-12">
+                        <div class="title-1">
+                            <h2 class="pt-0">Latest Services</h2>
+                        </div>
+
+                        <div class="flight-5 no-arrow row justify-content-center">
+                            @if(isset($latest_services) && $latest_services->count() > 0)
+                                @foreach($latest_services as $item)
+                                    <a class="col-lg-2 col-md-2 col-sm-6 col-12" href="{{ route('service.show', $item->id) }}">
+                                        <div class="tourBox wow zoomIn">
+                                            <div class="tourImg">
+                                                <img src="{{asset('uploads/services/' . $item->image)}}"
+                                                     class="img-fluid blur-up lazyload bg-img" alt="">
+                                            </div>
+                                            <div class="tourContent">
+                                                <h3>{{$item->title}}</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            @endif
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- home section start -->
     {{--<section class="cab-section flight-section p-0">--}}
     {{--    <div class="cloud">--}}
@@ -265,38 +302,21 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......</p>
             </div>
             <div class="slide-3 no-arrow">
-                @if(isset($cities) && $cities->count() > 0)
-                    @foreach($cities as $city)
+                @if(isset($countries) && $countries->count() > 0)
+                    @foreach($countries as $country)
                     <div>
                         <div class="blog-wrap">
                             <div class="blog-image">
                                 <div>
-                                    <img src="{{ asset('uploads/cities/' . $city->image) }}"
+                                    <img src="{{ asset('uploads/countries/' . $country->image) }}"
                                          class="img-fluid blur-up lazyload bg-img" alt="">
                                 </div>
                             </div>
                             <div class="destination-details">
                                 <div>
-                                    <h2>{{$city->title}}</h2>
-                                    <h6>{{$city->summary}}</h6>
-                                    <a href="{{route('user.show.programs', $city->id)}}" class="btn btn-rounded color2">Discovre Programs</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="blog-wrap">
-                            <div class="blog-image">
-                                <div>
-                                    <img src="{{ asset('uploads/cities/' . $city->image) }}"
-                                         class="img-fluid blur-up lazyload bg-img" alt="">
-                                </div>
-                            </div>
-                            <div class="destination-details">
-                                <div>
-                                    <h2>{{$city->title}}</h2>
-                                    <h6>{{$city->summary}}</h6>
-                                    <a href="{{route('user.show.programs', $city->id)}}" class="btn btn-rounded color2">Discovre Programs</a>
+                                    <h2>{{$country->title}}</h2>
+                                    <h6>{{$country->summary}}</h6>
+                                    <a href="{{route('user.show.programs', $country->id)}}" class="btn btn-rounded color2">Discovre Programs</a>
                                 </div>
                             </div>
                         </div>
@@ -615,23 +635,14 @@
                                         </div>
                                         <div class="special-content">
                                             <a href="{{ route('user.hotels.show', $hotel->id) }}">
-                                                <h5>{{$hotel->title}} <span><i class="fas fa-map-marker-alt"></i> {{$hotel->city->title}}</span></h5>
+                                                <h5>{{$hotel->title}} </h5>
                                             </a>
+                                            <h5 class="mt-1">
+                                                <span class="ms-0"><i class="fas fa-map-marker-alt"></i> {{$hotel->country->title}}, {{$hotel->city->title}}</span>
+                                            </h5>
                                             <div class="bottom-section">
                                                 <span>{{$hotel->address}}</span>
 
-                                                {{--                                        <div class="rating">--}}
-                                                {{--                                            <i class="fas fa-star"></i>--}}
-                                                {{--                                            <i class="fas fa-star"></i>--}}
-                                                {{--                                            <i class="fas fa-star"></i>--}}
-                                                {{--                                            <i class="fas fa-star"></i>--}}
-                                                {{--                                            <i class="far fa-star"></i>--}}
-                                                {{--                                            <span>26412 review</span>--}}
-                                                {{--                                        </div>--}}
-{{--                                                <div class="price">--}}
-{{--                                                    <del>$1300</del>--}}
-{{--                                                    <span>$1245</span>--}}
-{{--                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>

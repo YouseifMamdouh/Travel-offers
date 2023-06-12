@@ -77,10 +77,24 @@
                                 <input type="text" name="title" value="{{old("title")}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="City Name" />
                                 <!-- end::Input-->
                             </div>
+                            @php($countries = App\Models\Country::get())
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="country_id">Country</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <select name="country_id" id="country_id" style="width: 100%">
+                                    @if(isset($countries) && $countries->count() > 0)
+                                        @foreach($countries as $country)
+                                            <option value="{{$country->id}}" {{old('country_id') == $country->id ? 'selected' : ''}}>{{$country->title}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
                             <!-- begin::Input group-->
                             <div class="fv-row mb-7">
                                 <!-- begin::Label-->
-                                <label class="required fw-semibold fs-6 mb-2">Name</label>
+                                <label class="required fw-semibold fs-6 mb-2">Summary</label>
                                 <!-- end::Label-->
                                 <!-- begin::Input-->
                                 <textarea name="summary" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Summary">{{old("summary")}}</textarea>
@@ -126,6 +140,9 @@
 @section('script')
     <script>
         $(document).ready(function () {
+            let country_id = $("#country_id");
+            country_id.select2();
+
             ClassicEditor
                 .create( document.querySelector( '#editor' ) )
                 .then( editor => {

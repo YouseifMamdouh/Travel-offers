@@ -1,0 +1,8 @@
+.pretty .state label:after, .pretty .state label:before {
+    left: auto;
+    right: -11px;
+    top: -5px;
+    font-size: 27px;
+    font-weight: bold;
+}
+.pretty .state label {font-size: 18px;font-weight: bold}

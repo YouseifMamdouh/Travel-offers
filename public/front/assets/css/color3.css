@@ -9319,9 +9319,9 @@ section .black-layer {
       .single-section .description-section .description-details .menu-part .rooms-box td:first-child {
         width: 25%; }
       .single-section .description-section .description-details .menu-part .rooms-box td:nth-child(2) {
-        width: 55%; }
+        width: 45%; }
       .single-section .description-section .description-details .menu-part .rooms-box td:nth-child(3) {
-        width: 20%;
+        width: 30%;
         text-align: right; }
       .single-section .description-section .description-details .menu-part .rooms-box .price-details {
         display: -webkit-box;
@@ -23550,3 +23550,8 @@ body.dark {
     height: 110vh; }
     .cab-section .cab-content {
       height: 110vh; } }
+
+
+
+
+

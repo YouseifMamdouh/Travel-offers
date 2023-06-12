@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProgrammeImagesRequest;
 use App\Http\Requests\ProgrammeRequest;
 use App\Models\City;
+use App\Models\Country;
 use App\Models\Feature;
 use App\Models\OurProgramme;
 use App\Models\ProgrammeImage;
@@ -19,17 +20,19 @@ class ProgrammesController extends Controller
     {
         $data = OurProgramme::with('progImages')->get();
         $cities = City::get();
+        $countries = Country::get();
         $features = Feature::where('type_of', 'programmes')->get();
 
-        return view('dashboard.programmes.index', compact('data', 'cities', 'features'));
+        return view('dashboard.programmes.index', compact('data', 'cities','countries', 'features'));
     }
 
 
     public function create()
     {
         $cities = City::get();
+        $countries = Country::get();
         $features = Feature::where('type_of', 'programmes')->get();
-        return view('dashboard.programmes.create', compact('cities', 'features'));
+        return view('dashboard.programmes.create', compact('cities','countries', 'features'));
     }
     public function store(ProgrammeRequest $request)
     {
@@ -49,6 +52,7 @@ class ProgrammesController extends Controller
                 'description' => $request->description,
                 'cover' => $filename,
                 'city_id' => $request->city_id,
+                'country_id' => $request->country_id,
 
             ]);
             if ($programme) {
@@ -66,7 +70,7 @@ class ProgrammesController extends Controller
 
     public function show($id)
     {
-        $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
+        $data = OurProgramme::with('progImages', 'country','city', 'features')->find($id);
         if ($data) {
             return view('dashboard.programmes.show', compact('data'));
 
@@ -77,7 +81,7 @@ class ProgrammesController extends Controller
 
     public function addImages($id)
     {
-        $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
+        $data = OurProgramme::with('progImages', 'country','city', 'features')->find($id);
         if ($data) {
             return view('dashboard.programmes.postImages', compact('data'));
 
@@ -129,13 +133,14 @@ class ProgrammesController extends Controller
 
     public function edit($id)
     {
-        $data = OurProgramme::with('progImages', 'city', 'features')->find($id);
+        $data = OurProgramme::with('progImages', 'country','city', 'features')->find($id);
         $cities = City::get();
+        $countries = Country::get();
         $features = Feature::where('type_of', 'programmes')->get();
 
 
         if ($data) {
-            return view('dashboard.programmes.edit', compact('data', 'cities', 'features'));
+            return view('dashboard.programmes.edit', compact('data', 'cities','countries', 'features'));
 
         } else {
             return redirect()->route('programmes.index')->with(['error' => __('messages.error_general')]);
