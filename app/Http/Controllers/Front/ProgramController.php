@@ -16,8 +16,9 @@ class ProgramController extends Controller
         return view('front.pages.programs.index', compact('programmes'));
     }
 
-    public function show(){
-          return view('front.pages.programs.show');
+    public function show($id){
+        $program = OurProgramme::with('progImages', 'city', 'country', 'features')->find($id);
+          return view('front.pages.programs.show', compact('program'));
     }
 
     public function showPrograms($id) {

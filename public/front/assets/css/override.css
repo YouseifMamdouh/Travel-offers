@@ -13,10 +13,14 @@
 ol.breadcrumb {direction: rtl}
 .breadcrumb-item + .breadcrumb-item::before {padding-left: .5rem;float: right}
 .blog_section.section-b-space {padding-bottom: 50px!important;}
-
-
-
-
+.about-section.about_page .about-text .title-3 {text-align: right}
+.about-section.about_page .about-text {    -webkit-box-align: end; direction: rtl}
+.about-section .image-section {direction: ltr}
+.theme-breadcrumb .package-detail {margin-bottom: -3px;margin-top: 15px;}
+.theme-breadcrumb .package-detail li {color: white;padding-right: 10px;text-transform: capitalize;font-weight: 500;font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));}
+.theme-breadcrumb .package-detail li i {margin-right: 10px;}
+.hotel_title_section .hotel-name .right-part {margin-left: 0;margin-right: auto;}
+.single-section .single-sidebar .book-btn-section .rooms-section .selector-box .bottom-part .btn {margin-left: 0;margin-right: auto}
 
 
 

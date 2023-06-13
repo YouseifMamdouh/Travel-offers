@@ -43,7 +43,7 @@
                 <span class="title-label">{{__("messages.ral")}}</span>
                 <h2>{{__("messages.about_us")}}</h2>
             </div>
-            <div class="row" >
+            <div class="row" dir="rtl" >
                 <div class="col-xl-7  order-xl-1">
                     <div class="image-section rtl">
                         @if(isset($images) && $images->count() > 0)
