@@ -8,11 +8,11 @@
         <img src="{{ asset('front/assets/images/inner-bg.jpg') }}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>about us</h2>
+                <h2>{{__("messages.about_us")}}</h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">about us</li>
+                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">{{__('messages.home')}}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{__("messages.about_us")}}</li>
                     </ol>
                 </nav>
             </div>
@@ -23,7 +23,7 @@
 
 
     <!-- about section start -->
-    <section class="about-section three-image about_page animated-section section-b-space">
+    <section class="about-section rtl three-image about_page animated-section section-b-space">
         <div class="animation-section">
             <div class="cross po-1"></div>
             <div class="cross po-2"></div>
@@ -40,12 +40,12 @@
         </div>
         <div class="container">
             <div class="title-1">
-                <span class="title-label">Ral</span>
-                <h2>about us</h2>
+                <span class="title-label">{{__("messages.ral")}}</span>
+                <h2>{{__("messages.about_us")}}</h2>
             </div>
-            <div class="row">
+            <div class="row" >
                 <div class="col-xl-7  order-xl-1">
-                    <div class="image-section">
+                    <div class="image-section rtl">
                         @if(isset($images) && $images->count() > 0)
                             @foreach($images as $item)
                                 <div class="img-box">
@@ -63,17 +63,17 @@
                     </div>
                 </div>
                 <div class="col-xl-5">
-                    <div class="about-text ps-0">
+                    <div class="about-text rtl ps-0">
                         <div>
                             <div class="title-3">
-                                <span class="title-label">introduction</span>
+                                <span class="title-label">{{__("messages.intro")}}</span>
                             </div>
                             <h2>{{$details->title}}</h2>
                             <p>{!! $details->description !!}</p>
                             <img src="{{ asset('front') }}/assets/images/mix/signature.png" class="img-fluid blur-up lazyload" alt="">
                             <div class="buttons-about">
-                                <a href="{{ route('user.programs.index') }}" class="btn btn-lower btn-curve">view more</a>
-                                <a href="{{ route('user.contact') }}" class="btn btn-lower black-btn btn-curve">contact us</a>
+                                <a href="{{ route('user.programs.index') }}" class="btn btn-lower btn-curve">{{__("messages.view_more")}}</a>
+                                <a href="{{ route('user.contact') }}" class="btn btn-lower black-btn btn-curve">{{__('messages.contact_us')}}</a>
                             </div>
                         </div>
                     </div>

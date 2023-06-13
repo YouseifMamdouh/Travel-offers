@@ -13,7 +13,7 @@
 
     </section>
 
-    <section class="">
+    <section class="pt-0" style="margin-top: -50px">
         <div class="tourSection ratio3_2">
             <div class="container">
                 <div class="row">
@@ -22,14 +22,14 @@
 {{--                            <h2 class="pt-0">Latest Services</h2>--}}
 {{--                        </div>--}}
 
-                        <div class="flight-5 no-arrow row justify-content-center">
+                        <div class="flight-5 no-arrow row justify-content-center" style="z-index: 100;position:relative;">
                             @if(isset($latest_services) && $latest_services->count() > 0)
                                 @foreach($latest_services as $item)
-                                    <a class="col-lg-2 col-md-2 col-sm-6 col-12" href="{{ route('service.show', $item->id) }}">
+                                    <a class="col-lg-3 col-md-3 col-sm-6 col-12" href="{{ route('service.show', $item->id) }}" >
                                         <div class="tourBox wow zoomIn">
-                                            <div class="tourImg">
+                                            <div class="tourImg" style="border-radius: 0;">
                                                 <img src="{{asset('uploads/services/' . $item->image)}}"
-                                                     class="img-fluid blur-up lazyload bg-img" alt="">
+                                                     class="img-fluid blur-up lazyload bg-img" alt="" style="">
                                             </div>
                                             <div class="tourContent">
                                                 <h3>{{$item->title}}</h3>
@@ -48,247 +48,6 @@
     </section>
 
 
-
-    <!-- home section start -->
-    {{--<section class="cab-section flight-section p-0">--}}
-    {{--    <div class="cloud">--}}
-    {{--        <img src="{{ asset('front/assets/images/flights/cloud.png') }}" alt="" class="bg-img">--}}
-    {{--    </div>--}}
-    {{--    <div class="container">--}}
-    {{--        <div class="row">--}}
-    {{--            <div class="my-5 text-center text-slider">--}}
-    {{--                <h2> great journey begins</h2>--}}
-    {{--                <h3>with a small step</h3>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-    {{--    <div class="row">--}}
-    {{--        <div class="cab-content p-0">--}}
-
-    {{--            <div class="container-full-search">--}}
-
-    {{--                <div class="navs">--}}
-    {{--                    <div class="container">--}}
-    {{--                        <ul class="nav nav-pills uform_btns" id="pills-tab" role="tablist">--}}
-
-    {{--                            <li class="nav-item" role="presentation">--}}
-    {{--                                <button class="nav-link border-0 active" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">--}}
-    {{--                                    <i class="fas fa-hotel"></i> Hotels</button>--}}
-    {{--                            </li>--}}
-    {{--                            <li class="nav-item" role="presentation">--}}
-    {{--                                <button class="nav-link border-0" id="pills-program-tab" data-bs-toggle="pill" data-bs-target="#pills-program" type="button" role="tab" aria-controls="pills-program" aria-selected="false">--}}
-    {{--                                    <i class="fas fa-globe-asia"></i> Programs</button>--}}
-    {{--                            </li>--}}
-    {{--                        </ul>--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-
-    {{--                <div class="container">--}}
-    {{--                    <div class="tab-content" id="pills-tabContent">--}}
-
-
-    {{--                        <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">--}}
-
-    {{--                            <form class="radio-form  my-2">--}}
-    {{--                                <div class="form-group row pt-2 mb-0">--}}
-
-    {{--                                    <div class="col-lg-4 col-12 input-search">--}}
-    {{--                                        <input type="text" class="form-control open-select" id="exampleInputEmail1" placeholder="Destination">--}}
-    {{--                                            --}}{{-- <div class="selector-box">--}}
-    {{--                                                <h6 class="title">popular cities</h6>--}}
-    {{--                                                <ul>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>paris, france</h5>--}}
-    {{--                                                            <h6>Charles de Gaulle Airport</h6>--}}
-    {{--                                                            <span>par</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>Dubai, UAE</h5>--}}
-    {{--                                                            <h6>Dubai International Airport</h6>--}}
-    {{--                                                            <span>DXB</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>london</h5>--}}
-    {{--                                                            <h6>Heathrow</h6>--}}
-    {{--                                                            <span>LHR</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>singapore, singapore</h5>--}}
-    {{--                                                            <h6>changi Airport</h6>--}}
-    {{--                                                            <span>par</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>vancouver, canada</h5>--}}
-    {{--                                                            <h6>vancouver International Airport</h6>--}}
-    {{--                                                            <span>par</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>sydney, australia</h5>--}}
-    {{--                                                            <h6>rose bay SPB</h6>--}}
-    {{--                                                            <span>rse</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                    <li>--}}
-    {{--                                                        <a href="#">--}}
-    {{--                                                            <h5>kuala lumpur, malaysia</h5>--}}
-    {{--                                                            <h6>sentral</h6>--}}
-    {{--                                                            <span>xkl</span>--}}
-    {{--                                                        </a>--}}
-    {{--                                                    </li>--}}
-    {{--                                                </ul>--}}
-    {{--                                            </div> --}}
-    {{--                                    </div>--}}
-    {{--                                    <div class="col-lg-3 col-12 input-search">--}}
-    {{--                                        <input placeholder="Depart Date" class="datepicker" />--}}
-    {{--                                    </div>--}}
-    {{--                                    <div class="col-lg-3 col-12 input-search">--}}
-    {{--                                        <input placeholder="Return Date" class="datepicker" />--}}
-    {{--                                    </div>--}}
-    {{--                                    <div class="col-lg-2 col-12 input-search">--}}
-    {{--                                        <div class="form-group">--}}
-    {{--                                            <input type="text" class="form-control open-select" placeholder="Guest">--}}
-    {{--                                            --}}{{-- <img src="../assets/images/icon/user.png" class="img-fluid blur-up lazyload" alt=""> --}}
-    {{--                                            <div class="selector-box-flight">--}}
-    {{--                                                <div class="room-cls">--}}
-    {{--                                                    <div class="qty-box">--}}
-    {{--                                                        <label>adult</label>--}}
-    {{--                                                        <div class="input-group">--}}
-    {{--                                                            <button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""> - </button>--}}
-    {{--                                                            <input type="text" name="quantity" class="form-control qty-input input-number" value="1">--}}
-    {{--                                                            <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">+</button>--}}
-    {{--                                                        </div>--}}
-    {{--                                                    </div>--}}
-    {{--                                                    <div class="qty-box">--}}
-    {{--                                                        <label>children</label>--}}
-    {{--                                                        <div class="input-group">--}}
-    {{--                                                            <button type="button" class="btn quantity-left-minus" data-type="minus" data-field=""> - </button>--}}
-    {{--                                                            <input type="text" name="quantity" class="form-control qty-input input-number" value="1">--}}
-    {{--                                                            <button type="button" class="btn quantity-right-plus" data-type="plus" data-field=""> + </button>--}}
-    {{--                                                        </div>--}}
-    {{--                                                    </div>--}}
-    {{--                                                </div>--}}
-    {{--                                                <div class="flight-class">--}}
-    {{--                                                    <div class="form-check">--}}
-    {{--                                                        <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>--}}
-    {{--                                                        <label class="form-check-label" for="exampleRadios1">--}}
-    {{--                                                            economy--}}
-    {{--                                                        </label>--}}
-    {{--                                                    </div>--}}
-    {{--                                                    <div class="form-check">--}}
-    {{--                                                        <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">--}}
-    {{--                                                        <label class="form-check-label" for="exampleRadios2">--}}
-    {{--                                                            premium--}}
-    {{--                                                        </label>--}}
-    {{--                                                    </div>--}}
-    {{--                                                    <div class="form-check">--}}
-    {{--                                                        <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">--}}
-    {{--                                                        <label class="form-check-label" for="exampleRadios3">--}}
-    {{--                                                            business--}}
-    {{--                                                        </label>--}}
-    {{--                                                    </div>--}}
-    {{--                                                </div>--}}
-    {{--                                                <div class="bottom-part">--}}
-    {{--                                                    <a href="javascript:void(0)" class="btn">apply</a>--}}
-    {{--                                                </div>--}}
-    {{--                                            </div>--}}
-    {{--                                        </div>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-
-    {{--                            </form>--}}
-
-    {{--                            <div class="form-btn text-center">--}}
-    {{--                                <a href="#" class="btn btn-rounded color1 text-center">Search Hotels</a>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-
-    {{--                        <div class="tab-pane fade" id="pills-program" role="tabpanel" aria-labelledby="pills-program-tab">--}}
-    {{--                            <form class="radio-form  my-2">--}}
-    {{--                                <div class="form-group row py-2">--}}
-    {{--                                    <div class="col-12 input-search">--}}
-    {{--                                        <input type="text" class="form-control open-select" placeholder="choose country">--}}
-    {{--                                        <div class="selector-box">--}}
-    {{--                                            <h6 class="title">popular cities</h6>--}}
-    {{--                                            <ul>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>paris, france</h5>--}}
-    {{--                                                        <h6>Charles de Gaulle Airport</h6>--}}
-    {{--                                                        <span>par</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>Dubai, UAE</h5>--}}
-    {{--                                                        <h6>Dubai International Airport</h6>--}}
-    {{--                                                        <span>DXB</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>london</h5>--}}
-    {{--                                                        <h6>Heathrow</h6>--}}
-    {{--                                                        <span>LHR</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>singapore, singapore</h5>--}}
-    {{--                                                        <h6>changi Airport</h6>--}}
-    {{--                                                        <span>par</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>vancouver, canada</h5>--}}
-    {{--                                                        <h6>vancouver International Airport</h6>--}}
-    {{--                                                        <span>par</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>sydney, australia</h5>--}}
-    {{--                                                        <h6>rose bay SPB</h6>--}}
-    {{--                                                        <span>rse</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                                <li>--}}
-    {{--                                                    <a href="#">--}}
-    {{--                                                        <h5>kuala lumpur, malaysia</h5>--}}
-    {{--                                                        <h6>sentral</h6>--}}
-    {{--                                                        <span>xkl</span>--}}
-    {{--                                                    </a>--}}
-    {{--                                                </li>--}}
-    {{--                                            </ul>--}}
-    {{--                                        </div>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                            </form>--}}
-
-    {{--                            <div class="form-btn text-center">--}}
-    {{--                                <a href="#" class="btn btn-rounded color1 text-center">Search Programs</a>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-
-    {{--                    </div>--}}
-    {{--                </div>--}}
-
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-    {{--</section>--}}
-    <!--  home section end -->
 
 
 
@@ -616,7 +375,7 @@
 {{--    <!-- banner section end -->--}}
 
     <!-- hotel section start -->
-    <section class="process-steps section-b-space bg-white">
+    <section class="process-steps section-b-space pb-0 bg-white" style="padding-top: 20px!important;">
         <div class="container">
             <div class="title-1">
                 <span class="title-label">{{__("messages.hotels")}}</span>
@@ -658,7 +417,7 @@
 
 
     <!-- blog section start -->
-    <section class="blog_section section-b-space ratio_55">
+    <section class="blog_section section-b-space  ratio_55">
         <div class="container">
             <div class="title-2">
                 <h2>{{__("messages.our_news")}} <span>{{__("messages.and")}} {{__("messages.blog")}}</span></h2>

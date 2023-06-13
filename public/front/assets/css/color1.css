@@ -9,7 +9,7 @@ Author: Pixelstrap
 Author URI: https://themeforest.net/user/pixelstrap
 
 ----------------------------------------------------------------------------------- */
-
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
 /* 1. General CSS
 1.1. Button CSS
@@ -118,7 +118,7 @@ Author URI: https://themeforest.net/user/pixelstrap
 ==========================*/
 
 body {
-    font-family: Nunito, sans-serif;
+    font-family: 'Cairo', Nunito, sans-serif;
     position: relative;
     background: white;
     font-size: 14px;
@@ -131,7 +131,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Nunito, sans-serif;
+    font-family: 'Cairo', Nunito, sans-serif;
     font-weight: normal;
 }
 
@@ -558,17 +558,17 @@ section,
 }
 
 .btn.btn-solid.color2 {
-    background-color: #00a2f7;
+    background-color: #5e77a3;
     -webkit-box-shadow: 2.5px 4.33px 25px 0px rgba(0, 162, 247, 0.3);
     box-shadow: 2.5px 4.33px 25px 0px rgba(0, 162, 247, 0.3);
 }
 
 .btn.btn-solid.color2:hover {
     background-color: white;
-    color: #00a2f7;
+    color: #5e77a3;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border: 1px solid #00a2f7;
+    border: 1px solid #5e77a3;
     -webkit-box-shadow: 1px 11px 20px 0px rgba(0, 162, 247, 0.22);
     box-shadow: 1px 11px 20px 0px rgba(0, 162, 247, 0.22);
 }
@@ -609,17 +609,17 @@ section,
 }
 
 .btn.btn-rounded.color2 {
-    background-color: #00a2f7;
+    background-color: #5e77a3;
     -webkit-box-shadow: 2.5px 4.33px 25px 0px rgba(0, 162, 247, 0.3);
     box-shadow: 2.5px 4.33px 25px 0px rgba(0, 162, 247, 0.3);
 }
 
 .btn.btn-rounded.color2:hover {
     background-color: white;
-    color: #00a2f7;
+    color: #5e77a3;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border: 1px solid #00a2f7;
+    border: 1px solid #5e77a3;
     -webkit-box-shadow: 1px 11px 20px 0px rgba(0, 162, 247, 0.22);
     box-shadow: 1px 11px 20px 0px rgba(0, 162, 247, 0.22);
 }
@@ -657,7 +657,7 @@ section,
     padding: 4px 18px;
     line-height: 1.7;
     border-radius: 3px;
-    font-family: Work Sans;
+    font-family: 'Cairo', Work Sans;
     font-weight: 600;
 }
 
@@ -723,7 +723,7 @@ section,
 }
 
 .title-2 h2 span {
-    color: #00a2f7;
+    color: #5e77a3;
     font-weight: 900;
 }
 
@@ -749,7 +749,7 @@ section,
     text-transform: capitalize;
     padding: 4px 18px 6px;
     line-height: 1;
-    font-family: Work Sans;
+    font-family: 'Cairo', Work Sans;
     font-weight: 600;
 }
 
@@ -762,7 +762,7 @@ section,
 }
 
 .title-3 h2 span {
-    font-family: Vampiro One, cursive;
+    font-family: 'Cairo', Vampiro One, cursive;
     font-size: calc(35px + (85 - 35) * ((100vw - 320px) / (1920 - 320)));
     position: absolute;
     color: rgba(239, 63, 62, 0.1);
@@ -1023,7 +1023,7 @@ header .menu .header-right .user {
 }
 
 header .menu .header-right .user i {
-    color: #00a2f7;
+    color: #5e77a3;
     font-size: 12px;
 }
 
@@ -2195,7 +2195,7 @@ section .black-layer:before {
 }
 
 .home_section .home .home-content h1 {
-    font-family: Dancing Script, cursive;
+    font-family: 'Cairo', Dancing Script, cursive;
     font-size: calc(26px + (160 - 26) * ((100vw - 320px) / (1920 - 320)));
     color: white;
     text-transform: capitalize;
@@ -2234,13 +2234,13 @@ section .black-layer:before {
 
 .home_section .home .home-content.mix-layout h1 {
     font-size: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320)));
-    font-family: Nunito, Nunito;
+    font-family: 'Cairo', Nunito, Nunito;
     margin-bottom: calc(5px + (30 - 5) * ((100vw - 320px) / (1920 - 320)));
     position: relative;
 }
 
 .home_section .home .home-content.mix-layout h1 span {
-    font-family: Dancing Script;
+    font-family: 'Cairo', Dancing Script;
     font-size: calc(18px + (300 - 18) * ((100vw - 320px) / (1920 - 320)));
     position: absolute;
     color: rgba(255, 255, 255, 0.11);
@@ -3279,7 +3279,7 @@ section .black-layer:before {
 }
 
 .blog_section .blog-wrap .blog-details h6 i {
-    color: #00a2f7;
+    color: #5e77a3;
     margin-right: 3px;
 }
 
@@ -3450,7 +3450,7 @@ section .black-layer:before {
     padding: 5px 18px;
     line-height: 1;
     border-radius: 3px;
-    font-family: Work Sans;
+    font-family: 'Cairo', Work Sans;
     font-weight: 600;
     position: relative;
 }
@@ -5086,7 +5086,7 @@ section .black-layer:before {
 }
 
 .video-section .basic-section h2 {
-    font-family: Dancing Script;
+    font-family: 'Cairo', Dancing Script;
     font-size: calc(25px + (65 - 25) * ((100vw - 320px) / (1920 - 320)));
     color: white;
     text-align: center;
@@ -7824,7 +7824,7 @@ section .black-layer:before {
     position: absolute;
     top: -20px;
     right: 0;
-    font-family: Nunito;
+    font-family: 'Cairo', Nunito;
     letter-spacing: 0.05em;
 }
 
@@ -7954,7 +7954,7 @@ section .black-layer:before {
 }
 
 .discount-banner .banner-content .coupon h5 {
-    font-family: Work Sans;
+    font-family: 'Cairo', Work Sans;
     font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
     text-transform: capitalize;
     color: white;
@@ -8413,7 +8413,7 @@ section .black-layer:before {
 }
 
 .price-section .price-box .price-content .price-title h3:hover {
-    color: #00a2f7;
+    color: #5e77a3;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
@@ -8504,7 +8504,7 @@ section .black-layer:before {
 }
 
 .price-section .price-box .price-content .price a h6:hover {
-    color: #00a2f7;
+    color: #5e77a3;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
@@ -8521,7 +8521,7 @@ section .black-layer:before {
     font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 600;
     margin-left: auto;
-    color: #00a2f7;
+    color: #5e77a3;
     margin-bottom: 0;
 }
 
@@ -9118,7 +9118,7 @@ section .black-layer:before {
 
 .process-steps .step-bg {
     position: relative;
-    margin-top: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+    margin-top: calc(3px + (40 - 40) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .process-steps .step-bg:before {
@@ -10594,7 +10594,7 @@ section .black-layer:before {
 .breadcrumb-section .breadcrumb-content .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
     font-family: "Font Awesome 5 free";
     font-weight: 900;
-    content: "\f101";
+    content: "\f100";
     color: white;
 }
 
@@ -10680,7 +10680,7 @@ section .black-layer:before {
 }
 
 .breadcrumb-section .title-breadcrumb {
-    font-family: Dancing Script;
+    font-family: 'Cairo', Dancing Script;
     font-size: 510px;
     position: absolute;
     color: rgba(255, 255, 255, 0.02);
@@ -21824,7 +21824,7 @@ header .main-navbar .nav-menu>li.mega-menu {
 
 header.white-active .main-navbar .nav-menu>li .nav-link.active {
     background-color: white;
-    color: #00a2f7;
+    color: #5e77a3;
 }
 
 header.overlay-white {

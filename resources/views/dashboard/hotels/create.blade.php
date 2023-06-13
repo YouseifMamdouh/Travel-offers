@@ -192,7 +192,7 @@
                 city_id.find('option').remove();
                 if(id !== '') {
                     $.ajax({
-                        url: "/admin/get-cities-from-country/" + id,
+                        url: "{{url('admin/get-cities-from-country')}}/" + id,
                         data: {
                             _token: "{{csrf_token()}}",
                             _method: "POST",

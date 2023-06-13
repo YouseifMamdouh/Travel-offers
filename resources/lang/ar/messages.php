@@ -45,8 +45,22 @@ return [
     'new_topics' => 'New Topics',
     'copy_right' => 'copyright 2022 RalTravel by',
 
-    'home' => 'الرئيسية',
-    'home' => 'الرئيسية',
+    'address' => 'Address',
+    'email' => 'Email Address',
+    'phone' => 'Phone',
+    'get_touch' => 'Get In Touch',
+    'f_name' => 'first name',
+    'l_name' => 'last name',
+    'write_message' => 'Write Your Message',
+    'send_message' => 'Send Your Message',
+    'ral' => 'ral',
+    'intro' => 'introduction',
+    'view_more' => 'view more',
+
+
+
+
+
     'home' => 'الرئيسية',
     'home' => 'الرئيسية',
     'home' => 'الرئيسية',

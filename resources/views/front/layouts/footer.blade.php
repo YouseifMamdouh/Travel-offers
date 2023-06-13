@@ -52,17 +52,6 @@
                                                    </a>
                                                </div>
                                            </div>
-                                           <div class="col-4">
-                                               <div class="place rounded5">
-                                                   <a href="{{route('user.show.programs', $item->id)}}">
-                                                       <img src="{{ asset('uploads/cities/' . $item->image) }}"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                       <div class="overlay">
-                                                           <h6>{{$item->title}}</h6>
-                                                       </div>
-                                                   </a>
-                                               </div>
-                                           </div>
                                        @endforeach
                                    @endif
 
