@@ -88,8 +88,11 @@
 
 <!--begin::Javascript-->
 <script>var hostUrl = "assets/";</script>
+<!--end::Javascript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-<script src="{{asset('admin/assets/plugins/global/plugins.bundle.js')}}"></script>
 <script src="{{asset('admin/assets/js/scripts.bundle.js')}}"></script>
 <!--end::Global Javascript Bundle-->
 <!--begin::Vendors Javascript(used for this page only)-->
@@ -117,13 +120,10 @@
 <script src="{{asset('admin/assets/js/custom/utilities/modals/create-app.js')}}"></script>
 <script src="{{asset('admin/assets/js/custom/utilities/modals/new-target.js')}}"></script>
 <script src="{{asset('admin/assets/js/custom/utilities/modals/users-search.js')}}"></script>
+<script src="{{asset('admin/assets/js/select2.min.js')}}" defer></script>
 
 <!--end::Custom Javascript-->
-<!--end::Javascript-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{asset('admin/assets/js/select2.min.js')}}"></script>
+
 <script>
     $(document).ready(function () {
     });
