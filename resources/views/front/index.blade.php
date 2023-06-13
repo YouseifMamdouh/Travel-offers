@@ -18,9 +18,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-12 col-md-12">
-                        <div class="title-1">
-                            <h2 class="pt-0">Latest Services</h2>
-                        </div>
+{{--                        <div class="title-1">--}}
+{{--                            <h2 class="pt-0">Latest Services</h2>--}}
+{{--                        </div>--}}
 
                         <div class="flight-5 no-arrow row justify-content-center">
                             @if(isset($latest_services) && $latest_services->count() > 0)
@@ -298,7 +298,7 @@
     <section class="blog_section destination-section section-b-space ratio_55">
         <div class="container">
             <div class="title-2">
-                <h2>Local... <span>Reservations</span></h2>
+                <h2> {{__('messages.locale')}}  <span>{{__('messages.reservations')}}</span></h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......</p>
             </div>
             <div class="slide-3 no-arrow">
@@ -314,9 +314,9 @@
                             </div>
                             <div class="destination-details">
                                 <div>
-                                    <h2>{{$country->title}}</h2>
-                                    <h6>{{$country->summary}}</h6>
-                                    <a href="{{route('user.show.programs', $country->id)}}" class="btn btn-rounded color2">Discovre Programs</a>
+                                    <h2 class="mb-4">{{$country->title}}</h2>
+{{--                                    <h6>{{$country->summary}}</h6>--}}
+                                    <a href="{{route('user.show.programs', $country->id)}}" class="btn btn-rounded color2">{{__("messages.discover_prog")}}</a>
                                 </div>
                             </div>
                         </div>
@@ -619,8 +619,8 @@
     <section class="process-steps section-b-space bg-white">
         <div class="container">
             <div class="title-1">
-                <span class="title-label">Hotels</span>
-                <h2>Top Hotels</h2>
+                <span class="title-label">{{__("messages.hotels")}}</span>
+                <h2>{{__("messages.top_hotels")}}</h2>
             </div>
             <div class="step-bg ratio_square">
                 <div class="row popular-section">
@@ -661,7 +661,7 @@
     <section class="blog_section section-b-space ratio_55">
         <div class="container">
             <div class="title-2">
-                <h2>our news... <span>and blog</span></h2>
+                <h2>{{__("messages.our_news")}} <span>{{__("messages.and")}} {{__("messages.blog")}}</span></h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......</p>
             </div>
             <div class="slide-3 no-arrow">
@@ -731,7 +731,7 @@
                                     </div>
                                     <div class="detail">
                                         <div>
-                                            <h5>call us</h5>
+                                            <h5>{{__("messages.call_us")}}</h5>
                                             <p>920011391</p>
                                         </div>
                                     </div>
@@ -767,8 +767,8 @@
                                     </div>
                                     <div class="detail">
                                         <div>
-                                            <h5>special discount</h5>
-                                            <p>first booking in 25% off</p>
+                                            <h5>{{__("messages.spec_offer")}}</h5>
+                                            <p>{{__("messages.spec_offer_desc")}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -795,8 +795,8 @@
                                     </div>
                                     <div class="detail">
                                         <div>
-                                            <h5>newsletter</h5>
-                                            <p>scrambled it to make.</p>
+                                            <h5>{{__('messages.news_letter')}}</h5>
+                                            <p>{{__('messages.scrambled_make')}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -805,10 +805,10 @@
                     </div>
                     <div class="service-right">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter your email"
+                            <input type="text" class="form-control" placeholder="{{__('messages.enter_email')}}"
                                    aria-label="Recipient's username">
                             <div class="input-group-append">
-                                <button class="btn btn-subscribe" type="button" id="button-addon">subscribe</button>
+                                <button class="btn btn-subscribe" type="button" id="button-addon">{{__('messages.subscribe')}}</button>
                             </div>
                         </div>
                     </div>

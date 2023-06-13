@@ -17,7 +17,41 @@ return [
     'success_delete' => 'تم الحذف بنجاح',
     'error_general' => 'حدث خطأ ما .. برجاء المحاولة فيما',
     'failed_delete' => 'لم يتم الحذف',
-    'currency' => 'ريال '
+    'currency' => 'ريال ',
+    'home' => 'Home',
+    'about_us' => 'About US',
+    'hotels' => 'Hotels',
+    'services' => 'Services',
+    'our_programs' => 'Our Programs',
+    'blogs' => 'Blogs',
+    'contact_us' => 'Contact US',
+    'top_places' => 'top places',
+    'reservations' => 'Reservations',
+    'locale' => 'locale ....',
+
+    'discover_prog' => 'Discover Programs',
+    'top_hotels' => 'Top Hotels',
+
+    'our_news' => 'our news...',
+    'and' => 'and',
+    'blog' => 'blog',
+    'call_us' => 'call us',
+    'spec_offer' => 'SPECIAL DISCOUNT',
+    'spec_offer_desc' => 'first booking in 25% off',
+    'news_letter' => 'NEWSLETTER',
+    'scrambled_make' => 'scrambled it to make',
+    'enter_email' => 'Enter your email',
+    'subscribe' => 'subscribe',
+    'new_topics' => 'New Topics',
+    'copy_right' => 'copyright 2022 RalTravel by',
+
+    'home' => 'الرئيسية',
+    'home' => 'الرئيسية',
+    'home' => 'الرئيسية',
+    'home' => 'الرئيسية',
+    'home' => 'الرئيسية',
+    'home' => 'الرئيسية',
+    'home' => 'الرئيسية',
 
 
 ];

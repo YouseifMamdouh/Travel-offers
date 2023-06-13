@@ -25,14 +25,14 @@
                                             <i aria-hidden="true" class="fa fa-angle-right ps-2"></i>
                                         </div>
                                     </li>
-                                    <li><a href="{{ route('user.index') }}" class="menu-title">Home</a></li>
-                                    <li><a href="{{ route('user.about') }}" class="menu-title">About US</a></li>
+                                    <li><a href="{{ route('user.index') }}" class="menu-title">{{__('messages.home')}}</a></li>
+                                    <li><a href="{{ route('user.about') }}" class="menu-title">{{__('messages.about_us')}}</a></li>
                                     <li class="dropdown">
                                         <a href="{{ route('user.hotels.index') }}"
-                                           class="nav-link menu-title">hotels</a>
+                                           class="nav-link menu-title">{{__('messages.hotels')}}</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="nav-link menu-title">Services</a>
+                                        <a href="#" class="nav-link menu-title">{{__("messages.services")}}</a>
                                         <ul class="nav-submenu menu-content">
                                             @php
                                                 $services = \App\Models\Service::get();
@@ -46,23 +46,22 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{ route('user.programs.index') }}" class="nav-link menu-title">Our
-                                            Programs</a>
+                                        <a href="{{ route('user.programs.index') }}" class="nav-link menu-title">{{__("messages.our_programs")}}</a>
                                     </li>
-                                    <li><a href="{{ route('user.blogs.index') }}" class="menu-title">Blogs</a></li>
-                                    <li><a href="{{ route('user.contact') }}" class="menu-title">Contact US</a></li>
+                                    <li><a href="{{ route('user.blogs.index') }}" class="menu-title">{{__("messages.blogs")}}</a></li>
+                                    <li><a href="{{ route('user.contact') }}" class="menu-title">{{__("messages.contact_us")}}</a></li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
                     <ul class="header-right">
 
-                        <li class="front-setting rounded5">
-                            <select>
-                                <option value="en">EN</option>
-                                <option value="ar">Ar</option>
-                            </select>
-                        </li>
+{{--                        <li class="front-setting rounded5">--}}
+{{--                            <select>--}}
+{{--                                <option value="en">EN</option>--}}
+{{--                                <option value="ar">Ar</option>--}}
+{{--                            </select>--}}
+{{--                        </li>--}}
                         <li class="user rounded5">
                             <a href="#">
                                 <i class="fas fa-user"></i>

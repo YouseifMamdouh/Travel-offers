@@ -23,7 +23,7 @@ class HomeController extends Controller
         $cities = City::get();
         $countries = Country::get();
         $hotels = Hotel::limit(4)->get();
-        $latest_services = Service::orderBy('id', 'desc')->limit(5)->get();
+        $latest_services = Service::orderBy('id', 'desc')->limit(4)->get();
         return view('front.index', compact('banners', 'blogs', 'cities', 'hotels', 'countries', 'latest_services'));
     }
 
