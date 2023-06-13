@@ -282,7 +282,7 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/countries/delete/" + id,
+                                url: "/delete/" + id,
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",
