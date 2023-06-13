@@ -309,7 +309,8 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/services/delete/" + id,
+                                url: "{{url('admin/services/delete')}}/" + id,
+
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",

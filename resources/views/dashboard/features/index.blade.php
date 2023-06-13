@@ -302,7 +302,8 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/features/delete/" + id,
+                                url: "{{url('admin/features/delete')}}/" + id,
+
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",

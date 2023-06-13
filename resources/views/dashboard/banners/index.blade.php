@@ -282,7 +282,8 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/banners/delete/" + id,
+                                url: "{{url('admin/banners/delete')}}/" + id,
+
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",

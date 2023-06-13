@@ -286,7 +286,7 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/cities/delete/" + id,
+                                url: "{{url('admin/cities/delete')}}/" + id,
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",

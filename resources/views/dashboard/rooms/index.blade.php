@@ -463,7 +463,8 @@
                     }).then((function (result) {
                         if (result.isConfirmed) {
                             $.ajax({
-                                url: "/admin/rooms/delete/" + id,
+                                url: "{{url('admin/rooms/delete')}}/" + id,
+
                                 data: {
                                     _token: "{{csrf_token()}}",
                                     _method: "DELETE",

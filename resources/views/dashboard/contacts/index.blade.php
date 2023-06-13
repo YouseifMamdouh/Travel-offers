@@ -178,68 +178,7 @@
 <script src="{{asset('admin/assets/plugins/global/plugins.bundle.js')}}"></script>
 <script>
         $(document).ready(function () {
-            let delete_li = $('.delete_btn_li');
-            delete_li.on('click', function (e) {
-                e.preventDefault();
-                let form_locale = delete_li.parent();
-                let id = $(this).parent().find('input[name="locale_id"]').val();
-                if (id !== "") {
-                    Swal.fire({
-                        text: "Are You Sure?",
-                        icon: "warning",
-                        showCancelButton: !0,
-                        buttonsStyling: !1,
-                        confirmButtonText: "Delete",
-                        cancelButtonText: "Cancel",
-                        customClass: {confirmButton: "btn btn-danger", cancelButton: "btn btn-active-light"}
-                    }).then((function (result) {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                url: "/admin/about-us/delete/" + id,
-                                data: {
-                                    _token: "{{csrf_token()}}",
-                                    _method: "DELETE",
-                                    id: id,
-                                },
-                                type: "POST",
-                                success: function (response) {
-                                    if (typeof (response) != 'object') {
-                                        response = $.parseJSON(response)
-                                    }
-                                    console.log(response.status);
 
-                                    if (response.status === 1) {
-                                        let row_ = $('#row_' + id);
-                                        row_.remove();
-                                        Swal.fire({
-                                            text: "{{__('messages.success_delete')}}",
-                                            icon: "success",
-                                            confirmButtonText: "back",
-                                            customClass: {confirmButton: "btn btn-success"}
-                                        });
-                                    }
-                                }
-
-                            });
-                        } else {
-                            Swal.fire({
-                                text: "{{__('messages.failed_delete')}}",
-                                icon: "error",
-                                buttonsStyling: !1,
-                                confirmButtonText: "back",
-                                customClass: {confirmButton: "btn btn-primary"}
-                            });
-                        }
-                    }));
-                } else {
-                    Swal.fire({
-                        text: "{{__('messages.error_general')}}",
-                        icon: "error",
-                        confirmButtonText: "back",
-                        customClass: {confirmButton: "btn btn-primary"}
-                    })
-                }
-            });
         });
     </script>
 @stop
