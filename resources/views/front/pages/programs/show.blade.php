@@ -80,11 +80,13 @@
                                         </del>
                                     @endif
                                 </h4>
+                                @if($program->price > 0)
                                 <h2 class="price">
 
                                     {{  $program->price . General::getCurrency() }}
                                     <span>/للفرد</span>
                                 </h2>
+                                @endif
                                 {{--                                    <a href="{{ route('user.hotels.form',1) }}" class="btn btn-rounded btn-sm color1">book--}}
                                 {{--                                        this now</a>--}}
                             </div>
