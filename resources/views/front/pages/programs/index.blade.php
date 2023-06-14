@@ -95,11 +95,11 @@
                                                 </a>
                                                 <div class="tour-detail">
 
-                                                    <h6>
-                                                        <i class="fas fa-plane-departure ms-1"></i>
-                                                            {{$item->plan}}
-                                                        <i class="fas fa-plane-arrival ms-3"></i>
-                                                    </h6>
+{{--                                                    <h6>--}}
+{{--                                                        <i class="fas fa-plane-departure ms-1"></i>--}}
+{{--                                                            {{$item->plan}}--}}
+{{--                                                        <i class="fas fa-plane-arrival ms-3"></i>--}}
+{{--                                                    </h6>--}}
                                                     <div class="include-sec">
                                                         <span>شامل المزايا الآتية</span>
                                                         <ul class="include pe-0">

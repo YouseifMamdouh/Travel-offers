@@ -66,7 +66,7 @@
                                 <p class="mt-1 mb-2"><i
                                         class="fas fa-map-marker-alt ms-2"></i>{{$program->country->title . ', ' . $program->city->title}}
                                 </p>
-                                <p>{{$program->plan}}</p>
+                                <p style="max-width: 75%">{{$program->plan}}</p>
                                 {{--                                <div class="facility-detail">--}}
                                 {{--                                    <span>free wifi</span>--}}
                                 {{--                                    <span>free breakfast</span>--}}
