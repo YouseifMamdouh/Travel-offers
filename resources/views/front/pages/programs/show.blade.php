@@ -106,13 +106,13 @@
                                     {!! $program->description !!}
                                 </div>
                             </div>
+                            @if(isset($program->progImages) && $program->progImages->count() > 0)
 
                             <div class="desc-box">
                                 <h4 class="content-title">gallery</h4>
                                 <div class="menu-part" id="gallery">
                                     <div class="container-fluid p-0 ratio3_2">
                                         <div class="row  zoom-gallery">
-                                            @if(isset($program->progImages) && $program->progImages->count() > 0)
                                                 @foreach($program->progImages as $image)
                                                     <div class="col-lg-4 col-sm-6">
                                                         <div class="overlay">
@@ -126,12 +126,12 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
-                                            @endif
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endif
 
 {{--                            <div class="desc-box">--}}
 {{--                                <h4 class="content-title">review</h4>--}}
