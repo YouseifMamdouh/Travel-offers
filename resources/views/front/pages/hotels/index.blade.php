@@ -8,16 +8,16 @@
         <img src="{{asset('front/assets/images/inner-pages/bg-bread.jpg')}}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content">
             <div>
-                <h2>All hotels</h2>
+                <h2>جميع الفنادق</h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">hotels</li>
+                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">الرئيسية</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">الفنادق</li>
                     </ol>
                 </nav>
             </div>
         </div>
-        <div class="title-breadcrumb">Rica</div>
+{{--        <div class="title-breadcrumb">Rica</div>--}}
     </section>
     <!-- breadcrumb end -->
 
@@ -29,21 +29,21 @@
                 <div class="col-12">
                     <div class="search-section">
                         <div class="search-box">
-                            <div class="left-part">
+                            <div class="left-part" dir="rtl">
                                 <div class="search-body title-hotel">
-                                    <h6>hotel</h6>
-                                    <input type="text" name="text" placeholder="dubai" class="form-control ">
+                                    <h6>الفندق</h6>
+                                    <input type="text" name="text" placeholder="دبي" class="form-control ">
                                 </div>
                                 <div class="search-body">
-                                    <h6>check in</h6>
+                                    <h6>موعد الحجز</h6>
                                     <input placeholder="18 april" class="datepicker" />
                                 </div>
                                 <div class="search-body">
-                                    <h6>check out</h6>
+                                    <h6>موعد انتهاء الحجز</h6>
                                     <input placeholder="20 april" class="datepicker" />
                                 </div>
                                 <div class="search-body">
-                                    <h6>guests</h6>
+                                    <h6>الضيوف</h6>
                                     <div class="qty-box">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="search-body btn-search">
                                     <div class="right-part">
-                                        <a href="#" class="btn btn-solid color1">search</a>
+                                        <a href="#" class="btn btn-solid color1">بحث</a>
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +287,7 @@
 {{--                        <img src="{{asset('front/assets/images/icon/adjust.png')}}" class="img-fluid blur-up lazyload" alt="">--}}
 {{--                    </a>--}}
                     <div class="product-wrapper-grid special-section grid-box">
-                        <div class="row  content grid">
+                        <div class="row  content grid" dir="rtl">
                             @if(isset($hotels) && $hotels->count() > 0)
                                 @foreach($hotels as $item)
                                     <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">

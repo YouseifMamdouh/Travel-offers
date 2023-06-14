@@ -41,62 +41,51 @@
     <section class="single-section small-section bg-inner">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" dir="rtl">
                     <div class="hotel_title_section">
                         <div class="hotel-name">
                             <div class="left-part">
                                 <div class="top">
                                     <h2>{{$hotel->title}}</h2>
-                                    {{--                                    <div class="rating">--}}
-                                    {{--                                        <i class="fas fa-star"></i>--}}
-                                    {{--                                        <i class="fas fa-star"></i>--}}
-                                    {{--                                        <i class="fas fa-star"></i>--}}
-                                    {{--                                        <i class="fas fa-star"></i>--}}
-                                    {{--                                        <i class="far fa-star"></i>--}}
-                                    {{--                                    </div>--}}
                                     <div class="share-buttons">
-                                        <a href="#" class="btn btn-solid"><i class="far fa-share-square"></i> share</a>
-                                        <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> save</a>
+                                        <a href="#" class="btn btn-solid"><i class="far fa-share-square"></i> مشاركة</a>
+                                        <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> حفظ</a>
                                     </div>
                                 </div>
                                 <p class="mt-1 mb-2"><i
                                         class="fas fa-map-marker-alt me-2"></i>{{$hotel->country->title . ', ' . $hotel->city->title}}
                                 </p>
                                 <p>{{$hotel->address}}</p>
-                                {{--                                <div class="facility-detail">--}}
-                                {{--                                    <span>free wifi</span>--}}
-                                {{--                                    <span>free breakfast</span>--}}
-                                {{--                                </div>--}}
                             </div>
                             @php($min_price = $hotel->rooms->min('price'))
-                            @if($min_price != null)
-                                <div class="right-part">
-                                    <h2 class="price">{{__('messages.currency')}}{{$min_price}} <span>/ per night</span>
+                            @if($min_price != null && $min_price > 0)
+                                <div class="right-part" dir="rtl">
+                                    <h2 class="price">{{$min_price}} {{__('messages.currency')}} <span>/ لكل ليلة</span>
                                     </h2>
-                                    {{--                                    <a href="{{ route('user.hotels.form',1) }}" class="btn btn-rounded btn-sm color1">book--}}
-                                    {{--                                        this now</a>--}}
                                 </div>
                             @endif
 
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row" dir="rtl">
                 <div class="col-xl-9 col-lg-8">
                     <div class="description-section tab-section">
                         <div class="menu-top menu-up">
                             <ul class="nav nav-tabs" id="top-tab" role="tablist">
                                 <li class="nav-item"><a data-bs-toggle="tab" class="nav-link active"
-                                                        href="#rooms">rooms</a></li>
-                                <li class="nav-item"><a data-bs-toggle="tab" class="nav-link" href="#about">about</a>
+                                                        href="#rooms">الغرف</a></li>
+                                <li class="nav-item"><a data-bs-toggle="tab" class="nav-link" href="#about">عن الفندق</a>
                                 </li>
                                 <li class="nav-item"><a data-bs-toggle="tab" class="nav-link"
-                                                        href="#facility">facility</a>
+                                                        href="#facility">المزايا</a>
                                 </li>
                                 <li class="nav-item"><a data-bs-toggle="tab" class="nav-link"
-                                                        href="#location">location</a>
+                                                        href="#location">الموقع</a>
                                 </li>
                                 <li class="nav-item"><a data-bs-toggle="tab" class="nav-link"
-                                                        href="#policy">Gallery</a>
+                                                        href="#policy">المعرض</a>
                                 </li>
                             </ul>
                             <div class="description-details tab-content" id="top-tabContent">
@@ -117,7 +106,7 @@
                                                         <div class="room-detail">
                                                             <div class="row">
                                                                 <div class="col-6 p-0">
-                                                                    <h6>Amenities</h6>
+                                                                    <h6>المزايا</h6>
                                                                     <div class="facility-detail">
                                                                         <ul>
                                                                             @if(count($room->features) > 0)
@@ -144,13 +133,13 @@
                                                             <div>
                                                                 @if($room->discount != null)
                                                                     <h6>
-                                                                        {{ General::getCurrency() . ($room->price * 100)/$room->discount }}
+                                                                        {{($room->price * 100)/$room->discount .  General::getCurrency() }}
                                                                     </h6>
                                                                 @endif
 
-                                                                <h5>{{ General::getCurrency() . $room->price}} <span
+                                                                <h5>{{ $room->price . General::getCurrency() }} <span
                                                                         class="text-muted d-inline-block"
-                                                                        style="font-size: 15px;font-weight: normal">/per night</span>
+                                                                        style="font-size: 15px;font-weight: normal">/لكل ليلة</span>
                                                                 </h5>
 
 
@@ -158,7 +147,7 @@
                                                                 <div class="pretty p-default mt-4" dir="rtl">
                                                                     <input type="checkbox"/>
                                                                     <div class="state p-success">
-                                                                        <label>Book Now</label>
+                                                                        <label>احجز الان</label>
                                                                     </div>
                                                                 </div>
 
@@ -179,7 +168,7 @@
                                     <div class="row">
                                         <div class="col-xl-12 col-lg-12 col-12">
                                             <h6><img src="{{ asset('front/assets/images/icon/hotel/verified.png') }}"
-                                                     class="img-fluid blur-up lazyload" alt="Basic"> basic facility</h6>
+                                                     class="img-fluid blur-up lazyload" alt="Basic">المزايا الأساسية</h6>
                                             <ul class="d-inline-block">
                                                 @foreach($all_features_in_hotel as $single_feature)
                                                     <li class="d-inline">
@@ -267,23 +256,23 @@
                                     <img src="{{ asset('front/assets/images/map-image.svg') }}"
                                          class="img-fluid blur-up lazyload" alt="">
                                     {!! $hotel->location !!}
-                                    <h6>view on map</h6>
+                                    <h6>عرض علي الخريطة</h6>
                                 </div>
 
                                 <div class="book-btn-section">
-                                    <input type="text" class="form-control mb-2" placeholder="Enter Full Name">
-                                    <input type="text" class="form-control mb-2" placeholder="Enter Phone Number">
-                                    <input type="email" class="form-control mb-2" placeholder="Enter Email">
-                                    <input placeholder="Check In" class="datepicker"/>
-                                    <input placeholder="Check Out" class="datepicker"/>
+                                    <input type="text" class="form-control mb-2" placeholder="ادخل الإسم بالكامل">
+                                    <input type="text" class="form-control mb-2" placeholder="ادخل رقم الهاتف">
+                                    <input type="email" class="form-control mb-2" placeholder="البريد الإلكتروني">
+                                    <input placeholder="تسجيل الدخول" class="datepicker"/>
+                                    <input placeholder="تسجيل الخروج" class="datepicker"/>
                                     <div class="rooms-section">
                                         <input type="text" class="form-control open-select"
-                                               placeholder="rooms & guests">
+                                               placeholder="عدد الغرف والضيوف">
                                         <div class="selector-box">
                                             <div class="room-cls">
-                                                <label class="title_room">room 1</label>
+                                                <label class="title_room">الغرفة 1</label>
                                                 <div class="qty-box">
-                                                    <label>adult</label>
+                                                    <label>البالغين</label>
                                                     <div class="input-group">
                                                         <button type="button" class="btn quantity-left-minus"
                                                                 data-type="minus" data-field=""> -
@@ -296,7 +285,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="qty-box">
-                                                    <label>children</label>
+                                                    <label>الأطفال</label>
                                                     <div class="input-group">
                                                         <button type="button" class="btn quantity-left-minus"
                                                                 data-type="minus" data-field=""> -
@@ -310,14 +299,13 @@
                                                 </div>
                                             </div>
                                             <div class="bottom-part">
-                                                <a href="#" class="add-room">add room +</a>
-                                                <a href="javascript:void(0)" class="btn">apply</a>
+                                                <a href="#" class="add-room">إضافة غرفة +</a>
+                                                <a href="javascript:void(0)" class="btn">تأكيد</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <a href="{{ route('user.hotels.form',1) }}" class="btn btn-rounded btn-sm color1">book
-                                        this now</a>
+                                    <a href="{{ route('user.hotels.form',1) }}" class="btn btn-rounded btn-sm color1">إرسال الطلب</a>
                                 </div>
                             </div>
                         </div>

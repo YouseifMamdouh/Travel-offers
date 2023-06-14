@@ -7,11 +7,11 @@
         <img src="{{ asset('front')}}/assets/images/inner-pages/breadcrumb1.jpg" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>Our Programmes</h2>
+                <h2>البرامج السياحية</h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Our Programmes</li>
+                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">الرئيسية</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">البرامج السياحية</li>
                     </ol>
                 </nav>
             </div>
@@ -37,7 +37,7 @@
     <!-- section start -->
     <section class="small-section bg-inner">
         <div class="container">
-            <div class="row">
+            <div class="row" dir="rtl">
 
                 <div class="col-xl-12 onclick-map">
                     <div class="book-table single-table bg-inner">
@@ -91,18 +91,18 @@
                                             </div>
                                             <div class="special-content">
                                                 <a href="{{ route('user.programs.show',$item->id) }}">
-                                                    <h5>Bali Dreams Land Only<span>(6N 7D)</span></h5>
+                                                    <h5>{{$item->name}}<span>{{$item->title}}</span></h5>
                                                 </a>
                                                 <div class="tour-detail">
 
                                                     <h6>
-                                                        <i class="fas fa-plane-departure me-3"></i>
+                                                        <i class="fas fa-plane-departure ms-1"></i>
                                                             {{$item->plan}}
                                                         <i class="fas fa-plane-arrival ms-3"></i>
                                                     </h6>
                                                     <div class="include-sec">
-                                                        <span>include at this price</span>
-                                                        <ul class="include">
+                                                        <span>شامل المزايا الآتية</span>
+                                                        <ul class="include pe-0">
                                                             @php
                                                                 $prog_features = $item->features->pluck('id')->toArray();;
                                                             @endphp
@@ -120,15 +120,17 @@
                                                     </div>
                                                     <div class="bottom-section">
                                                         <div class="price">
-                                                            <h6>
+                                                            <h6 dir="rtl">
                                                             @if($item->discount != null)
                                                                 <del>
-                                                                    {{ General::getCurrency() . ($item->price * 100)/$item->discount }}
+                                                                    {{  ($item->price * 100)/$item->discount .General::getCurrency()  }}
                                                                 </del>
                                                             @endif
-                                                                {{ General::getCurrency() . $item->price}}
+                                                                {{ $item->price .General::getCurrency() }}
                                                             </h6>
-                                                            <span>price per person</span>
+                                                        </div>
+                                                        <div class="price" style="clear: both">
+                                                            <span>التكلفة للفرد الواحد</span>
                                                         </div>
                                                     </div>
                                                 </div>

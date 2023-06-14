@@ -62,11 +62,11 @@
 {{--                                <option value="ar">Ar</option>--}}
 {{--                            </select>--}}
 {{--                        </li>--}}
-                        <li class="user rounded5">
-                            <a href="#">
-                                <i class="fas fa-user"></i>
-                            </a>
-                        </li>
+{{--                        <li class="user rounded5">--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="fas fa-user"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <li class="setting">
                             <a href="#">
                                 <i class="fas fa-cog"></i>

@@ -7,10 +7,10 @@
         $blogs = \App\Models\Blog::limit(3)->get();
     @endphp
    <footer>
-       <div class="footer section-b-space section-t-space">
+       <div class="footer section-b-space section-t-space" style="padding-top: 40px!important;">
            <div class="container">
-               <div class="row order-row">
-                   <div class="col-xl-3 col-md-7 order-cls">
+               <div class="row order-row text-right">
+                   <div class="col-xl-3 col-lg-3 col-md-7 order-cls">
                        <div class="footer-title mobile-title">
                            <h5>{{__('messages.contact_us')}}</h5>
                        </div>
@@ -31,24 +31,22 @@
                        </div>
                    </div>
 
-                   <div class="col-xl-3 col-md-7">
+                   <div class="col-xl-3 col-lg-3 col-md-7">
                        <div class="footer-title">
                            <h5>{{__("messages.top_places")}}</h5>
                        </div>
                        <div class="footer-content">
                            <div class="footer-place">
-                               <div class="row">
+                               <div class="row px-3" dir="rtl">
 
                                    @if(isset($countries) && $countries->count() > 0)
                                        @foreach($countries as $item)
-                                           <div class="col-4">
+                                           <div class="col-lg-6 col-md-6 col-6 mt-0 mb-2">
                                                <div class="place rounded5">
-                                                   <a href="{{route('user.show.programs', $item->id)}}">
-                                                       <img src="{{ asset('uploads/countries/' . $item->image) }}"
-                                                            class="img-fluid blur-up lazyload" alt="">
-                                                       <div class="overlay">
-                                                           <h6>{{$item->title}}</h6>
-                                                       </div>
+                                                   <a href="{{route('user.show.programs', $item->id)}}" dir="rtl">
+
+                                                       <h6> - {{$item->title}}</h6>
+
                                                    </a>
                                                </div>
                                            </div>
@@ -60,10 +58,10 @@
                            </div>
                        </div>
                    </div>
-                   <div class="col-xl-3 col-md-4">
+                   <div class="col-xl-3 col-lg-3 col-md-4">
                        <div class="footer-space">
                            <div class="footer-title">
-                               <h5>{{__("messages.about_us")}}</h5>
+                               <h5>روابط مهمة</h5>
                            </div>
                            <div class="footer-content">
                                <div class="footer-links">
@@ -91,7 +89,7 @@
                            <div class="footer-blog">
                                @if(isset($blogs) && $blogs->count() > 0)
                                    @foreach($blogs as $blog)
-                                       <div class="media">
+                                       <div class="media" dir="rtl">
                                            <div class="img-part rounded5">
                                                <a href="#"><img src="{{ asset('uploads/blogs/' . $blog->image) }}" style="width: 100px"
                                                                 class="img-fluid blur-up lazyload" alt=""></a>

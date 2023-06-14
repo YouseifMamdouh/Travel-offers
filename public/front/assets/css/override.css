@@ -1,10 +1,11 @@
 .pretty .state label:after, .pretty .state label:before {
-    left: auto;
-    right: -11px;
+    right: auto;
+    left: -50px;
     top: -5px;
     font-size: 27px;
     font-weight: bold;
 }
+.pretty {margin-right: 0!important;}
 .pretty .state label {font-size: 18px;font-weight: bold}
 .tourSection .tourBox .tourContent h3 {color: #fff;!important;}
 .tourSection .tourBox .tourContent {background: #a1885c;padding-bottom: 17px;border-bottom-left-radius: 28px;border-bottom-right-radius: 28px;}
@@ -21,8 +22,30 @@ ol.breadcrumb {direction: rtl}
 .theme-breadcrumb .package-detail li i {margin-right: 10px;}
 .hotel_title_section .hotel-name .right-part {margin-left: 0;margin-right: auto;}
 .single-section .single-sidebar .book-btn-section .rooms-section .selector-box .bottom-part .btn {margin-left: 0;margin-right: auto}
+header .main-navbar .nav-menu>li {float:right!important;}
+header .menu {direction: rtl}
+header .main-navbar .nav-menu>li .nav-submenu li {text-align: right;transition: all 0s}
+header .main-navbar .nav-menu>li .nav-submenu li a{font-size: 13px}
+header .main-navbar .nav-menu>li .nav-submenu li:hover {background: #a1885c}
+header .main-navbar .nav-menu>li .nav-submenu li:hover > a {color: #fff;transition: all 0s}
+header .main-navbar .nav-menu>li .nav-submenu {left: auto!important;right: 0}
+footer .footer .footer-content .contact-detail p {padding-right: 0;margin-bottom: 28px}
+footer .footer .footer-title h5 {margin-top: 30px;margin-bottom: 31px}
+footer .footer .footer-content .footer-place .place a h6{color: white;text-transform: capitalize;font-weight: 700;font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));letter-spacing: 0.03em;line-height: 1.2;}
+footer .footer .footer-content .footer-blog .media .media-body {margin-right: 25px;margin-left: 0;}
+.text-right {text-align: right}
+footer .footer .footer-space {padding-left: 0;padding-right: 90px}
+.special-section.grid-box .special-box .special-content .tour-detail .bottom-section .price h6 {float: right}
+.special-section.grid-box .special-box .special-content .tour-detail .bottom-section .price h6 del {margin-left: 10px}
 
 
+
+.breadcrumb .breadcrumb-item {font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));color: #000;text-transform: capitalize;font-weight: 700;}
+.breadcrumb .breadcrumb-item a {font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));color: #000;}
+.breadcrumb .breadcrumb-item+.breadcrumb-item:before {font-family: "Font Awesome 5 free";font-weight: 900;content: "\f100";color: #000;}
+.breadcrumb {margin-bottom: 0!important;}
+.hotel_title_section .hotel-name .left-part .top .share-buttons .btn {margin-right: 15px;margin-left: 0!important;}
+.room-cls {text-align: right}
 
 
 
