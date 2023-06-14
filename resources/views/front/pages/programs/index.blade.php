@@ -154,3 +154,16 @@
     <!-- section End -->
 
 @endsection
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            // Make All Ad Cards Same Height
+            let special_box = $('div.special-box');
+            let cardMaxHeight = Math.max.apply(null, special_box.map(function () {
+                return $(this).height();
+            }).get());
+            special_box.height(cardMaxHeight);
+        });
+    </script>
+@stop
