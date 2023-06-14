@@ -118,6 +118,7 @@
 
                                                         </ul>
                                                     </div>
+                                                    @if($item->price > 0)
                                                     <div class="bottom-section">
                                                         <div class="price">
                                                             <h6 dir="rtl">
@@ -133,6 +134,7 @@
                                                             <span>التكلفة للفرد الواحد</span>
                                                         </div>
                                                     </div>
+                                                        @endif
                                                 </div>
                                             </div>
                                             {{-- <div class="label-offer">Recommended</div> --}}
