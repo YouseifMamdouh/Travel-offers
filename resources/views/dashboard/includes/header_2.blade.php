@@ -307,7 +307,7 @@
                         <!--end::Menu item-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                            <form action="{{url('logout')}}" method="post"
+                            <form action="{{route('logout')}}" method="post"
                                >
                                 @csrf
                                 <button type="submit" class="menu-link custom_btn px-5">Sign Out</button>

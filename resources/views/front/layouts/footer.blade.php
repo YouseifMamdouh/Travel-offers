@@ -20,7 +20,7 @@
                                    <img src="{{ asset('front/assets/images/logo-ral.png') }}" alt=""
                                         class="img-fluid blur-up lazyload" width="150px">
                                </div>
-                               <p>{!! $about->description !!}</p>
+{{--                               <p>{!! $about->description !!}</p>--}}
                                <ul class="contact-list">
                                    {{-- <li><i class="fas fa-map-marker-alt"></i>Cairo , maadi</li> --}}
                                    <li><i class="fas fa-phone-alt"></i>{{$contact->phone}}</li>
@@ -45,7 +45,7 @@
                                                <div class="place rounded5">
                                                    <a href="{{route('user.show.programs', $item->id)}}" dir="rtl">
 
-                                                       <h6> - {{$item->title}}</h6>
+                                                       <h6>{{$item->title}}</h6>
 
                                                    </a>
                                                </div>

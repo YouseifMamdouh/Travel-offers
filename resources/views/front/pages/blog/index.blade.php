@@ -10,13 +10,12 @@
                 <h2>blog</h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">blog</li>
+                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">الرئيسية</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">الأخبار</li>
                     </ol>
                 </nav>
             </div>
         </div>
-        <div class="title-breadcrumb">Rica</div>
     </section>
     <!-- breadcrumb end -->
 
@@ -33,7 +32,7 @@
                                     <div class="col-lg-4 col-md-6">
                                         <div class="blog-wrap wow fadeInUp">
                                             <div class="blog-image">
-                                                <a href="#">
+                                                <a href="{{route('user.blogs.show', $item->id)}}">
                                                     <img src="{{ asset('uploads/blogs/' . $item->image) }}"
                                                          class="img-fluid blur-up lazyload bg-img" alt="">
                                                 </a>
@@ -45,7 +44,7 @@
                                                 </div>
                                             </div>
                                             <div class="blog-details">
-                                                <a href="#">
+                                                <a href="{{route('user.blogs.show', $item->id)}}">
                                                     <h5>{{$item->title}}</h5>
 
                                                 </a>

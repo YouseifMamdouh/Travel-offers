@@ -13,7 +13,8 @@ class BlogController extends Controller
         return view('front.pages.blog.index', compact('blogs'));
     }
 
-    public function show(){
-          return view('front.pages.blog.show');
+    public function show($id){
+        $blog = Blog::find($id);
+          return view('front.pages.blog.show', compact('blog'));
     }
 }

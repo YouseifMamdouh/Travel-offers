@@ -5779,7 +5779,7 @@ section .black-layer:before {
     line-height: 1.5;
     margin-bottom: 15px;
     margin-top: -7px;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -5868,7 +5868,7 @@ section .black-layer:before {
     display: flex;
     overflow: hidden;
     max-width: 280px;
-    white-space: nowrap;
+    white-space: normal;
     text-overflow: ellipsis;
     display: block;
 }
@@ -5992,7 +5992,7 @@ section .black-layer:before {
     max-width: 360px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
     font-size: 13px;
 }
 
@@ -6037,7 +6037,7 @@ section .black-layer:before {
     max-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .special-section.grid-box .special-box .special-content.restaurant-detail h5 {
@@ -8146,7 +8146,7 @@ section .black-layer:before {
 
 .deals .deals-box .left-portion .deals-content .detail h2 {
     font-size: calc(17px + (27 - 17) * ((100vw - 320px) / (1920 - 320)));
-    white-space: nowrap;
+    white-space: normal;
     color: #ef3f3e;
     margin-bottom: 0;
 }
@@ -9189,7 +9189,7 @@ section .black-layer:before {
     display: flex;
     overflow: hidden;
     max-width: 100%;
-    white-space: nowrap;
+    white-space: normal;
     text-overflow: ellipsis;
     color: black;
     font-weight: 800;
@@ -9314,7 +9314,7 @@ section .black-layer:before {
     max-width: 360px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .process-steps .step-bg .popular-section .step-box .popular-box .special-content .tour-detail h6 i {
@@ -9357,7 +9357,7 @@ section .black-layer:before {
     max-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .process-steps .step-bg h4 {
@@ -9924,7 +9924,7 @@ section .black-layer:before {
     display: flex;
     overflow: hidden;
     max-width: 280px;
-    white-space: nowrap;
+    white-space: normal;
     text-overflow: ellipsis;
     color: black;
 }
@@ -10046,7 +10046,7 @@ section .black-layer:before {
     max-width: 360px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .popular-section .popular-box .content .special-content .tour-detail h6 i {
@@ -10089,7 +10089,7 @@ section .black-layer:before {
     max-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .popular-section .popular-box .content .special-content.restaurant-detail h5 {
@@ -10354,7 +10354,7 @@ section .black-layer:before {
     -moz-osx-font-smoothing: grayscale;
     margin: 2px 0 0;
     font-size: 70px;
-    white-space: nowrap;
+    white-space: normal;
     text-transform: uppercase;
     overflow: hidden;
     width: 100%;
@@ -18900,7 +18900,7 @@ footer.footer-bg .footer .footer-content .footer-blog .media .media-body p {
     color: black;
     overflow: hidden;
     border-right: 0.15em solid #ef3f3e;
-    white-space: nowrap;
+    white-space: normal;
     margin: 0 auto;
     letter-spacing: 0.15em;
     -webkit-animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
@@ -22313,7 +22313,7 @@ header.overlay-white {
     top: 0;
     left: 0;
     cursor: default;
-    white-space: nowrap;
+    white-space: normal;
     color: black;
     font-size: 12px;
     line-height: 1.333;
@@ -22363,7 +22363,7 @@ header.overlay-white {
     position: absolute;
     bottom: 0;
     left: 0;
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
     font-size: 9px;
     line-height: 9px;
@@ -27758,7 +27758,7 @@ body.dark {
     .list-view .list-box .list-content h6 {
         max-width: 300px;
         overflow: hidden;
-        white-space: nowrap;
+        white-space: normal;
         text-overflow: ellipsis;
     }
     .top-filter-section ul .onclick-title {
@@ -27807,7 +27807,7 @@ body.dark {
         margin-right: 8px;
         max-width: 115px;
         overflow: hidden;
-        white-space: nowrap;
+        white-space: normal;
         text-overflow: ellipsis;
     }
     .category-section .category-box .bottom-bar .top h6 {
@@ -28809,7 +28809,7 @@ body.dark {
         margin-right: 8px;
         max-width: 105px;
         overflow: hidden;
-        white-space: nowrap;
+        white-space: normal;
         text-overflow: ellipsis;
     }
     .category-section .category-box .bottom-bar .top h6 {
@@ -30013,7 +30013,7 @@ body.dark {
         display: inline-block;
     }
     .faq-tab .nav-tabs .nav-item .nav-link {
-        white-space: nowrap;
+        white-space: normal;
     }
     .faq-tab .nav-tabs .nav-item .nav-link.active {
         border-right: none;
@@ -32754,7 +32754,7 @@ body.dark {
     .category-section .category-box .bottom-bar .top h5 {
         max-width: 100px;
         overflow: hidden;
-        white-space: nowrap;
+        white-space: normal;
         text-overflow: ellipsis;
         font-size: 13px;
         margin-right: 5px;
@@ -32950,7 +32950,7 @@ body.dark {
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 200px;
-        white-space: nowrap;
+        white-space: normal;
         padding: 0;
     }
     .single-section .description-section .description-details .menu-part .accordion-plan .card .card-body {
@@ -33194,7 +33194,7 @@ body.dark {
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 200px;
-        white-space: nowrap;
+        white-space: normal;
         padding: 0;
     }
     .single-section .description-section .description-details .menu-part .accordion-plan .card .card-body {

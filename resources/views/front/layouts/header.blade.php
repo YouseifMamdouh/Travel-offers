@@ -35,7 +35,7 @@
                                         <a href="#" class="nav-link menu-title">{{__("messages.services")}}</a>
                                         <ul class="nav-submenu menu-content">
                                             @php
-                                                $services = \App\Models\Service::get();
+                                                $services = \App\Models\Service::orderBy('id', 'asc')->get();
                                             @endphp
                                             @if(isset($services) && $services->count() > 0)
                                                 @foreach($services as $service)
@@ -48,7 +48,10 @@
                                     <li class="dropdown">
                                         <a href="{{ route('user.programs.index') }}" class="nav-link menu-title">{{__("messages.our_programs")}}</a>
                                     </li>
+                                    @php($blogs = \App\Models\Blog::count())
+                                    @if(isset($blogs) && $blogs > 0)
                                     <li><a href="{{ route('user.blogs.index') }}" class="menu-title">{{__("messages.blogs")}}</a></li>
+                                   @endif
                                     <li><a href="{{ route('user.contact') }}" class="menu-title">{{__("messages.contact_us")}}</a></li>
                                 </ul>
                             </div>

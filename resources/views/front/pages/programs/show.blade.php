@@ -13,18 +13,6 @@
         <img src="{{ asset('uploads/programmes/' . $program->cover) }}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content overlay-black">
             <div>
-{{--                <h2>{{$program->name}}</h2>--}}
-{{--                <nav aria-label="breadcrumb" class="theme-breadcrumb">--}}
-{{--                    <ol class="breadcrumb">--}}
-{{--                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">{{__('messages.home')}}</a></li>--}}
-{{--                        <li class="breadcrumb-item"><a href="{{route('user.programs.index')}}">{{__('messages.our_programs')}}</a></li>--}}
-{{--                        <li class="breadcrumb-item active" aria-current="page">{{$program->name}}</li>--}}
-{{--                    </ol>--}}
-{{--                    <ul class="package-detail">--}}
-{{--                        <li><i class="far fa-calendar-alt"></i>{{$program->title}}</li>--}}
-{{--                        <li><i class="fas fa-plane"></i>{{$program->plan}}</li>--}}
-{{--                    </ul>--}}
-{{--                </nav>--}}
             </div>
         </div>
         <div class="title-breadcrumb">Rica</div>

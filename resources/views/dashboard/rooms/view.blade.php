@@ -172,7 +172,10 @@
     </div>
 @stop
 @section('script')
+    <script src="{{asset('admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+
     <script>
+
         $(document).ready(function () {
             // ClassicEditor
             //     .create(document.querySelector('#editor'))

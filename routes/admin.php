@@ -146,7 +146,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::post('/store', 'ProgrammesController@store')->name('programmes.store');
         Route::get('/edit/{id}', 'ProgrammesController@edit')->name('programmes.edit');
         Route::post('/update/{id}', 'ProgrammesController@update')->name('programmes.update');
-        Route::get('delete/{id}', 'ProgrammesController@destroy')->name('programmes.destroy');
+        Route::delete('delete/{id}', 'ProgrammesController@destroy')->name('programmes.destroy');
 
         Route::get('add-images/{id}', 'ProgrammesController@addImages')->name('programmes.addImages');
         Route::post('post-images/{id}', 'ProgrammesController@postImages')->name('programmes.postImages');

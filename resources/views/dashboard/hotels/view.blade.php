@@ -171,16 +171,18 @@
     </div>
 @stop
 @section('script')
+    <script src="{{asset('admin/assets/plugins/global/plugins.bundle.js')}}"></script>
+
     <script>
         $(document).ready(function () {
-            ClassicEditor
-                .create(document.querySelector('#editor'))
-                .then(editor => {
-                    console.log(editor);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+            // ClassicEditor
+            //     .create(document.querySelector('#editor'))
+            //     .then(editor => {
+            //         console.log(editor);
+            //     })
+            //     .catch(error => {
+            //         console.error(error);
+            //     });
 
             let delete_image = $(".delete_image");
             delete_image.on('click', function (e) {

@@ -29,7 +29,7 @@ class RoomRequest extends FormRequest
             'type_of' => 'required|in:single,double,family',
             'hotel_id' => 'required|exists:hotels,id',
             'features' => 'required',
-            'price' => 'required',
+//            'price' => 'required',
         ];
     }
     public function messages()
@@ -42,7 +42,7 @@ class RoomRequest extends FormRequest
             'hotel_id.required' => 'The Hotel Field is Required',
             'hotel_id.exists' => 'The Hotel must Exists in Hotels List',
             'features.required' => 'The Features Field is Required',
-            'price.required' => 'The price Field is Required',
+//            'price.required' => 'The price Field is Required',
         ];
     }
 }

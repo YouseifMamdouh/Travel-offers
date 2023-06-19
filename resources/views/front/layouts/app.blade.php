@@ -11,6 +11,7 @@
     <meta name="author" content="rica">
     <link rel="icon" href="" type="image/x-icon" />
     <title>Ral Travel</title>
+    <link rel="shortcut icon" href="{{asset('front/assets/images/logo-ral.png')}}"/>
 
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
@@ -181,12 +182,20 @@
                     showCloseButton: true,
                 });
             });
-
         </script>
     @endif
     @yield('script')
     @stack('user.js')
-
+    <script>
+        $(document).ready(function () {
+            // Make All Ad Cards Same Height
+            let special_box = $('div.special-content');
+            let cardMaxHeight = Math.max.apply(null, special_box.map(function () {
+                return $(this).height();
+            }).get());
+            special_box.height(cardMaxHeight);
+        });
+    </script>
 </body>
 
 </html>
