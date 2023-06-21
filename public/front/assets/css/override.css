@@ -30,9 +30,10 @@ header .main-navbar .nav-menu>li .nav-submenu li:hover {background: #a1885c}
 header .main-navbar .nav-menu>li .nav-submenu li:hover > a {color: #fff;transition: all 0s}
 header .main-navbar .nav-menu>li .nav-submenu {left: auto!important;right: 0}
 footer .footer .footer-content .contact-detail p {padding-right: 0;margin-bottom: 28px}
-footer .footer .footer-title h5 {margin-top: 30px;margin-bottom: 31px}
-footer .footer .footer-content .footer-place .place a h6{color: white;text-transform: capitalize;font-weight: 700;font-size: calc(12px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));letter-spacing: 0.03em;line-height: 1.2;}
-footer .footer .footer-content .footer-links ul li a {color: white;}
+footer .footer .footer-title h5 {color:#a1a1a1;margin-top: 30px;margin-bottom: 31px}
+footer .footer .footer-content .footer-place .place a h6{color: #a1a1a1;text-transform: capitalize;font-weight: 700;font-size: calc(12px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));letter-spacing: 0.03em;line-height: 1.2;}
+footer .footer .footer-content .footer-links ul li a {color: #a1a1a1;}
+footer .footer .footer-content .footer-blog .media .media-body h5 {color: #a1a1a1;font-size: calc(12px + (20 - 16) * ((100vw - 320px) / (1920 - 320)))}
 footer .footer .footer-content .footer-blog .media .media-body {margin-right: 25px;margin-left: 0;}
 .text-right {text-align: right}
 footer .footer .footer-space {padding-left: 0;padding-right: 90px}

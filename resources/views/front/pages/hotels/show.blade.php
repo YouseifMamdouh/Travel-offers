@@ -116,7 +116,7 @@
                                                             <div class="room-detail">
                                                                 <div class="row">
                                                                     <div class="col-6 p-0">
-                                                                        <h6>المزايا</h6>
+{{--                                                                        <h6>المزايا</h6>--}}
                                                                         <div class="facility-detail">
                                                                             <ul>
                                                                                 @if(count($room->features) > 0)
@@ -139,8 +139,9 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <div class="price-details">
+                                                            <div class="price-details" style="margin-left: {{$room->price < 1 ? '50px' : '0'}}">
                                                                 <div>
+                                                                    @if($room->price > 0)
                                                                     @if($room->discount != null)
                                                                         <h6>
                                                                             {{($room->price * 100)/$room->discount .  General::getCurrency() }}
@@ -152,7 +153,7 @@
                                                                             class="text-muted d-inline-block"
                                                                             style="font-size: 15px;font-weight: normal">/لكل ليلة</span>
                                                                     </h5>
-
+                                                                    @endif
 
                                                                     <!-- success -->
                                                                     <div class="pretty p-default mt-4" dir="rtl">

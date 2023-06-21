@@ -3,7 +3,7 @@
     @php
         $contact = \App\Models\Contact::first();
         $about = \App\Models\AboutUsDetail::first();
-        $countries = \App\Models\Country::get();
+        $countries = \App\Models\Country::whereHas('hotels')->get();
         $blogs = \App\Models\Blog::limit(3)->get();
     @endphp
    <footer>
