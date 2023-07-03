@@ -10,7 +10,7 @@
 
     <!-- breadcrumb start -->
     <section class="breadcrumb-section pt-0" >
-        <img src="{{ asset('uploads/programmes/' . $program->cover) }}" class="bg-img img-fluid blur-up lazyload" alt="">
+        <img src="{{ asset('uploads/programmes/' . $program->banner) }}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content overlay-black">
             <div>
             </div>

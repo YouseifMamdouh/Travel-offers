@@ -30,6 +30,8 @@ class RoomRequest extends FormRequest
             'hotel_id' => 'required|exists:hotels,id',
             'features' => 'required',
 //            'price' => 'required',
+            'banner' => 'required_without:id|mimes:png,jpg,jpeg',
+
         ];
     }
     public function messages()

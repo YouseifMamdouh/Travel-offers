@@ -25,7 +25,9 @@ class Country extends Model
     public function hotels() {
         return $this->hasMany(Hotel::class, 'country_id', 'id');
     }
-
+    public function programs() {
+        return $this->hasMany(OurProgramme::class, 'country_id', 'id');
+    }
 
 
 }

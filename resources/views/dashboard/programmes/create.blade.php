@@ -20,7 +20,8 @@
         <div class="d-flex flex-column flex-column-fluid">
             <!--begin::Toolbar-->
 
-            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
+            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6"
+                 dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
                 <!--begin::Toolbar container-->
                 <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
                     <!--begin::Page title-->
@@ -35,7 +36,8 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('programmes.index')}}" class="text-muted text-hover-primary">Programmes</a> <span class="px-2"> - </span>
+                                <a href="{{route('programmes.index')}}"
+                                   class="text-muted text-hover-primary">Programmes</a> <span class="px-2"> - </span>
                                 <span> Add </span>
                             </li>
                             <!--end::Item-->
@@ -77,8 +79,8 @@
                     <div class="card-body py-4" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
                         <!--begin::Table-->
                         <form action="{{route('programmes.store')}}" enctype="multipart/form-data" method="post">
-                            @csrf
-                            <!--begin::Input group-->
+                        @csrf
+                        <!--begin::Input group-->
 
                             <!--begin::Input group-->
                             <div class="fv-row mb-7">
@@ -86,7 +88,8 @@
                                 <label class="required fw-semibold fs-6 mb-2" for="name">Name</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="name" value="{{old("name")}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Name" />
+                                <input type="text" name="name" value="{{old("name")}}"
+                                       class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Name"/>
                                 <!--end::Input-->
                             </div>
                             <div class="fv-row mb-7">
@@ -94,7 +97,8 @@
                                 <label class="required fw-semibold fs-6 mb-2">Duration</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="title" value="{{old("title")}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Duration" />
+                                <input type="text" name="title" value="{{old("title")}}"
+                                       class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Duration"/>
                                 <!--end::Input-->
                             </div>
 
@@ -105,14 +109,16 @@
                                     <label class="required fw-semibold fs-6 mb-2" for="price">Price</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" name="price" value="{{old("price")}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Price" />
+                                    <input type="text" name="price" value="{{old("price")}}"
+                                           class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Price"/>
                                     <!--end::Input-->
                                 </div>
                                 <div class="col-md-5 d-inline-block mx-3">
                                     <label class="fw-semibold fs-6 mb-2" for="discount">Discount (optional)</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" name="discount" value="{{old("discount")}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Discount" />
+                                    <input type="text" name="discount" value="{{old("discount")}}"
+                                           class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Discount"/>
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -123,7 +129,9 @@
                                 <label class="required fw-semibold fs-6 mb-2" for="plan">Programme Plan</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="plan" value="{{old("plan")}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Kuta (2N) → Lombok (2N) → Ubud (2N) " />
+                                <input type="text" name="plan" value="{{old("plan")}}"
+                                       class="form-control form-control-solid mb-3 mb-lg-0"
+                                       placeholder="Kuta (2N) → Lombok (2N) → Ubud (2N) "/>
                                 <!--end::Input-->
                             </div>
                             <!--begin::Input group-->
@@ -134,7 +142,8 @@
                                 <!--begin::Input-->
                                 <textarea class="form-control editor "
                                           rows="10" id="ck_description"
-                                          name="description">{{old("description")}}</textarea>                                                                <!--end::Input-->
+                                          name="description">{{old("description")}}</textarea>
+                                <!--end::Input-->
                             </div>
                             @php
                                 $arr=[];
@@ -173,9 +182,10 @@
                                 <!--begin::Input-->
                                 <select name="country_id" id="country_id" style="width: 100%">
                                     @if(isset($countries) && $countries->count() > 0)
-                                    <option value="">Choose City</option>
-                                    @foreach($countries as $country)
-                                            <option value="{{$country->id}}" {{old("country_id") == $country->id ? 'selected' : ''}}>{{$country->title}}</option>
+                                        <option value="">Choose City</option>
+                                        @foreach($countries as $country)
+                                            <option
+                                                value="{{$country->id}}" {{old("country_id") == $country->id ? 'selected' : ''}}>{{$country->title}}</option>
                                         @endforeach
                                     @endif
                                 </select>
@@ -200,7 +210,14 @@
                                 <input class="form-control form-control-solid" type="file" id="cover" name="cover">
                                 <!--end::Input-->
                             </div>
-
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="formFile">Banner</label>
+                                <!-- end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="banner">
+                                <!-- end::Input-->
+                            </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary"
                                         data-kt-users-modal-action="submit">
@@ -241,15 +258,13 @@
             $('#features').selectize();
 
             ClassicEditor
-                .create( document.querySelector( '.editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
-
-
+                .create(document.querySelector('.editor'))
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
 
 
             let city_id = $("#city_id");
@@ -261,7 +276,7 @@
             country_id.on('change', function () {
                 let id = $(this).val();
                 city_id.find('option').remove();
-                if(id !== '') {
+                if (id !== '') {
                     $.ajax({
                         url: "{{url('admin/get-cities-from-country')}}/" + id,
                         data: {
@@ -280,7 +295,7 @@
 
                                 let html_opts = '';
                                 $.each(data, function (index, item) {
-                                        console.log(item.title[lang]);
+                                    console.log(item.title[lang]);
                                     html_opts += "<option value='" + item.id + "'>" + item.title[lang] + "</option>";
                                 });
                                 city_id.append(html_opts);
@@ -298,13 +313,13 @@
             });
 
             ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
+                .create(document.querySelector('#editor'))
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         });
     </script>
 @stop

@@ -31,16 +31,16 @@ header .main-navbar .nav-menu>li .nav-submenu li:hover > a {color: #fff;transiti
 header .main-navbar .nav-menu>li .nav-submenu {left: auto!important;right: 0}
 footer .footer .footer-content .contact-detail p {padding-right: 0;margin-bottom: 28px}
 footer .footer .footer-title h5 {color:#a1a1a1;margin-top: 30px;margin-bottom: 31px}
-footer .footer .footer-content .footer-place .place a h6{color: #a1a1a1;text-transform: capitalize;font-weight: 700;font-size: calc(12px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));letter-spacing: 0.03em;line-height: 1.2;}
-footer .footer .footer-content .footer-links ul li a {color: #a1a1a1;}
+footer .footer .footer-content .footer-place .place a h6{color: #fff;text-transform: capitalize;font-weight: 700;font-size: calc(12px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));letter-spacing: 0.03em;line-height: 1.2;}
+footer .footer .footer-content .footer-links ul li a {color: #fff;}
 footer .footer .footer-content .footer-blog .media .media-body h5 {color: #a1a1a1;font-size: calc(12px + (20 - 16) * ((100vw - 320px) / (1920 - 320)))}
 footer .footer .footer-content .footer-blog .media .media-body {margin-right: 25px;margin-left: 0;}
 .text-right {text-align: right}
 footer .footer .footer-space {padding-left: 0;padding-right: 90px}
 .special-section.grid-box .special-box .special-content .tour-detail .bottom-section .price h6 {float: right}
 .special-section.grid-box .special-box .special-content .tour-detail .bottom-section .price h6 del {margin-left: 10px}
-
-
+.special-section.grid-box .special-box .special-content h5 {max-width: 100%!important;}
+.special-section.grid-box .special-box .special-content .tour-detail .include-sec ul li img {width: 40px!important;height: 40px!important;}
 
 .breadcrumb .breadcrumb-item {font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));color: #000;text-transform: capitalize;font-weight: 700;}
 .breadcrumb .breadcrumb-item a {font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));color: #000;}
@@ -49,6 +49,23 @@ footer .footer .footer-space {padding-left: 0;padding-right: 90px}
 .hotel_title_section .hotel-name .left-part .top .share-buttons .btn {margin-right: 15px;margin-left: 0!important;}
 .room-cls {text-align: right}
 .service_details p {color: #000}
+
+@media (max-width: 560px) {
+    .banners .item {height: auto!important;}
+    .services_section {margin-top: 30px!important;}
+    .single_service {margin-bottom: 20px!important;}
+    footer .footer .footer-space {padding-right: 0!important;}
+    footer .footer .footer-title .according-menu {left: 15px!important;right: auto!important;}
+    footer .footer .footer-title h5 {margin-top: 15px;margin-bottom: 15px;}
+    .according-menu {left: 20px;right: auto!important;}
+    header.light_header .main-navbar .nav-menu>li {text-align: right}
+
+
+
+
+
+
+}
 
 
 

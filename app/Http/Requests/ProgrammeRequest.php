@@ -33,6 +33,8 @@ class ProgrammeRequest extends FormRequest
             'city_id' => 'required|exists:cities,id',
             'country_id' => 'required|exists:countries,id',
             'features' => 'required',
+            'banner' => 'required_without:id|mimes:png,jpg,jpeg',
+
 
         ];
     }

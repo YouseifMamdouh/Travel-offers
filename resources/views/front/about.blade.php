@@ -48,8 +48,8 @@
                     <div class="image-section rtl">
                         @if(isset($images) && $images->count() > 0)
                             @foreach($images as $item)
-                                <div class="img-box">
-                                    <img src="{{ asset('uploads/aboutus/' . $item->image) }}" data-tilt data-tilt-perspective="110"
+                                <div class="img-box" style="width: 33%">
+                                    <img src="{{ asset('uploads/aboutus/' . $item->image) }}" data-tilt data-tilt-perspective="110" style="height: 100%; width: 100%"
                                          data-tilt-speed="400" data-tilt-max="1.2" class="img-fluid blur-up lazyload radius-cls"
                                          alt="">
                                     <div class="title-box radius-cls">

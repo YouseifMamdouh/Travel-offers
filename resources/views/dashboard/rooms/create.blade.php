@@ -9,7 +9,8 @@
         <div class="d-flex flex-column flex-column-fluid">
             <!--begin::Toolbar-->
 
-            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
+            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6"
+                 dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
                 <!--begin::Toolbar container-->
                 <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
                     <!--begin::Page title-->
@@ -24,7 +25,8 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('rooms.index')}}" class="text-muted text-hover-primary">Rooms</a> <span class="px-2"> - </span>
+                                <a href="{{route('rooms.index')}}" class="text-muted text-hover-primary">Rooms</a> <span
+                                    class="px-2"> - </span>
                                 <span> Add Room </span>
                             </li>
                             <!--end::Item-->
@@ -67,14 +69,15 @@
 
                         <!--begin::Table-->
                         <form action="{{route('rooms.store')}}" enctype="multipart/form-data" method="post">
-                            @csrf
-                            <!--begin::Input group-->
+                        @csrf
+                        <!--begin::Input group-->
                             <div class="fv-row mb-7">
                                 <!--begin::Label-->
                                 <label class="required fw-semibold fs-6 mb-2">Name</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="title" value="{{old('title')}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Title" />
+                                <input type="text" name="title" value="{{old('title')}}"
+                                       class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Title"/>
                                 <!--end::Input-->
                             </div>
 
@@ -83,7 +86,8 @@
                                 <label class="required fw-semibold fs-6 mb-2" for="title">Description</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <textarea name="description" class="form-control form-control-solid mb-3 mb-lg-0" id="editor" placeholder="Description">{{old('description')}}</textarea>
+                                <textarea name="description" class="form-control form-control-solid mb-3 mb-lg-0"
+                                          id="editor" placeholder="Description">{{old('description')}}</textarea>
                                 <!--end::Input-->
                             </div>
                             <div class="fv-row mb-7">
@@ -111,9 +115,13 @@
                                 <!--begin::Input-->
 
                                 <select name="type_of" id="type_of" style="width: 100%">
-                                    <option value="single" {{old('type_of') == 'single' ? 'selected' : ''}}>Single</option>
-                                    <option value="double" {{old('type_of') == 'double' ? 'selected' : ''}}>Double</option>
-                                    <option value="family" {{old('type_of') == 'family' ? 'selected' : ''}}>Family (4 Persons)</option>
+                                    <option value="single" {{old('type_of') == 'single' ? 'selected' : ''}}>Single
+                                    </option>
+                                    <option value="double" {{old('type_of') == 'double' ? 'selected' : ''}}>Double
+                                    </option>
+                                    <option value="family" {{old('type_of') == 'family' ? 'selected' : ''}}>Family (4
+                                        Persons)
+                                    </option>
                                 </select>
 
                             </div>
@@ -161,7 +169,14 @@
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
-
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="formFile">Banner</label>
+                                <!-- end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="banner">
+                                <!-- end::Input-->
+                            </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary"
                                         data-kt-users-modal-action="submit">
@@ -216,13 +231,13 @@
             $('#features').selectize();
 
             ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
+                .create(document.querySelector('#editor'))
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         });
     </script>
 @stop

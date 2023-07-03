@@ -12,7 +12,7 @@ class Hotel extends Model
     use HasTranslations;
     protected $table = 'hotels';
 
-    protected $fillable = ['title', 'city_id', 'country_id', 'location', 'address', 'description', 'rooms_num'];
+    protected $fillable = ['title', 'city_id', 'country_id', 'location', 'address', 'description', 'rooms_num', 'banner'];
 
     public $translatable = ['title', 'location', 'address', 'description'];
 

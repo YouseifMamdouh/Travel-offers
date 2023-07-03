@@ -13,7 +13,7 @@ class AboutUsDetail extends Model
 
     protected $table = "about_us_details";
 
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'map'];
 
     public $translatable = ['title', 'description'];
 }

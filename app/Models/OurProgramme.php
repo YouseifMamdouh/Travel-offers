@@ -13,7 +13,7 @@ class OurProgramme extends Model
 
     protected  $table = "our_programmes";
 
-    protected $fillable = ['name', 'title', 'description', 'cover','price', 'discount', 'plan', 'city_id', 'country_id'];
+    protected $fillable = ['name', 'title', 'description', 'cover','price', 'discount', 'plan', 'city_id', 'country_id', 'banner'];
 
     public $translatable = ['name', 'title', 'description', 'plan'];
 

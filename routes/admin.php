@@ -164,6 +164,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::delete('delete/{id}', 'FeaturesController@destroy')->name('features.destroy');
     });
 
+    Route::group(['prefix' => 'messages'], function () {
+        Route::get('/', 'MessagesController@index')->name('messages.index');
+    });
+
 
 
 

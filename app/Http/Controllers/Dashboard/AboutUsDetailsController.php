@@ -35,7 +35,8 @@ class AboutUsDetailsController extends Controller
 
             $data->update([
                 'title' => $request->title,
-                'description' => $request->description
+                'description' => $request->description,
+                'map' => $request->map
             ]);
             DB::commit();
 

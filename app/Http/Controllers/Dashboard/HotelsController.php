@@ -39,6 +39,10 @@ class HotelsController extends Controller
     {
 //        return  $request;
         try {
+            $fileName = "";
+            if ($request->hasFile('banner')) {
+                $fileName = \General::uploadImage('hotels', $request->banner);
+            }
 
             DB::beginTransaction();
             Hotel::create([
@@ -49,6 +53,7 @@ class HotelsController extends Controller
                 'location' => $request->location,
                 'address' => $request->address,
                 'rooms_num' => $request->rooms_num,
+                'banner' => $fileName,
             ]);
 
             DB::commit();
@@ -63,7 +68,7 @@ class HotelsController extends Controller
     public function show($id)
     {
         $data = Hotel::with('city', 'hotelImages')
-            ->select('id', 'title', 'city_id', 'location', 'country_id',
+            ->select('id', 'title', 'city_id', 'location', 'country_id', 'banner',
                 'address', 'rooms_num', 'description')->find($id);
         if ($data) {
             return view('dashboard.hotels.view', compact('data'));
@@ -161,8 +166,16 @@ class HotelsController extends Controller
 //            return $request;
             $data = Hotel::find($id);
             DB::beginTransaction();
+            $filename = "";
+            if ($request->hasFile('banner')) {
+                if (File::exists(public_path('uploads/hotels/' . $data->banner))) {
+                    File::delete(public_path('uploads/hotels/' . $data->banner));
+                }
 
-            $data->update($request->except('id', '_token'));
+                $filename = \General::uploadImage('hotels', $request->banner);
+                $data->update(['banner' => $filename]);
+            }
+            $data->update($request->except('id', '_token', 'banner'));
             DB::commit();
             return redirect()->route('hotels.index')->with(['success' => __('messages.success_updated')]);
 
@@ -183,6 +196,9 @@ class HotelsController extends Controller
                         File::delete(public_path('uploads/hotels/' . $image->image));
                     }
                 }
+            }
+            if (File::exists(public_path('uploads/hotels/' . $data->banner))) {
+                File::delete(public_path('uploads/hotels/' . $data->banner));
             }
             $data->delete();
             return response()->json(['status' => 1, 'msg' => __('messages.success_deleted')]);

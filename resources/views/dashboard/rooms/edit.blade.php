@@ -64,7 +64,11 @@
                 <div class="card">
                     <!--begin::Card body-->
                     <div class="card-body py-4" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
-
+                        <div class="row px-0">
+                            <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
+                                <img src="{{asset('uploads/rooms/'. $data->banner)}}" alt="Banner" class="w-100">
+                            </div>
+                        </div>
                         <!--begin::Table-->
                         <form action="{{route('rooms.update', $data->id)}}" enctype="multipart/form-data" method="post">
                             @csrf
@@ -155,7 +159,14 @@
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
-
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="formFile">Banner</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="banner">
+                                <!--end::Input-->
+                            </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary"
                                         data-kt-users-modal-action="submit">

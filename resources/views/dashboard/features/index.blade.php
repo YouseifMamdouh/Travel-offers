@@ -280,11 +280,6 @@
         $(document).ready(function () {
 
 
-            $('#type_of').select2({
-                dropdownParent: $("#kt_modal_add_user")
-            });
-
-
             let delete_li = $('.delete_btn_li');
             delete_li.on('click', function (e) {
                 e.preventDefault();

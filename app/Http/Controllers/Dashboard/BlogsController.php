@@ -36,6 +36,11 @@ class BlogsController extends Controller
             if ($request->hasFile('image')) {
                 $filename = \General::uploadImage('blogs', $request->image);
             }
+            $bannerName = "";
+            if ($request->hasFile('banner')) {
+                $bannerName = \General::uploadImage('blogs', $request->banner);
+            }
+
 //            return $filename;
             DB::beginTransaction();
             Blog::create([
@@ -44,6 +49,7 @@ class BlogsController extends Controller
                 'description' => $request->description,
                 'created_at' => $request->created_at,
                 'image' => $filename,
+                'banner' => $bannerName,
             ]);
 
             DB::commit();
@@ -83,11 +89,19 @@ class BlogsController extends Controller
                 $filename = \General::uploadImage('blogs', $request->image);
                 $data->update(['image' => $filename]);
             }
+            if ($request->hasFile('banner')) {
+                if (File::exists(public_path('uploads/blogs/' . $data->banner))) {
+                    File::delete(public_path('uploads/blogs/' . $data->banner));
+                }
+
+                $filename = \General::uploadImage('blogs', $request->banner);
+                $data->update(['banner' => $filename]);
+            }
             if ($request->created_at != null) {
                 $data->update(['created_at' => $request->created_at]);
             }
 
-            $data->update($request->except('id', '_token', 'image', 'created_at'));
+            $data->update($request->except('id', '_token', 'image', 'created_at', 'banner'));
             DB::commit();
             return redirect()->route('blogs.index')->with(['success' => __('messages.success_updated')]);
 
@@ -103,6 +117,9 @@ class BlogsController extends Controller
         if ($data) {
             if (File::exists(public_path('uploads/blogs/' . $data->image))) {
                 File::delete(public_path('uploads/blogs/' . $data->image));
+            }
+            if (File::exists(public_path('uploads/blogs/' . $data->banner))) {
+                File::delete(public_path('uploads/blogs/' . $data->banner));
             }
             $data->delete();
             return response()->json(['status' => 1, 'msg' => __('messages.success_deleted')]);

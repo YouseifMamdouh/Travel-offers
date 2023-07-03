@@ -13,7 +13,7 @@ class Room extends Model
 
     protected $table = "rooms";
 
-    protected $fillable = ['hotel_id', 'title', 'description', 'type_of', 'price'];
+    protected $fillable = ['hotel_id', 'title', 'description', 'type_of', 'price', 'banner'];
 
     public $translatable = ['title', 'description'];
 

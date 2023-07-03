@@ -86,8 +86,20 @@
                                 <!--end::Label-->
                                 <!--begin::Input-->
                                 <textarea class="form-control "
-                                          rows="10" id="ck_description"
+                                          rows="5" id="ck_description"
                                           name="description">{{$data->description}}</textarea>                                                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="map">Map</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea class="form-control "
+                                          rows="5"
+                                          name="map">{{$data->map}}</textarea>                                                                <!--end::Input-->
                             </div>
                             <!--end::Input group-->
 

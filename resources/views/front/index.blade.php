@@ -13,7 +13,7 @@
 
     </section>
 
-    <section class="pt-0" style="margin-top: -50px">
+    <section class="pt-0 services_section" style="margin-top: -50px">
         <div class="tourSection ratio3_2">
             <div class="container">
                 <div class="row">
@@ -25,7 +25,7 @@
                         <div class="flight-5 no-arrow row justify-content-center" style="z-index: 100;position:relative;">
                             @if(isset($latest_services) && $latest_services->count() > 0)
                                 @foreach($latest_services as $item)
-                                    <a class="col-lg-3 col-md-3 col-sm-6 col-12" href="{{ route('service.show', $item->id) }}" >
+                                    <a class="col-lg-3 col-md-3 col-sm-6 col-12 single_service" href="{{ route('service.show', $item->id) }}" >
                                         <div class="tourBox wow zoomIn">
                                             <div class="tourImg" style="border-radius: 0;">
                                                 <img src="{{asset('uploads/services/' . $item->image)}}"
@@ -104,10 +104,13 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="step-box">
                                     <div class="popular-box">
+                                        <a href="{{ route('user.hotels.show', $hotel->id) }}">
+
                                         <div class="popular_img">
                                             <img src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}" alt=""
                                                  class="img-fluid blur-up lazyload bg-img">
                                         </div>
+                                        </a>
                                         <div class="special-content" style="direction: rtl;text-align: right;">
                                             <a href="{{ route('user.hotels.show', $hotel->id) }}">
                                                 <h5>{{$hotel->title}} </h5>

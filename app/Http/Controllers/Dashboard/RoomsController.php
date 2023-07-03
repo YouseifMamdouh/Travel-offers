@@ -18,7 +18,7 @@ class RoomsController extends Controller
     public function index()
     {
         $data = Room::with('hotel', 'roomImages', 'features')
-            ->select('id', 'title', 'description', 'type_of', 'hotel_id',
+            ->select('id', 'title', 'description', 'type_of', 'hotel_id','banner',
                 'price')->get();
 //        return $data;
         $hotels = Hotel::get();
@@ -38,6 +38,11 @@ class RoomsController extends Controller
 //        return  $request;
         try {
 
+            $bannerName = "";
+            if ($request->hasFile('banner')) {
+                $bannerName = \General::uploadImage('rooms', $request->banner);
+            }
+
             DB::beginTransaction();
             $room = Room::create([
                 'title' => $request->title,
@@ -45,6 +50,8 @@ class RoomsController extends Controller
                 'hotel_id' => $request->hotel_id,
                 'type_of' => $request->type_of,
                 'price' => $request->price,
+                'banner' => $bannerName,
+
             ]);
             if ($room) {
                 $room->features()->attach($request->features);
@@ -62,7 +69,7 @@ class RoomsController extends Controller
     public function show($id)
     {
         $data = Room::with('hotel', 'roomImages', 'features')
-            ->select('id', 'title', 'description', 'type_of', 'hotel_id',
+            ->select('id', 'title', 'description', 'type_of', 'hotel_id', 'banner',
                 'price')->find($id);
         if ($data) {
             return view('dashboard.rooms.view', compact('data'));
@@ -131,7 +138,7 @@ class RoomsController extends Controller
     public function edit($id)
     {
         $data = Room::with('hotel', 'roomImages', 'features')
-            ->select('id', 'title', 'description', 'type_of', 'hotel_id',
+            ->select('id', 'title', 'description', 'type_of', 'hotel_id','banner',
                 'price')->find($id);
         $hotels = Hotel::get();
         $features = Feature::where('type_of', 'hotels')->get();
@@ -149,6 +156,14 @@ class RoomsController extends Controller
 //            return $request;
             $data = Room::find($id);
             DB::beginTransaction();
+            if ($request->hasFile('banner')) {
+                if (File::exists(public_path('uploads/rooms/' . $data->banner))) {
+                    File::delete(public_path('uploads/rooms/' . $data->banner));
+                }
+
+                $filename = \General::uploadImage('rooms', $request->banner);
+                $data->update(['banner' => $filename]);
+            }
 
             $data->update([
                 'title' => $request->title,
@@ -178,6 +193,9 @@ class RoomsController extends Controller
                         File::delete(public_path('uploads/rooms/' . $image->image));
                     }
                 }
+            }
+            if (File::exists(public_path('uploads/rooms/' . $data->banner))) {
+                File::delete(public_path('uploads/rooms/' . $data->banner));
             }
             $data->delete();
             return response()->json(['status' => 1, 'msg' => __('messages.success_deleted')]);

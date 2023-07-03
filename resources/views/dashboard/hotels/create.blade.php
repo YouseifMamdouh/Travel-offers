@@ -139,6 +139,14 @@
                                 <input type="number" name="rooms_num" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Rooms Number" value="{{old('rooms_num')}}" />
                                 <!--end::Input-->
                             </div>
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="formFile">Banner</label>
+                                <!-- end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="banner">
+                                <!-- end::Input-->
+                            </div>
 
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary"

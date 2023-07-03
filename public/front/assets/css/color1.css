@@ -27620,9 +27620,9 @@ body.dark {
         display: block;
         margin-left: 0;
     }
-    .special-section.grid-box .special-box .special-content .tour-detail .include-sec ul li {
-        font-size: 0;
-    }
+    /*.special-section.grid-box .special-box .special-content .tour-detail .include-sec ul li {*/
+    /*    font-size: 0;*/
+    /*}*/
     .special-section.grid-box .special-box .special-content.restaurant-detail h5 span {
         display: inline-block;
     }

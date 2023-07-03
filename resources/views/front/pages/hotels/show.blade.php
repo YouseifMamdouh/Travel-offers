@@ -4,37 +4,50 @@
 @section('content')
 
     @if(isset($hotel) && $hotel != null)
+{{--        @if(count($hotel->hotelImages) > 0)--}}
+{{--            <section class="pt-0 ratio2_3 zoom-gallery overlay-hover">--}}
+{{--                <div class="container-fluid p-0">--}}
+{{--                    <div class="row m-0">--}}
+{{--                        <div class="col-md-6 p-0">--}}
+{{--                            <a href="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"--}}
+{{--                               target="_blank">--}}
+{{--                                <img src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"--}}
+{{--                                     class="img-fluid blur-up lazyload bg-img" alt="image">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        @php($rest_of_images = $hotel->hotelImages->slice(1,count($hotel->hotelImages))->chunk(2))--}}
+{{--                        @foreach($rest_of_images as $imgs_arr)--}}
+{{--                            <div class="col-md-3 col-6 p-0">--}}
+{{--                                @foreach($imgs_arr as $image)--}}
+{{--                                    <a href="{{ asset('uploads/hotels/' . $image->image) }}" target="_blank">--}}
+{{--                                        <img src="{{ asset('uploads/hotels/' . $image->image) }}"--}}
+{{--                                             class="img-fluid blur-up lazyload bg-img"--}}
+{{--                                             alt="">--}}
+{{--                                    </a>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </section>--}}
+{{--        @endif--}}
         @if(count($hotel->hotelImages) > 0)
             <section class="pt-0 ratio2_3 zoom-gallery overlay-hover">
                 <div class="container-fluid p-0">
-                    <div class="row m-0">
-                        <div class="col-md-6 p-0">
-                            <a href="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"
-                               target="_blank">
-                                <img src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"
-                                     class="img-fluid blur-up lazyload bg-img"
-                                     alt="image">
-                            </a>
-                        </div>
-                        @php($rest_of_images = $hotel->hotelImages->slice(1,count($hotel->hotelImages))->chunk(2))
-                        @foreach($rest_of_images as $imgs_arr)
-                            <div class="col-md-3 col-6 p-0">
 
-                                @foreach($imgs_arr as $image)
-                                    <a href="{{ asset('uploads/hotels/' . $image->image) }}" target="_blank">
-                                        <img src="{{ asset('uploads/hotels/' . $image->image) }}"
-                                             class="img-fluid blur-up lazyload bg-img"
-                                             alt="">
-                                    </a>
-                                @endforeach
+                    <div class="owl-carousel owl-theme hotel_images" dir="ltr">
+                        @foreach($hotel->hotelImages as $k => $single_image)
+
+                            <div class="item" style="height: 66vh;width: 100%">
+                                <img src="{{asset('uploads/hotels/' . $single_image->image)}}" alt="image" style="width: 100%;height: 100%">
                             </div>
-
                         @endforeach
-
                     </div>
                 </div>
             </section>
         @endif
+
     @endif
     <!-- image section start -->
     <!-- image section end -->
@@ -213,7 +226,7 @@
                                                         <a href="{{asset('uploads/rooms/' . $image_item->image)}}"
                                                            target="_blank">
                                                             <img src="{{asset('uploads/rooms/' . $image_item->image)}}"
-                                                                 alt="{{$image_item->image}}">
+                                                                 alt="{{$image_item->image}}" class="w-100">
                                                         </a>
                                                     </div>
                                                 @endforeach
@@ -342,3 +355,33 @@
         <!-- section end -->
     @endif
 @endsection
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $('.hotel_images').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                autoplay:true,
+                autoplayTimeout:2000,
+                autoplayHoverPause:true,
+                // animateOut: 'fadeOut',
+                // animateIn: 'fadeIn',
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            })
+        });
+
+    </script>
+@stop

@@ -3,7 +3,7 @@
     @php
         $contact = \App\Models\Contact::first();
         $about = \App\Models\AboutUsDetail::first();
-        $countries = \App\Models\Country::whereHas('hotels')->get();
+        $countries = \App\Models\Country::whereHas('programs')->get();
         $blogs = \App\Models\Blog::limit(3)->get();
     @endphp
    <footer>
@@ -116,10 +116,10 @@
                     <div class="col-xl-6 col-md-6 col-sm-12 text-right">
                         <div class="footer-social">
                             <ul>
-                                <li><a href="https://www.facebook.com/RALTRAVELTABUK"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://instagram.com/ral.travel?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://twitter.com/RAL_KSA"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://web.whatsapp.com/send?phone=966546982604"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="https://www.facebook.com/RALTRAVELTABUK" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://instagram.com/ral.travel?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://twitter.com/RAL_KSA" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://web.whatsapp.com/send?phone=966549416068" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -27,6 +27,7 @@ class HotelRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'location' => 'required',
+            'banner' => 'required_without:id|mimes:png,jpg,jpeg',
             'address' => 'required',
             'city_id' => 'required|exists:cities,id',
             'country_id' => 'required|exists:countries,id',

@@ -79,6 +79,9 @@
                             <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
                                 <img src="{{asset('uploads/programmes/'. $data->cover)}}" alt="cover" style="width: 100%">
                             </div>
+                            <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
+                                <img src="{{asset('uploads/programmes/'. $data->banner)}}" alt="Banner" class="w-100">
+                            </div>
                         </div>
                         <!--begin::Table-->
                         <form action="{{route('programmes.update', $data->id)}}" enctype="multipart/form-data" method="post">
@@ -204,6 +207,14 @@
                                 <!--end::Label-->
                                 <!--begin::Input-->
                                 <input class="form-control form-control-solid" type="file" id="cover" name="cover">
+                                <!--end::Input-->
+                            </div>
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="formFile">Banner</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="banner">
                                 <!--end::Input-->
                             </div>
 

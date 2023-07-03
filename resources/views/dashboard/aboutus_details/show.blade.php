@@ -88,6 +88,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Map :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {!! $data->map !!}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
 

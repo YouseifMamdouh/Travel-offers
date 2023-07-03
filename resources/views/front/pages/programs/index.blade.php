@@ -82,16 +82,11 @@
                                                     <img src="{{ asset('uploads/programmes/' . $item->cover)}}"
                                                          class="img-fluid blur-up lazyload bg-img" alt="">
                                                 </a>
-                                                <div class="top-icon">
-                                                    <a href="#" class="" data-bs-toggle="tooltip" data-placement="top" title=""
-                                                       data-original-title="Add to Wishlist">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                </div>
+
                                             </div>
                                             <div class="special-content">
                                                 <a href="{{ route('user.programs.show',$item->id) }}">
-                                                    <h5>{{$item->name}}<span>{{$item->title}}</span></h5>
+                                                    <h5>{{$item->name}} &nbsp;<span>{{$item->title}}</span></h5>
                                                 </a>
                                                 <div class="tour-detail">
 
@@ -107,7 +102,7 @@
                                                                 $prog_features = $item->features->pluck('id')->toArray();;
                                                             @endphp
                                                             @foreach($all_features as $feature)
-                                                                <li class="{{in_array($feature->id, $prog_features) ? '' : 'not-include'}}">
+                                                                <li class="{{in_array($feature->id, $prog_features) ? '' : 'd-none'}}" style="width: 45%; vertical-align: top">
                                                                     <img src="{{ asset('uploads/features/' . $feature->icon)}}"
                                                                          class="img-fluid blur-up lazyload" alt="" data-bs-toggle="tooltip"
                                                                          data-placement="top" title="Hotel">

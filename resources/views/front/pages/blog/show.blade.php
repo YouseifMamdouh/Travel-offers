@@ -4,7 +4,7 @@
 
     <!-- breadcrumb start -->
     <section class="breadcrumb-section pt-0" >
-        <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="bg-img img-fluid blur-up lazyload" alt="">
+        <img src="{{ asset('uploads/blogs/' . $blog->banner) }}" class="bg-img img-fluid blur-up lazyload" alt="">
     </section>
     <section class="pt-0 mt-1" style="background: #e0e0e0">
         <div class="container">
@@ -22,6 +22,44 @@
                     </nav>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="small-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="review-section text-right">
+                        <div class="review_box">
+                            <div class="title-top">
+                                <h5> {{$blog->title}}</h5>
+                            </div>
+                            <div class="flight_detail">
+                                <div class="row">
+                                    <div class="description-section tab-section">
+                                        <div class="description-details">
+                                            <div class="desc-box">
+                                                <div class="menu-part mt-0 about" id="highlight">
+                                                    <div class="about-sec service_details">
+                                                        {!! $blog->description !!}
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 

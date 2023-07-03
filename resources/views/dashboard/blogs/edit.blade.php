@@ -9,7 +9,8 @@
         <div class="d-flex flex-column flex-column-fluid">
             <!--begin::Toolbar-->
 
-            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
+            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6"
+                 dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
                 <!--begin::Toolbar container-->
                 <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
                     <!--begin::Page title-->
@@ -24,7 +25,8 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('blogs.index')}}" class="text-muted text-hover-primary">Blogs</a> <span class="px-2"> - </span>
+                                <a href="{{route('blogs.index')}}" class="text-muted text-hover-primary">Blogs</a> <span
+                                    class="px-2"> - </span>
                                 <span> Edit </span>
                             </li>
                             <!--end::Item-->
@@ -69,6 +71,9 @@
                             <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
                                 <img src="{{asset('uploads/blogs/'. $data->image)}}" alt="Banner" class="w-100">
                             </div>
+                            <div class="col-lg-4 col-md-4 col-sm-7 col-12 m-auto">
+                                <img src="{{asset('uploads/blogs/'. $data->banner)}}" alt="Banner" class="w-100">
+                            </div>
                         </div>
                         <!--begin::Table-->
                         <form action="{{route('blogs.update', $data->id)}}" enctype="multipart/form-data" method="post">
@@ -80,7 +85,8 @@
                                 <label class="required fw-semibold fs-6 mb-2">Title</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="title" value="{{$data->title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Blog Title" />
+                                <input type="text" name="title" value="{{$data->title}}"
+                                       class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Blog Title"/>
                                 <!--end::Input-->
                             </div>
                             <div class="fv-row mb-7">
@@ -88,7 +94,8 @@
                                 <label class="required fw-semibold fs-6 mb-2">Sub Title</label>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input type="text" name="sub_title" value="{{$data->sub_title}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="sub title" />
+                                <input type="text" name="sub_title" value="{{$data->sub_title}}"
+                                       class="form-control form-control-solid mb-3 mb-lg-0" placeholder="sub title"/>
                                 <!--end::Input-->
                             </div>
 
@@ -99,7 +106,8 @@
                                 <!--begin::Input-->
                                 <textarea class="form-control editor "
                                           rows="10" id="ck_description"
-                                          name="description">{{$data->description}}</textarea>                                                                <!--end::Input-->
+                                          name="description">{{$data->description}}</textarea>
+                                <!--end::Input-->
                             </div>
                             <!--end::Input group-->
                             <!--begin::Input group-->
@@ -118,11 +126,19 @@
                                 <label class="required fw-semibold fs-6 mb-2" for="created_at">Date</label> <span>({{date('d-m-Y', strtotime($data->created_at))}})</span>
                                 <!--end::Label-->
                                 <!--begin::Input-->
-                                <input class="form-control form-control-solid" type="date" id="created_at" name="created_at">
+                                <input class="form-control form-control-solid" type="date" id="created_at"
+                                       name="created_at">
                                 <!--end::Input-->
                             </div>
                             <!--end::Input group-->
-
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2" for="formFile">Banner</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-solid" type="file" id="formFile" name="banner">
+                                <!--end::Input-->
+                            </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary"
                                         data-kt-users-modal-action="submit">
@@ -152,13 +168,13 @@
     <script>
         $(document).ready(function () {
             ClassicEditor
-                .create( document.querySelector( '.editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
+                .create(document.querySelector('.editor'))
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
 
         });
     </script>

@@ -42,6 +42,10 @@ class ProgrammesController extends Controller
             if ($request->hasFile('cover')) {
                 $filename = \General::uploadImage('programmes', $request->cover);
             }
+            $bannerName = "";
+            if ($request->hasFile('banner')) {
+                $bannerName = \General::uploadImage('programmes', $request->banner);
+            }
             DB::beginTransaction();
             $programme = OurProgramme::create([
                 'name' => $request->name,
@@ -53,7 +57,7 @@ class ProgrammesController extends Controller
                 'cover' => $filename,
                 'city_id' => $request->city_id,
                 'country_id' => $request->country_id,
-
+                'banner' => $bannerName,
             ]);
             if ($programme) {
                 $programme->features()->attach($request->features);
@@ -164,8 +168,16 @@ class ProgrammesController extends Controller
                 $filename = \General::uploadImage('programmes', $request->cover);
                 $data->update(['cover' => $filename]);
             }
+            if ($request->hasFile('banner')) {
+                if (File::exists(public_path('uploads/programmes/' . $data->banner))) {
+                    File::delete(public_path('uploads/programmes/' . $data->banner));
+                }
 
-            $data->update($request->except('id', '_token', 'cover'));
+                $filename = \General::uploadImage('programmes', $request->banner);
+                $data->update(['banner' => $filename]);
+            }
+
+            $data->update($request->except('id', '_token', 'cover', 'banner'));
             $data->features()->sync($request->features);
 
             DB::commit();
@@ -191,6 +203,9 @@ class ProgrammesController extends Controller
             }
             if (File::exists(public_path('uploads/programmes/' . $data->cover))) {
                 File::delete(public_path('uploads/programmes/' . $data->cover));
+            }
+            if (File::exists(public_path('uploads/programmes/' . $data->banner))) {
+                File::delete(public_path('uploads/programmes/' . $data->banner));
             }
             $data->delete();
             return response()->json(['status' => 1, 'msg' => __('messages.success_deleted')]);

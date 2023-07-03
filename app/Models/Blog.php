@@ -13,7 +13,7 @@ class Blog extends Model
 
     protected $table = "blogs";
 
-    protected $fillable = ['title', 'sub_title' , 'image', 'description', 'created_at'];
+    protected $fillable = ['title', 'sub_title' , 'image', 'description', 'created_at', 'banner'];
 
     public $translatable = ['title', 'description', 'sub_title', 'location'];
 

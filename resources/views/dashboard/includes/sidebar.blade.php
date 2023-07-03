@@ -651,6 +651,45 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                     </div>
                     <!--end:Menu sub-->
                 </div>
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion d-none {{ Route::currentRouteName() === 'messages.index' ? 'show' : '' }}">
+                    <!--begin:Menu link-->
+                    <span class="menu-link">
+											<span class="menu-icon"
+                                                  style="{{Config::get('app.locale') == 'en' ? 'margin-right:.5rem;margin-left:0' : 'margin-left:.5rem;margin-right:0'}}">
+												<i class="ki-duotone ki-messages">
+                                                 <i class="path1"></i>
+                                                 <i class="path2"></i>
+                                                 <i class="path3"></i>
+                                                 <i class="path4"></i>
+                                                 <i class="path5"></i>
+                                                </i>
+											</span>
+											<span class="menu-title">Messages & Bookings</span>
+											<span class="menu-arrow"></span>
+										</span>
+                    <!--end:Menu link-->
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-accordion">
+
+
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'messages.index' ? 'active' : ''}}"
+                               href="{{route('messages.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Messages </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+
+                    </div>
+                    <!--end:Menu sub-->
+                </div>
 
 
 

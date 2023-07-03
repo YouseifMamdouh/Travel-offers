@@ -28,7 +28,9 @@ class BlogRequest extends FormRequest
             'sub_title' => 'required',
 //            'location' => 'required',
             'image' => 'required_without:id',
-            'created_at' => 'required_without',
+            'created_at' => 'required_without:id',
+            'banner' => 'required_without:id|mimes:png,jpg,jpeg',
+
         ];
     }
     public function messages()
