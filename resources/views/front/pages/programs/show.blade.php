@@ -48,7 +48,7 @@
                                     <h2>{{$program->name}}</h2>
                                     <div class="share-buttons">
                                         <a href="#" class="btn btn-solid"><i class="far fa-share-square"></i> مشاركة</a>
-                                        <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> حفظ</a>
+{{--                                        <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> حفظ</a>--}}
                                     </div>
                                 </div>
                                 <p class="mt-1 mb-2"><i

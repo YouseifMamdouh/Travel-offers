@@ -67,7 +67,7 @@
                                         <h2>{{$hotel->title}}</h2>
                                         <div class="share-buttons">
                                             <a href="#" class="btn btn-solid"><i class="far fa-share-square"></i> مشاركة</a>
-                                            <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> حفظ</a>
+{{--                                            <a href="#" class="btn btn-solid"><i class="far fa-heart"></i> حفظ</a>--}}
                                         </div>
                                     </div>
                                     <p class="mt-1 mb-2"><i
@@ -93,8 +93,10 @@
                         <div class="description-section tab-section">
                             <div class="menu-top menu-up">
                                 <ul class="nav nav-tabs" id="top-tab" role="tablist">
+
                                     <li class="nav-item"><a data-bs-toggle="tab" class="nav-link active"
-                                                            href="#rooms">الغرف</a></li>
+                                                            href="#policy">المعرض</a>
+                                    </li>
                                     <li class="nav-item"><a data-bs-toggle="tab" class="nav-link" href="#about">عن
                                             الفندق</a>
                                     </li>
@@ -104,9 +106,10 @@
                                     <li class="nav-item"><a data-bs-toggle="tab" class="nav-link"
                                                             href="#location">الموقع</a>
                                     </li>
-                                    <li class="nav-item"><a data-bs-toggle="tab" class="nav-link"
-                                                            href="#policy">المعرض</a>
-                                    </li>
+                                    <li class="nav-item"><a data-bs-toggle="tab" class="nav-link "
+                                                            href="#rooms">الغرف</a></li>
+
+
                                 </ul>
                                 <div class="description-details tab-content" id="top-tabContent">
                                     <div class="menu-part tab-pane fade show active" id="rooms">
