@@ -112,7 +112,7 @@
 
                                 </ul>
                                 <div class="description-details tab-content" id="top-tabContent">
-                                    <div class="menu-part tab-pane fade show active" id="rooms">
+                                    <div class="menu-part tab-pane fade " id="rooms">
                                         <table class="rooms-box">
                                             @if($hotel->rooms != null)
                                                 @foreach($hotel->rooms as $room)
@@ -220,7 +220,7 @@
                                         {!! $hotel->location !!}
                                     </div>
 
-                                    <div class="menu-part tab-pane fade policy" id="policy">
+                                    <div class="menu-part tab-pane fade policy show active" id="policy">
                                         <div class="row">
                                             @if(isset($images) && $images->count() > 0)
                                                 @foreach($images as $image_item)
