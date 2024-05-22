@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="{{asset('front/assets/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/pretty-checkbox.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/override.css')}}">
+    <link rel="stylesheet" href="{{asset('front/assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('front/assets/css/locale_'.app()->getLocale().'.css')}}">
     @yield('style')
     @stack('user.css')
 </head>

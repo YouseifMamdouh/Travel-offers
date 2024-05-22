@@ -1,6 +1,22 @@
 {{-- //overlay-white --}}
 <!-- header start -->
 <header class="light_header">
+    <div class="upper_header py-1">
+        <div class="container">
+            <div class="d-inline">
+                <img class="social_img" src="{{asset('front/assets/images/whatsapp.png')}}" alt="whatsapp">
+                <a href="https://wa.me/+009663325255" class="header_span" target="_blank">
+                        009663325255
+                </a>
+            </div>
+            <div class="d-inline ms-5">
+                <img class="social_img" src="{{asset('front/assets/images/chat-box.png')}}" alt="whatsapp">
+                <a href="mailto:info@raltravel.com" class="header_span" target="_blank">
+                    info@raltravel.com
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -25,7 +41,8 @@
                                         </div>
                                     </li>
                                     <li><a href="{{ route('user.index') }}" class="">{{__('messages.home')}}</a></li>
-                                    <li><a href="{{ route('user.about') }}" class="">{{__('messages.about_us')}}</a></li>
+                                    <li><a href="{{ route('user.about') }}" class="">{{__('messages.about_us')}}</a>
+                                    </li>
                                     <li class="dropdown">
                                         <a href="{{ route('user.hotels.index') }}"
                                            class="nav-link ">{{__('messages.hotels')}}</a>
@@ -45,30 +62,33 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{ route('user.programs.index') }}" class="nav-link ">{{__("messages.our_programs")}}</a>
+                                        <a href="{{ route('user.programs.index') }}"
+                                           class="nav-link ">{{__("messages.our_programs")}}</a>
                                     </li>
                                     @php($blogs = \App\Models\Blog::count())
                                     @if(isset($blogs) && $blogs > 0)
-                                    <li><a href="{{ route('user.blogs.index') }}" class="">{{__("messages.blogs")}}</a></li>
-                                   @endif
-                                    <li><a href="{{ route('user.contact') }}" class="">{{__("messages.contact_us")}}</a></li>
+                                        <li><a href="{{ route('user.blogs.index') }}"
+                                               class="">{{__("messages.blogs")}}</a></li>
+                                    @endif
+                                    <li><a href="{{ route('user.contact') }}" class="">{{__("messages.contact_us")}}</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
                     <ul class="header-right">
 
-{{--                        <li class="front-setting rounded5">--}}
-{{--                            <select>--}}
-{{--                                <option value="en">EN</option>--}}
-{{--                                <option value="ar">Ar</option>--}}
-{{--                            </select>--}}
-{{--                        </li>--}}
-{{--                        <li class="user rounded5">--}}
-{{--                            <a href="#">--}}
-{{--                                <i class="fas fa-user"></i>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li class="front-setting rounded5">
+                            <select>
+                                <option value="en">EN</option>
+                                <option value="ar">Ar</option>
+                            </select>
+                        </li>
+                        {{--                        <li class="user rounded5">--}}
+                        {{--                            <a href="#">--}}
+                        {{--                                <i class="fas fa-user"></i>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
                         <div class="toggle-nav" style="margin-left: 10px"><i class="fa fa-bars sidebar-bar"></i></div>
 
                     </ul>

@@ -5,34 +5,42 @@
         <div class="owl-carousel owl-theme banners" dir="ltr">
             @foreach($banners as $k => $banner)
 
-            <div class="item" style="height: 66vh;overflow: hidden;">
-                <img src="{{asset('uploads/banners/' . $banner->image)}}" alt="image">
-            </div>
-           @endforeach
+                <div class="item" style="height: 74vh;overflow: hidden;position:relative;">
+                    <img src="{{asset('uploads/banners/' . $banner->image)}}" alt="image">
+                    <div class="banner_details">
+                        <h2>{{$banner->title}}</h2>
+                        <a href="{{route('user.about')}}" class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
+                    </div>
+                </div>
+            @endforeach
         </div>
 
     </section>
 
-    <section class="pt-0 services_section" style="margin-top: -50px">
+    <section class="pt-0 services_section" style="margin-top: -120px">
         <div class="tourSection ratio3_2">
-            <div class="container">
+            <div class="container custom_container">
                 <div class="row">
                     <div class="col-12 col-lg-12 col-md-12">
-{{--                        <div class="title-1">--}}
-{{--                            <h2 class="pt-0">Latest Services</h2>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="title-1">--}}
+                        {{--                            <h2 class="pt-0">Latest Services</h2>--}}
+                        {{--                        </div>--}}
 
-                        <div class="flight-5 no-arrow row justify-content-center" style="z-index: 100;position:relative;">
+                        <div class="flight-5 no-arrow row justify-content-center"
+                             style="z-index: 100;position:relative;">
                             @if(isset($latest_services) && $latest_services->count() > 0)
                                 @foreach($latest_services as $item)
-                                    <a class="col-lg-3 col-md-3 col-sm-6 col-12 single_service" href="{{ route('service.show', $item->id) }}" >
-                                        <div class="tourBox wow zoomIn">
-                                            <div class="tourImg" style="border-radius: 0;">
-                                                <img src="{{asset('uploads/services/' . $item->image)}}"
-                                                     class="img-fluid blur-up lazyload bg-img" alt="" style="">
-                                            </div>
-                                            <div class="tourContent">
-                                                <h3>{{$item->title}}</h3>
+                                    <a class="col-lg-3 col-md-3 col-sm-6 col-12 single_service"
+                                       href="{{ route('service.show', $item->id) }}">
+                                        <div class="single_service_div">
+                                            <div class="tourBox wow zoomIn">
+                                                <div class="tourImg" style="border-radius: 0;">
+                                                    <img src="{{asset('uploads/services/' . $item->image)}}"
+                                                         class="img-fluid blur-up lazyload bg-img" alt="" style="">
+                                                </div>
+                                                <div class="tourContent">
+                                                    <h3>{{$item->title}}</h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </a>
@@ -49,7 +57,351 @@
 
 
 
+    <!-- Local section start -->
+    <section class="blog_section destination-section section-b-space ratio_55">
+        <div class="container">
+            <div class="title-2 mb-4">
+                <h2 class="custom_title"> {{\App\Helpers\TranslationHelper::translate('Top Programmes', 'site')}} </h2>
+            </div>
+            <div class="slider_333">
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img">
+                            <a href="javascript:void(0);">
+                            <div class="bg_img">
+                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
+                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                <div class="row destination_details_custom">
 
+                                    <div class="col-lg-12 col-12">
+                                        <h2>برنامج اذربيجان السياحي</h2>
+                                    </div>
+                                    <div class="col-lg-12 col-12 ">
+                                        <div class="row mt-4 facility_row">
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
+                                        <span class=" w-100 custom_btn_more">
+                                            المزيد
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img">
+                            <a href="javascript:void(0);">
+                            <div class="bg_img">
+                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
+                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                <div class="row destination_details_custom">
+
+                                    <div class="col-lg-12 col-12">
+                                        <h2>برنامج اذربيجان السياحي</h2>
+                                    </div>
+                                    <div class="col-lg-12 col-12 ">
+                                        <div class="row mt-4 facility_row">
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
+                                        <span class=" w-100 custom_btn_more">
+                                            المزيد
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img">
+                            <a href="javascript:void(0);">
+                            <div class="bg_img">
+                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
+                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                <div class="row destination_details_custom">
+
+                                    <div class="col-lg-12 col-12">
+                                        <h2>برنامج اذربيجان السياحي</h2>
+                                    </div>
+                                    <div class="col-lg-12 col-12 ">
+                                        <div class="row mt-4 facility_row">
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
+                                        <span class=" w-100 custom_btn_more">
+                                            المزيد
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img">
+                            <a href="javascript:void(0);">
+                            <div class="bg_img">
+                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
+                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                <div class="row destination_details_custom">
+
+                                    <div class="col-lg-12 col-12">
+                                        <h2>برنامج اذربيجان السياحي</h2>
+                                    </div>
+                                    <div class="col-lg-12 col-12 ">
+                                        <div class="row mt-4 facility_row">
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
+                                        <span class=" w-100 custom_btn_more">
+                                            المزيد
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img">
+                            <a href="javascript:void(0);">
+                            <div class="bg_img">
+                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
+                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                <div class="row destination_details_custom">
+
+                                    <div class="col-lg-12 col-12">
+                                        <h2>برنامج اذربيجان السياحي</h2>
+                                    </div>
+                                    <div class="col-lg-12 col-12 ">
+                                        <div class="row mt-4 facility_row">
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-3 px-0">
+                                                <div class="facility_img">
+                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
+                                                </div>
+                                                <div class="facility_title">
+                                                    <span>
+                                                        زيارات سياحية
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
+                                        <span class=" w-100 custom_btn_more">
+                                            المزيد
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -57,30 +409,31 @@
     <section class="blog_section destination-section section-b-space ratio_55">
         <div class="container">
             <div class="title-2 mb-4">
-                <h2> {{__('messages.locale')}}  <span>{{__('messages.reservations')}}</span></h2>
+                <h2> {{__('messages.locale')}} <span>{{__('messages.reservations')}}</span></h2>
             </div>
             <div class="slide-3 no-arrow">
                 @if(isset($countries) && $countries->count() > 0)
                     @foreach($countries as $country)
                         <div>
-                        <div class="blog-wrap">
-                            <div class="blog-image">
-                                <div>
-                                    <img src="{{ asset('uploads/countries/' . $country->image) }}"
-                                         class="img-fluid blur-up lazyload bg-img" alt="">
+                            <div class="blog-wrap">
+                                <div class="blog-image">
+                                    <div>
+                                        <img src="{{ asset('uploads/countries/' . $country->image) }}"
+                                             class="img-fluid blur-up lazyload bg-img" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="destination-details row">
+                                <div class="destination-details row">
 
-                                <div class="col-lg-6 col-6">
-                                    <a href="{{route('user.show.programs', $country->id)}}" class="btn btn-rounded color2">{{__("messages.discover_prog")}}</a>
-                                </div>
-                                <div class="col-lg-6 col-6">
-                                    <h2>{{$country->title}}</h2>
+                                    <div class="col-lg-6 col-6">
+                                        <a href="{{route('user.show.programs', $country->id)}}"
+                                           class="btn btn-rounded color2">{{__("messages.discover_prog")}}</a>
+                                    </div>
+                                    <div class="col-lg-6 col-6">
+                                        <h2>{{$country->title}}</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 @endif
             </div>
@@ -89,93 +442,230 @@
     <!-- Local section end -->
 
 
+
+    <section class="banner_section">
+        <div class="container custom_container">
+            <div class="banner_div">
+                <img src="{{asset('front/assets/images/banner_custom.png')}}" alt="" class="w-100">
+                <a class="btn custom_btn_discover" href="{{route('user.programs.index')}}" >{{\App\Helpers\TranslationHelper::translate('Discover More', 'site')}}</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Local section start -->
+    <section class="blog_section destination-section section-b-space ratio_55">
+        <div class="container custom_container">
+            <div class="title-2 mb-4">
+                <h2 class="custom_title"> {{\App\Helpers\TranslationHelper::translate('Top Destinations', 'site')}} ... <span> {{\App\Helpers\TranslationHelper::translate('Internal', 'site')}} </span></h2>
+            </div>
+            <div class="slider_333">
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>جدة</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>جدة</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>جدة</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>جدة</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>جدة</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>جدة</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
     <section class="process-steps section-b-space pb-0 bg-white" style="padding-top: 20px!important;">
         <div class="container">
             <div class="title-1">
                 <a href="{{route('user.hotels.index')}}">
-                <span class="title-label">{{__("messages.hotels")}}</span>
-                <h2>{{__("messages.top_hotels")}}</h2>
+{{--                    <span class="title-label">{{__("messages.hotels")}}</span>--}}
+                    <h2>{{__("messages.top_hotels")}}</h2>
                 </a>
             </div>
-            <div class="step-bg ratio_square">
-                <div class="row popular-section">
+            <div class="step-bg ratio_square custom_top_hotels">
+
+                <div class="slider_444 popular-section " style="margin: 0">
                     @if(isset($hotels) && $hotels->count() > 0)
                         @foreach($hotels as $hotel)
-                            <div class="col-lg-3 col-sm-6">
                                 <div class="step-box">
                                     <div class="popular-box">
                                         <a href="{{ route('user.hotels.show', $hotel->id) }}">
 
-                                        <div class="popular_img">
-                                            <img src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}" alt=""
-                                                 class="img-fluid blur-up lazyload bg-img">
-                                        </div>
+                                            <div class="popular_img">
+                                                <img
+                                                    src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"
+                                                    alt=""
+                                                    class="img-fluid blur-up lazyload bg-img">
+                                            </div>
                                         </a>
-                                        <div class="special-content" style="direction: rtl;text-align: right;">
+                                        <div class="special-content" style="direction: rtl;text-align: center;">
                                             <a href="{{ route('user.hotels.show', $hotel->id) }}">
                                                 <h5>{{$hotel->title}} </h5>
                                             </a>
-                                            <h5 class="mt-1">
-                                                <span class="ms-0"><i class="fas fa-map-marker-alt"></i> {{$hotel->country->title}}, {{$hotel->city->title}}</span>
-                                            </h5>
-                                            <div class="bottom-section">
-                                                <span>{{$hotel->address}}</span>
+{{--                                            <h5 class="mt-1">--}}
+{{--                                                <span class="ms-0"><i class="fas fa-map-marker-alt"></i> {{$hotel->country->title}}, {{$hotel->city->title}}</span>--}}
+{{--                                            </h5>--}}
+{{--                                            <div class="bottom-section">--}}
+{{--                                                <span>{{$hotel->address}}</span>--}}
 
-                                            </div>
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         @endforeach
                     @endif
+
+
+
                 </div>
+
             </div>
         </div>
     </section>
     <!-- hotel section start -->
 
-    @if(isset($blogs) && $blogs->count() > 0)
+{{--    @if(isset($blogs) && $blogs->count() > 0)--}}
 
-    <!-- blog section start -->
-    <section class="blog_section section-b-space  ratio_55">
-        <div class="container">
-            <div class="title-2">
-                <h2>{{__("messages.our_news")}} <span>{{__("messages.and")}} {{__("messages.blog")}}</span></h2>
-            </div>
-            <div class="slide-3 no-arrow">
-                    @foreach($blogs as $blog)
-                        <div>
-                            <div class="blog-wrap">
-                                <div class="blog-image">
-                                    <div>
-                                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
-                                             class="img-fluid blur-up lazyload bg-img" alt="">
-                                    </div>
-                                    <div class="blog-label">
-                                        <div>
-                                            <h3>{{date('d', strtotime($blog->created_at))}}</h3>
-                                            <h6>{{date('M', strtotime($blog->created_at))}}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blog-details">
-                                    <a href="{{route('user.blogs.show', $blog->id)}}">
-                                        <h5>{{$blog->title}}</h5>
+{{--        <!-- blog section start -->--}}
+{{--        <section class="blog_section section-b-space  ratio_55">--}}
+{{--            <div class="container">--}}
+{{--                <div class="title-2">--}}
+{{--                    <h2>{{__("messages.our_news")}} <span>{{__("messages.and")}} {{__("messages.blog")}}</span></h2>--}}
+{{--                </div>--}}
+{{--                <div class="slide-3 no-arrow">--}}
+{{--                    @foreach($blogs as $blog)--}}
+{{--                        <div>--}}
+{{--                            <div class="blog-wrap">--}}
+{{--                                <div class="blog-image">--}}
+{{--                                    <div>--}}
+{{--                                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"--}}
+{{--                                             class="img-fluid blur-up lazyload bg-img" alt="">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="blog-label">--}}
+{{--                                        <div>--}}
+{{--                                            <h3>{{date('d', strtotime($blog->created_at))}}</h3>--}}
+{{--                                            <h6>{{date('M', strtotime($blog->created_at))}}</h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="blog-details">--}}
+{{--                                    <a href="{{route('user.blogs.show', $blog->id)}}">--}}
+{{--                                        <h5>{{$blog->title}}</h5>--}}
 
-                                    </a>
-                                    <p>
-                                        {{$blog->sub_title}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+{{--                                    </a>--}}
+{{--                                    <p>--}}
+{{--                                        {{$blog->sub_title}}--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endforeach--}}
 
-            </div>
-        </div>
-    </section>
-    <!-- blog section end -->
-    @endif
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
+{{--        <!-- blog section end -->--}}
+{{--    @endif--}}
 
     <!-- subscribe section start -->
     <section class="subscribe-footer zig-zag-effect">
@@ -285,7 +775,8 @@
                             <input type="text" class="form-control" placeholder="{{__('messages.enter_email')}}"
                                    aria-label="Recipient's username">
                             <div class="input-group-append">
-                                <button class="btn btn-subscribe" type="button" id="button-addon">{{__('messages.subscribe')}}</button>
+                                <button class="btn btn-subscribe" type="button"
+                                        id="button-addon">{{__('messages.subscribe')}}</button>
                             </div>
                         </div>
                     </div>

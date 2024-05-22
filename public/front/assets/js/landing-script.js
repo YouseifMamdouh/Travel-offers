@@ -63,7 +63,7 @@
             }
         ]
     });
-    
+
 
     $('ul.tabs li').click(function () {
         var tab_id = $(this).attr('data-tab');
@@ -91,7 +91,7 @@
 
 
         parent.css({
-            'background-image': 'url(' + src + ')',
+            'background-image': 'linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),url(' + src + ')',
             'background-size': 'cover',
             'background-position': 'center',
             'background-repeat': 'no-repeat',
@@ -99,6 +99,26 @@
         });
 
         el.hide();
+    });
+
+    $(".bg-img-other").parent().addClass('bg-size');
+    $(".bg-img-other.blur-up" ).parent().addClass('blur-up lazyload');
+    $('.bg-img-other').each(function () {
+
+        var el_ = $(this),
+            src_ = el_.attr('src'),
+            parent_ = el_.parent();
+
+        parent_.hide()
+        parent_.css({
+            'background-image': 'linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url(' + src_ + ')',
+            'background-size': 'cover',
+            'background-position': 'center',
+            'background-repeat': 'no-repeat',
+            'display': 'block'
+        });
+
+        el_.hide();
     });
 
     $(window).on('scroll', function () {
@@ -126,7 +146,7 @@
               offset 	= $this.offset(),
               xOffset = e.pageX - offset.left + 10,
               yOffset = e.pageY - offset.top + 30;
-              
+
           if( type == 'mouseenter' ) {
               $this.data( 'tipText', title ).removeAttr( 'title' );
               $this.find ( '.title' ).text(title).fadeIn(50);
@@ -141,14 +161,13 @@
                   .css( 'top', ( yOffset ) + 'px' )
                   .css( 'left', ( xOffset ) + 'px' );
           }
-          
+
       }
-       
-      $( document.querySelectorAll( '.tooltip-custom' ) ).on({ 
-           mouseenter: onHoverToggleTooltip, 
-           mouseleave: onHoverToggleTooltip, 
+
+      $( document.querySelectorAll( '.tooltip-custom' ) ).on({
+           mouseenter: onHoverToggleTooltip,
+           mouseleave: onHoverToggleTooltip,
            mousemove: onHoverToggleTooltip
       });
-        
+
       });
-        

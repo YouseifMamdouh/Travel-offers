@@ -230,6 +230,26 @@
         el.hide();
     });
 
+
+    $(".bg-img-other").parent().addClass('bg-size');
+    $(".bg-img-other.blur-up" ).parent().addClass('blur-up lazyload');
+    $('.bg-img-other').each(function () {
+
+        var el_ = $(this),
+            src_ = el_.attr('src'),
+            parent_ = el_.parent();
+
+        parent_.hide()
+        parent_.css({
+            'background-image': 'linear-gradient(to bottom, rgba(161, 161, 161, 0.24), rgba(0, 0, 0, 0.50)), url(' + src_ + ')',
+            'background-size': 'cover',
+            'background-position': 'center',
+            'background-repeat': 'no-repeat',
+            'display': 'block'
+        });
+
+        el_.hide();
+    });
     /*=====================
       8 .Category page
       ==========================*/
@@ -347,20 +367,48 @@
         ]
     });
 
-    $('.slider-3').slick({
+    $('.slider_333').slick({
         infinite: true,
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: false,
+        // arrows:true,
         autoplaySpeed: 5000,
         responsive: [{
-                breakpoint: 1460,
+            breakpoint: 1460,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+            {
+                breakpoint: 767,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
-            },
+            }
+        ]
+    });
+
+    $('.slider_444').slick({
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        // centerPadding: '200px',
+        // centerMode: true,
+        autoplay: false,
+        arrows:false,
+        autoplaySpeed: 5000,
+        responsive: [{
+            breakpoint: 1460,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
             {
                 breakpoint: 767,
                 settings: {

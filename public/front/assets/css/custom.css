@@ -1,0 +1,84 @@
+/* Start Header */
+.upper_header {height: auto;background: #fff}
+.social_img {width: 23px;margin: 10px 7px 11px 7px;}
+.header_span {font-size: 15px;font-weight: bolder;vertical-align: middle;color: #222222}
+.header_span:hover{color: #222222}
+
+/* End Header */
+
+
+/* Start Tour Section */
+.tourSection .tourBox .tourImg {background-size: 50% !important}
+.tourSection .tourBox {background: #fff!important;}
+.tourSection .tourBox .tourContent h3 {color: #3a3a3a!important;font-size: 30px; font-weight: bolder}
+.tourSection .tourBox .tourContent {background: #fff!important;padding-top: 0!important;min-height: 115px}
+.single_service_div {box-shadow: 0 0 9px .5em #aeaeae8a;border-radius: 28px;margin: 30px 20px 100px 20px;padding: 0}
+.custom_container {max-width: 95% !important}
+/* End Tour Section */
+
+
+/* Start Top Programmes */
+.destination_details_custom {padding: 25px}
+.custom_title {color: #222222!important;font-weight: bold!important; margin-bottom: 60px!important;}
+.destination_details_custom  h2 {padding-top: 100px;color: #fff;font-size: 32px;font-weight: bolder}
+.destination_custom_img {min-height: 600px;}
+.blog_section .blog-wrap .destination_custom_img .bg-size {height: 100%}
+.facility_row {text-align: center}
+.facility_img img {width: 37px;margin: auto}
+.facility_title {margin-top: 16px;font-size: 15px;font-weight: bolder; color: #fff}
+.custom_btn_more {color: #fff;font-weight: bolder;background: #998964;display: block;text-align: center;padding: 10px;font-size: 19px;border-radius: 20px;}
+.custom_btn_div {margin-top: 35px!important;}
+.bg_img {height: 100%;}
+/* End Top Programmes */
+
+/* Start Slick */
+.slider_333 .slick-prev, .slick-next {z-index: 9999;height: 50px;width: 50px}
+.slider_333 .slick-next {display: none!important;}
+.slider_333 .slick-prev {left: 2px!important;}
+.slider_333 .slick-prev:before, .slick-next:before {font-size: 70px!important;}
+/* End Slick */
+
+
+
+/* Start Top Distinations */
+.destination_details_custom_ {padding: 25px;text-align: center}
+.destination_details_custom_  h2 {padding-top: 110px;color: #fff;font-size: 45px;font-weight: bolder}
+.destination_custom_img_ {min-height: 500px;}
+/* End Top Distinations */
+
+/* Start Hotels */
+.process-steps .step-bg .row>div:nth-child(2), .process-steps .step-bg .row>div:nth-child(4) {margin-top: 0px!important;}
+.custom_top_hotels .step-box {border: 1px solid #ddd!important;overflow: hidden!important;border-radius: 27px!important;margin: 10px 0;}
+.custom_top_hotels .step-box .popular-box .special-content{width: 100%;position: absolute!important;bottom: 0!important;background: #fff!important;border-radius: 26px !important;overflow: hidden!important;padding: 30px 20px!important;}
+/* End Hotels */
+
+/* Start Banner */
+.banner_div {position: relative;}
+.custom_btn_discover {width:200px;color: #fff;font-weight: bolder;background: #5f77a3;display: block;text-align: center;padding: 10px;font-size: 19px;border-radius: 20px;position: absolute;bottom: 35%;right: 29%;}
+.banner_details {position: absolute;z-index: 99999;top: 26%;right: 11%;width: 350px;text-align: right;}
+.banner_details h2 {font-size: 55px;line-height: 67px;}
+.custom_btn_banner {margin-top:13px;width:174px;color: #000;font-weight: bolder;background: #cba449;text-align: center;padding: 10px;font-size: 21px;border-radius: 20px;}
+
+/* End Banner */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
