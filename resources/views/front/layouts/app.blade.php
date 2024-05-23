@@ -86,6 +86,11 @@
     </div>
     <!-- tap to top end -->
 
+    <div class="whats_app_quick" style="display: none;position: fixed;bottom: 107px;width: 45px;right: 23px;z-index: 10000;">
+        <a target="_blank" href="https://wa.me/+966546982604">
+            <img src="{{asset('front/assets/images/whatsapp.png')}}" alt="" style="width: 100%;">
+        </a>
+    </div>
 
     <!-- setting start -->
     {{-- <div class="theme-setting">
