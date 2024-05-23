@@ -5,7 +5,7 @@
         <div class="owl-carousel owl-theme banners" dir="ltr">
             @foreach($banners as $k => $banner)
 
-                <div class="item" style="height: 74vh;overflow: hidden;position:relative;
+                <div class="item" style="height: 94vh;overflow: hidden;position:relative;
 background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url({{asset('uploads/banners/' . $banner->image)}});
     background-size: cover;
     background-position: center center;
