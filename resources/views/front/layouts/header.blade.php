@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="border-bottom: 2px solid #fff;">
         <div class="row">
             <div class="col">
                 <div class="menu">
@@ -25,7 +25,7 @@
                         <a href="{{url('/')}}">
                             {{-- <img src="{{ asset('front/assets/images/icon/footer-logo.png') }}" alt=""
                             class="img-fluid blur-up lazyload"> --}}
-                            <img src="{{ asset('front/assets/images/logo-ral.png') }}" alt=""
+                            <img src="{{ asset('front/assets/images/logo-ral_.png') }}" alt=""
                                  class="img-fluid blur-up lazyload" width="70">
                         </a>
                     </div>
@@ -65,12 +65,14 @@
                                         <a href="{{ route('user.programs.index') }}"
                                            class="nav-link ">{{__("messages.our_programs")}}</a>
                                     </li>
-                                    @php($blogs = \App\Models\Blog::count())
-                                    @if(isset($blogs) && $blogs > 0)
-                                        <li><a href="{{ route('user.blogs.index') }}"
-                                               class="">{{__("messages.blogs")}}</a></li>
-                                    @endif
+{{--                                    @php($blogs = \App\Models\Blog::count())--}}
+{{--                                    @if(isset($blogs) && $blogs > 0)--}}
+{{--                                        <li><a href="{{ route('user.blogs.index') }}"--}}
+{{--                                               class="">{{__("messages.blogs")}}</a></li>--}}
+{{--                                    @endif--}}
                                     <li><a href="{{ route('user.contact') }}" class="">{{__("messages.contact_us")}}</a>
+                                    </li>
+                                    <li><a href="javascript:void(0);" class="">English</a>
                                     </li>
                                 </ul>
                             </div>
@@ -78,12 +80,12 @@
                     </nav>
                     <ul class="header-right">
 
-                        <li class="front-setting rounded5">
-                            <select>
-                                <option value="en">EN</option>
-                                <option value="ar">Ar</option>
-                            </select>
-                        </li>
+{{--                        <li class="front-setting rounded5">--}}
+{{--                            <select>--}}
+{{--                                <option value="en">EN</option>--}}
+{{--                                <option value="ar">Ar</option>--}}
+{{--                            </select>--}}
+{{--                        </li>--}}
                         {{--                        <li class="user rounded5">--}}
                         {{--                            <a href="#">--}}
                         {{--                                <i class="fas fa-user"></i>--}}

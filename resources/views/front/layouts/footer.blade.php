@@ -17,7 +17,7 @@
                        <div class="footer-content">
                            <div class="contact-detail">
                                <div class="footer-logo">
-                                   <img src="{{ asset('front/assets/images/logo-ral.png') }}" alt=""
+                                   <img src="{{ asset('front/assets/images/logo-ral_.png') }}" alt=""
                                         class="img-fluid blur-up lazyload" width="150px">
                                </div>
 {{--                               <p>{!! $about->description !!}</p>--}}

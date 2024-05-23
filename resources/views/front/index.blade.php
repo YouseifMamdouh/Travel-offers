@@ -5,8 +5,11 @@
         <div class="owl-carousel owl-theme banners" dir="ltr">
             @foreach($banners as $k => $banner)
 
-                <div class="item" style="height: 74vh;overflow: hidden;position:relative;">
-                    <img src="{{asset('uploads/banners/' . $banner->image)}}" alt="image">
+                <div class="item" style="height: 74vh;overflow: hidden;position:relative;
+background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url({{asset('uploads/banners/' . $banner->image)}});
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;">
                     <div class="banner_details">
                         <h2>{{$banner->title}}</h2>
                         <a href="{{route('user.about')}}" class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
@@ -17,7 +20,7 @@
 
     </section>
 
-    <section class="pt-0 services_section" style="margin-top: -120px">
+    <section class="pt-0 services_section" style="margin-top: -85px">
         <div class="tourSection ratio3_2">
             <div class="container custom_container">
                 <div class="row">
@@ -59,7 +62,7 @@
 
     <!-- Local section start -->
     <section class="blog_section destination-section section-b-space ratio_55">
-        <div class="container">
+        <div class="container mini_container">
             <div class="title-2 mb-4">
                 <h2 class="custom_title"> {{\App\Helpers\TranslationHelper::translate('Top Programmes', 'site')}} </h2>
             </div>
@@ -407,7 +410,7 @@
 
     <!-- Local section start -->
     <section class="blog_section destination-section section-b-space ratio_55">
-        <div class="container">
+        <div class="container mini_container">
             <div class="title-2 mb-4">
                 <h2> {{__('messages.locale')}} <span>{{__('messages.reservations')}}</span></h2>
             </div>
@@ -444,7 +447,7 @@
 
 
     <section class="banner_section">
-        <div class="container custom_container">
+        <div class="container mini_container">
             <div class="banner_div">
                 <img src="{{asset('front/assets/images/banner_custom.png')}}" alt="" class="w-100">
                 <a class="btn custom_btn_discover" href="{{route('user.programs.index')}}" >{{\App\Helpers\TranslationHelper::translate('Discover More', 'site')}}</a>
@@ -455,9 +458,9 @@
 
     <!-- Local section start -->
     <section class="blog_section destination-section section-b-space ratio_55">
-        <div class="container custom_container">
+        <div class="container mini_container">
             <div class="title-2 mb-4">
-                <h2 class="custom_title"> {{\App\Helpers\TranslationHelper::translate('Top Destinations', 'site')}} ... <span> {{\App\Helpers\TranslationHelper::translate('Internal', 'site')}} </span></h2>
+                <h2 class="custom_title"> {{\App\Helpers\TranslationHelper::translate('Top Destinations', 'site')}} </h2>
             </div>
             <div class="slider_333">
                 <div>
@@ -465,11 +468,65 @@
                         <div class="blog-image destination_custom_img_">
                             <a href="javascript:void(0);">
                                 <div class="bg_img">
-                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
+                                    <img src="{{ asset('front/assets/images/georgia.jpg') }}"
                                          class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
-                                            <h2>جدة</h2>
+                                            <h2>جورجيا</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/tailand.webp') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>تايلند</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/turky.jpg') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>تركيا</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="blog-wrap position-relative">
+                        <div class="blog-image destination_custom_img_">
+                            <a href="javascript:void(0);">
+                                <div class="bg_img">
+                                    <img src="{{ asset('front/assets/images/egypt.webp') }}"
+                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                    <div class="row destination_details_custom_">
+                                        <div class="col-lg-12 col-12">
+                                            <h2>مصر</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -487,79 +544,7 @@
                                          class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
-                                            <h2>جدة</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img_">
-                            <a href="javascript:void(0);">
-                                <div class="bg_img">
-                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                    <div class="row destination_details_custom_">
-                                        <div class="col-lg-12 col-12">
-                                            <h2>جدة</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img_">
-                            <a href="javascript:void(0);">
-                                <div class="bg_img">
-                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                    <div class="row destination_details_custom_">
-                                        <div class="col-lg-12 col-12">
-                                            <h2>جدة</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img_">
-                            <a href="javascript:void(0);">
-                                <div class="bg_img">
-                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                    <div class="row destination_details_custom_">
-                                        <div class="col-lg-12 col-12">
-                                            <h2>جدة</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img_">
-                            <a href="javascript:void(0);">
-                                <div class="bg_img">
-                                    <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                    <div class="row destination_details_custom_">
-                                        <div class="col-lg-12 col-12">
-                                            <h2>جدة</h2>
+                                            <h2>ازربيجان</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -574,8 +559,8 @@
     </section>
 
 
-    <section class="process-steps section-b-space pb-0 bg-white" style="padding-top: 20px!important;">
-        <div class="container">
+    <section class="process-steps section-b-space pb-0 bg-white" style="padding-top: 20px!important;    margin-bottom: 50px;">
+        <div class="container mini_container">
             <div class="title-1">
                 <a href="{{route('user.hotels.index')}}">
 {{--                    <span class="title-label">{{__("messages.hotels")}}</span>--}}
@@ -795,7 +780,9 @@
             $('.banners').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: false,
+                nav: true,
+                navText: ["<span class='fas fa-chevron-left'></span>", "<span class='fas fa-chevron-right'></span>"],
+                dots:false,
                 responsive: {
                     0: {
                         items: 1

@@ -378,14 +378,14 @@
         responsive: [{
             breakpoint: 1460,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 3,
+                slidesToScroll: 1
             }
         },
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
@@ -405,8 +405,8 @@
         responsive: [{
             breakpoint: 1460,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 3,
+                slidesToScroll: 1
             }
         },
             {

@@ -1,18 +1,22 @@
 /* Start Header */
-.upper_header {height: auto;background: #fff}
+header.light_header {position: absolute;background: transparent;z-index: 999}
+.upper_header {height: auto;background: transparent}
 .social_img {width: 23px;margin: 10px 7px 11px 7px;}
-.header_span {font-size: 15px;font-weight: bolder;vertical-align: middle;color: #222222}
-.header_span:hover{color: #222222}
-
+.header_span {font-size: 15px;font-weight: bolder;vertical-align: middle;color: #fff}
+.header_span:hover{color: #fff}
+header.light_header .main-navbar .nav-menu>li>a {color: #fff}
+header.light_header .menu .brand-logo img {filter: none;width: 150px}
 /* End Header */
 
 
 /* Start Tour Section */
-.tourSection .tourBox .tourImg {background-size: 50% !important}
+.tourSection .tourBox .tourImg {background-size: 40% !important}
 .tourSection .tourBox {background: #fff!important;}
-.tourSection .tourBox .tourContent h3 {color: #3a3a3a!important;font-size: 30px; font-weight: bolder}
-.tourSection .tourBox .tourContent {background: #fff!important;padding-top: 0!important;min-height: 115px}
-.single_service_div {box-shadow: 0 0 9px .5em #aeaeae8a;border-radius: 28px;margin: 30px 20px 100px 20px;padding: 0}
+.tourSection .tourBox .tourContent h3 {color: #3a3a3a!important;font-size: 23px; font-weight: bolder;padding: 0 13px}
+.tourSection .tourBox .tourContent {background: #fff!important;padding-top: 0!important;min-height: 90px}
+.single_service_div {
+    /*box-shadow: 0 0 9px .5em #aeaeae8a;*/
+    border-radius: 28px;margin: 30px 20px 100px 20px;padding: 0}
 .custom_container {max-width: 95% !important}
 /* End Tour Section */
 
@@ -20,8 +24,8 @@
 /* Start Top Programmes */
 .destination_details_custom {padding: 25px}
 .custom_title {color: #222222!important;font-weight: bold!important; margin-bottom: 60px!important;}
-.destination_details_custom  h2 {padding-top: 100px;color: #fff;font-size: 32px;font-weight: bolder}
-.destination_custom_img {min-height: 600px;}
+.destination_details_custom  h2 {padding-top: 10px;color: #fff;font-size: 25px;font-weight: bolder}
+.destination_custom_img {height: 500px;}
 .blog_section .blog-wrap .destination_custom_img .bg-size {height: 100%}
 .facility_row {text-align: center}
 .facility_img img {width: 37px;margin: auto}
@@ -32,18 +36,20 @@
 /* End Top Programmes */
 
 /* Start Slick */
+.mini_container {max-width: 80%}
 .slider_333 .slick-prev, .slick-next {z-index: 9999;height: 50px;width: 50px}
 .slider_333 .slick-next {display: none!important;}
 .slider_333 .slick-prev {left: 2px!important;}
-.slider_333 .slick-prev:before, .slick-next:before {font-size: 70px!important;}
+.slider_333 .slick-prev:before, .slick-next:before {font-size: 55px!important;}
 /* End Slick */
 
 
 
 /* Start Top Distinations */
 .destination_details_custom_ {padding: 25px;text-align: center}
-.destination_details_custom_  h2 {padding-top: 110px;color: #fff;font-size: 45px;font-weight: bolder}
-.destination_custom_img_ {min-height: 500px;}
+.destination_details_custom_  h2 {padding-top: 80px;color: #fff;font-size: 30px;font-weight: bolder}
+.destination_custom_img_ {height: 400px;}
+.destination_custom_img_ .bg_img {height: 500px}
 /* End Top Distinations */
 
 /* Start Hotels */
@@ -55,10 +61,13 @@
 /* Start Banner */
 .banner_div {position: relative;}
 .custom_btn_discover {width:200px;color: #fff;font-weight: bolder;background: #5f77a3;display: block;text-align: center;padding: 10px;font-size: 19px;border-radius: 20px;position: absolute;bottom: 35%;right: 29%;}
-.banner_details {position: absolute;z-index: 99999;top: 26%;right: 11%;width: 350px;text-align: right;}
-.banner_details h2 {font-size: 55px;line-height: 67px;}
+.banner_details {position: absolute;z-index: 99999;top: 33%;right: 11%;width: 350px;text-align: right;}
+.banner_details h2 {font-size: 40px;line-height: 67px;color: #fff}
 .custom_btn_banner {margin-top:13px;width:174px;color: #000;font-weight: bolder;background: #cba449;text-align: center;padding: 10px;font-size: 21px;border-radius: 20px;}
-
+.banners_section  .owl-carousel .owl-nav {display: block!important;position: absolute;width: 100%;bottom: 16%;}
+.banners_section .owl-carousel .owl-nav button.owl-next, .banners_section .owl-carousel .owl-nav button.owl-prev {    width: 50px;height: 50px;background: #ffffffbd;border-radius: 50%;font-size: 27px;}
+.banners_section .owl-carousel .owl-nav button.owl-next {padding: 3px 0 0 2px !important;}
+.banners_section .owl-carousel .owl-nav button.owl-prev {padding: 3px 3px 0 0 !important;}
 /* End Banner */
 
 
