@@ -6,13 +6,14 @@
             @foreach($banners as $k => $banner)
 
                 <div class="item" style="height: 94vh;overflow: hidden;position:relative;
-background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url({{asset('uploads/banners/' . $banner->image)}});
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;">
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url({{asset('uploads/banners/' . $banner->image)}});
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;">
                     <div class="banner_details">
                         <h2>{{$banner->title}}</h2>
-                        <a href="{{route('user.contact')}}" class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
+                        <a href="{{route('user.contact')}}"
+                           class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
                     </div>
                 </div>
             @endforeach
@@ -67,341 +68,140 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                 <h2 class="custom_title"> {{\App\Helpers\TranslationHelper::translate('Top Programmes', 'site')}} </h2>
             </div>
             <div class="slider_333">
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img">
-                            <a href="javascript:void(0);">
-                            <div class="bg_img">
-                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                <div class="row destination_details_custom">
 
-                                    <div class="col-lg-12 col-12">
-                                        <h2>برنامج اذربيجان السياحي</h2>
-                                    </div>
-                                    <div class="col-lg-12 col-12 ">
-                                        <div class="row mt-4 facility_row">
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
+
+                @php
+                    $all_features = \App\Models\Feature::where('type_of', 'programmes')->get();
+
+                @endphp
+                @if(isset($programmes) && $programmes->count() > 0)
+                    @foreach($programmes as $item)
+
+                        <div>
+                            <div class="blog-wrap position-relative">
+                                <div class="blog-image destination_custom_img">
+                                    <a href="{{ route('user.programs.show',$item->id) }}">
+                                        <div class="bg_img">
+                                            <img src="{{ asset('uploads/programmes/' . $item->cover)}}"
+                                                 class="img-fluid blur-up lazyload bg-img-other"
+                                                 style="height: 100%;display: none" alt="">
+                                            <div class="row destination_details_custom">
+
+                                                <div class="col-lg-12 col-12">
+                                                    <h2>{{$item->name}}</h2>
                                                 </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
+                                                <div class="col-lg-12 col-12 ">
+                                                    <div class="row mt-4 facility_row">
+
+                                                        @php
+                                                            $prog_features = $item->features->pluck('id')->toArray();;
+                                                        @endphp
+                                                        @foreach($all_features as $feature)
+
+                                                            <div class="col-md-3 col-3 px-0 {{in_array($feature->id, $prog_features) ? '' : 'd-none'}} ">
+                                                                <div class="facility_img">
+                                                                    <img src="{{ asset('uploads/features/' . $feature->icon)}}"
+                                                                         alt="plane">
+                                                                </div>
+                                                                <div class="facility_title">
+                                                                    <span>
+                                                                        {{$feature->name}}
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
+                                                <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
+                                                    <span class=" w-100 custom_btn_more">
+                                                        المزيد
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
-                                        <span class=" w-100 custom_btn_more">
-                                            المزيد
-                                        </span>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
-                            </a>
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img">
-                            <a href="javascript:void(0);">
-                            <div class="bg_img">
-                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                <div class="row destination_details_custom">
 
-                                    <div class="col-lg-12 col-12">
-                                        <h2>برنامج اذربيجان السياحي</h2>
-                                    </div>
-                                    <div class="col-lg-12 col-12 ">
-                                        <div class="row mt-4 facility_row">
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
-                                        <span class=" w-100 custom_btn_more">
-                                            المزيد
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img">
-                            <a href="javascript:void(0);">
-                            <div class="bg_img">
-                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                <div class="row destination_details_custom">
 
-                                    <div class="col-lg-12 col-12">
-                                        <h2>برنامج اذربيجان السياحي</h2>
-                                    </div>
-                                    <div class="col-lg-12 col-12 ">
-                                        <div class="row mt-4 facility_row">
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
-                                        <span class=" w-100 custom_btn_more">
-                                            المزيد
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img">
-                            <a href="javascript:void(0);">
-                            <div class="bg_img">
-                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                <div class="row destination_details_custom">
 
-                                    <div class="col-lg-12 col-12">
-                                        <h2>برنامج اذربيجان السياحي</h2>
-                                    </div>
-                                    <div class="col-lg-12 col-12 ">
-                                        <div class="row mt-4 facility_row">
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
-                                        <span class=" w-100 custom_btn_more">
-                                            المزيد
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-wrap position-relative">
-                        <div class="blog-image destination_custom_img">
-                            <a href="javascript:void(0);">
-                            <div class="bg_img">
-                                <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"
-                                     class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
-                                <div class="row destination_details_custom">
 
-                                    <div class="col-lg-12 col-12">
-                                        <h2>برنامج اذربيجان السياحي</h2>
-                                    </div>
-                                    <div class="col-lg-12 col-12 ">
-                                        <div class="row mt-4 facility_row">
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/man.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-3 px-0">
-                                                <div class="facility_img">
-                                                    <img src="{{asset('front/assets/images/plane.png')}}" alt="plane">
-                                                </div>
-                                                <div class="facility_title">
-                                                    <span>
-                                                        زيارات سياحية
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">
-                                        <span class=" w-100 custom_btn_more">
-                                            المزيد
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
+
+
+{{--                <div>--}}
+{{--                    <div class="blog-wrap position-relative">--}}
+{{--                        <div class="blog-image destination_custom_img">--}}
+{{--                            <a href="javascript:void(0);">--}}
+{{--                                <div class="bg_img">--}}
+{{--                                    <img src="{{ asset('front/assets/images/cover_custom.jpg') }}"--}}
+{{--                                         class="img-fluid blur-up lazyload bg-img-other"--}}
+{{--                                         style="height: 100%;display: none" alt="">--}}
+{{--                                    <div class="row destination_details_custom">--}}
+
+{{--                                        <div class="col-lg-12 col-12">--}}
+{{--                                            <h2>برنامج اذربيجان السياحي</h2>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-12 col-12 ">--}}
+{{--                                            <div class="row mt-4 facility_row">--}}
+{{--                                                <div class="col-md-3 col-3 px-0">--}}
+{{--                                                    <div class="facility_img">--}}
+{{--                                                        <img src="{{asset('front/assets/images/man.png')}}" alt="plane">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="facility_title">--}}
+{{--                                                    <span>--}}
+{{--                                                        زيارات سياحية--}}
+{{--                                                    </span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-md-3 col-3 px-0">--}}
+{{--                                                    <div class="facility_img">--}}
+{{--                                                        <img src="{{asset('front/assets/images/plane.png')}}"--}}
+{{--                                                             alt="plane">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="facility_title">--}}
+{{--                                                    <span>--}}
+{{--                                                        زيارات سياحية--}}
+{{--                                                    </span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-md-3 col-3 px-0">--}}
+{{--                                                    <div class="facility_img">--}}
+{{--                                                        <img src="{{asset('front/assets/images/man.png')}}" alt="plane">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="facility_title">--}}
+{{--                                                    <span>--}}
+{{--                                                        زيارات سياحية--}}
+{{--                                                    </span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-md-3 col-3 px-0">--}}
+{{--                                                    <div class="facility_img">--}}
+{{--                                                        <img src="{{asset('front/assets/images/plane.png')}}"--}}
+{{--                                                             alt="plane">--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="facility_title">--}}
+{{--                                                    <span>--}}
+{{--                                                        زيارات سياحية--}}
+{{--                                                    </span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-5 col-md-5 col-sm-6 col-6 m-auto custom_btn_div">--}}
+{{--                                        <span class=" w-100 custom_btn_more">--}}
+{{--                                            المزيد--}}
+{{--                                        </span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -450,7 +250,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
         <div class="container mini_container">
             <div class="banner_div">
                 <img src="{{asset('front/assets/images/banner_custom.png')}}" alt="" class="w-100">
-                <a class="btn custom_btn_discover" href="{{route('user.programs.index')}}" >{{\App\Helpers\TranslationHelper::translate('Discover More', 'site')}}</a>
+                <a class="btn custom_btn_discover"
+                   href="{{route('user.programs.index')}}">{{\App\Helpers\TranslationHelper::translate('Discover More', 'site')}}</a>
             </div>
         </div>
     </section>
@@ -469,7 +270,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                             <a href="javascript:void(0);">
                                 <div class="bg_img">
                                     <img src="{{ asset('front/assets/images/georgia.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                         class="img-fluid blur-up lazyload bg-img-other"
+                                         style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
                                             <h2>جورجيا</h2>
@@ -487,7 +289,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                             <a href="javascript:void(0);">
                                 <div class="bg_img">
                                     <img src="{{ asset('front/assets/images/tailand.webp') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                         class="img-fluid blur-up lazyload bg-img-other"
+                                         style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
                                             <h2>تايلند</h2>
@@ -505,7 +308,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                             <a href="javascript:void(0);">
                                 <div class="bg_img">
                                     <img src="{{ asset('front/assets/images/turky.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                         class="img-fluid blur-up lazyload bg-img-other"
+                                         style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
                                             <h2>تركيا</h2>
@@ -523,7 +327,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                             <a href="javascript:void(0);">
                                 <div class="bg_img">
                                     <img src="{{ asset('front/assets/images/egypt.webp') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                         class="img-fluid blur-up lazyload bg-img-other"
+                                         style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
                                             <h2>مصر</h2>
@@ -541,7 +346,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                             <a href="javascript:void(0);">
                                 <div class="bg_img">
                                     <img src="{{ asset('front/assets/images/top_distination.jpg') }}"
-                                         class="img-fluid blur-up lazyload bg-img-other" style="height: 100%;display: none" alt="">
+                                         class="img-fluid blur-up lazyload bg-img-other"
+                                         style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
                                             <h2>ازربيجان</h2>
@@ -559,11 +365,12 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
     </section>
 
 
-    <section class="process-steps section-b-space pb-0 bg-white" style="padding-top: 20px!important;    margin-bottom: 50px;">
+    <section class="process-steps section-b-space pb-0 bg-white"
+             style="padding-top: 20px!important;    margin-bottom: 50px;">
         <div class="container mini_container">
             <div class="title-1">
                 <a href="{{route('user.hotels.index')}}">
-{{--                    <span class="title-label">{{__("messages.hotels")}}</span>--}}
+                    {{--                    <span class="title-label">{{__("messages.hotels")}}</span>--}}
                     <h2>{{__("messages.top_hotels")}}</h2>
                 </a>
             </div>
@@ -572,34 +379,33 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                 <div class="slider_444 popular-section " style="margin: 0">
                     @if(isset($hotels) && $hotels->count() > 0)
                         @foreach($hotels as $hotel)
-                                <div class="step-box">
-                                    <div class="popular-box">
-                                        <a href="{{ route('user.hotels.show', $hotel->id) }}">
+                            <div class="step-box">
+                                <div class="popular-box">
+                                    <a href="{{ route('user.hotels.show', $hotel->id) }}">
 
-                                            <div class="popular_img">
-                                                <img
-                                                    src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"
-                                                    alt=""
-                                                    class="img-fluid blur-up lazyload bg-img">
-                                            </div>
-                                        </a>
-                                        <div class="special-content" style="direction: rtl;text-align: center;">
-                                            <a href="{{ route('user.hotels.show', $hotel->id) }}">
-                                                <h5>{{$hotel->title}} </h5>
-                                            </a>
-{{--                                            <h5 class="mt-1">--}}
-{{--                                                <span class="ms-0"><i class="fas fa-map-marker-alt"></i> {{$hotel->country->title}}, {{$hotel->city->title}}</span>--}}
-{{--                                            </h5>--}}
-{{--                                            <div class="bottom-section">--}}
-{{--                                                <span>{{$hotel->address}}</span>--}}
-
-{{--                                            </div>--}}
+                                        <div class="popular_img">
+                                            <img
+                                                src="{{ asset('uploads/hotels/' . $hotel->hotelImages->first()->image) }}"
+                                                alt=""
+                                                class="img-fluid blur-up lazyload bg-img">
                                         </div>
+                                    </a>
+                                    <div class="special-content" style="direction: rtl;text-align: center;">
+                                        <a href="{{ route('user.hotels.show', $hotel->id) }}">
+                                            <h5>{{$hotel->title}} </h5>
+                                        </a>
+                                        {{--                                            <h5 class="mt-1">--}}
+                                        {{--                                                <span class="ms-0"><i class="fas fa-map-marker-alt"></i> {{$hotel->country->title}}, {{$hotel->city->title}}</span>--}}
+                                        {{--                                            </h5>--}}
+                                        {{--                                            <div class="bottom-section">--}}
+                                        {{--                                                <span>{{$hotel->address}}</span>--}}
+
+                                        {{--                                            </div>--}}
                                     </div>
                                 </div>
+                            </div>
                         @endforeach
                     @endif
-
 
 
                 </div>
@@ -609,48 +415,48 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
     </section>
     <!-- hotel section start -->
 
-{{--    @if(isset($blogs) && $blogs->count() > 0)--}}
+    {{--    @if(isset($blogs) && $blogs->count() > 0)--}}
 
-{{--        <!-- blog section start -->--}}
-{{--        <section class="blog_section section-b-space  ratio_55">--}}
-{{--            <div class="container">--}}
-{{--                <div class="title-2">--}}
-{{--                    <h2>{{__("messages.our_news")}} <span>{{__("messages.and")}} {{__("messages.blog")}}</span></h2>--}}
-{{--                </div>--}}
-{{--                <div class="slide-3 no-arrow">--}}
-{{--                    @foreach($blogs as $blog)--}}
-{{--                        <div>--}}
-{{--                            <div class="blog-wrap">--}}
-{{--                                <div class="blog-image">--}}
-{{--                                    <div>--}}
-{{--                                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"--}}
-{{--                                             class="img-fluid blur-up lazyload bg-img" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="blog-label">--}}
-{{--                                        <div>--}}
-{{--                                            <h3>{{date('d', strtotime($blog->created_at))}}</h3>--}}
-{{--                                            <h6>{{date('M', strtotime($blog->created_at))}}</h6>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="blog-details">--}}
-{{--                                    <a href="{{route('user.blogs.show', $blog->id)}}">--}}
-{{--                                        <h5>{{$blog->title}}</h5>--}}
+    {{--        <!-- blog section start -->--}}
+    {{--        <section class="blog_section section-b-space  ratio_55">--}}
+    {{--            <div class="container">--}}
+    {{--                <div class="title-2">--}}
+    {{--                    <h2>{{__("messages.our_news")}} <span>{{__("messages.and")}} {{__("messages.blog")}}</span></h2>--}}
+    {{--                </div>--}}
+    {{--                <div class="slide-3 no-arrow">--}}
+    {{--                    @foreach($blogs as $blog)--}}
+    {{--                        <div>--}}
+    {{--                            <div class="blog-wrap">--}}
+    {{--                                <div class="blog-image">--}}
+    {{--                                    <div>--}}
+    {{--                                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"--}}
+    {{--                                             class="img-fluid blur-up lazyload bg-img" alt="">--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="blog-label">--}}
+    {{--                                        <div>--}}
+    {{--                                            <h3>{{date('d', strtotime($blog->created_at))}}</h3>--}}
+    {{--                                            <h6>{{date('M', strtotime($blog->created_at))}}</h6>--}}
+    {{--                                        </div>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <div class="blog-details">--}}
+    {{--                                    <a href="{{route('user.blogs.show', $blog->id)}}">--}}
+    {{--                                        <h5>{{$blog->title}}</h5>--}}
 
-{{--                                    </a>--}}
-{{--                                    <p>--}}
-{{--                                        {{$blog->sub_title}}--}}
-{{--                                    </p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    @endforeach--}}
+    {{--                                    </a>--}}
+    {{--                                    <p>--}}
+    {{--                                        {{$blog->sub_title}}--}}
+    {{--                                    </p>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    @endforeach--}}
 
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </section>--}}
-{{--        <!-- blog section end -->--}}
-{{--    @endif--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </section>--}}
+    {{--        <!-- blog section end -->--}}
+    {{--    @endif--}}
 
     <!-- subscribe section start -->
     <section class="subscribe-footer zig-zag-effect">
@@ -782,7 +588,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
                 margin: 10,
                 nav: true,
                 navText: ["<span class='fas fa-chevron-left'></span>", "<span class='fas fa-chevron-right'></span>"],
-                dots:false,
+                dots: false,
                 responsive: {
                     0: {
                         items: 1

@@ -13,6 +13,7 @@ use App\Models\Contact;
 use App\Models\ContactUsMessage;
 use App\Models\Country;
 use App\Models\Hotel;
+use App\Models\OurProgramme;
 use App\Models\Service;
 
 class HomeController extends Controller
@@ -24,7 +25,9 @@ class HomeController extends Controller
         $countries = Country::get();
         $hotels = Hotel::limit(4)->get();
         $latest_services = Service::orderBy('id', 'desc')->limit(4)->get();
-        return view('front.index', compact('banners', 'blogs', 'cities', 'hotels', 'countries', 'latest_services'));
+        $programmes = OurProgramme::with('city', 'features')->get();
+
+        return view('front.index', compact('programmes','banners', 'blogs', 'cities', 'hotels', 'countries', 'latest_services'));
     }
 
     public function contact(){
