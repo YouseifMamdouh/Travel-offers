@@ -12,7 +12,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url(
     background-repeat: no-repeat;">
                     <div class="banner_details">
                         <h2>{{$banner->title}}</h2>
-                        <a href="{{route('user.about')}}" class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
+                        <a href="{{route('user.contact')}}" class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
                     </div>
                 </div>
             @endforeach
