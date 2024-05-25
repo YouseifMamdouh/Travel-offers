@@ -1,5 +1,10 @@
 [data-kt-app-sidebar-fixed=true] .app-sidebar {right: auto;left: 0!important;}
-[data-kt-app-sidebar-fixed=true] .app-wrapper {margin-right: 0;margin-left: calc(var(--bs-app-sidebar-width) + var(--bs-app-sidebar-gap-start, 0px) + var(--bs-app-sidebar-gap-end, 0px))}
 [data-kt-app-header-fixed=true][data-kt-app-sidebar-fixed=true][data-kt-app-sidebar-push-header=true] .app-header, [data-kt-app-header-fixed=true][data-kt-app-sidebar-sticky=on][data-kt-app-sidebar-push-header=true] .app-header {left: calc(var(--bs-app-sidebar-width) + var(--bs-app-sidebar-gap-start, 0px) + var(--bs-app-sidebar-gap-end, 0px)); right: 0}
+[data-kt-app-sidebar-fixed=true] .app-wrapper {margin-right: 0;margin-left: calc(var(--bs-app-sidebar-width) + var(--bs-app-sidebar-gap-start, 0px) + var(--bs-app-sidebar-gap-end, 0px))}
+
 .start-100 {right: auto!important;left: 100% !important}
 .btn > i {padding-right: 0!important;padding-left: .35rem!important;}
+@media (max-width: 580px) {
+    [data-kt-app-sidebar-fixed=true] .app-wrapper {margin-right: 0;margin-left:0}
+
+}

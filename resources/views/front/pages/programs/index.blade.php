@@ -117,9 +117,9 @@
                                                     <div class="bottom-section">
                                                         <div class="price">
                                                             <h6 dir="rtl">
-                                                            @if($item->discount != null)
+                                                            @if($item->discount != null && floatval($item->discount) > 0 && floatval($item->price) > 0)
                                                                 <del>
-                                                                    {{  ($item->price * 100)/$item->discount .General::getCurrency()  }}
+                                                                    {{  (floatval($item->price) * 100)/ floatval($item->discount) .General::getCurrency()  }}
                                                                 </del>
                                                             @endif
                                                                 {{ $item->price .General::getCurrency() }}

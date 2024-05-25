@@ -85,7 +85,7 @@
             </div>
             <div class="row"  dir="rtl">
 
-                <div class="col-xl-9 col-lg-8">
+                <div class="col-xl-12 col-lg-12">
                     <div class="description-section tab-section">
 
                         <div class="description-details">
@@ -177,62 +177,62 @@
                     </div>
 
                 </div>
-                <div class="col-xl-3 col-lg-4 ">
-                    <div class="sticky-cls">
-                        <div class="single-sidebar">
-                            <div class="selection-section">
-                                <h4 class="title">احجز البرنامج</h4>
-                                <div class="book-btn-section border-top-0">
-                                    <div class="detail-top">
-                                        <input type="text" id="firstName" class="form-control" placeholder="{{__("messages.f_name")}}">
-                                        <input type="text" id="firstName" class="form-control" placeholder="{{__("messages.l_name")}}">
-                                        <input type="email" id="email" class="form-control"
-                                            placeholder="{{__("messages.email")}}">
-                                        <input type="number" id="phone" class="form-control" placeholder="{{__("messages.phone")}}">
-                                    </div>
-                                    <div class="rooms-section">
-                                        <input type="text" class="form-control open-select"
-                                            placeholder="عدد الغرف والأفراد">
-                                        <div class="selector-box">
-                                            <div class="room-cls">
-                                                <label class="title_room">الغرفة 1</label>
-                                                <div class="qty-box">
-                                                    <label>البالغين</label>
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                            data-type="minus" data-field=""> - </button>
-                                                        <input type="text" name="quantity"
-                                                            class="form-control qty-input input-number" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                            data-type="plus" data-field="">+</button>
-                                                    </div>
-                                                </div>
-                                                <div class="qty-box">
-                                                    <label>الأطفال</label>
-                                                    <div class="input-group">
-                                                        <button type="button" class="btn quantity-left-minus"
-                                                            data-type="minus" data-field=""> - </button>
-                                                        <input type="text" name="quantity"
-                                                            class="form-control qty-input input-number" value="1">
-                                                        <button type="button" class="btn quantity-right-plus"
-                                                            data-type="plus" data-field=""> + </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="bottom-part">
-                                                <a href="#" class="add-room">إضافة غرفة +</a>
-                                                <a href="javascript:void(0)" class="btn">تأكيد</a>
-                                            </div>
-                                        </div>
-                                    </div>
+{{--                <div class="col-xl-3 col-lg-4 ">--}}
+{{--                    <div class="sticky-cls">--}}
+{{--                        <div class="single-sidebar">--}}
+{{--                            <div class="selection-section">--}}
+{{--                                <h4 class="title">احجز البرنامج</h4>--}}
+{{--                                <div class="book-btn-section border-top-0">--}}
+{{--                                    <div class="detail-top">--}}
+{{--                                        <input type="text" id="firstName" class="form-control" placeholder="{{__("messages.f_name")}}">--}}
+{{--                                        <input type="text" id="firstName" class="form-control" placeholder="{{__("messages.l_name")}}">--}}
+{{--                                        <input type="email" id="email" class="form-control"--}}
+{{--                                            placeholder="{{__("messages.email")}}">--}}
+{{--                                        <input type="number" id="phone" class="form-control" placeholder="{{__("messages.phone")}}">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="rooms-section">--}}
+{{--                                        <input type="text" class="form-control open-select"--}}
+{{--                                            placeholder="عدد الغرف والأفراد">--}}
+{{--                                        <div class="selector-box">--}}
+{{--                                            <div class="room-cls">--}}
+{{--                                                <label class="title_room">الغرفة 1</label>--}}
+{{--                                                <div class="qty-box">--}}
+{{--                                                    <label>البالغين</label>--}}
+{{--                                                    <div class="input-group">--}}
+{{--                                                        <button type="button" class="btn quantity-left-minus"--}}
+{{--                                                            data-type="minus" data-field=""> - </button>--}}
+{{--                                                        <input type="text" name="quantity"--}}
+{{--                                                            class="form-control qty-input input-number" value="1">--}}
+{{--                                                        <button type="button" class="btn quantity-right-plus"--}}
+{{--                                                            data-type="plus" data-field="">+</button>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="qty-box">--}}
+{{--                                                    <label>الأطفال</label>--}}
+{{--                                                    <div class="input-group">--}}
+{{--                                                        <button type="button" class="btn quantity-left-minus"--}}
+{{--                                                            data-type="minus" data-field=""> - </button>--}}
+{{--                                                        <input type="text" name="quantity"--}}
+{{--                                                            class="form-control qty-input input-number" value="1">--}}
+{{--                                                        <button type="button" class="btn quantity-right-plus"--}}
+{{--                                                            data-type="plus" data-field=""> + </button>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="bottom-part">--}}
+{{--                                                <a href="#" class="add-room">إضافة غرفة +</a>--}}
+{{--                                                <a href="javascript:void(0)" class="btn">تأكيد</a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
-                                    <a href="#" class="btn btn-rounded btn-sm color1">إرسال الطلب</a>
-                                </div>
-                            </div>
-                        </div>
+{{--                                    <a href="#" class="btn btn-rounded btn-sm color1">إرسال الطلب</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>

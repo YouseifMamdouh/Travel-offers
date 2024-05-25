@@ -1,8 +1,40 @@
 @extends('front.layouts.app')
+@push('user.css')
+    <link rel="stylesheet" href="{{asset('front/assets/css/custom.css')}}">
 
+@endpush
 @section('content')
-    <section class="banners_section flight-section p-0  ">
-        <div class="owl-carousel owl-theme banners" dir="ltr">
+    <section class="banners_section flight-section p-0">
+        <div class="banner_container large_owl_banners" style="height: 94vh;overflow: hidden;position:relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.5)), url({{asset('front/assets/images/banners_container.webp')}});
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;">
+                                <div class="banner_details">
+                                    <h2>السفر الأن اسهل مع رال</h2>
+                                    <a href="{{route('user.contact')}}"
+                                       class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>
+                                </div>
+{{--            <div class="owl-carousel owl-theme banners d-lg-none d-md-none" dir="ltr">--}}
+            <div class="owl-carousel owl-theme banners " dir="ltr">
+                @foreach($banners as $k => $banner)
+
+                    <div class="item" style="height: 40vh;overflow: hidden;position:relative;
+                        background-image: url({{asset('uploads/banners/' . $banner->image)}});
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat; border-radius: 10px">
+                        {{--                    <div class="banner_details">--}}
+                        {{--                        <h2>{{$banner->title}}</h2>--}}
+                        {{--                        <a href="{{route('user.contact')}}"--}}
+                        {{--                           class="btn custom_btn_banner">{{\App\Helpers\TranslationHelper::translate('More', 'site')}}</a>--}}
+                        {{--                    </div>--}}
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <div class="owl-carousel owl-theme banners small_owl_banners" dir="ltr">
             @foreach($banners as $k => $banner)
 
                 <div class="item" style="height: 94vh;overflow: hidden;position:relative;
@@ -18,7 +50,6 @@
                 </div>
             @endforeach
         </div>
-
     </section>
 
     <section class="pt-0 services_section" style="margin-top: -85px">
@@ -34,7 +65,7 @@
                              style="z-index: 100;position:relative;">
                             @if(isset($latest_services) && $latest_services->count() > 0)
                                 @foreach($latest_services as $item)
-                                    <a class="col-lg-3 col-md-3 col-sm-6 col-12 single_service"
+                                    <a class="col-lg-3 col-md-3 col-sm-6 col-6 single_service"
                                        href="{{ route('service.show', $item->id) }}">
                                         <div class="single_service_div">
                                             <div class="tourBox wow zoomIn">
@@ -293,7 +324,7 @@
                                          style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
-                                            <h2>تايلند</h2>
+                                            <h2>تايلاند</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -350,7 +381,7 @@
                                          style="height: 100%;display: none" alt="">
                                     <div class="row destination_details_custom_">
                                         <div class="col-lg-12 col-12">
-                                            <h2>ازربيجان</h2>
+                                            <h2>أذربيجان</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -589,6 +620,7 @@
                 nav: true,
                 navText: ["<span class='fas fa-chevron-left'></span>", "<span class='fas fa-chevron-right'></span>"],
                 dots: false,
+                center: true,
                 responsive: {
                     0: {
                         items: 1
@@ -597,7 +629,7 @@
                         items: 1
                     },
                     1000: {
-                        items: 1
+                        items: 3
                     }
                 }
             })

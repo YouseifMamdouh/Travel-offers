@@ -1,11 +1,12 @@
 /* Start Header */
 header.light_header {position: absolute;background: transparent;z-index: 999}
 .upper_header {height: auto;background: transparent}
-.social_img {width: 23px;margin: 10px 7px 11px 7px;}
+.social_img {width: 23px;margin: 10px 7px 11px 7px;    filter: none;}
 .header_span {font-size: 15px;font-weight: bolder;vertical-align: middle;color: #fff}
 .header_span:hover{color: #fff}
 header.light_header .main-navbar .nav-menu>li>a {color: #fff}
 header.light_header .menu .brand-logo img {filter: none;width: 150px}
+header.light_header .toggle-nav i {color: #fff}
 /* End Header */
 
 
@@ -15,7 +16,7 @@ header.light_header .menu .brand-logo img {filter: none;width: 150px}
 .tourSection .tourBox .tourContent h3 {color: #3a3a3a!important;font-size: 23px; font-weight: bolder;padding: 0 13px}
 .tourSection .tourBox .tourContent {background: #fff!important;padding-top: 0!important;min-height: 90px}
 .single_service_div {
-    /*box-shadow: 0 0 9px .5em #aeaeae8a;*/
+    box-shadow: 0 0 9px .5em #aeaeae8a;
     border-radius: 28px;margin: 30px 20px 100px 20px;padding: 0}
 .custom_container {max-width: 95% !important}
 /* End Tour Section */
@@ -64,19 +65,59 @@ header.light_header .menu .brand-logo img {filter: none;width: 150px}
 .banner_details {position: absolute;z-index: 99999;top: 33%;right: 11%;width: 350px;text-align: right;}
 .banner_details h2 {font-size: 40px;line-height: 67px;color: #fff}
 .custom_btn_banner {margin-top:13px;width:174px;color: #000;font-weight: bolder;background: #cba449;text-align: center;padding: 10px;font-size: 21px;border-radius: 20px;}
-.banners_section  .owl-carousel .owl-nav {display: block!important;position: absolute;width: 100%;bottom: 16%;}
+.banners_section .owl-carousel .owl-nav {display: block!important;position: absolute;width: 100%;bottom: -30%; left: 50%}
 .banners_section .owl-carousel .owl-nav button.owl-next, .banners_section .owl-carousel .owl-nav button.owl-prev {    width: 50px;height: 50px;background: #ffffffbd;border-radius: 50%;font-size: 27px;}
 .banners_section .owl-carousel .owl-nav button.owl-next {padding: 3px 0 0 2px !important;}
 .banners_section .owl-carousel .owl-nav button.owl-prev {padding: 3px 3px 0 0 !important;}
+.banners {position: absolute;width: 50%;top: 27%;z-index: 999999;}
+.banners .owl-item.active.center {margin-top: -13px;}
+.banners .owl-stage-outer {padding-top: 20px}
+.small_owl_banners {display: none!important;}
 /* End Banner */
 
 
 
 
+@media (max-width: 1200px) {
+    header.light_header .main-navbar .nav-menu>li>a {color: #000!important;}
+    header.light_header .main-navbar .nav-menu>li {text-align: right}
+}
 
 
 
+@media (max-width: 560px) {
+    .social_img_div {margin: 0!important;}
+    header.light_header .menu .brand-logo img {width: 115px}
 
+    .banner_details {top: 45%; right: 7%}
+    .banner_details h2 {font-size: 25px;line-height: 42px}
+    .custom_btn_banner {width: 120px;font-size: 18px;padding: 8px}
+    .banners_section  .owl-carousel .owl-nav {display: block!important;position: absolute;width: 100%;bottom: 6%;        left: 0;}
+    .banners_section .owl-carousel .owl-nav button.owl-next, .banners_section .owl-carousel .owl-nav button.owl-prev {    width: 40px;height: 40px;background: #ffffffbd;border-radius: 50%;font-size: 22px;}
+    .banners .item {height: 70vh!important;}
+    .banners .owl-item.active.center {margin: 0!important;}
+    .banners .owl-stage-outer {padding: 0!important;}
+    .banners {
+        position: relative;width: 100%;top: auto;
+        z-index: 1;}
+    .large_owl_banners {display: none!important;}
+    .small_owl_banners {display: block!important;}
+
+    header.light_header .main-navbar #mainnav .nav-menu>li>a {color: #000!important;}
+
+
+    .single_service_div { margin: 0;}
+    .single_service {margin-top: 20px}
+    .tourSection .tourBox .tourContent h3 {font-size: 18px}
+    .tourSection .tourBox .tourContent {min-height: 70px;}
+    .tourSection .tourBox {padding: 0}
+
+    .mini_container {max-width: 95%}
+    .destination_custom_img {height: 440px}
+    .destination_custom_img .bg-size:before {padding-top:55%}
+
+    .custom_btn_discover {bottom: 18%;right: 22%;padding: 4px;font-size: 12px;font-weight: 600;width: 96px;}
+}
 
 
 

@@ -49,6 +49,10 @@ footer .footer .footer-space {padding-left: 0;padding-right: 90px}
 .hotel_title_section .hotel-name .left-part .top .share-buttons .btn {margin-right: 15px;margin-left: 0!important;}
 .room-cls {text-align: right}
 .service_details p {color: #000}
+.upper_header {height: auto;background: transparent}
+.social_img {width: 23px;margin: 10px 7px 11px 7px;    filter: invert(1);}
+.header_span {font-size: 15px;font-weight: bolder;vertical-align: middle;color: #000}
+.header_span:hover{color: #000}
 
 @media (max-width: 560px) {
     .banners .item {height: auto!important;}

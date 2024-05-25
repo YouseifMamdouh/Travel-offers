@@ -9,7 +9,7 @@
                         009663325255
                 </a>
             </div>
-            <div class="d-inline ms-5">
+            <div class="d-inline ms-5 social_img_div">
                 <img class="social_img" src="{{asset('front/assets/images/chat-box.png')}}" alt="whatsapp">
                 <a href="mailto:info@raltravel.com" class="header_span" target="_blank">
                     info@raltravel.com
@@ -59,21 +59,21 @@
                                                             {{$service->title}} </a></li>
                                                 @endforeach
                                             @endif
+                                            <li><a target="_blank" href="https://eflang.my.site.com/s/?info=Y2FtcGFpZ25JZD03MDE3VDAwMDAwMDFDTEVRQTImY2FtcGFpZ25OYW1lPVJBTCBUcmF2ZWwgYWdlbnQmbWFya2V0PVNBUiZldGFnPVJBTFRSQVZFTEFHRU5UJnNvdXJjZT1hMDMwWTAwMDAwVWxFWmFRQU4mbWVldGluZ1VybD0nJw%3D%3D"
+                                                   class="">
+                                                    تعلم اللغة الإنجليزية </a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
                                         <a href="{{ route('user.programs.index') }}"
                                            class="nav-link ">{{__("messages.our_programs")}}</a>
                                     </li>
-{{--                                    @php($blogs = \App\Models\Blog::count())--}}
-{{--                                    @if(isset($blogs) && $blogs > 0)--}}
-{{--                                        <li><a href="{{ route('user.blogs.index') }}"--}}
-{{--                                               class="">{{__("messages.blogs")}}</a></li>--}}
-{{--                                    @endif--}}
+{{--                                    @p
+--}}
                                     <li><a href="{{ route('user.contact') }}" class="">{{__("messages.contact_us")}}</a>
                                     </li>
-                                    <li><a href="javascript:void(0);" class="">English</a>
-                                    </li>
+{{--                                    <li><a href="javascript:void(0);" class="">English</a>--}}
+{{--                                    </li>--}}
                                 </ul>
                             </div>
                         </div>
