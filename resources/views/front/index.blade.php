@@ -23,7 +23,7 @@
                         background-image: url({{asset('uploads/banners/' . $banner->image)}});
                         background-size: cover;
                         background-position: center center;
-                        background-repeat: no-repeat; border-radius: 10px">
+                        background-repeat: no-repeat; border-radius: 20px;overflow: hidden">
                         {{--                    <div class="banner_details">--}}
                         {{--                        <h2>{{$banner->title}}</h2>--}}
                         {{--                        <a href="{{route('user.contact')}}"--}}
