@@ -69,7 +69,7 @@ header.light_header .toggle-nav i {color: #fff}
 .banners_section .owl-carousel .owl-nav button.owl-next, .banners_section .owl-carousel .owl-nav button.owl-prev {    width: 50px;height: 50px;background: #ffffffbd;border-radius: 50%;font-size: 27px;}
 .banners_section .owl-carousel .owl-nav button.owl-next {padding: 3px 0 0 2px !important;}
 .banners_section .owl-carousel .owl-nav button.owl-prev {padding: 3px 3px 0 0 !important;}
-.banners {position: absolute;width: 50%;top: 27%;z-index: 999999;}
+.banners {position: absolute;width: 50%;top: 27%;z-index: 1;}
 .banners .owl-item.active.center {margin-top: -13px;}
 .banners .owl-stage-outer {padding-top: 20px}
 .small_owl_banners {display: none!important;}
