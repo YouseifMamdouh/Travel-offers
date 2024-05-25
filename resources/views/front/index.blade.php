@@ -499,7 +499,7 @@
                     <div class="service-left">
                         <ul>
                             <li>
-                                <div class="service-box">
+                                <div class="service-box" dir="rtl">
                                     <div class="icon">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -527,7 +527,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="service-box">
+                                <div class="service-box" dir="rtl">
                                     <div class="icon">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -563,7 +563,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="service-box">
+                                <div class="service-box" dir="rtl">
                                     <div class="icon">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -625,8 +625,8 @@
                     0: {
                         items: 1
                     },
-                    600: {
-                        items: 1
+                    760: {
+                        items: 3
                     },
                     1000: {
                         items: 3

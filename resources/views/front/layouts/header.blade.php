@@ -5,8 +5,8 @@
         <div class="container">
             <div class="d-inline">
                 <img class="social_img" src="{{asset('front/assets/images/whatsapp.png')}}" alt="whatsapp">
-                <a href="https://wa.me/+009663325255" class="header_span" target="_blank">
-                        009663325255
+                <a href="https://wa.me/+966549416068" class="header_span" target="_blank">
+                    +966549416068
                 </a>
             </div>
             <div class="d-inline ms-5 social_img_div">
