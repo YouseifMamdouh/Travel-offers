@@ -2,12 +2,14 @@
 header.light_header {position: absolute;background: transparent;z-index: 999}
 .upper_header {height: auto;background: transparent}
 .social_img {width: 23px;margin: 10px 7px 11px 7px;    filter: none;}
-.header_span {font-size: 15px;font-weight: bolder;vertical-align: middle;color: #fff}
+.header_span {font-size: 15px;font-weight: bolder;vertical-align: baseline;color: #fff}
 .header_span:hover{color: #fff}
 header.light_header .main-navbar .nav-menu>li>a {color: #fff}
 header.light_header .menu .brand-logo img {filter: none;width: 150px}
 header.light_header .toggle-nav i {color: #fff}
-.custom_header_span {color: #2fef46!important;}
+.custom_header_span {background-color: #2fef46!important;padding: 4px;border-radius: 5px;}
+.left_header {margin:10px 0 0 100px}
+.right_header {margin:10px 100px 0 0 }
 /* End Header */
 
 

@@ -3,18 +3,34 @@
 <header class="light_header">
     <div class="upper_header py-1">
         <div class="container">
-            <div class="d-inline">
-                <img class="social_img" src="{{asset('front/assets/images/whatsapp.png')}}" alt="whatsapp">
-                <a href="https://wa.me/+966549416068" class="header_span custom_header_span" target="_blank">
-                    +966549416068
-                </a>
+            <div class="row">
+                <div class="col-lg-4 col-12 " style="text-align: left">
+
+                    <div class="d-inline  custom_header_span">
+                        <img class="social_img" style=" margin: 8px 6px 11px 3px" src="{{asset('front/assets/images/whatsapp.png')}}" alt="whatsapp">
+                        <a href="https://wa.me/+966549416068" class="header_span" target="_blank">
+                            راسلنا علي الواتساب
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12" style="text-align: center">
+                    <div class="d-inline ms-5 social_img_div">
+                        <img class="social_img" src="{{asset('front/assets/images/phone.png')}}" alt="whatsapp">
+                        <a href="tel:+966549416068" class="header_span" target="_blank">
+                            +966549416068
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12" style="text-align: right">
+                    <div class="d-inline ms-5 social_img_div">
+                        <img class="social_img" src="{{asset('front/assets/images/chat-box.png')}}" alt="whatsapp">
+                        <a href="mailto:info@raltravel.com" class="header_span" target="_blank">
+                            info@raltravel.com
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="d-inline ms-5 social_img_div">
-                <img class="social_img" src="{{asset('front/assets/images/chat-box.png')}}" alt="whatsapp">
-                <a href="mailto:info@raltravel.com" class="header_span" target="_blank">
-                    info@raltravel.com
-                </a>
-            </div>
+
         </div>
     </div>
     <div class="container" style="border-bottom: 2px solid #fff;">
