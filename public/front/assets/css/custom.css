@@ -11,6 +11,14 @@ header.light_header .toggle-nav i {color: #fff}
 .left_header {margin:10px 0 0 100px}
 .right_header {margin:10px 100px 0 0 }
 /* End Header */
+@media (min-width: 580px) and (max-width: 760px) {
+    .customize_container {max-width: 100%;}
+}
+@media (min-width: 340px) and (max-width: 580px) {
+    .customize_container {max-width: 100%;}
+    .customize_header_right {text-align: right!important;}
+    .customize_header_center {text-align: right!important;margin-left: auto;}
+}
 
 
 /* Start Tour Section */
@@ -120,7 +128,7 @@ header.light_header .toggle-nav i {color: #fff}
 }
 
 @media (max-width: 560px) {
-    .social_img_div {margin: 0!important;}
+    .social_img_div {margin: 0 0 0 30px!important;}
     header.light_header .menu .brand-logo img {width: 115px}
 
 
