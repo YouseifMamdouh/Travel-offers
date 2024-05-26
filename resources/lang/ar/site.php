@@ -45,4 +45,5 @@
   'Internal' => 'Internal',
   'Discover More' => 'Discover More',
   'More' => 'المزيد',
+  'Top Hotels ' => 'أفضل الفنادق ',
 );

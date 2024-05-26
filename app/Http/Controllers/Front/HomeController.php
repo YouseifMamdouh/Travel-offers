@@ -24,10 +24,12 @@ class HomeController extends Controller
         $cities = City::get();
         $countries = Country::get();
         $hotels = Hotel::limit(4)->get();
-        $latest_services = Service::orderBy('id', 'desc')->limit(4)->get();
+        $latest_services = Service::orderBy('id', 'desc')->limit(3)->get();
         $programmes = OurProgramme::with('city', 'features')->get();
+        $footer_hotels = Hotel::limit(4)->get();
 
-        return view('front.index', compact('programmes','banners', 'blogs', 'cities', 'hotels', 'countries', 'latest_services'));
+
+        return view('front.index', compact('footer_hotels', 'programmes','banners', 'blogs', 'cities', 'hotels', 'countries', 'latest_services'));
     }
 
     public function contact(){

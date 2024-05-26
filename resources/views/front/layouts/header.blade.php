@@ -5,7 +5,7 @@
         <div class="container">
             <div class="d-inline">
                 <img class="social_img" src="{{asset('front/assets/images/whatsapp.png')}}" alt="whatsapp">
-                <a href="https://wa.me/+966549416068" class="header_span" target="_blank">
+                <a href="https://wa.me/+966549416068" class="header_span custom_header_span" target="_blank">
                     +966549416068
                 </a>
             </div>
@@ -59,7 +59,8 @@
                                                             {{$service->title}} </a></li>
                                                 @endforeach
                                             @endif
-                                            <li><a target="_blank" href="https://eflang.my.site.com/s/?info=Y2FtcGFpZ25JZD03MDE3VDAwMDAwMDFDTEVRQTImY2FtcGFpZ25OYW1lPVJBTCBUcmF2ZWwgYWdlbnQmbWFya2V0PVNBUiZldGFnPVJBTFRSQVZFTEFHRU5UJnNvdXJjZT1hMDMwWTAwMDAwVWxFWmFRQU4mbWVldGluZ1VybD0nJw%3D%3D"
+                                            <li><a target="_blank"
+                                                   href="https://eflang.my.site.com/s/?info=Y2FtcGFpZ25JZD03MDE3VDAwMDAwMDFDTEVRQTImY2FtcGFpZ25OYW1lPVJBTCBUcmF2ZWwgYWdlbnQmbWFya2V0PVNBUiZldGFnPVJBTFRSQVZFTEFHRU5UJnNvdXJjZT1hMDMwWTAwMDAwVWxFWmFRQU4mbWVldGluZ1VybD0nJw%3D%3D"
                                                    class="">
                                                     تعلم اللغة الإنجليزية </a></li>
                                         </ul>
@@ -68,24 +69,24 @@
                                         <a href="{{ route('user.programs.index') }}"
                                            class="nav-link ">{{__("messages.our_programs")}}</a>
                                     </li>
-{{--                                    @p
---}}
+                                    {{--                                    @p
+                                    --}}
                                     <li><a href="{{ route('user.contact') }}" class="">{{__("messages.contact_us")}}</a>
                                     </li>
-{{--                                    <li><a href="javascript:void(0);" class="">English</a>--}}
-{{--                                    </li>--}}
+                                    {{--                                    <li><a href="javascript:void(0);" class="">English</a>--}}
+                                    {{--                                    </li>--}}
                                 </ul>
                             </div>
                         </div>
                     </nav>
                     <ul class="header-right">
 
-{{--                        <li class="front-setting rounded5">--}}
-{{--                            <select>--}}
-{{--                                <option value="en">EN</option>--}}
-{{--                                <option value="ar">Ar</option>--}}
-{{--                            </select>--}}
-{{--                        </li>--}}
+                        {{--                        <li class="front-setting rounded5">--}}
+                        {{--                            <select>--}}
+                        {{--                                <option value="en">EN</option>--}}
+                        {{--                                <option value="ar">Ar</option>--}}
+                        {{--                            </select>--}}
+                        {{--                        </li>--}}
                         {{--                        <li class="user rounded5">--}}
                         {{--                            <a href="#">--}}
                         {{--                                <i class="fas fa-user"></i>--}}

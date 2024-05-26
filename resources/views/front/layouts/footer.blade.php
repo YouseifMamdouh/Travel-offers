@@ -70,7 +70,7 @@
                                        <li><a href="{{route('user.about')}}">{{__("messages.about_us")}}</a></li>
                                        <li><a href="{{route('user.hotels.index')}}">{{__("messages.hotels")}}</a></li>
                                        <li><a href="{{route('user.programs.index')}}">{{__("messages.our_programs")}}</a></li>
-                                       <li><a href="{{route('user.blogs.index')}}">{{__("messages.blogs")}}</a></li>
+{{--                                       <li><a href="{{route('user.blogs.index')}}">{{__("messages.blogs")}}</a></li>--}}
                                        <li><a href="{{route('user.contact')}}">{{__("messages.contact_us")}}</a></li>
 
                                        {{--                                        <li><a href="#">terms & co.</a></li>--}}
@@ -83,22 +83,24 @@
                    </div>
                    <div class="col-xl-3 col-md-6">
                        <div class="footer-title">
-                           <h5>{{__("messages.new_topics")}}</h5>
+                           <h5>{{\App\Helpers\TranslationHelper::translate('Top Hotels ', 'site')}}</h5>
+{{--                           <h5>{{__("messages.new_topics")}}</h5>--}}
+
                        </div>
                        <div class="footer-content">
                            <div class="footer-blog">
-                               @if(isset($blogs) && $blogs->count() > 0)
-                                   @foreach($blogs as $blog)
+                               @if(isset($footer_hotels) && $footer_hotels->count() > 0)
+                                   @foreach($footer_hotels as $footer_hotel)
                                        <div class="media" dir="rtl">
-                                           <div class="img-part rounded5">
-                                               <a href="#"><img src="{{ asset('uploads/blogs/' . $blog->image) }}" style="width: 100px"
-                                                                class="img-fluid blur-up lazyload" alt=""></a>
-                                           </div>
+{{--                                           <div class="img-part rounded5">--}}
+{{--                                               <a href="#"><img src="{{ asset('uploads/blogs/' . $blog->image) }}" style="width: 100px"--}}
+{{--                                                                class="img-fluid blur-up lazyload" alt=""></a>--}}
+{{--                                           </div>--}}
                                            <div class="media-body">
-                                               <h5>{{$blog->title}}</h5>
-                                               <p>
-                                                   {{$blog->sub_title}}
-                                               </p>
+                                               <h5 style="color: #fff">- {{$footer_hotel->title}}</h5>
+{{--                                               <p>--}}
+{{--                                                   {{$blog->sub_title}}--}}
+{{--                                               </p>--}}
                                            </div>
                                        </div>
                                    @endforeach
@@ -116,10 +118,14 @@
                     <div class="col-xl-6 col-md-6 col-sm-12 text-right">
                         <div class="footer-social">
                             <ul>
-                                <li><a href="https://www.facebook.com/RALTRAVELTABUK" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://instagram.com/ral.travel?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://twitter.com/RAL_KSA" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://web.whatsapp.com/send?phone=966549416068" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="https://www.facebook.com/raltravelsa" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/raltravel_sa" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li>
+                                    <a href="https://www.tiktok.com/@raltravel_sa?lang=en" target="_blank">
+                                        <img src="{{asset('front/assets/images/tik-tok.png')}}" style="width: 17px;vertical-align: top" alt="tik-tok">
+                                    </a>
+                                </li>
+                                <li><a href="https://wa.me/+966549416068" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>

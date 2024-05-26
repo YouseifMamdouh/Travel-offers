@@ -7,6 +7,7 @@ header.light_header {position: absolute;background: transparent;z-index: 999}
 header.light_header .main-navbar .nav-menu>li>a {color: #fff}
 header.light_header .menu .brand-logo img {filter: none;width: 150px}
 header.light_header .toggle-nav i {color: #fff}
+.custom_header_span {color: #2fef46!important;}
 /* End Header */
 
 

@@ -55,7 +55,8 @@ footer .footer .footer-space {padding-left: 0;padding-right: 90px}
 .header_span:hover{color: #000}
 
 .subscribe-footer .service-left .service-box .detail {margin-right: 12px;}
-
+footer .footer .footer-content .footer-blog .media+.media {margin-top:5px}
+footer .footer .footer-content .footer-blog .media .media-body {margin-right: 3px;}
 @media (max-width: 560px) {
     .banners .item {height: auto!important;}
     .services_section {margin-top: 30px!important;}
