@@ -51,6 +51,17 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::delete('delete/{id}', 'CountriesController@destroy')->name('countries.destroy');
     });
 
+    Route::group(['prefix' => 'contact_messages'], function () {
+        Route::get('/', 'ContactUsMessageController@index')->name('contact_messages.index');
+        Route::get('/show/{id}', 'ContactUsMessageController@show')->name('contact_messages.show');
+        Route::delete('delete/{id}', 'ContactUsMessageController@destroy')->name('contact_messages.destroy');
+    });
+    Route::group(['prefix' => 'bookings'], function () {
+        Route::get('/', 'ServiceBookingController@index')->name('bookings.index');
+        Route::get('/show/{id}', 'ServiceBookingController@show')->name('bookings.show');
+        Route::delete('delete/{id}', 'ServiceBookingController@destroy')->name('bookings.destroy');
+    });
+
     Route::group(['prefix' => 'banners'], function () {
         Route::get('/', 'BannersController@index')->name('banners.index');
         Route::get('/create', 'BannersController@create')->name('banners.create');
@@ -164,9 +175,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Dashboard',
         Route::delete('delete/{id}', 'FeaturesController@destroy')->name('features.destroy');
     });
 
-    Route::group(['prefix' => 'messages'], function () {
-        Route::get('/', 'MessagesController@index')->name('messages.index');
-    });
+//    Route::group(['prefix' => 'messages'], function () {
+//        Route::get('/', 'MessagesController@index')->name('messages.index');
+//    });
 
 
 

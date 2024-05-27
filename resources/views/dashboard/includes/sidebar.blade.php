@@ -652,7 +652,7 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                     <!--end:Menu sub-->
                 </div>
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion d-none {{ Route::currentRouteName() === 'messages.index' ? 'show' : '' }}">
+                     class="menu-item menu-accordion {{ Route::currentRouteName() === 'contact_messages.index' ? 'show' : '' }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon"
@@ -676,12 +676,24 @@ if (isset($_COOKIE["sidebar_minimize_state"]) && $_COOKIE["sidebar_minimize_stat
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{Route::currentRouteName() === 'messages.index' ? 'active' : ''}}"
-                               href="{{route('messages.index')}}">
+                            <a class="menu-link {{Route::currentRouteName() === 'contact_messages.index' ? 'active' : ''}}"
+                               href="{{route('contact_messages.index')}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
                                 <span class="menu-title">Messages </span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{Route::currentRouteName() === 'bookings.index' ? 'active' : ''}}"
+                               href="{{route('bookings.index')}}">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+                                <span class="menu-title">Bookings </span>
                             </a>
                             <!--end:Menu link-->
                         </div>
