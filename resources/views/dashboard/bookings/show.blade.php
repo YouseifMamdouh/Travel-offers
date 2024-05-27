@@ -1,5 +1,5 @@
 @extends('layouts.dashboard_2')
-@section('title', 'Show Blog')
+@section('title', 'Show Booking Details')
 @section('content')
 
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
@@ -15,7 +15,7 @@
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                            Show Blog</h1>
+                            Show Booking Details</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -23,7 +23,7 @@
                             <li class="breadcrumb-item text-muted">
                                 <a href="{{route('dashboard')}}"
                                    class="text-muted text-hover-primary">Dashboard</a> <span class="px-2"> - </span>
-                                <a href="{{route('blogs.index')}}" class="text-muted text-hover-primary">Blogs</a>
+                                <a href="{{route('bookings.index')}}" class="text-muted text-hover-primary">Bookings</a>
                                 <span class="px-2"> - </span>
                                 <span> Show  </span>
                             </li>
@@ -44,58 +44,70 @@
                 <!--begin::Card-->
                 <div class="card">
                     <!--begin::Card body-->
-                    <div class="card-header border-0 pt-6">
 
-                        <div class="card-toolbar">
-                            <!--begin::Toolbar-->
-                            <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                <!--begin::Add user-->
-                                <a type="button" class="btn btn-primary" href="{{route('blogs.edit', $data->id)}}">
-                                    Edit
-                                    <i class="ki-duotone ki-pencil">
-                                        <i class="path1"></i>
-                                        <i class="path2"></i>
-                                    </i>
-                                </a>
-                                <!--end::Add user-->
-                            </div>
-                            <!--end::Toolbar-->
-                        </div>
-                    </div>
                     <div class="card-body py-4" dir="{{Config::get('app.locale') == 'en' ? 'ltr' : 'rtl'}}">
 
                         <div class="row px-0 mt-3">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
-                                <h4>Blog Details</h4>
+                                <h4>Booking Details</h4>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
-                                        Title :
+                                        First Name :
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
-                                        {{$data->title}}
+                                        {{$data->f_name}}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
-                                        Sub Title :
+                                        Last Name :
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
-                                        {{$data->sub_title}}
+                                        {{$data->l_name}}
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12  text-left details_item bold">
-                                        Description :
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Service :
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12  text-left details_item bold">
-                                        {!! $data->description !!}
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->service?->title}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Email :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->email}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Phone :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->phone}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                        Address :
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
+                                        {{$data->address}}
                                     </div>
                                 </div>
                             </div>
@@ -104,22 +116,13 @@
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
                                         Date :
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
                                         {{date('d-m-Y', strtotime($data->created_at))}}
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-auto text-left">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-6  text-left details_item bold">
-                                        Image :
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6  text-left details_item bold">
-                                        <img src="{{asset('uploads/blogs/' . $data->image)}}" alt="" class="w-100">
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
 

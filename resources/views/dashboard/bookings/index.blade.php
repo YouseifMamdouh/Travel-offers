@@ -272,7 +272,10 @@
                                                     data-kt-menu="true">
                                                     <!--begin::Menu item-->
 
-
+                                                    <div class="menu-item px-3">
+                                                        <a href="{{route('bookings.show', $item->id)}}"
+                                                           class="menu-link px-3"> Show</a>
+                                                    </div>
                                                         <!--end::Menu item-->
                                                     <!--begin::Menu item-->
                                                     <div class="menu-item  px-3">
