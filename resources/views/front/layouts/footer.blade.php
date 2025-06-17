@@ -84,23 +84,14 @@
                    <div class="col-xl-3 col-md-6">
                        <div class="footer-title">
                            <h5>{{\App\Helpers\TranslationHelper::translate('Top Hotels ', 'site')}}</h5>
-{{--                           <h5>{{__("messages.new_topics")}}</h5>--}}
-
                        </div>
                        <div class="footer-content">
                            <div class="footer-blog">
                                @if(isset($footer_hotels) && $footer_hotels->count() > 0)
                                    @foreach($footer_hotels as $footer_hotel)
                                        <div class="media" dir="rtl">
-{{--                                           <div class="img-part rounded5">--}}
-{{--                                               <a href="#"><img src="{{ asset('uploads/blogs/' . $blog->image) }}" style="width: 100px"--}}
-{{--                                                                class="img-fluid blur-up lazyload" alt=""></a>--}}
-{{--                                           </div>--}}
                                            <div class="media-body">
                                                <h5 style="color: #fff">- {{$footer_hotel->title}}</h5>
-{{--                                               <p>--}}
-{{--                                                   {{$blog->sub_title}}--}}
-{{--                                               </p>--}}
                                            </div>
                                        </div>
                                    @endforeach
@@ -118,20 +109,20 @@
                     <div class="col-xl-6 col-md-6 col-sm-12 text-right">
                         <div class="footer-social">
                             <ul>
-                                <li><a href="https://www.facebook.com/raltravelsa" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/raltravel_sa" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 <li>
-                                    <a href="https://www.tiktok.com/@raltravel_sa?lang=en" target="_blank">
+                                    <a href="#" target="_blank">
                                         <img src="{{asset('front/assets/images/tik-tok.png')}}" style="width: 17px;vertical-align: top" alt="tik-tok">
                                     </a>
                                 </li>
-                                <li><a href="https://wa.me/+966549416068" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-12 text-left">
                         <div class="copy-right">
-                            <p>{{__("messages.copy_right")}} <i class="fas fa-heart"></i><a href="https://matrixclouds.com/ar">Matrix Clouds</a></p>
+                            {{-- <p>{{__("messages.copy_right")}} <i class="fas fa-heart"></i><a href="https://matrixclouds.com/ar">Matrix Clouds</a></p> --}}
                         </div>
                     </div>
                 </div>
