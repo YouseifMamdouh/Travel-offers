@@ -46,4 +46,6 @@
   'Discover More' => 'اكتشف المزيد',
   'More' => 'المزيد',
     'Top Hotels ' => 'أفضل الفنادق ',
+    'destinations' => 'الوجهات',
+
 );

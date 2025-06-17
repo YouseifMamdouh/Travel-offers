@@ -370,7 +370,7 @@
     $('.slider_333').slick({
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
         // arrows:true,
@@ -378,7 +378,7 @@
         responsive: [{
             breakpoint: 1460,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 4,
                 slidesToScroll: 1
             }
         },

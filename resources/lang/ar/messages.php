@@ -56,6 +56,7 @@ return [
     'ral' => 'ral',
     'intro' => 'introduction',
     'view_more' => 'view more',
+'destinations' => 'الوجهات',
 
 
 

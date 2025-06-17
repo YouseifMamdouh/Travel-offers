@@ -4,15 +4,15 @@
 @section('content')
 
     <!-- breadcrumb start -->
-    <section class="breadcrumb-section pt-0" >
+    <section class="breadcrumb-section pt-0">
         <img src="{{ asset('front/assets/images/inner-bg.jpg') }}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content overlay-black">
             <div>
-                <h2>{{__("messages.about_us")}}</h2>
+                <h2>{{ __('messages.about_us') }}</h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">{{__('messages.home')}}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{__("messages.about_us")}}</li>
+                        <li class="breadcrumb-item"><a href="{{ route('user.index') }}">{{ __('messages.home') }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ __('messages.about_us') }}</li>
                     </ol>
                 </nav>
             </div>
@@ -40,21 +40,21 @@
         </div>
         <div class="container">
             <div class="title-1">
-                <span class="title-label">{{__("messages.ral")}}</span>
-                <h2>{{__("messages.about_us")}}</h2>
+                <span class="title-label">عروض السفر</span>
+                <h2>{{ __('messages.about_us') }}</h2>
             </div>
-            <div class="row" dir="rtl" >
+            <div class="row" dir="rtl">
                 <div class="col-xl-7  order-xl-1">
                     <div class="image-section rtl">
-                        @if(isset($images) && $images->count() > 0)
-                            @foreach($images as $item)
+                        @if (isset($images) && $images->count() > 0)
+                            @foreach ($images as $item)
                                 <div class="img-box" style="width: 33%">
-                                    <img src="{{ asset('uploads/aboutus/' . $item->image) }}" data-tilt data-tilt-perspective="110" style="height: 100%; width: 100%"
-                                         data-tilt-speed="400" data-tilt-max="1.2" class="img-fluid blur-up lazyload radius-cls"
-                                         alt="">
+                                    <img src="{{ asset('uploads/aboutus/' . $item->image) }}" data-tilt
+                                        data-tilt-perspective="110" style="height: 100%; width: 100%" data-tilt-speed="400"
+                                        data-tilt-max="1.2" class="img-fluid blur-up lazyload radius-cls" alt="">
                                     <div class="title-box radius-cls">
-                                        <h3>{{$item->title}}</h3>
-                                        <h6>{{$item->description}}</h6>
+                                        <h3>{{ $item->title }}</h3>
+                                        <h6>{{ $item->description }}</h6>
                                     </div>
                                 </div>
                             @endforeach
@@ -66,14 +66,17 @@
                     <div class="about-text rtl ps-0">
                         <div>
                             <div class="title-3">
-                                <span class="title-label">{{__("messages.intro")}}</span>
+                                <span class="title-label">{{ __('messages.intro') }}</span>
                             </div>
-                            <h2>{{$details->title}}</h2>
+                            <h3>Welcome to Travel Offers</h3>
                             <p>{!! $details->description !!}</p>
-                            <img src="{{ asset('front') }}/assets/images/mix/signature.png" class="img-fluid blur-up lazyload" alt="">
+                            <img src="{{ asset('front') }}/assets/images/mix/signature.png"
+                                class="img-fluid blur-up lazyload" alt="">
                             <div class="buttons-about">
-                                <a href="{{ route('user.programs.index') }}" class="btn btn-lower btn-curve">{{__("messages.view_more")}}</a>
-                                <a href="{{ route('user.contact') }}" class="btn btn-lower black-btn btn-curve">{{__('messages.contact_us')}}</a>
+                                <a href="{{ route('user.programs.index') }}"
+                                    class="btn btn-lower btn-curve">{{ __('messages.view_more') }}</a>
+                                <a href="{{ route('user.contact') }}"
+                                    class="btn btn-lower black-btn btn-curve">{{ __('messages.contact_us') }}</a>
                             </div>
                         </div>
                     </div>
