@@ -283,14 +283,8 @@
                 <li class="nav-item"><a href="#" class="nav-link nav_link">خدمات السفر</a></li>
                 <li class="nav-item dropdown position-relative">
                     <a style="font-weight: 600" href="#" class="nav-link" data-bs-toggle="dropdown">
-                        الوجهات السياحية <i class="fas fa-chevron-down"></i>
+                        الوجهات السياحية
                     </a>
-                    <ul class="dropdown-menu dropdown_menu shadow rounded-3 p-0 overflow-hidden"
-                        style="min-width: 180px;">
-                        <li><a href="#" class="dropdown-item dropdown_link py-2 px-3">دبي</a></li>
-                        <li><a href="#" class="dropdown-item dropdown_link py-2 px-3">الرياض</a></li>
-                        <li><a href="#" class="dropdown-item dropdown_link py-2 px-3">مكة</a></li>
-                    </ul>
                 </li>
                 <li class="nav-item"><a href="#" class="nav-link nav_link">خطوط الطيران</a></li>
                 <li class="nav-item"><a href="#" class="nav-link nav_link">تواصل معنا</a></li>
@@ -299,8 +293,9 @@
 
         <a href="/" class="me-auto">
             <img src="{{ asset('front/assets/img/logotop.png') }}" alt="الشعار" class="logo_img"
-                style="height: 96px; width: 100%;">
+                style="height: 80px; width: auto; max-width: 100%;">
         </a>
+
 
         <button class="navbar-toggler ms-2 d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -311,11 +306,11 @@
     </div>
 </nav>
 <a href="https://wa.me/201234567890" class="side-icon whatsapp" target="_blank" title="تواصل عبر واتساب">
-  <i class="fab fa-whatsapp"></i>
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 <a href="tel:+201234567890" class="side-icon phone" title="اتصال هاتفي">
-  <i class="fas fa-phone-alt"></i>
+    <i class="fas fa-phone-alt"></i>
 </a>
 
 

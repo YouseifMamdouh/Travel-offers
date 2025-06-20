@@ -3214,8 +3214,6 @@ section .black-layer:before {
 
 .blog_section .blog-wrap {
     border-radius: 10px;
-    -webkit-box-shadow: 2.5px 4.33px 35px 0px rgba(0, 0, 0, 0.04);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     overflow: hidden;
