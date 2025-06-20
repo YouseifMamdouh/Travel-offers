@@ -34,7 +34,7 @@
                    <div class="col-xl-3 col-lg-3 col-md-7">
                        <div class="footer-title">
                            <h5>افضل العروض السياحية
-</h5>
+                           </h5>
                        </div>
                        <div class="footer-content">
                            <div class="footer-place">
@@ -63,33 +63,27 @@
                    <div class="col-xl-3 col-lg-3 col-md-4">
                        <div class="footer-space">
                            <div class="footer-title">
-                               <h5>روابط مهمة</h5>
+                               <h5>الخدمات</h5>
                            </div>
                            <div class="footer-content">
                                <div class="footer-links">
                                    <ul>
-                                       <li><a href="{{ route('user.index') }}">{{ __('messages.home') }}</a></li>
-                                       <li><a href="{{ route('user.about') }}">{{ __('messages.about_us') }}</a></li>
-                                       <li><a href="{{ route('user.hotels.index') }}">{{ __('messages.hotels') }}</a>
-                                       </li>
-                                       <li><a
-                                               href="{{ route('user.programs.index') }}">{{ __('messages.our_programs') }}</a>
-                                       </li>
-                                       {{--                                       <li><a href="{{route('user.blogs.index')}}">{{__("messages.blogs")}}</a></li> --}}
-                                       <li><a href="{{ route('user.contact') }}">{{ __('messages.contact_us') }}</a>
-                                       </li>
-
-                                       {{--                                        <li><a href="#">terms & co.</a></li> --}}
-                                       {{--                                        <li><a href="#">privacy</a></li> --}}
-                                       {{--                                        <li><a href="#">support</a></li> --}}
+                                       <li><a href="#">التنقلات</a></li>
+                                       <li><a href="#">خدمة تأجير السيارات</a></li>
+                                       <li><a href="#">باقات السياحة الداخلية</a></li>
+                                       <li><a href="#">باقات الرحلات البحرية</a></li>
+                                       <li><a href="#">باقات</a></li>
+                                       <li><a href="#">الباقات الرياضية</a></li>
+                                       <li><a href="#">باقات الرحلات البحرية</a></li>
                                    </ul>
                                </div>
                            </div>
                        </div>
                    </div>
+
                    <div class="col-xl-3 col-md-6">
                        <div class="footer-title">
-                           <h5>{{ \App\Helpers\TranslationHelper::translate('Top Hotels ', 'site') }}</h5>
+                           <h5>افضل الوجهات</h5>
                        </div>
                        <div class="footer-content">
                            <div class="footer-blog">
@@ -136,4 +130,13 @@
            </div>
        </div>
    </footer>
+
+   <a href="https://wa.me/201234567890" class="side-icon whatsapp" target="_blank" title="تواصل عبر واتساب">
+       <i class="fab fa-whatsapp"></i>
+   </a>
+
+   <a href="tel:+201234567890" class="side-icon phone" title="اتصال هاتفي">
+       <i class="fas fa-phone-alt"></i>
+   </a>
+
    <!-- footer section end -->

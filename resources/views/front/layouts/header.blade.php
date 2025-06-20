@@ -277,17 +277,17 @@
         <div dir="rtl" class="collapse navbar-collapse justify-content-center d-lg-flex"
             id="navbarSupportedContent">
             <ul class="navbar-nav nav_menu d-flex align-items-center gap-3">
-                <li class="nav-item"><a href="#" class="nav-link nav_link">الرئيسية</a></li>
-                <li class="nav-item"><a href="#" class="nav-link nav_link">من نحن</a></li>
+                <li class="nav-item"><a href="{{ route('user.index') }}" class="nav-link nav_link">الرئيسية</a></li>
+                <li class="nav-item"><a href="{{ route('user.about') }}" class="nav-link nav_link">من نحن</a></li>
                 <li class="nav-item"><a href="#" class="nav-link nav_link">عروض السفر</a></li>
                 <li class="nav-item"><a href="#" class="nav-link nav_link">خدمات السفر</a></li>
                 <li class="nav-item dropdown position-relative">
-                    <a style="font-weight: 600" href="#" class="nav-link" data-bs-toggle="dropdown">
+                    <a style="font-weight: 600" href="{{ route('user.hotels.index') }}" class="nav-link">
                         الوجهات السياحية
                     </a>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link nav_link">خطوط الطيران</a></li>
-                <li class="nav-item"><a href="#" class="nav-link nav_link">تواصل معنا</a></li>
+                <li class="nav-item"><a href="{{ route('user.Airlines') }}" class="nav-link nav_link">خطوط الطيران</a></li>
+                <li class="nav-item"><a href="{{ route('user.contact') }}" class="nav-link nav_link">تواصل معنا</a></li>
             </ul>
         </div>
 
@@ -305,13 +305,6 @@
 
     </div>
 </nav>
-<a href="https://wa.me/201234567890" class="side-icon whatsapp" target="_blank" title="تواصل عبر واتساب">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="tel:+201234567890" class="side-icon phone" title="اتصال هاتفي">
-    <i class="fas fa-phone-alt"></i>
-</a>
 
 
 <script>

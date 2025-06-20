@@ -1,5 +1,7 @@
 @extends('front.layouts.app')
-
+@push('user.css')
+    <link rel="stylesheet" href="{{ asset('front/assets/css/custom.css') }}">
+@endpush
 
 @section('content')
 
@@ -8,11 +10,11 @@
         <img src="{{asset('front/assets/images/inner-pages/bg-bread.jpg')}}" class="bg-img img-fluid blur-up lazyload" alt="">
         <div class="breadcrumb-content">
             <div>
-                <h2>جميع الفنادق</h2>
+                <h2>جميع الوجهات السياحيه </h2>
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('user.index')}}">الرئيسية</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">الفنادق</li>
+                        <li class="breadcrumb-item active" aria-current="page">الوجهات السياحة</li>
                     </ol>
                 </nav>
             </div>
