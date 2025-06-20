@@ -715,7 +715,7 @@ section,
 
 .title-2 h2 {
     font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
-    color: #808080;
+    color: #850000;
     font-weight: 400;
     margin-bottom: 22px;
     line-height: 32px;

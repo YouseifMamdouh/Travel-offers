@@ -1,79 +1,331 @@
-{{-- //overlay-white --}}
-<!-- header start -->
-<header class="light_header">
-    <div class="upper_header py-1">
-        <div class="container">
-            <div class="d-inline custom_header_span">
-                <img class="social_img" style="" src="{{ asset('front/assets/images/whatsapp.png') }}" alt="whatsapp">
-                <a href="https://wa.me/+966549416068" class="header_span" target="_blank">
-                    +966549416068
-                </a>
-            </div>
-            <div class="d-inline ms-5 social_img_div">
-                <img class="social_img" src="{{ asset('front/assets/images/phone.png') }}" alt="whatsapp">
-                <a href="tel:+966549416068" class="header_span" target="_blank">
-                    +966549416068
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="border-bottom: 2px solid #fff;">
-        <div class="row">
-            <div class="col">
-                <div class="menu">
-                    <div class="brand-logo">
-                        <a href="{{ url('/') }}">
-                            <img src="{{ asset('front/assets/img/logotop.png') }}" alt=""
-                                class="img-fluid blur-up lazyload" width="40">
-                        </a>
-                    </div>
-                    <nav>
-                        <div class="main-navbar">
-                            <div id="mainnav">
-                                <div class="menu-overlay"></div>
-                                <ul class="nav-menu">
-                                    <li class="back-btn">
-                                        <div class="mobile-back text-end">
-                                            <span>عودة</span>
-                                            <i aria-hidden="true" class="fa fa-angle-right ps-2"></i>
-                                        </div>
-                                    </li>
-                                    <li><a href="{{ route('user.index') }}" class="">{{ __('messages.home') }}</a></li>
-                                    <li><a href="{{ route('user.about') }}" class="">{{ __('messages.about_us') }}</a></li>
-                                    <li class="dropdown">
-                                        <a href="{{ route('user.hotels.index') }}" class="nav-link ">{{ __('messages.destinations') }}</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="nav-link menu-title">{{ __('messages.services') }}</a>
-                                        <ul class="nav-submenu menu-content">
-                                            @php
-                                                $services = \App\Models\Service::orderBy('id', 'desc')->get();
-                                            @endphp
-                                            @if (isset($services) && $services->count() > 0)
-                                                @foreach ($services as $service)
-                                                    <li><a href="{{ route('service.show', $service->id) }}">{{ $service->title }}</a></li>
-                                                @endforeach
-                                            @endif
-                                            <li><a target="_blank"
-                                                   href="https://eflang.my.site.com/s/?info=Y2FtcGFpZ25JZD03MDE3VDAwMDAwMDFDTEVRQTImY2FtcGFpZ25OYW1lPVJBTCBUcmF2ZWwgYWdlbnQmbWFya2V0PVNBUiZldGFnPVJBTFRSQVZFTEFHRU5UJnNvdXJjZT1hMDMwWTAwMDAwVWxFWmFRQU4mbWVldGluZ1VybD0nJw%3D%3D">
-                                                   تعلم اللغة الإنجليزية</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="{{ route('user.programs.index') }}" class="nav-link ">{{ __('messages.our_programs') }}</a>
-                                    </li>
-                                    <li><a href="{{ route('user.contact') }}" class="">{{ __('messages.contact_us') }}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                    <ul class="header-right">
-                        <div class="toggle-nav" style="margin-left: 10px"><i class="fa fa-bars sidebar-bar"></i></div>
-                    </ul>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    /* Upper Header Styles */
+    .upper_header {
+        /* background-color: #4a90a4; */
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    .upper_header_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact_info {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .contact_item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .social_img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    .social_icon {
+        color: white;
+        font-size: 16px;
+    }
+
+    .header_link {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+    }
+
+    .header_link:hover {
+        opacity: 0.8;
+    }
+
+    .language_selector {
+        display: flex;
+        align-items: center;
+    }
+
+    .lang_item {
+        background-color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        border: 2px solid #4a90a4;
+    }
+
+    .lang_text {
+        color: #4a90a4;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* Main Header Styles */
+    .main_header {
+        background-color: white;
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .brand_logo {
+        flex-shrink: 0;
+    }
+
+    .logo_img {
+        height: 40px;
+        width: auto;
+    }
+
+    /* Navigation Styles */
+    .main_nav {
+        flex: 1;
+        display: flex;
+        /* justify-content: center; */
+    }
+
+    .nav_menu {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .nav_menu li {
+        position: relative;
+    }
+
+    .nav_link {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .nav_link:hover {
+        color: #4a90a4;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown_menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        list-style: none;
+    }
+
+    .dropdown:hover .dropdown_menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown_link {
+        display: block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown_link:hover {
+        background-color: #f8f9fa;
+        color: #4a90a4;
+    }
+
+    /* Mobile Toggle */
+    .mobile_toggle {
+        display: none;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .upper_header_content {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact_info {
+            gap: 15px;
+        }
+
+        .main_nav {
+            display: none;
+        }
+
+        .mobile_toggle {
+            display: block;
+        }
+
+        .header_content {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact_info {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .nav_menu {
+            gap: 15px;
+            font-size: 14px;
+        }
+    }
+
+    /* RTL Specific Adjustments */
+    [dir="rtl"] .dropdown_menu {
+        right: 0;
+        left: auto;
+    }
+
+    [dir="rtl"] .nav_link i {
+        margin-right: 5px;
+        margin-left: 0;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        font-weight: 600;
+    }
+
+    .dropdown-menu {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <div class="d-none d-lg-flex align-items-center gap-3 ms-auto">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/9661800300" target="_blank"
+                class="d-flex justify-content-center align-items-center rounded-circle border"
+                style="width: 40px; height: 40px; background-color: #fff;">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="whatsapp"
+                    style="width: 18px; height: 18px;">
+            </a>
+
+            <!-- Language -->
+            <div class="language_selector">
+                <div class="lang_item" onclick="toggleLanguage()" style="cursor: pointer;">
+                    <span class="lang_text" id="langText">en</span>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
 
-<!--  header end -->
+
+            <!-- Phone -->
+            <a href="tel:1800300"
+                class="d-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-dark text-decoration-none"
+                style="font-weight: 600;">
+                <span>1800300</span>
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+
+        <div dir="rtl" class="collapse navbar-collapse justify-content-center d-lg-flex"
+            id="navbarSupportedContent">
+            <ul class="navbar-nav nav_menu d-flex align-items-center gap-3">
+                <li class="nav-item"><a href="#" class="nav-link nav_link">الرئيسية</a></li>
+                <li class="nav-item"><a href="#" class="nav-link nav_link">من نحن</a></li>
+                <li class="nav-item"><a href="#" class="nav-link nav_link">عروض السفر</a></li>
+                <li class="nav-item"><a href="#" class="nav-link nav_link">خدمات السفر</a></li>
+                <li class="nav-item dropdown position-relative">
+                    <a style="font-weight: 600" href="#" class="nav-link" data-bs-toggle="dropdown">
+                        الوجهات السياحية <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown_menu shadow rounded-3 p-0 overflow-hidden"
+                        style="min-width: 180px;">
+                        <li><a href="#" class="dropdown-item dropdown_link py-2 px-3">دبي</a></li>
+                        <li><a href="#" class="dropdown-item dropdown_link py-2 px-3">الرياض</a></li>
+                        <li><a href="#" class="dropdown-item dropdown_link py-2 px-3">مكة</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link nav_link">خطوط الطيران</a></li>
+                <li class="nav-item"><a href="#" class="nav-link nav_link">تواصل معنا</a></li>
+            </ul>
+        </div>
+
+        <a href="/" class="me-auto">
+            <img src="{{ asset('front/assets/img/logotop.png') }}" alt="الشعار" class="logo_img"
+                style="height: 96px; width: 100%;">
+        </a>
+
+        <button class="navbar-toggler ms-2 d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+</nav>
+<a href="https://wa.me/201234567890" class="side-icon whatsapp" target="_blank" title="تواصل عبر واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="tel:+201234567890" class="side-icon phone" title="اتصال هاتفي">
+  <i class="fas fa-phone-alt"></i>
+</a>
+
+
+<script>
+    function toggleLanguage() {
+        const langSpan = document.getElementById('langText');
+        if (langSpan.innerText === 'en') {
+            langSpan.innerText = 'ar';
+        } else {
+            langSpan.innerText = 'en';
+        }
+    }
+</script>
