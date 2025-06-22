@@ -244,7 +244,6 @@
     }
 </style>
 
-
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container d-flex justify-content-between align-items-center">
 
@@ -264,7 +263,6 @@
                 </div>
             </div>
 
-
             <!-- Phone -->
             <a href="tel:1800300"
                 class="d-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-dark text-decoration-none"
@@ -279,14 +277,19 @@
             <ul class="navbar-nav nav_menu d-flex align-items-center gap-3">
                 <li class="nav-item"><a href="{{ route('user.index') }}" class="nav-link nav_link">الرئيسية</a></li>
                 <li class="nav-item"><a href="{{ route('user.about') }}" class="nav-link nav_link">من نحن</a></li>
-                <li class="nav-item"><a href="#" class="nav-link nav_link">عروض السفر</a></li>
-                <li class="nav-item"><a href="#" class="nav-link nav_link">خدمات السفر</a></li>
+                <li class="nav-item"><a href="{{ route('user.traveloffers') }}" class="nav-link nav_link">عروض السفر</a></li>
+
+                <li class="nav-item">
+                    <a href="{{ route('user.servicesmain') }}" class="nav-link nav_link">خدمات السفر</a>
+                </li>
+
                 <li class="nav-item dropdown position-relative">
                     <a style="font-weight: 600" href="{{ route('user.hotels.index') }}" class="nav-link">
                         الوجهات السياحية
                     </a>
                 </li>
-                <li class="nav-item"><a href="{{ route('user.Airlines') }}" class="nav-link nav_link">خطوط الطيران</a></li>
+                <li class="nav-item"><a href="{{ route('user.Airlines') }}" class="nav-link nav_link">خطوط الطيران</a>
+                </li>
                 <li class="nav-item"><a href="{{ route('user.contact') }}" class="nav-link nav_link">تواصل معنا</a></li>
             </ul>
         </div>
@@ -295,7 +298,6 @@
             <img src="{{ asset('front/assets/img/logotop.png') }}" alt="الشعار" class="logo_img"
                 style="height: 80px; width: auto; max-width: 100%;">
         </a>
-
 
         <button class="navbar-toggler ms-2 d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -306,14 +308,9 @@
     </div>
 </nav>
 
-
 <script>
     function toggleLanguage() {
         const langSpan = document.getElementById('langText');
-        if (langSpan.innerText === 'en') {
-            langSpan.innerText = 'ar';
-        } else {
-            langSpan.innerText = 'en';
-        }
+        langSpan.innerText = (langSpan.innerText === 'en') ? 'ar' : 'en';
     }
 </script>

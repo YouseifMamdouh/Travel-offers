@@ -20,9 +20,7 @@
                                    <img src="{{ asset('front/assets/img/logotop.png') }}" alt=""
                                        class="img-fluid blur-up lazyload" width="140">
                                </div>
-                               {{--                               <p>{!! $about->description !!}</p> --}}
                                <ul class="contact-list">
-                                   {{-- <li><i class="fas fa-map-marker-alt"></i>Cairo , maadi</li> --}}
                                    <li><i class="fas fa-phone-alt"></i>{{ $contact->phone }}</li>
                                    <li><i class="fas fa-envelope"></i>{{ $contact->email }}</li>
                                    <li><i class="fas fa-map-marker-alt"></i>{{ $contact->address }}</li>
@@ -123,7 +121,6 @@
                    </div>
                    <div class="col-xl-6 col-md-6 col-sm-12 text-left">
                        <div class="copy-right">
-                           {{-- <p>{{__("messages.copy_right")}} <i class="fas fa-heart"></i><a href="https://matrixclouds.com/ar">Matrix Clouds</a></p> --}}
                        </div>
                    </div>
                </div>
@@ -131,11 +128,11 @@
        </div>
    </footer>
 
-   <a href="https://wa.me/201234567890" class="side-icon whatsapp" target="_blank" title="تواصل عبر واتساب">
+   <a href="#" class="side-icon whatsapp" target="_blank" title="تواصل عبر واتساب">
        <i class="fab fa-whatsapp"></i>
    </a>
 
-   <a href="tel:+201234567890" class="side-icon phone" title="اتصال هاتفي">
+   <a href="#0" class="side-icon phone" title="اتصال هاتفي">
        <i class="fas fa-phone-alt"></i>
    </a>
 

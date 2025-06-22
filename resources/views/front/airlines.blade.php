@@ -2,51 +2,6 @@
 
 @push('user.css')
     <link rel="stylesheet" href="{{ asset('front/assets/css/custom.css') }}">
-    <style>
-        .airlines-section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .airlines-section h2 {
-            font-weight: bold;
-            margin-bottom: 40px;
-            color: #23395d;
-        }
-
-        .airlines-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .airline-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #ccc;
-            width: 180px;
-            padding: 20px 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .airline-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .airline-card img {
-            max-height: 50px;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
-
-        .airline-card p {
-            font-weight: bold;
-            color: #333;
-            font-size: 14px;
-        }
-    </style>
 @endpush
 
 @section('content')
